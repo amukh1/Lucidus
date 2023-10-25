@@ -6,6 +6,15 @@
 #include <map>
 #include <memory>
 
+#include <llvm/IR/LLVMContext.h>
+#include <llvm/IR/Module.h>
+#include <llvm/IR/IRBuilder.h>
+#include <llvm/IR/Verifier.h>
+#include <llvm/IR/Instructions.h>
+#include <llvm/Support/raw_ostream.h>
+
+#include "LLVMController.h"
+
 // antlr files in ./antlr
 #include "antlr4-runtime.h"
 #include "LucidusLexer.h"
@@ -19,6 +28,9 @@
 
 int main() {
     // antlr
+    std::shared_ptr<LLVMController> Controller = std::make_shared<LLVMController>();
+    // Controller->module->getOrInsertFunction("printf", llvm::FunctionType::get(Controller->builder->getInt32Ty(), Controller->builder->getInt8PtrTy(), true));
+
 
     std::ifstream stream;
     stream.open("test.luc");
@@ -31,9 +43,10 @@ int main() {
 
     // visitor
     MyVisitor visitor;
+    visitor.controller = Controller;
     visitor.visit(tree);
 
-    
+     llvm::outs() << *Controller->module << '\n';
 
     return 0;
 }

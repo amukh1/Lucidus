@@ -1,0 +1,206 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "lib/libgtest_maind.a"
+		}
+	],
+	"backtrace" : 3,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"cxx_library_with_type",
+			"cxx_library",
+			"install",
+			"install_project",
+			"target_link_libraries",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"build/_deps/googletest-src/googletest/cmake/internal_utils.cmake",
+			"build/_deps/googletest-src/googletest/CMakeLists.txt",
+			"runtime/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 133,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 209,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 152,
+				"parent" : 2
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 151,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 318,
+				"parent" : 4
+			},
+			{
+				"command" : 5,
+				"file" : 1,
+				"line" : 146,
+				"parent" : 0
+			},
+			{
+				"file" : 2
+			},
+			{
+				"command" : 6,
+				"file" : 2,
+				"line" : 10,
+				"parent" : 7
+			},
+			{
+				"command" : 6,
+				"file" : 1,
+				"line" : 121,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "   -Wall -pedantic -W -g -O0 -g   -Wall -pedantic -W  "
+				},
+				{
+					"fragment" : "-Wall -Wshadow -Werror -Wconversion -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls"
+				},
+				{
+					"fragment" : "-std=c++17"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 8,
+					"path" : "/workspaces/codespaces-blank/runtime/src"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/workspaces/codespaces-blank/runtime/src/atn"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/workspaces/codespaces-blank/runtime/src/dfa"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/workspaces/codespaces-blank/runtime/src/internal"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/workspaces/codespaces-blank/runtime/src/misc"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/workspaces/codespaces-blank/runtime/src/support"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/workspaces/codespaces-blank/runtime/src/tree"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/workspaces/codespaces-blank/runtime/src/tree/pattern"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/workspaces/codespaces-blank/runtime/src/tree/xpath"
+				},
+				{
+					"backtrace" : 9,
+					"isSystem" : true,
+					"path" : "/workspaces/codespaces-blank/build/_deps/googletest-src/googletest/include"
+				},
+				{
+					"backtrace" : 9,
+					"isSystem" : true,
+					"path" : "/workspaces/codespaces-blank/build/_deps/googletest-src/googletest"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 6,
+			"id" : "gtest::@1ea2dfc0605fe3ab2a3f"
+		}
+	],
+	"id" : "gtest_main::@1ea2dfc0605fe3ab2a3f",
+	"install" : 
+	{
+		"destinations" : 
+		[
+			{
+				"backtrace" : 5,
+				"path" : "lib"
+			}
+		],
+		"prefix" : 
+		{
+			"path" : "/usr/local"
+		}
+	},
+	"name" : "gtest_main",
+	"nameOnDisk" : "libgtest_maind.a",
+	"paths" : 
+	{
+		"build" : "_deps/googletest-build/googletest",
+		"source" : "build/_deps/googletest-src/googletest"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "build/_deps/googletest-src/googletest/src/gtest_main.cc",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

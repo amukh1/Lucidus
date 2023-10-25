@@ -19,10 +19,6 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual std::any visitStat(LucidusParser::StatContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
   virtual std::any visitRawtype(LucidusParser::RawtypeContext *ctx) override {
     return visitChildren(ctx);
   }
@@ -32,6 +28,18 @@ public:
   }
 
   virtual std::any visitIdec(LucidusParser::IdecContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitParam(LucidusParser::ParamContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitDec(LucidusParser::DecContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitStat(LucidusParser::StatContext *ctx) override {
     return visitChildren(ctx);
   }
 

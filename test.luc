@@ -1,4 +1,4 @@
-decl printf(x:i8*, ...) -> int;
+decl printf(x:char*, ...) -> int;
 
 decl add(x:int, y:int) -> int;
 defn add(x:int,y:int) -> int {

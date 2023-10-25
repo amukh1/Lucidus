@@ -4,17 +4,17 @@ options { tokenVocab=LucidusLexer;}
 program
     : (stat | def)*  EOF
     ;
-
-stat
-    : ID '=' expr ';'
-    | expr ';'
-    | DECL ID '(' ((idec|DOTS) (',' (idec|DOTS))*)? ')' ARROW ID ';'
-    | RETURN expr ';'
-    ;
-
 rawtype: (ID);
 type: (ID) (STAR)*;
 idec: ID COL type ;
+param: (idec|DOTS);
+dec: DECL ID '(' (param (',' param)*)? ')' ARROW type ';';
+stat
+    : ID '=' expr ';'
+    | expr ';'
+    | dec
+    | RETURN expr ';'
+    ;
 def : DEF ID '(' (idec (',' idec)*)? ')' ARROW ID '{' stat* '}' ;
 
 expr: ID

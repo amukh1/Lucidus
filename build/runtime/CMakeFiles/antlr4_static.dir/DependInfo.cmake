@@ -141,7 +141,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/workspaces/codespaces-blank/runtime/src/tree/xpath/XPathWildcardAnywhereElement.cpp" "/workspaces/codespaces-blank/build/runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathWildcardAnywhereElement.cpp.o"
   "/workspaces/codespaces-blank/runtime/src/tree/xpath/XPathWildcardElement.cpp" "/workspaces/codespaces-blank/build/runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathWildcardElement.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "Clang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

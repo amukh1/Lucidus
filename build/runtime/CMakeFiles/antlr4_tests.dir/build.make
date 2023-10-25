@@ -60,15 +60,15 @@ include runtime/CMakeFiles/antlr4_tests.dir/flags.make
 runtime/CMakeFiles/antlr4_tests.dir/tests/Utf8Test.cpp.o: runtime/CMakeFiles/antlr4_tests.dir/flags.make
 runtime/CMakeFiles/antlr4_tests.dir/tests/Utf8Test.cpp.o: ../runtime/tests/Utf8Test.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object runtime/CMakeFiles/antlr4_tests.dir/tests/Utf8Test.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_tests.dir/tests/Utf8Test.cpp.o -c /workspaces/codespaces-blank/runtime/tests/Utf8Test.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_tests.dir/tests/Utf8Test.cpp.o -c /workspaces/codespaces-blank/runtime/tests/Utf8Test.cpp
 
 runtime/CMakeFiles/antlr4_tests.dir/tests/Utf8Test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_tests.dir/tests/Utf8Test.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/tests/Utf8Test.cpp > CMakeFiles/antlr4_tests.dir/tests/Utf8Test.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/tests/Utf8Test.cpp > CMakeFiles/antlr4_tests.dir/tests/Utf8Test.cpp.i
 
 runtime/CMakeFiles/antlr4_tests.dir/tests/Utf8Test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_tests.dir/tests/Utf8Test.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/tests/Utf8Test.cpp -o CMakeFiles/antlr4_tests.dir/tests/Utf8Test.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/tests/Utf8Test.cpp -o CMakeFiles/antlr4_tests.dir/tests/Utf8Test.cpp.s
 
 # Object files for target antlr4_tests
 antlr4_tests_OBJECTS = \
@@ -80,8 +80,8 @@ antlr4_tests_EXTERNAL_OBJECTS =
 runtime/antlr4_tests: runtime/CMakeFiles/antlr4_tests.dir/tests/Utf8Test.cpp.o
 runtime/antlr4_tests: runtime/CMakeFiles/antlr4_tests.dir/build.make
 runtime/antlr4_tests: runtime/libantlr4-runtime.a
-runtime/antlr4_tests: lib/libgtest_main.a
-runtime/antlr4_tests: lib/libgtest.a
+runtime/antlr4_tests: lib/libgtest_maind.a
+runtime/antlr4_tests: lib/libgtestd.a
 runtime/antlr4_tests: runtime/CMakeFiles/antlr4_tests.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable antlr4_tests"
 	cd /workspaces/codespaces-blank/build/runtime && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/antlr4_tests.dir/link.txt --verbose=$(VERBOSE)

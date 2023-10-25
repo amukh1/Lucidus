@@ -6,7 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/workspaces/codespaces-blank/runtime/tests/Utf8Test.cpp" "/workspaces/codespaces-blank/build/runtime/CMakeFiles/antlr4_tests.dir/tests/Utf8Test.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "Clang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

@@ -19,8 +19,8 @@ public:
   };
 
   enum {
-    RuleProgram = 0, RuleStat = 1, RuleRawtype = 2, RuleType = 3, RuleIdec = 4, 
-    RuleDef = 5, RuleExpr = 6, RuleFunc = 7
+    RuleProgram = 0, RuleRawtype = 1, RuleType = 2, RuleIdec = 3, RuleParam = 4, 
+    RuleDec = 5, RuleStat = 6, RuleDef = 7, RuleExpr = 8, RuleFunc = 9
   };
 
   explicit LucidusParser(antlr4::TokenStream *input);
@@ -41,10 +41,12 @@ public:
 
 
   class ProgramContext;
-  class StatContext;
   class RawtypeContext;
   class TypeContext;
   class IdecContext;
+  class ParamContext;
+  class DecContext;
+  class StatContext;
   class DefContext;
   class ExprContext;
   class FuncContext; 
@@ -65,34 +67,6 @@ public:
   };
 
   ProgramContext* program();
-
-  class  StatContext : public antlr4::ParserRuleContext {
-  public:
-    StatContext(antlr4::ParserRuleContext *parent, size_t invokingState);
-    virtual size_t getRuleIndex() const override;
-    std::vector<antlr4::tree::TerminalNode *> ID();
-    antlr4::tree::TerminalNode* ID(size_t i);
-    antlr4::tree::TerminalNode *EQ();
-    ExprContext *expr();
-    antlr4::tree::TerminalNode *SEMI();
-    antlr4::tree::TerminalNode *DECL();
-    antlr4::tree::TerminalNode *OPAREN();
-    antlr4::tree::TerminalNode *CPAREN();
-    antlr4::tree::TerminalNode *ARROW();
-    std::vector<IdecContext *> idec();
-    IdecContext* idec(size_t i);
-    std::vector<antlr4::tree::TerminalNode *> DOTS();
-    antlr4::tree::TerminalNode* DOTS(size_t i);
-    std::vector<antlr4::tree::TerminalNode *> COMMA();
-    antlr4::tree::TerminalNode* COMMA(size_t i);
-    antlr4::tree::TerminalNode *RETURN();
-
-
-    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
-   
-  };
-
-  StatContext* stat();
 
   class  RawtypeContext : public antlr4::ParserRuleContext {
   public:
@@ -136,6 +110,61 @@ public:
   };
 
   IdecContext* idec();
+
+  class  ParamContext : public antlr4::ParserRuleContext {
+  public:
+    ParamContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    IdecContext *idec();
+    antlr4::tree::TerminalNode *DOTS();
+
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  ParamContext* param();
+
+  class  DecContext : public antlr4::ParserRuleContext {
+  public:
+    DecContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *DECL();
+    antlr4::tree::TerminalNode *ID();
+    antlr4::tree::TerminalNode *OPAREN();
+    antlr4::tree::TerminalNode *CPAREN();
+    antlr4::tree::TerminalNode *ARROW();
+    TypeContext *type();
+    antlr4::tree::TerminalNode *SEMI();
+    std::vector<ParamContext *> param();
+    ParamContext* param(size_t i);
+    std::vector<antlr4::tree::TerminalNode *> COMMA();
+    antlr4::tree::TerminalNode* COMMA(size_t i);
+
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  DecContext* dec();
+
+  class  StatContext : public antlr4::ParserRuleContext {
+  public:
+    StatContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *ID();
+    antlr4::tree::TerminalNode *EQ();
+    ExprContext *expr();
+    antlr4::tree::TerminalNode *SEMI();
+    DecContext *dec();
+    antlr4::tree::TerminalNode *RETURN();
+
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  StatContext* stat();
 
   class  DefContext : public antlr4::ParserRuleContext {
   public:

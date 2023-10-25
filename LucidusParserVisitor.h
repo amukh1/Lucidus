@@ -21,13 +21,17 @@ public:
    */
     virtual std::any visitProgram(LucidusParser::ProgramContext *context) = 0;
 
-    virtual std::any visitStat(LucidusParser::StatContext *context) = 0;
-
     virtual std::any visitRawtype(LucidusParser::RawtypeContext *context) = 0;
 
     virtual std::any visitType(LucidusParser::TypeContext *context) = 0;
 
     virtual std::any visitIdec(LucidusParser::IdecContext *context) = 0;
+
+    virtual std::any visitParam(LucidusParser::ParamContext *context) = 0;
+
+    virtual std::any visitDec(LucidusParser::DecContext *context) = 0;
+
+    virtual std::any visitStat(LucidusParser::StatContext *context) = 0;
 
     virtual std::any visitDef(LucidusParser::DefContext *context) = 0;
 

@@ -60,1770 +60,1770 @@ include runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/ANTLRErrorListener.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/ANTLRErrorListener.cpp.o: ../runtime/src/ANTLRErrorListener.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/ANTLRErrorListener.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/ANTLRErrorListener.cpp.o -c /workspaces/codespaces-blank/runtime/src/ANTLRErrorListener.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/ANTLRErrorListener.cpp.o -c /workspaces/codespaces-blank/runtime/src/ANTLRErrorListener.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/ANTLRErrorListener.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/ANTLRErrorListener.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/ANTLRErrorListener.cpp > CMakeFiles/antlr4_static.dir/src/ANTLRErrorListener.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/ANTLRErrorListener.cpp > CMakeFiles/antlr4_static.dir/src/ANTLRErrorListener.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/ANTLRErrorListener.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/ANTLRErrorListener.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/ANTLRErrorListener.cpp -o CMakeFiles/antlr4_static.dir/src/ANTLRErrorListener.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/ANTLRErrorListener.cpp -o CMakeFiles/antlr4_static.dir/src/ANTLRErrorListener.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/ANTLRErrorStrategy.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/ANTLRErrorStrategy.cpp.o: ../runtime/src/ANTLRErrorStrategy.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/ANTLRErrorStrategy.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/ANTLRErrorStrategy.cpp.o -c /workspaces/codespaces-blank/runtime/src/ANTLRErrorStrategy.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/ANTLRErrorStrategy.cpp.o -c /workspaces/codespaces-blank/runtime/src/ANTLRErrorStrategy.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/ANTLRErrorStrategy.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/ANTLRErrorStrategy.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/ANTLRErrorStrategy.cpp > CMakeFiles/antlr4_static.dir/src/ANTLRErrorStrategy.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/ANTLRErrorStrategy.cpp > CMakeFiles/antlr4_static.dir/src/ANTLRErrorStrategy.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/ANTLRErrorStrategy.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/ANTLRErrorStrategy.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/ANTLRErrorStrategy.cpp -o CMakeFiles/antlr4_static.dir/src/ANTLRErrorStrategy.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/ANTLRErrorStrategy.cpp -o CMakeFiles/antlr4_static.dir/src/ANTLRErrorStrategy.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/ANTLRFileStream.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/ANTLRFileStream.cpp.o: ../runtime/src/ANTLRFileStream.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/ANTLRFileStream.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/ANTLRFileStream.cpp.o -c /workspaces/codespaces-blank/runtime/src/ANTLRFileStream.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/ANTLRFileStream.cpp.o -c /workspaces/codespaces-blank/runtime/src/ANTLRFileStream.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/ANTLRFileStream.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/ANTLRFileStream.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/ANTLRFileStream.cpp > CMakeFiles/antlr4_static.dir/src/ANTLRFileStream.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/ANTLRFileStream.cpp > CMakeFiles/antlr4_static.dir/src/ANTLRFileStream.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/ANTLRFileStream.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/ANTLRFileStream.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/ANTLRFileStream.cpp -o CMakeFiles/antlr4_static.dir/src/ANTLRFileStream.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/ANTLRFileStream.cpp -o CMakeFiles/antlr4_static.dir/src/ANTLRFileStream.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/ANTLRInputStream.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/ANTLRInputStream.cpp.o: ../runtime/src/ANTLRInputStream.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/ANTLRInputStream.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/ANTLRInputStream.cpp.o -c /workspaces/codespaces-blank/runtime/src/ANTLRInputStream.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/ANTLRInputStream.cpp.o -c /workspaces/codespaces-blank/runtime/src/ANTLRInputStream.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/ANTLRInputStream.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/ANTLRInputStream.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/ANTLRInputStream.cpp > CMakeFiles/antlr4_static.dir/src/ANTLRInputStream.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/ANTLRInputStream.cpp > CMakeFiles/antlr4_static.dir/src/ANTLRInputStream.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/ANTLRInputStream.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/ANTLRInputStream.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/ANTLRInputStream.cpp -o CMakeFiles/antlr4_static.dir/src/ANTLRInputStream.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/ANTLRInputStream.cpp -o CMakeFiles/antlr4_static.dir/src/ANTLRInputStream.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/BailErrorStrategy.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/BailErrorStrategy.cpp.o: ../runtime/src/BailErrorStrategy.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/BailErrorStrategy.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/BailErrorStrategy.cpp.o -c /workspaces/codespaces-blank/runtime/src/BailErrorStrategy.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/BailErrorStrategy.cpp.o -c /workspaces/codespaces-blank/runtime/src/BailErrorStrategy.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/BailErrorStrategy.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/BailErrorStrategy.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/BailErrorStrategy.cpp > CMakeFiles/antlr4_static.dir/src/BailErrorStrategy.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/BailErrorStrategy.cpp > CMakeFiles/antlr4_static.dir/src/BailErrorStrategy.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/BailErrorStrategy.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/BailErrorStrategy.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/BailErrorStrategy.cpp -o CMakeFiles/antlr4_static.dir/src/BailErrorStrategy.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/BailErrorStrategy.cpp -o CMakeFiles/antlr4_static.dir/src/BailErrorStrategy.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/BaseErrorListener.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/BaseErrorListener.cpp.o: ../runtime/src/BaseErrorListener.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/BaseErrorListener.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/BaseErrorListener.cpp.o -c /workspaces/codespaces-blank/runtime/src/BaseErrorListener.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/BaseErrorListener.cpp.o -c /workspaces/codespaces-blank/runtime/src/BaseErrorListener.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/BaseErrorListener.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/BaseErrorListener.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/BaseErrorListener.cpp > CMakeFiles/antlr4_static.dir/src/BaseErrorListener.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/BaseErrorListener.cpp > CMakeFiles/antlr4_static.dir/src/BaseErrorListener.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/BaseErrorListener.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/BaseErrorListener.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/BaseErrorListener.cpp -o CMakeFiles/antlr4_static.dir/src/BaseErrorListener.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/BaseErrorListener.cpp -o CMakeFiles/antlr4_static.dir/src/BaseErrorListener.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/BufferedTokenStream.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/BufferedTokenStream.cpp.o: ../runtime/src/BufferedTokenStream.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/BufferedTokenStream.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/BufferedTokenStream.cpp.o -c /workspaces/codespaces-blank/runtime/src/BufferedTokenStream.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/BufferedTokenStream.cpp.o -c /workspaces/codespaces-blank/runtime/src/BufferedTokenStream.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/BufferedTokenStream.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/BufferedTokenStream.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/BufferedTokenStream.cpp > CMakeFiles/antlr4_static.dir/src/BufferedTokenStream.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/BufferedTokenStream.cpp > CMakeFiles/antlr4_static.dir/src/BufferedTokenStream.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/BufferedTokenStream.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/BufferedTokenStream.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/BufferedTokenStream.cpp -o CMakeFiles/antlr4_static.dir/src/BufferedTokenStream.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/BufferedTokenStream.cpp -o CMakeFiles/antlr4_static.dir/src/BufferedTokenStream.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/CharStream.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/CharStream.cpp.o: ../runtime/src/CharStream.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/CharStream.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/CharStream.cpp.o -c /workspaces/codespaces-blank/runtime/src/CharStream.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/CharStream.cpp.o -c /workspaces/codespaces-blank/runtime/src/CharStream.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/CharStream.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/CharStream.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/CharStream.cpp > CMakeFiles/antlr4_static.dir/src/CharStream.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/CharStream.cpp > CMakeFiles/antlr4_static.dir/src/CharStream.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/CharStream.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/CharStream.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/CharStream.cpp -o CMakeFiles/antlr4_static.dir/src/CharStream.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/CharStream.cpp -o CMakeFiles/antlr4_static.dir/src/CharStream.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/CommonToken.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/CommonToken.cpp.o: ../runtime/src/CommonToken.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/CommonToken.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/CommonToken.cpp.o -c /workspaces/codespaces-blank/runtime/src/CommonToken.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/CommonToken.cpp.o -c /workspaces/codespaces-blank/runtime/src/CommonToken.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/CommonToken.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/CommonToken.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/CommonToken.cpp > CMakeFiles/antlr4_static.dir/src/CommonToken.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/CommonToken.cpp > CMakeFiles/antlr4_static.dir/src/CommonToken.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/CommonToken.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/CommonToken.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/CommonToken.cpp -o CMakeFiles/antlr4_static.dir/src/CommonToken.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/CommonToken.cpp -o CMakeFiles/antlr4_static.dir/src/CommonToken.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/CommonTokenFactory.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/CommonTokenFactory.cpp.o: ../runtime/src/CommonTokenFactory.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/CommonTokenFactory.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/CommonTokenFactory.cpp.o -c /workspaces/codespaces-blank/runtime/src/CommonTokenFactory.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/CommonTokenFactory.cpp.o -c /workspaces/codespaces-blank/runtime/src/CommonTokenFactory.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/CommonTokenFactory.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/CommonTokenFactory.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/CommonTokenFactory.cpp > CMakeFiles/antlr4_static.dir/src/CommonTokenFactory.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/CommonTokenFactory.cpp > CMakeFiles/antlr4_static.dir/src/CommonTokenFactory.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/CommonTokenFactory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/CommonTokenFactory.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/CommonTokenFactory.cpp -o CMakeFiles/antlr4_static.dir/src/CommonTokenFactory.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/CommonTokenFactory.cpp -o CMakeFiles/antlr4_static.dir/src/CommonTokenFactory.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/CommonTokenStream.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/CommonTokenStream.cpp.o: ../runtime/src/CommonTokenStream.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/CommonTokenStream.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/CommonTokenStream.cpp.o -c /workspaces/codespaces-blank/runtime/src/CommonTokenStream.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/CommonTokenStream.cpp.o -c /workspaces/codespaces-blank/runtime/src/CommonTokenStream.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/CommonTokenStream.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/CommonTokenStream.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/CommonTokenStream.cpp > CMakeFiles/antlr4_static.dir/src/CommonTokenStream.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/CommonTokenStream.cpp > CMakeFiles/antlr4_static.dir/src/CommonTokenStream.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/CommonTokenStream.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/CommonTokenStream.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/CommonTokenStream.cpp -o CMakeFiles/antlr4_static.dir/src/CommonTokenStream.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/CommonTokenStream.cpp -o CMakeFiles/antlr4_static.dir/src/CommonTokenStream.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/ConsoleErrorListener.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/ConsoleErrorListener.cpp.o: ../runtime/src/ConsoleErrorListener.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/ConsoleErrorListener.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/ConsoleErrorListener.cpp.o -c /workspaces/codespaces-blank/runtime/src/ConsoleErrorListener.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/ConsoleErrorListener.cpp.o -c /workspaces/codespaces-blank/runtime/src/ConsoleErrorListener.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/ConsoleErrorListener.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/ConsoleErrorListener.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/ConsoleErrorListener.cpp > CMakeFiles/antlr4_static.dir/src/ConsoleErrorListener.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/ConsoleErrorListener.cpp > CMakeFiles/antlr4_static.dir/src/ConsoleErrorListener.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/ConsoleErrorListener.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/ConsoleErrorListener.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/ConsoleErrorListener.cpp -o CMakeFiles/antlr4_static.dir/src/ConsoleErrorListener.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/ConsoleErrorListener.cpp -o CMakeFiles/antlr4_static.dir/src/ConsoleErrorListener.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/DefaultErrorStrategy.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/DefaultErrorStrategy.cpp.o: ../runtime/src/DefaultErrorStrategy.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/DefaultErrorStrategy.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/DefaultErrorStrategy.cpp.o -c /workspaces/codespaces-blank/runtime/src/DefaultErrorStrategy.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/DefaultErrorStrategy.cpp.o -c /workspaces/codespaces-blank/runtime/src/DefaultErrorStrategy.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/DefaultErrorStrategy.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/DefaultErrorStrategy.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/DefaultErrorStrategy.cpp > CMakeFiles/antlr4_static.dir/src/DefaultErrorStrategy.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/DefaultErrorStrategy.cpp > CMakeFiles/antlr4_static.dir/src/DefaultErrorStrategy.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/DefaultErrorStrategy.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/DefaultErrorStrategy.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/DefaultErrorStrategy.cpp -o CMakeFiles/antlr4_static.dir/src/DefaultErrorStrategy.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/DefaultErrorStrategy.cpp -o CMakeFiles/antlr4_static.dir/src/DefaultErrorStrategy.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/DiagnosticErrorListener.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/DiagnosticErrorListener.cpp.o: ../runtime/src/DiagnosticErrorListener.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/DiagnosticErrorListener.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/DiagnosticErrorListener.cpp.o -c /workspaces/codespaces-blank/runtime/src/DiagnosticErrorListener.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/DiagnosticErrorListener.cpp.o -c /workspaces/codespaces-blank/runtime/src/DiagnosticErrorListener.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/DiagnosticErrorListener.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/DiagnosticErrorListener.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/DiagnosticErrorListener.cpp > CMakeFiles/antlr4_static.dir/src/DiagnosticErrorListener.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/DiagnosticErrorListener.cpp > CMakeFiles/antlr4_static.dir/src/DiagnosticErrorListener.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/DiagnosticErrorListener.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/DiagnosticErrorListener.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/DiagnosticErrorListener.cpp -o CMakeFiles/antlr4_static.dir/src/DiagnosticErrorListener.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/DiagnosticErrorListener.cpp -o CMakeFiles/antlr4_static.dir/src/DiagnosticErrorListener.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/Exceptions.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/Exceptions.cpp.o: ../runtime/src/Exceptions.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/Exceptions.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/Exceptions.cpp.o -c /workspaces/codespaces-blank/runtime/src/Exceptions.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/Exceptions.cpp.o -c /workspaces/codespaces-blank/runtime/src/Exceptions.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/Exceptions.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/Exceptions.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/Exceptions.cpp > CMakeFiles/antlr4_static.dir/src/Exceptions.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/Exceptions.cpp > CMakeFiles/antlr4_static.dir/src/Exceptions.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/Exceptions.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/Exceptions.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/Exceptions.cpp -o CMakeFiles/antlr4_static.dir/src/Exceptions.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/Exceptions.cpp -o CMakeFiles/antlr4_static.dir/src/Exceptions.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/FailedPredicateException.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/FailedPredicateException.cpp.o: ../runtime/src/FailedPredicateException.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/FailedPredicateException.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/FailedPredicateException.cpp.o -c /workspaces/codespaces-blank/runtime/src/FailedPredicateException.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/FailedPredicateException.cpp.o -c /workspaces/codespaces-blank/runtime/src/FailedPredicateException.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/FailedPredicateException.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/FailedPredicateException.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/FailedPredicateException.cpp > CMakeFiles/antlr4_static.dir/src/FailedPredicateException.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/FailedPredicateException.cpp > CMakeFiles/antlr4_static.dir/src/FailedPredicateException.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/FailedPredicateException.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/FailedPredicateException.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/FailedPredicateException.cpp -o CMakeFiles/antlr4_static.dir/src/FailedPredicateException.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/FailedPredicateException.cpp -o CMakeFiles/antlr4_static.dir/src/FailedPredicateException.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/InputMismatchException.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/InputMismatchException.cpp.o: ../runtime/src/InputMismatchException.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/InputMismatchException.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/InputMismatchException.cpp.o -c /workspaces/codespaces-blank/runtime/src/InputMismatchException.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/InputMismatchException.cpp.o -c /workspaces/codespaces-blank/runtime/src/InputMismatchException.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/InputMismatchException.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/InputMismatchException.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/InputMismatchException.cpp > CMakeFiles/antlr4_static.dir/src/InputMismatchException.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/InputMismatchException.cpp > CMakeFiles/antlr4_static.dir/src/InputMismatchException.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/InputMismatchException.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/InputMismatchException.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/InputMismatchException.cpp -o CMakeFiles/antlr4_static.dir/src/InputMismatchException.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/InputMismatchException.cpp -o CMakeFiles/antlr4_static.dir/src/InputMismatchException.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/IntStream.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/IntStream.cpp.o: ../runtime/src/IntStream.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/IntStream.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/IntStream.cpp.o -c /workspaces/codespaces-blank/runtime/src/IntStream.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/IntStream.cpp.o -c /workspaces/codespaces-blank/runtime/src/IntStream.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/IntStream.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/IntStream.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/IntStream.cpp > CMakeFiles/antlr4_static.dir/src/IntStream.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/IntStream.cpp > CMakeFiles/antlr4_static.dir/src/IntStream.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/IntStream.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/IntStream.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/IntStream.cpp -o CMakeFiles/antlr4_static.dir/src/IntStream.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/IntStream.cpp -o CMakeFiles/antlr4_static.dir/src/IntStream.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/InterpreterRuleContext.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/InterpreterRuleContext.cpp.o: ../runtime/src/InterpreterRuleContext.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/InterpreterRuleContext.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/InterpreterRuleContext.cpp.o -c /workspaces/codespaces-blank/runtime/src/InterpreterRuleContext.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/InterpreterRuleContext.cpp.o -c /workspaces/codespaces-blank/runtime/src/InterpreterRuleContext.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/InterpreterRuleContext.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/InterpreterRuleContext.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/InterpreterRuleContext.cpp > CMakeFiles/antlr4_static.dir/src/InterpreterRuleContext.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/InterpreterRuleContext.cpp > CMakeFiles/antlr4_static.dir/src/InterpreterRuleContext.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/InterpreterRuleContext.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/InterpreterRuleContext.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/InterpreterRuleContext.cpp -o CMakeFiles/antlr4_static.dir/src/InterpreterRuleContext.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/InterpreterRuleContext.cpp -o CMakeFiles/antlr4_static.dir/src/InterpreterRuleContext.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/Lexer.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/Lexer.cpp.o: ../runtime/src/Lexer.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/Lexer.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/Lexer.cpp.o -c /workspaces/codespaces-blank/runtime/src/Lexer.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/Lexer.cpp.o -c /workspaces/codespaces-blank/runtime/src/Lexer.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/Lexer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/Lexer.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/Lexer.cpp > CMakeFiles/antlr4_static.dir/src/Lexer.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/Lexer.cpp > CMakeFiles/antlr4_static.dir/src/Lexer.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/Lexer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/Lexer.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/Lexer.cpp -o CMakeFiles/antlr4_static.dir/src/Lexer.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/Lexer.cpp -o CMakeFiles/antlr4_static.dir/src/Lexer.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/LexerInterpreter.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/LexerInterpreter.cpp.o: ../runtime/src/LexerInterpreter.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/LexerInterpreter.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/LexerInterpreter.cpp.o -c /workspaces/codespaces-blank/runtime/src/LexerInterpreter.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/LexerInterpreter.cpp.o -c /workspaces/codespaces-blank/runtime/src/LexerInterpreter.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/LexerInterpreter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/LexerInterpreter.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/LexerInterpreter.cpp > CMakeFiles/antlr4_static.dir/src/LexerInterpreter.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/LexerInterpreter.cpp > CMakeFiles/antlr4_static.dir/src/LexerInterpreter.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/LexerInterpreter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/LexerInterpreter.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/LexerInterpreter.cpp -o CMakeFiles/antlr4_static.dir/src/LexerInterpreter.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/LexerInterpreter.cpp -o CMakeFiles/antlr4_static.dir/src/LexerInterpreter.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/LexerNoViableAltException.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/LexerNoViableAltException.cpp.o: ../runtime/src/LexerNoViableAltException.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/LexerNoViableAltException.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/LexerNoViableAltException.cpp.o -c /workspaces/codespaces-blank/runtime/src/LexerNoViableAltException.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/LexerNoViableAltException.cpp.o -c /workspaces/codespaces-blank/runtime/src/LexerNoViableAltException.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/LexerNoViableAltException.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/LexerNoViableAltException.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/LexerNoViableAltException.cpp > CMakeFiles/antlr4_static.dir/src/LexerNoViableAltException.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/LexerNoViableAltException.cpp > CMakeFiles/antlr4_static.dir/src/LexerNoViableAltException.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/LexerNoViableAltException.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/LexerNoViableAltException.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/LexerNoViableAltException.cpp -o CMakeFiles/antlr4_static.dir/src/LexerNoViableAltException.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/LexerNoViableAltException.cpp -o CMakeFiles/antlr4_static.dir/src/LexerNoViableAltException.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/ListTokenSource.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/ListTokenSource.cpp.o: ../runtime/src/ListTokenSource.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/ListTokenSource.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/ListTokenSource.cpp.o -c /workspaces/codespaces-blank/runtime/src/ListTokenSource.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/ListTokenSource.cpp.o -c /workspaces/codespaces-blank/runtime/src/ListTokenSource.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/ListTokenSource.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/ListTokenSource.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/ListTokenSource.cpp > CMakeFiles/antlr4_static.dir/src/ListTokenSource.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/ListTokenSource.cpp > CMakeFiles/antlr4_static.dir/src/ListTokenSource.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/ListTokenSource.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/ListTokenSource.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/ListTokenSource.cpp -o CMakeFiles/antlr4_static.dir/src/ListTokenSource.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/ListTokenSource.cpp -o CMakeFiles/antlr4_static.dir/src/ListTokenSource.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/NoViableAltException.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/NoViableAltException.cpp.o: ../runtime/src/NoViableAltException.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/NoViableAltException.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/NoViableAltException.cpp.o -c /workspaces/codespaces-blank/runtime/src/NoViableAltException.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/NoViableAltException.cpp.o -c /workspaces/codespaces-blank/runtime/src/NoViableAltException.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/NoViableAltException.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/NoViableAltException.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/NoViableAltException.cpp > CMakeFiles/antlr4_static.dir/src/NoViableAltException.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/NoViableAltException.cpp > CMakeFiles/antlr4_static.dir/src/NoViableAltException.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/NoViableAltException.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/NoViableAltException.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/NoViableAltException.cpp -o CMakeFiles/antlr4_static.dir/src/NoViableAltException.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/NoViableAltException.cpp -o CMakeFiles/antlr4_static.dir/src/NoViableAltException.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/Parser.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/Parser.cpp.o: ../runtime/src/Parser.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/Parser.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/Parser.cpp.o -c /workspaces/codespaces-blank/runtime/src/Parser.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/Parser.cpp.o -c /workspaces/codespaces-blank/runtime/src/Parser.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/Parser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/Parser.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/Parser.cpp > CMakeFiles/antlr4_static.dir/src/Parser.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/Parser.cpp > CMakeFiles/antlr4_static.dir/src/Parser.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/Parser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/Parser.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/Parser.cpp -o CMakeFiles/antlr4_static.dir/src/Parser.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/Parser.cpp -o CMakeFiles/antlr4_static.dir/src/Parser.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/ParserInterpreter.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/ParserInterpreter.cpp.o: ../runtime/src/ParserInterpreter.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/ParserInterpreter.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/ParserInterpreter.cpp.o -c /workspaces/codespaces-blank/runtime/src/ParserInterpreter.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/ParserInterpreter.cpp.o -c /workspaces/codespaces-blank/runtime/src/ParserInterpreter.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/ParserInterpreter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/ParserInterpreter.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/ParserInterpreter.cpp > CMakeFiles/antlr4_static.dir/src/ParserInterpreter.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/ParserInterpreter.cpp > CMakeFiles/antlr4_static.dir/src/ParserInterpreter.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/ParserInterpreter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/ParserInterpreter.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/ParserInterpreter.cpp -o CMakeFiles/antlr4_static.dir/src/ParserInterpreter.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/ParserInterpreter.cpp -o CMakeFiles/antlr4_static.dir/src/ParserInterpreter.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/ParserRuleContext.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/ParserRuleContext.cpp.o: ../runtime/src/ParserRuleContext.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/ParserRuleContext.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/ParserRuleContext.cpp.o -c /workspaces/codespaces-blank/runtime/src/ParserRuleContext.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/ParserRuleContext.cpp.o -c /workspaces/codespaces-blank/runtime/src/ParserRuleContext.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/ParserRuleContext.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/ParserRuleContext.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/ParserRuleContext.cpp > CMakeFiles/antlr4_static.dir/src/ParserRuleContext.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/ParserRuleContext.cpp > CMakeFiles/antlr4_static.dir/src/ParserRuleContext.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/ParserRuleContext.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/ParserRuleContext.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/ParserRuleContext.cpp -o CMakeFiles/antlr4_static.dir/src/ParserRuleContext.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/ParserRuleContext.cpp -o CMakeFiles/antlr4_static.dir/src/ParserRuleContext.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/ProxyErrorListener.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/ProxyErrorListener.cpp.o: ../runtime/src/ProxyErrorListener.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/ProxyErrorListener.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/ProxyErrorListener.cpp.o -c /workspaces/codespaces-blank/runtime/src/ProxyErrorListener.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/ProxyErrorListener.cpp.o -c /workspaces/codespaces-blank/runtime/src/ProxyErrorListener.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/ProxyErrorListener.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/ProxyErrorListener.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/ProxyErrorListener.cpp > CMakeFiles/antlr4_static.dir/src/ProxyErrorListener.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/ProxyErrorListener.cpp > CMakeFiles/antlr4_static.dir/src/ProxyErrorListener.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/ProxyErrorListener.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/ProxyErrorListener.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/ProxyErrorListener.cpp -o CMakeFiles/antlr4_static.dir/src/ProxyErrorListener.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/ProxyErrorListener.cpp -o CMakeFiles/antlr4_static.dir/src/ProxyErrorListener.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/RecognitionException.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/RecognitionException.cpp.o: ../runtime/src/RecognitionException.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/RecognitionException.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/RecognitionException.cpp.o -c /workspaces/codespaces-blank/runtime/src/RecognitionException.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/RecognitionException.cpp.o -c /workspaces/codespaces-blank/runtime/src/RecognitionException.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/RecognitionException.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/RecognitionException.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/RecognitionException.cpp > CMakeFiles/antlr4_static.dir/src/RecognitionException.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/RecognitionException.cpp > CMakeFiles/antlr4_static.dir/src/RecognitionException.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/RecognitionException.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/RecognitionException.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/RecognitionException.cpp -o CMakeFiles/antlr4_static.dir/src/RecognitionException.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/RecognitionException.cpp -o CMakeFiles/antlr4_static.dir/src/RecognitionException.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/Recognizer.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/Recognizer.cpp.o: ../runtime/src/Recognizer.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/Recognizer.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/Recognizer.cpp.o -c /workspaces/codespaces-blank/runtime/src/Recognizer.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/Recognizer.cpp.o -c /workspaces/codespaces-blank/runtime/src/Recognizer.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/Recognizer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/Recognizer.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/Recognizer.cpp > CMakeFiles/antlr4_static.dir/src/Recognizer.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/Recognizer.cpp > CMakeFiles/antlr4_static.dir/src/Recognizer.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/Recognizer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/Recognizer.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/Recognizer.cpp -o CMakeFiles/antlr4_static.dir/src/Recognizer.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/Recognizer.cpp -o CMakeFiles/antlr4_static.dir/src/Recognizer.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/RuleContext.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/RuleContext.cpp.o: ../runtime/src/RuleContext.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/RuleContext.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/RuleContext.cpp.o -c /workspaces/codespaces-blank/runtime/src/RuleContext.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/RuleContext.cpp.o -c /workspaces/codespaces-blank/runtime/src/RuleContext.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/RuleContext.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/RuleContext.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/RuleContext.cpp > CMakeFiles/antlr4_static.dir/src/RuleContext.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/RuleContext.cpp > CMakeFiles/antlr4_static.dir/src/RuleContext.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/RuleContext.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/RuleContext.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/RuleContext.cpp -o CMakeFiles/antlr4_static.dir/src/RuleContext.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/RuleContext.cpp -o CMakeFiles/antlr4_static.dir/src/RuleContext.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/RuleContextWithAltNum.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/RuleContextWithAltNum.cpp.o: ../runtime/src/RuleContextWithAltNum.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/RuleContextWithAltNum.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/RuleContextWithAltNum.cpp.o -c /workspaces/codespaces-blank/runtime/src/RuleContextWithAltNum.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/RuleContextWithAltNum.cpp.o -c /workspaces/codespaces-blank/runtime/src/RuleContextWithAltNum.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/RuleContextWithAltNum.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/RuleContextWithAltNum.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/RuleContextWithAltNum.cpp > CMakeFiles/antlr4_static.dir/src/RuleContextWithAltNum.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/RuleContextWithAltNum.cpp > CMakeFiles/antlr4_static.dir/src/RuleContextWithAltNum.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/RuleContextWithAltNum.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/RuleContextWithAltNum.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/RuleContextWithAltNum.cpp -o CMakeFiles/antlr4_static.dir/src/RuleContextWithAltNum.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/RuleContextWithAltNum.cpp -o CMakeFiles/antlr4_static.dir/src/RuleContextWithAltNum.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/RuntimeMetaData.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/RuntimeMetaData.cpp.o: ../runtime/src/RuntimeMetaData.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/RuntimeMetaData.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/RuntimeMetaData.cpp.o -c /workspaces/codespaces-blank/runtime/src/RuntimeMetaData.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/RuntimeMetaData.cpp.o -c /workspaces/codespaces-blank/runtime/src/RuntimeMetaData.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/RuntimeMetaData.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/RuntimeMetaData.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/RuntimeMetaData.cpp > CMakeFiles/antlr4_static.dir/src/RuntimeMetaData.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/RuntimeMetaData.cpp > CMakeFiles/antlr4_static.dir/src/RuntimeMetaData.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/RuntimeMetaData.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/RuntimeMetaData.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/RuntimeMetaData.cpp -o CMakeFiles/antlr4_static.dir/src/RuntimeMetaData.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/RuntimeMetaData.cpp -o CMakeFiles/antlr4_static.dir/src/RuntimeMetaData.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/Token.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/Token.cpp.o: ../runtime/src/Token.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/Token.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/Token.cpp.o -c /workspaces/codespaces-blank/runtime/src/Token.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/Token.cpp.o -c /workspaces/codespaces-blank/runtime/src/Token.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/Token.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/Token.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/Token.cpp > CMakeFiles/antlr4_static.dir/src/Token.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/Token.cpp > CMakeFiles/antlr4_static.dir/src/Token.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/Token.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/Token.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/Token.cpp -o CMakeFiles/antlr4_static.dir/src/Token.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/Token.cpp -o CMakeFiles/antlr4_static.dir/src/Token.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/TokenSource.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/TokenSource.cpp.o: ../runtime/src/TokenSource.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/TokenSource.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/TokenSource.cpp.o -c /workspaces/codespaces-blank/runtime/src/TokenSource.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/TokenSource.cpp.o -c /workspaces/codespaces-blank/runtime/src/TokenSource.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/TokenSource.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/TokenSource.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/TokenSource.cpp > CMakeFiles/antlr4_static.dir/src/TokenSource.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/TokenSource.cpp > CMakeFiles/antlr4_static.dir/src/TokenSource.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/TokenSource.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/TokenSource.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/TokenSource.cpp -o CMakeFiles/antlr4_static.dir/src/TokenSource.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/TokenSource.cpp -o CMakeFiles/antlr4_static.dir/src/TokenSource.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/TokenStream.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/TokenStream.cpp.o: ../runtime/src/TokenStream.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/TokenStream.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/TokenStream.cpp.o -c /workspaces/codespaces-blank/runtime/src/TokenStream.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/TokenStream.cpp.o -c /workspaces/codespaces-blank/runtime/src/TokenStream.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/TokenStream.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/TokenStream.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/TokenStream.cpp > CMakeFiles/antlr4_static.dir/src/TokenStream.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/TokenStream.cpp > CMakeFiles/antlr4_static.dir/src/TokenStream.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/TokenStream.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/TokenStream.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/TokenStream.cpp -o CMakeFiles/antlr4_static.dir/src/TokenStream.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/TokenStream.cpp -o CMakeFiles/antlr4_static.dir/src/TokenStream.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/TokenStreamRewriter.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/TokenStreamRewriter.cpp.o: ../runtime/src/TokenStreamRewriter.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/TokenStreamRewriter.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/TokenStreamRewriter.cpp.o -c /workspaces/codespaces-blank/runtime/src/TokenStreamRewriter.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/TokenStreamRewriter.cpp.o -c /workspaces/codespaces-blank/runtime/src/TokenStreamRewriter.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/TokenStreamRewriter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/TokenStreamRewriter.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/TokenStreamRewriter.cpp > CMakeFiles/antlr4_static.dir/src/TokenStreamRewriter.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/TokenStreamRewriter.cpp > CMakeFiles/antlr4_static.dir/src/TokenStreamRewriter.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/TokenStreamRewriter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/TokenStreamRewriter.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/TokenStreamRewriter.cpp -o CMakeFiles/antlr4_static.dir/src/TokenStreamRewriter.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/TokenStreamRewriter.cpp -o CMakeFiles/antlr4_static.dir/src/TokenStreamRewriter.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/UnbufferedCharStream.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/UnbufferedCharStream.cpp.o: ../runtime/src/UnbufferedCharStream.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/UnbufferedCharStream.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/UnbufferedCharStream.cpp.o -c /workspaces/codespaces-blank/runtime/src/UnbufferedCharStream.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/UnbufferedCharStream.cpp.o -c /workspaces/codespaces-blank/runtime/src/UnbufferedCharStream.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/UnbufferedCharStream.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/UnbufferedCharStream.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/UnbufferedCharStream.cpp > CMakeFiles/antlr4_static.dir/src/UnbufferedCharStream.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/UnbufferedCharStream.cpp > CMakeFiles/antlr4_static.dir/src/UnbufferedCharStream.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/UnbufferedCharStream.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/UnbufferedCharStream.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/UnbufferedCharStream.cpp -o CMakeFiles/antlr4_static.dir/src/UnbufferedCharStream.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/UnbufferedCharStream.cpp -o CMakeFiles/antlr4_static.dir/src/UnbufferedCharStream.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/UnbufferedTokenStream.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/UnbufferedTokenStream.cpp.o: ../runtime/src/UnbufferedTokenStream.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/UnbufferedTokenStream.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/UnbufferedTokenStream.cpp.o -c /workspaces/codespaces-blank/runtime/src/UnbufferedTokenStream.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/UnbufferedTokenStream.cpp.o -c /workspaces/codespaces-blank/runtime/src/UnbufferedTokenStream.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/UnbufferedTokenStream.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/UnbufferedTokenStream.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/UnbufferedTokenStream.cpp > CMakeFiles/antlr4_static.dir/src/UnbufferedTokenStream.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/UnbufferedTokenStream.cpp > CMakeFiles/antlr4_static.dir/src/UnbufferedTokenStream.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/UnbufferedTokenStream.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/UnbufferedTokenStream.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/UnbufferedTokenStream.cpp -o CMakeFiles/antlr4_static.dir/src/UnbufferedTokenStream.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/UnbufferedTokenStream.cpp -o CMakeFiles/antlr4_static.dir/src/UnbufferedTokenStream.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/Vocabulary.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/Vocabulary.cpp.o: ../runtime/src/Vocabulary.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/Vocabulary.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/Vocabulary.cpp.o -c /workspaces/codespaces-blank/runtime/src/Vocabulary.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/Vocabulary.cpp.o -c /workspaces/codespaces-blank/runtime/src/Vocabulary.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/Vocabulary.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/Vocabulary.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/Vocabulary.cpp > CMakeFiles/antlr4_static.dir/src/Vocabulary.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/Vocabulary.cpp > CMakeFiles/antlr4_static.dir/src/Vocabulary.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/Vocabulary.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/Vocabulary.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/Vocabulary.cpp -o CMakeFiles/antlr4_static.dir/src/Vocabulary.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/Vocabulary.cpp -o CMakeFiles/antlr4_static.dir/src/Vocabulary.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/WritableToken.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/WritableToken.cpp.o: ../runtime/src/WritableToken.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/WritableToken.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/WritableToken.cpp.o -c /workspaces/codespaces-blank/runtime/src/WritableToken.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/WritableToken.cpp.o -c /workspaces/codespaces-blank/runtime/src/WritableToken.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/WritableToken.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/WritableToken.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/WritableToken.cpp > CMakeFiles/antlr4_static.dir/src/WritableToken.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/WritableToken.cpp > CMakeFiles/antlr4_static.dir/src/WritableToken.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/WritableToken.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/WritableToken.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/WritableToken.cpp -o CMakeFiles/antlr4_static.dir/src/WritableToken.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/WritableToken.cpp -o CMakeFiles/antlr4_static.dir/src/WritableToken.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATN.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATN.cpp.o: ../runtime/src/atn/ATN.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/ATN.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ATN.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ATN.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ATN.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ATN.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATN.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/ATN.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ATN.cpp > CMakeFiles/antlr4_static.dir/src/atn/ATN.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ATN.cpp > CMakeFiles/antlr4_static.dir/src/atn/ATN.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATN.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/ATN.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ATN.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ATN.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ATN.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ATN.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNConfig.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNConfig.cpp.o: ../runtime/src/atn/ATNConfig.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNConfig.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ATNConfig.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ATNConfig.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ATNConfig.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ATNConfig.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNConfig.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/ATNConfig.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ATNConfig.cpp > CMakeFiles/antlr4_static.dir/src/atn/ATNConfig.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ATNConfig.cpp > CMakeFiles/antlr4_static.dir/src/atn/ATNConfig.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNConfig.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/ATNConfig.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ATNConfig.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ATNConfig.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ATNConfig.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ATNConfig.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNConfigSet.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNConfigSet.cpp.o: ../runtime/src/atn/ATNConfigSet.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNConfigSet.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ATNConfigSet.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ATNConfigSet.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ATNConfigSet.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ATNConfigSet.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNConfigSet.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/ATNConfigSet.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ATNConfigSet.cpp > CMakeFiles/antlr4_static.dir/src/atn/ATNConfigSet.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ATNConfigSet.cpp > CMakeFiles/antlr4_static.dir/src/atn/ATNConfigSet.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNConfigSet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/ATNConfigSet.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ATNConfigSet.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ATNConfigSet.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ATNConfigSet.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ATNConfigSet.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNDeserializationOptions.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNDeserializationOptions.cpp.o: ../runtime/src/atn/ATNDeserializationOptions.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNDeserializationOptions.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ATNDeserializationOptions.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ATNDeserializationOptions.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ATNDeserializationOptions.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ATNDeserializationOptions.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNDeserializationOptions.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/ATNDeserializationOptions.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ATNDeserializationOptions.cpp > CMakeFiles/antlr4_static.dir/src/atn/ATNDeserializationOptions.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ATNDeserializationOptions.cpp > CMakeFiles/antlr4_static.dir/src/atn/ATNDeserializationOptions.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNDeserializationOptions.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/ATNDeserializationOptions.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ATNDeserializationOptions.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ATNDeserializationOptions.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ATNDeserializationOptions.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ATNDeserializationOptions.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNDeserializer.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNDeserializer.cpp.o: ../runtime/src/atn/ATNDeserializer.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNDeserializer.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ATNDeserializer.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ATNDeserializer.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ATNDeserializer.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ATNDeserializer.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNDeserializer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/ATNDeserializer.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ATNDeserializer.cpp > CMakeFiles/antlr4_static.dir/src/atn/ATNDeserializer.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ATNDeserializer.cpp > CMakeFiles/antlr4_static.dir/src/atn/ATNDeserializer.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNDeserializer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/ATNDeserializer.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ATNDeserializer.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ATNDeserializer.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ATNDeserializer.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ATNDeserializer.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNSimulator.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNSimulator.cpp.o: ../runtime/src/atn/ATNSimulator.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNSimulator.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ATNSimulator.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ATNSimulator.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ATNSimulator.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ATNSimulator.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNSimulator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/ATNSimulator.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ATNSimulator.cpp > CMakeFiles/antlr4_static.dir/src/atn/ATNSimulator.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ATNSimulator.cpp > CMakeFiles/antlr4_static.dir/src/atn/ATNSimulator.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNSimulator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/ATNSimulator.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ATNSimulator.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ATNSimulator.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ATNSimulator.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ATNSimulator.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNState.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNState.cpp.o: ../runtime/src/atn/ATNState.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNState.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ATNState.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ATNState.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ATNState.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ATNState.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNState.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/ATNState.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ATNState.cpp > CMakeFiles/antlr4_static.dir/src/atn/ATNState.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ATNState.cpp > CMakeFiles/antlr4_static.dir/src/atn/ATNState.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNState.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/ATNState.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ATNState.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ATNState.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ATNState.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ATNState.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNStateType.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNStateType.cpp.o: ../runtime/src/atn/ATNStateType.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNStateType.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ATNStateType.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ATNStateType.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ATNStateType.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ATNStateType.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNStateType.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/ATNStateType.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ATNStateType.cpp > CMakeFiles/antlr4_static.dir/src/atn/ATNStateType.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ATNStateType.cpp > CMakeFiles/antlr4_static.dir/src/atn/ATNStateType.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ATNStateType.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/ATNStateType.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ATNStateType.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ATNStateType.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ATNStateType.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ATNStateType.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ActionTransition.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ActionTransition.cpp.o: ../runtime/src/atn/ActionTransition.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/ActionTransition.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ActionTransition.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ActionTransition.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ActionTransition.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ActionTransition.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ActionTransition.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/ActionTransition.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ActionTransition.cpp > CMakeFiles/antlr4_static.dir/src/atn/ActionTransition.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ActionTransition.cpp > CMakeFiles/antlr4_static.dir/src/atn/ActionTransition.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ActionTransition.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/ActionTransition.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ActionTransition.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ActionTransition.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ActionTransition.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ActionTransition.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/AmbiguityInfo.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/AmbiguityInfo.cpp.o: ../runtime/src/atn/AmbiguityInfo.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/AmbiguityInfo.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/AmbiguityInfo.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/AmbiguityInfo.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/AmbiguityInfo.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/AmbiguityInfo.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/AmbiguityInfo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/AmbiguityInfo.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/AmbiguityInfo.cpp > CMakeFiles/antlr4_static.dir/src/atn/AmbiguityInfo.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/AmbiguityInfo.cpp > CMakeFiles/antlr4_static.dir/src/atn/AmbiguityInfo.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/AmbiguityInfo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/AmbiguityInfo.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/AmbiguityInfo.cpp -o CMakeFiles/antlr4_static.dir/src/atn/AmbiguityInfo.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/AmbiguityInfo.cpp -o CMakeFiles/antlr4_static.dir/src/atn/AmbiguityInfo.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ArrayPredictionContext.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ArrayPredictionContext.cpp.o: ../runtime/src/atn/ArrayPredictionContext.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/ArrayPredictionContext.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ArrayPredictionContext.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ArrayPredictionContext.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ArrayPredictionContext.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ArrayPredictionContext.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ArrayPredictionContext.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/ArrayPredictionContext.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ArrayPredictionContext.cpp > CMakeFiles/antlr4_static.dir/src/atn/ArrayPredictionContext.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ArrayPredictionContext.cpp > CMakeFiles/antlr4_static.dir/src/atn/ArrayPredictionContext.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ArrayPredictionContext.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/ArrayPredictionContext.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ArrayPredictionContext.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ArrayPredictionContext.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ArrayPredictionContext.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ArrayPredictionContext.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/AtomTransition.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/AtomTransition.cpp.o: ../runtime/src/atn/AtomTransition.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/AtomTransition.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/AtomTransition.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/AtomTransition.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/AtomTransition.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/AtomTransition.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/AtomTransition.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/AtomTransition.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/AtomTransition.cpp > CMakeFiles/antlr4_static.dir/src/atn/AtomTransition.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/AtomTransition.cpp > CMakeFiles/antlr4_static.dir/src/atn/AtomTransition.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/AtomTransition.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/AtomTransition.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/AtomTransition.cpp -o CMakeFiles/antlr4_static.dir/src/atn/AtomTransition.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/AtomTransition.cpp -o CMakeFiles/antlr4_static.dir/src/atn/AtomTransition.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ContextSensitivityInfo.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ContextSensitivityInfo.cpp.o: ../runtime/src/atn/ContextSensitivityInfo.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/ContextSensitivityInfo.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ContextSensitivityInfo.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ContextSensitivityInfo.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ContextSensitivityInfo.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ContextSensitivityInfo.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ContextSensitivityInfo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/ContextSensitivityInfo.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ContextSensitivityInfo.cpp > CMakeFiles/antlr4_static.dir/src/atn/ContextSensitivityInfo.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ContextSensitivityInfo.cpp > CMakeFiles/antlr4_static.dir/src/atn/ContextSensitivityInfo.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ContextSensitivityInfo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/ContextSensitivityInfo.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ContextSensitivityInfo.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ContextSensitivityInfo.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ContextSensitivityInfo.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ContextSensitivityInfo.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/DecisionEventInfo.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/DecisionEventInfo.cpp.o: ../runtime/src/atn/DecisionEventInfo.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/DecisionEventInfo.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/DecisionEventInfo.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/DecisionEventInfo.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/DecisionEventInfo.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/DecisionEventInfo.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/DecisionEventInfo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/DecisionEventInfo.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/DecisionEventInfo.cpp > CMakeFiles/antlr4_static.dir/src/atn/DecisionEventInfo.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/DecisionEventInfo.cpp > CMakeFiles/antlr4_static.dir/src/atn/DecisionEventInfo.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/DecisionEventInfo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/DecisionEventInfo.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/DecisionEventInfo.cpp -o CMakeFiles/antlr4_static.dir/src/atn/DecisionEventInfo.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/DecisionEventInfo.cpp -o CMakeFiles/antlr4_static.dir/src/atn/DecisionEventInfo.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/DecisionInfo.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/DecisionInfo.cpp.o: ../runtime/src/atn/DecisionInfo.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/DecisionInfo.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/DecisionInfo.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/DecisionInfo.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/DecisionInfo.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/DecisionInfo.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/DecisionInfo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/DecisionInfo.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/DecisionInfo.cpp > CMakeFiles/antlr4_static.dir/src/atn/DecisionInfo.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/DecisionInfo.cpp > CMakeFiles/antlr4_static.dir/src/atn/DecisionInfo.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/DecisionInfo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/DecisionInfo.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/DecisionInfo.cpp -o CMakeFiles/antlr4_static.dir/src/atn/DecisionInfo.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/DecisionInfo.cpp -o CMakeFiles/antlr4_static.dir/src/atn/DecisionInfo.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/DecisionState.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/DecisionState.cpp.o: ../runtime/src/atn/DecisionState.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/DecisionState.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/DecisionState.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/DecisionState.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/DecisionState.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/DecisionState.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/DecisionState.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/DecisionState.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/DecisionState.cpp > CMakeFiles/antlr4_static.dir/src/atn/DecisionState.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/DecisionState.cpp > CMakeFiles/antlr4_static.dir/src/atn/DecisionState.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/DecisionState.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/DecisionState.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/DecisionState.cpp -o CMakeFiles/antlr4_static.dir/src/atn/DecisionState.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/DecisionState.cpp -o CMakeFiles/antlr4_static.dir/src/atn/DecisionState.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/EpsilonTransition.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/EpsilonTransition.cpp.o: ../runtime/src/atn/EpsilonTransition.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/EpsilonTransition.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/EpsilonTransition.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/EpsilonTransition.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/EpsilonTransition.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/EpsilonTransition.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/EpsilonTransition.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/EpsilonTransition.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/EpsilonTransition.cpp > CMakeFiles/antlr4_static.dir/src/atn/EpsilonTransition.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/EpsilonTransition.cpp > CMakeFiles/antlr4_static.dir/src/atn/EpsilonTransition.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/EpsilonTransition.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/EpsilonTransition.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/EpsilonTransition.cpp -o CMakeFiles/antlr4_static.dir/src/atn/EpsilonTransition.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/EpsilonTransition.cpp -o CMakeFiles/antlr4_static.dir/src/atn/EpsilonTransition.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ErrorInfo.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ErrorInfo.cpp.o: ../runtime/src/atn/ErrorInfo.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/ErrorInfo.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ErrorInfo.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ErrorInfo.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ErrorInfo.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ErrorInfo.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ErrorInfo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/ErrorInfo.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ErrorInfo.cpp > CMakeFiles/antlr4_static.dir/src/atn/ErrorInfo.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ErrorInfo.cpp > CMakeFiles/antlr4_static.dir/src/atn/ErrorInfo.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ErrorInfo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/ErrorInfo.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ErrorInfo.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ErrorInfo.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ErrorInfo.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ErrorInfo.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LL1Analyzer.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LL1Analyzer.cpp.o: ../runtime/src/atn/LL1Analyzer.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/LL1Analyzer.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LL1Analyzer.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LL1Analyzer.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LL1Analyzer.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LL1Analyzer.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LL1Analyzer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/LL1Analyzer.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LL1Analyzer.cpp > CMakeFiles/antlr4_static.dir/src/atn/LL1Analyzer.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LL1Analyzer.cpp > CMakeFiles/antlr4_static.dir/src/atn/LL1Analyzer.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LL1Analyzer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/LL1Analyzer.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LL1Analyzer.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LL1Analyzer.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LL1Analyzer.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LL1Analyzer.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerATNConfig.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerATNConfig.cpp.o: ../runtime/src/atn/LexerATNConfig.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerATNConfig.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LexerATNConfig.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LexerATNConfig.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LexerATNConfig.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LexerATNConfig.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerATNConfig.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/LexerATNConfig.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LexerATNConfig.cpp > CMakeFiles/antlr4_static.dir/src/atn/LexerATNConfig.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LexerATNConfig.cpp > CMakeFiles/antlr4_static.dir/src/atn/LexerATNConfig.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerATNConfig.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/LexerATNConfig.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LexerATNConfig.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LexerATNConfig.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LexerATNConfig.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LexerATNConfig.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerATNSimulator.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerATNSimulator.cpp.o: ../runtime/src/atn/LexerATNSimulator.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerATNSimulator.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LexerATNSimulator.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LexerATNSimulator.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LexerATNSimulator.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LexerATNSimulator.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerATNSimulator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/LexerATNSimulator.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LexerATNSimulator.cpp > CMakeFiles/antlr4_static.dir/src/atn/LexerATNSimulator.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LexerATNSimulator.cpp > CMakeFiles/antlr4_static.dir/src/atn/LexerATNSimulator.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerATNSimulator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/LexerATNSimulator.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LexerATNSimulator.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LexerATNSimulator.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LexerATNSimulator.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LexerATNSimulator.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerAction.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerAction.cpp.o: ../runtime/src/atn/LexerAction.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerAction.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LexerAction.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LexerAction.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LexerAction.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LexerAction.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerAction.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/LexerAction.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LexerAction.cpp > CMakeFiles/antlr4_static.dir/src/atn/LexerAction.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LexerAction.cpp > CMakeFiles/antlr4_static.dir/src/atn/LexerAction.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerAction.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/LexerAction.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LexerAction.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LexerAction.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LexerAction.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LexerAction.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerActionExecutor.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerActionExecutor.cpp.o: ../runtime/src/atn/LexerActionExecutor.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerActionExecutor.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LexerActionExecutor.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LexerActionExecutor.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LexerActionExecutor.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LexerActionExecutor.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerActionExecutor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/LexerActionExecutor.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LexerActionExecutor.cpp > CMakeFiles/antlr4_static.dir/src/atn/LexerActionExecutor.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LexerActionExecutor.cpp > CMakeFiles/antlr4_static.dir/src/atn/LexerActionExecutor.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerActionExecutor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/LexerActionExecutor.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LexerActionExecutor.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LexerActionExecutor.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LexerActionExecutor.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LexerActionExecutor.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerChannelAction.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerChannelAction.cpp.o: ../runtime/src/atn/LexerChannelAction.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerChannelAction.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LexerChannelAction.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LexerChannelAction.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LexerChannelAction.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LexerChannelAction.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerChannelAction.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/LexerChannelAction.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LexerChannelAction.cpp > CMakeFiles/antlr4_static.dir/src/atn/LexerChannelAction.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LexerChannelAction.cpp > CMakeFiles/antlr4_static.dir/src/atn/LexerChannelAction.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerChannelAction.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/LexerChannelAction.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LexerChannelAction.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LexerChannelAction.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LexerChannelAction.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LexerChannelAction.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerCustomAction.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerCustomAction.cpp.o: ../runtime/src/atn/LexerCustomAction.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerCustomAction.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LexerCustomAction.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LexerCustomAction.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LexerCustomAction.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LexerCustomAction.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerCustomAction.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/LexerCustomAction.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LexerCustomAction.cpp > CMakeFiles/antlr4_static.dir/src/atn/LexerCustomAction.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LexerCustomAction.cpp > CMakeFiles/antlr4_static.dir/src/atn/LexerCustomAction.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerCustomAction.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/LexerCustomAction.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LexerCustomAction.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LexerCustomAction.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LexerCustomAction.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LexerCustomAction.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerIndexedCustomAction.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerIndexedCustomAction.cpp.o: ../runtime/src/atn/LexerIndexedCustomAction.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerIndexedCustomAction.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LexerIndexedCustomAction.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LexerIndexedCustomAction.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LexerIndexedCustomAction.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LexerIndexedCustomAction.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerIndexedCustomAction.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/LexerIndexedCustomAction.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LexerIndexedCustomAction.cpp > CMakeFiles/antlr4_static.dir/src/atn/LexerIndexedCustomAction.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LexerIndexedCustomAction.cpp > CMakeFiles/antlr4_static.dir/src/atn/LexerIndexedCustomAction.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerIndexedCustomAction.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/LexerIndexedCustomAction.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LexerIndexedCustomAction.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LexerIndexedCustomAction.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LexerIndexedCustomAction.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LexerIndexedCustomAction.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerModeAction.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerModeAction.cpp.o: ../runtime/src/atn/LexerModeAction.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerModeAction.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LexerModeAction.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LexerModeAction.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LexerModeAction.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LexerModeAction.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerModeAction.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/LexerModeAction.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LexerModeAction.cpp > CMakeFiles/antlr4_static.dir/src/atn/LexerModeAction.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LexerModeAction.cpp > CMakeFiles/antlr4_static.dir/src/atn/LexerModeAction.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerModeAction.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/LexerModeAction.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LexerModeAction.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LexerModeAction.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LexerModeAction.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LexerModeAction.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerMoreAction.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerMoreAction.cpp.o: ../runtime/src/atn/LexerMoreAction.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerMoreAction.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LexerMoreAction.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LexerMoreAction.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LexerMoreAction.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LexerMoreAction.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerMoreAction.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/LexerMoreAction.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LexerMoreAction.cpp > CMakeFiles/antlr4_static.dir/src/atn/LexerMoreAction.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LexerMoreAction.cpp > CMakeFiles/antlr4_static.dir/src/atn/LexerMoreAction.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerMoreAction.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/LexerMoreAction.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LexerMoreAction.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LexerMoreAction.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LexerMoreAction.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LexerMoreAction.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerPopModeAction.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerPopModeAction.cpp.o: ../runtime/src/atn/LexerPopModeAction.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerPopModeAction.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LexerPopModeAction.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LexerPopModeAction.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LexerPopModeAction.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LexerPopModeAction.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerPopModeAction.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/LexerPopModeAction.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LexerPopModeAction.cpp > CMakeFiles/antlr4_static.dir/src/atn/LexerPopModeAction.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LexerPopModeAction.cpp > CMakeFiles/antlr4_static.dir/src/atn/LexerPopModeAction.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerPopModeAction.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/LexerPopModeAction.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LexerPopModeAction.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LexerPopModeAction.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LexerPopModeAction.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LexerPopModeAction.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerPushModeAction.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerPushModeAction.cpp.o: ../runtime/src/atn/LexerPushModeAction.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerPushModeAction.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LexerPushModeAction.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LexerPushModeAction.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LexerPushModeAction.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LexerPushModeAction.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerPushModeAction.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/LexerPushModeAction.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LexerPushModeAction.cpp > CMakeFiles/antlr4_static.dir/src/atn/LexerPushModeAction.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LexerPushModeAction.cpp > CMakeFiles/antlr4_static.dir/src/atn/LexerPushModeAction.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerPushModeAction.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/LexerPushModeAction.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LexerPushModeAction.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LexerPushModeAction.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LexerPushModeAction.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LexerPushModeAction.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerSkipAction.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerSkipAction.cpp.o: ../runtime/src/atn/LexerSkipAction.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerSkipAction.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LexerSkipAction.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LexerSkipAction.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LexerSkipAction.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LexerSkipAction.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerSkipAction.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/LexerSkipAction.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LexerSkipAction.cpp > CMakeFiles/antlr4_static.dir/src/atn/LexerSkipAction.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LexerSkipAction.cpp > CMakeFiles/antlr4_static.dir/src/atn/LexerSkipAction.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerSkipAction.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/LexerSkipAction.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LexerSkipAction.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LexerSkipAction.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LexerSkipAction.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LexerSkipAction.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerTypeAction.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerTypeAction.cpp.o: ../runtime/src/atn/LexerTypeAction.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerTypeAction.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LexerTypeAction.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LexerTypeAction.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LexerTypeAction.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LexerTypeAction.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerTypeAction.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/LexerTypeAction.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LexerTypeAction.cpp > CMakeFiles/antlr4_static.dir/src/atn/LexerTypeAction.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LexerTypeAction.cpp > CMakeFiles/antlr4_static.dir/src/atn/LexerTypeAction.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LexerTypeAction.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/LexerTypeAction.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LexerTypeAction.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LexerTypeAction.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LexerTypeAction.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LexerTypeAction.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LookaheadEventInfo.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LookaheadEventInfo.cpp.o: ../runtime/src/atn/LookaheadEventInfo.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/LookaheadEventInfo.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LookaheadEventInfo.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LookaheadEventInfo.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/LookaheadEventInfo.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/LookaheadEventInfo.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LookaheadEventInfo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/LookaheadEventInfo.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LookaheadEventInfo.cpp > CMakeFiles/antlr4_static.dir/src/atn/LookaheadEventInfo.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/LookaheadEventInfo.cpp > CMakeFiles/antlr4_static.dir/src/atn/LookaheadEventInfo.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/LookaheadEventInfo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/LookaheadEventInfo.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LookaheadEventInfo.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LookaheadEventInfo.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/LookaheadEventInfo.cpp -o CMakeFiles/antlr4_static.dir/src/atn/LookaheadEventInfo.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/NotSetTransition.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/NotSetTransition.cpp.o: ../runtime/src/atn/NotSetTransition.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/NotSetTransition.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/NotSetTransition.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/NotSetTransition.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/NotSetTransition.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/NotSetTransition.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/NotSetTransition.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/NotSetTransition.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/NotSetTransition.cpp > CMakeFiles/antlr4_static.dir/src/atn/NotSetTransition.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/NotSetTransition.cpp > CMakeFiles/antlr4_static.dir/src/atn/NotSetTransition.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/NotSetTransition.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/NotSetTransition.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/NotSetTransition.cpp -o CMakeFiles/antlr4_static.dir/src/atn/NotSetTransition.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/NotSetTransition.cpp -o CMakeFiles/antlr4_static.dir/src/atn/NotSetTransition.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/OrderedATNConfigSet.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/OrderedATNConfigSet.cpp.o: ../runtime/src/atn/OrderedATNConfigSet.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/OrderedATNConfigSet.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/OrderedATNConfigSet.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/OrderedATNConfigSet.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/OrderedATNConfigSet.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/OrderedATNConfigSet.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/OrderedATNConfigSet.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/OrderedATNConfigSet.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/OrderedATNConfigSet.cpp > CMakeFiles/antlr4_static.dir/src/atn/OrderedATNConfigSet.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/OrderedATNConfigSet.cpp > CMakeFiles/antlr4_static.dir/src/atn/OrderedATNConfigSet.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/OrderedATNConfigSet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/OrderedATNConfigSet.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/OrderedATNConfigSet.cpp -o CMakeFiles/antlr4_static.dir/src/atn/OrderedATNConfigSet.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/OrderedATNConfigSet.cpp -o CMakeFiles/antlr4_static.dir/src/atn/OrderedATNConfigSet.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ParseInfo.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ParseInfo.cpp.o: ../runtime/src/atn/ParseInfo.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/ParseInfo.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ParseInfo.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ParseInfo.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ParseInfo.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ParseInfo.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ParseInfo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/ParseInfo.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ParseInfo.cpp > CMakeFiles/antlr4_static.dir/src/atn/ParseInfo.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ParseInfo.cpp > CMakeFiles/antlr4_static.dir/src/atn/ParseInfo.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ParseInfo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/ParseInfo.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ParseInfo.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ParseInfo.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ParseInfo.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ParseInfo.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ParserATNSimulator.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ParserATNSimulator.cpp.o: ../runtime/src/atn/ParserATNSimulator.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/ParserATNSimulator.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ParserATNSimulator.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ParserATNSimulator.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ParserATNSimulator.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ParserATNSimulator.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ParserATNSimulator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/ParserATNSimulator.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ParserATNSimulator.cpp > CMakeFiles/antlr4_static.dir/src/atn/ParserATNSimulator.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ParserATNSimulator.cpp > CMakeFiles/antlr4_static.dir/src/atn/ParserATNSimulator.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ParserATNSimulator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/ParserATNSimulator.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ParserATNSimulator.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ParserATNSimulator.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ParserATNSimulator.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ParserATNSimulator.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/PrecedencePredicateTransition.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/PrecedencePredicateTransition.cpp.o: ../runtime/src/atn/PrecedencePredicateTransition.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/PrecedencePredicateTransition.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/PrecedencePredicateTransition.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/PrecedencePredicateTransition.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/PrecedencePredicateTransition.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/PrecedencePredicateTransition.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/PrecedencePredicateTransition.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/PrecedencePredicateTransition.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/PrecedencePredicateTransition.cpp > CMakeFiles/antlr4_static.dir/src/atn/PrecedencePredicateTransition.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/PrecedencePredicateTransition.cpp > CMakeFiles/antlr4_static.dir/src/atn/PrecedencePredicateTransition.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/PrecedencePredicateTransition.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/PrecedencePredicateTransition.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/PrecedencePredicateTransition.cpp -o CMakeFiles/antlr4_static.dir/src/atn/PrecedencePredicateTransition.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/PrecedencePredicateTransition.cpp -o CMakeFiles/antlr4_static.dir/src/atn/PrecedencePredicateTransition.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/PredicateEvalInfo.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/PredicateEvalInfo.cpp.o: ../runtime/src/atn/PredicateEvalInfo.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/PredicateEvalInfo.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/PredicateEvalInfo.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/PredicateEvalInfo.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/PredicateEvalInfo.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/PredicateEvalInfo.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/PredicateEvalInfo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/PredicateEvalInfo.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/PredicateEvalInfo.cpp > CMakeFiles/antlr4_static.dir/src/atn/PredicateEvalInfo.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/PredicateEvalInfo.cpp > CMakeFiles/antlr4_static.dir/src/atn/PredicateEvalInfo.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/PredicateEvalInfo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/PredicateEvalInfo.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/PredicateEvalInfo.cpp -o CMakeFiles/antlr4_static.dir/src/atn/PredicateEvalInfo.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/PredicateEvalInfo.cpp -o CMakeFiles/antlr4_static.dir/src/atn/PredicateEvalInfo.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/PredicateTransition.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/PredicateTransition.cpp.o: ../runtime/src/atn/PredicateTransition.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/PredicateTransition.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/PredicateTransition.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/PredicateTransition.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/PredicateTransition.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/PredicateTransition.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/PredicateTransition.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/PredicateTransition.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/PredicateTransition.cpp > CMakeFiles/antlr4_static.dir/src/atn/PredicateTransition.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/PredicateTransition.cpp > CMakeFiles/antlr4_static.dir/src/atn/PredicateTransition.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/PredicateTransition.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/PredicateTransition.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/PredicateTransition.cpp -o CMakeFiles/antlr4_static.dir/src/atn/PredicateTransition.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/PredicateTransition.cpp -o CMakeFiles/antlr4_static.dir/src/atn/PredicateTransition.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/PredictionContext.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/PredictionContext.cpp.o: ../runtime/src/atn/PredictionContext.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/PredictionContext.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/PredictionContext.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/PredictionContext.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/PredictionContext.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/PredictionContext.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/PredictionContext.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/PredictionContext.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/PredictionContext.cpp > CMakeFiles/antlr4_static.dir/src/atn/PredictionContext.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/PredictionContext.cpp > CMakeFiles/antlr4_static.dir/src/atn/PredictionContext.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/PredictionContext.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/PredictionContext.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/PredictionContext.cpp -o CMakeFiles/antlr4_static.dir/src/atn/PredictionContext.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/PredictionContext.cpp -o CMakeFiles/antlr4_static.dir/src/atn/PredictionContext.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/PredictionContextCache.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/PredictionContextCache.cpp.o: ../runtime/src/atn/PredictionContextCache.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/PredictionContextCache.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/PredictionContextCache.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/PredictionContextCache.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/PredictionContextCache.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/PredictionContextCache.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/PredictionContextCache.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/PredictionContextCache.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/PredictionContextCache.cpp > CMakeFiles/antlr4_static.dir/src/atn/PredictionContextCache.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/PredictionContextCache.cpp > CMakeFiles/antlr4_static.dir/src/atn/PredictionContextCache.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/PredictionContextCache.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/PredictionContextCache.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/PredictionContextCache.cpp -o CMakeFiles/antlr4_static.dir/src/atn/PredictionContextCache.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/PredictionContextCache.cpp -o CMakeFiles/antlr4_static.dir/src/atn/PredictionContextCache.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/PredictionContextMergeCache.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/PredictionContextMergeCache.cpp.o: ../runtime/src/atn/PredictionContextMergeCache.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/PredictionContextMergeCache.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/PredictionContextMergeCache.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/PredictionContextMergeCache.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/PredictionContextMergeCache.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/PredictionContextMergeCache.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/PredictionContextMergeCache.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/PredictionContextMergeCache.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/PredictionContextMergeCache.cpp > CMakeFiles/antlr4_static.dir/src/atn/PredictionContextMergeCache.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/PredictionContextMergeCache.cpp > CMakeFiles/antlr4_static.dir/src/atn/PredictionContextMergeCache.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/PredictionContextMergeCache.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/PredictionContextMergeCache.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/PredictionContextMergeCache.cpp -o CMakeFiles/antlr4_static.dir/src/atn/PredictionContextMergeCache.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/PredictionContextMergeCache.cpp -o CMakeFiles/antlr4_static.dir/src/atn/PredictionContextMergeCache.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/PredictionMode.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/PredictionMode.cpp.o: ../runtime/src/atn/PredictionMode.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/PredictionMode.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/PredictionMode.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/PredictionMode.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/PredictionMode.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/PredictionMode.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/PredictionMode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/PredictionMode.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/PredictionMode.cpp > CMakeFiles/antlr4_static.dir/src/atn/PredictionMode.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/PredictionMode.cpp > CMakeFiles/antlr4_static.dir/src/atn/PredictionMode.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/PredictionMode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/PredictionMode.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/PredictionMode.cpp -o CMakeFiles/antlr4_static.dir/src/atn/PredictionMode.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/PredictionMode.cpp -o CMakeFiles/antlr4_static.dir/src/atn/PredictionMode.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ProfilingATNSimulator.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ProfilingATNSimulator.cpp.o: ../runtime/src/atn/ProfilingATNSimulator.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/ProfilingATNSimulator.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ProfilingATNSimulator.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ProfilingATNSimulator.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/ProfilingATNSimulator.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/ProfilingATNSimulator.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ProfilingATNSimulator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/ProfilingATNSimulator.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ProfilingATNSimulator.cpp > CMakeFiles/antlr4_static.dir/src/atn/ProfilingATNSimulator.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/ProfilingATNSimulator.cpp > CMakeFiles/antlr4_static.dir/src/atn/ProfilingATNSimulator.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/ProfilingATNSimulator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/ProfilingATNSimulator.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ProfilingATNSimulator.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ProfilingATNSimulator.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/ProfilingATNSimulator.cpp -o CMakeFiles/antlr4_static.dir/src/atn/ProfilingATNSimulator.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/RangeTransition.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/RangeTransition.cpp.o: ../runtime/src/atn/RangeTransition.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/RangeTransition.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/RangeTransition.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/RangeTransition.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/RangeTransition.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/RangeTransition.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/RangeTransition.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/RangeTransition.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/RangeTransition.cpp > CMakeFiles/antlr4_static.dir/src/atn/RangeTransition.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/RangeTransition.cpp > CMakeFiles/antlr4_static.dir/src/atn/RangeTransition.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/RangeTransition.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/RangeTransition.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/RangeTransition.cpp -o CMakeFiles/antlr4_static.dir/src/atn/RangeTransition.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/RangeTransition.cpp -o CMakeFiles/antlr4_static.dir/src/atn/RangeTransition.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/RuleTransition.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/RuleTransition.cpp.o: ../runtime/src/atn/RuleTransition.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/RuleTransition.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/RuleTransition.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/RuleTransition.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/RuleTransition.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/RuleTransition.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/RuleTransition.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/RuleTransition.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/RuleTransition.cpp > CMakeFiles/antlr4_static.dir/src/atn/RuleTransition.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/RuleTransition.cpp > CMakeFiles/antlr4_static.dir/src/atn/RuleTransition.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/RuleTransition.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/RuleTransition.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/RuleTransition.cpp -o CMakeFiles/antlr4_static.dir/src/atn/RuleTransition.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/RuleTransition.cpp -o CMakeFiles/antlr4_static.dir/src/atn/RuleTransition.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/SemanticContext.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/SemanticContext.cpp.o: ../runtime/src/atn/SemanticContext.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/SemanticContext.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/SemanticContext.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/SemanticContext.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/SemanticContext.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/SemanticContext.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/SemanticContext.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/SemanticContext.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/SemanticContext.cpp > CMakeFiles/antlr4_static.dir/src/atn/SemanticContext.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/SemanticContext.cpp > CMakeFiles/antlr4_static.dir/src/atn/SemanticContext.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/SemanticContext.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/SemanticContext.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/SemanticContext.cpp -o CMakeFiles/antlr4_static.dir/src/atn/SemanticContext.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/SemanticContext.cpp -o CMakeFiles/antlr4_static.dir/src/atn/SemanticContext.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/SetTransition.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/SetTransition.cpp.o: ../runtime/src/atn/SetTransition.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/SetTransition.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/SetTransition.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/SetTransition.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/SetTransition.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/SetTransition.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/SetTransition.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/SetTransition.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/SetTransition.cpp > CMakeFiles/antlr4_static.dir/src/atn/SetTransition.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/SetTransition.cpp > CMakeFiles/antlr4_static.dir/src/atn/SetTransition.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/SetTransition.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/SetTransition.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/SetTransition.cpp -o CMakeFiles/antlr4_static.dir/src/atn/SetTransition.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/SetTransition.cpp -o CMakeFiles/antlr4_static.dir/src/atn/SetTransition.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/SingletonPredictionContext.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/SingletonPredictionContext.cpp.o: ../runtime/src/atn/SingletonPredictionContext.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/SingletonPredictionContext.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/SingletonPredictionContext.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/SingletonPredictionContext.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/SingletonPredictionContext.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/SingletonPredictionContext.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/SingletonPredictionContext.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/SingletonPredictionContext.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/SingletonPredictionContext.cpp > CMakeFiles/antlr4_static.dir/src/atn/SingletonPredictionContext.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/SingletonPredictionContext.cpp > CMakeFiles/antlr4_static.dir/src/atn/SingletonPredictionContext.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/SingletonPredictionContext.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/SingletonPredictionContext.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/SingletonPredictionContext.cpp -o CMakeFiles/antlr4_static.dir/src/atn/SingletonPredictionContext.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/SingletonPredictionContext.cpp -o CMakeFiles/antlr4_static.dir/src/atn/SingletonPredictionContext.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/StarLoopbackState.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/StarLoopbackState.cpp.o: ../runtime/src/atn/StarLoopbackState.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/StarLoopbackState.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/StarLoopbackState.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/StarLoopbackState.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/StarLoopbackState.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/StarLoopbackState.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/StarLoopbackState.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/StarLoopbackState.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/StarLoopbackState.cpp > CMakeFiles/antlr4_static.dir/src/atn/StarLoopbackState.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/StarLoopbackState.cpp > CMakeFiles/antlr4_static.dir/src/atn/StarLoopbackState.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/StarLoopbackState.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/StarLoopbackState.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/StarLoopbackState.cpp -o CMakeFiles/antlr4_static.dir/src/atn/StarLoopbackState.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/StarLoopbackState.cpp -o CMakeFiles/antlr4_static.dir/src/atn/StarLoopbackState.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/Transition.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/Transition.cpp.o: ../runtime/src/atn/Transition.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/Transition.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/Transition.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/Transition.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/Transition.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/Transition.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/Transition.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/Transition.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/Transition.cpp > CMakeFiles/antlr4_static.dir/src/atn/Transition.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/Transition.cpp > CMakeFiles/antlr4_static.dir/src/atn/Transition.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/Transition.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/Transition.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/Transition.cpp -o CMakeFiles/antlr4_static.dir/src/atn/Transition.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/Transition.cpp -o CMakeFiles/antlr4_static.dir/src/atn/Transition.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/TransitionType.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/TransitionType.cpp.o: ../runtime/src/atn/TransitionType.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/TransitionType.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/TransitionType.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/TransitionType.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/TransitionType.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/TransitionType.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/TransitionType.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/TransitionType.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/TransitionType.cpp > CMakeFiles/antlr4_static.dir/src/atn/TransitionType.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/TransitionType.cpp > CMakeFiles/antlr4_static.dir/src/atn/TransitionType.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/TransitionType.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/TransitionType.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/TransitionType.cpp -o CMakeFiles/antlr4_static.dir/src/atn/TransitionType.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/TransitionType.cpp -o CMakeFiles/antlr4_static.dir/src/atn/TransitionType.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/WildcardTransition.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/atn/WildcardTransition.cpp.o: ../runtime/src/atn/WildcardTransition.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/atn/WildcardTransition.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/WildcardTransition.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/WildcardTransition.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/atn/WildcardTransition.cpp.o -c /workspaces/codespaces-blank/runtime/src/atn/WildcardTransition.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/WildcardTransition.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/atn/WildcardTransition.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/WildcardTransition.cpp > CMakeFiles/antlr4_static.dir/src/atn/WildcardTransition.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/atn/WildcardTransition.cpp > CMakeFiles/antlr4_static.dir/src/atn/WildcardTransition.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/atn/WildcardTransition.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/atn/WildcardTransition.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/WildcardTransition.cpp -o CMakeFiles/antlr4_static.dir/src/atn/WildcardTransition.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/atn/WildcardTransition.cpp -o CMakeFiles/antlr4_static.dir/src/atn/WildcardTransition.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/dfa/DFA.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/dfa/DFA.cpp.o: ../runtime/src/dfa/DFA.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/dfa/DFA.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/dfa/DFA.cpp.o -c /workspaces/codespaces-blank/runtime/src/dfa/DFA.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/dfa/DFA.cpp.o -c /workspaces/codespaces-blank/runtime/src/dfa/DFA.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/dfa/DFA.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/dfa/DFA.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/dfa/DFA.cpp > CMakeFiles/antlr4_static.dir/src/dfa/DFA.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/dfa/DFA.cpp > CMakeFiles/antlr4_static.dir/src/dfa/DFA.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/dfa/DFA.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/dfa/DFA.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/dfa/DFA.cpp -o CMakeFiles/antlr4_static.dir/src/dfa/DFA.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/dfa/DFA.cpp -o CMakeFiles/antlr4_static.dir/src/dfa/DFA.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/dfa/DFASerializer.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/dfa/DFASerializer.cpp.o: ../runtime/src/dfa/DFASerializer.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/dfa/DFASerializer.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/dfa/DFASerializer.cpp.o -c /workspaces/codespaces-blank/runtime/src/dfa/DFASerializer.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/dfa/DFASerializer.cpp.o -c /workspaces/codespaces-blank/runtime/src/dfa/DFASerializer.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/dfa/DFASerializer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/dfa/DFASerializer.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/dfa/DFASerializer.cpp > CMakeFiles/antlr4_static.dir/src/dfa/DFASerializer.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/dfa/DFASerializer.cpp > CMakeFiles/antlr4_static.dir/src/dfa/DFASerializer.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/dfa/DFASerializer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/dfa/DFASerializer.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/dfa/DFASerializer.cpp -o CMakeFiles/antlr4_static.dir/src/dfa/DFASerializer.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/dfa/DFASerializer.cpp -o CMakeFiles/antlr4_static.dir/src/dfa/DFASerializer.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/dfa/DFAState.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/dfa/DFAState.cpp.o: ../runtime/src/dfa/DFAState.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/dfa/DFAState.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/dfa/DFAState.cpp.o -c /workspaces/codespaces-blank/runtime/src/dfa/DFAState.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/dfa/DFAState.cpp.o -c /workspaces/codespaces-blank/runtime/src/dfa/DFAState.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/dfa/DFAState.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/dfa/DFAState.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/dfa/DFAState.cpp > CMakeFiles/antlr4_static.dir/src/dfa/DFAState.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/dfa/DFAState.cpp > CMakeFiles/antlr4_static.dir/src/dfa/DFAState.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/dfa/DFAState.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/dfa/DFAState.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/dfa/DFAState.cpp -o CMakeFiles/antlr4_static.dir/src/dfa/DFAState.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/dfa/DFAState.cpp -o CMakeFiles/antlr4_static.dir/src/dfa/DFAState.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/dfa/LexerDFASerializer.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/dfa/LexerDFASerializer.cpp.o: ../runtime/src/dfa/LexerDFASerializer.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/dfa/LexerDFASerializer.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/dfa/LexerDFASerializer.cpp.o -c /workspaces/codespaces-blank/runtime/src/dfa/LexerDFASerializer.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/dfa/LexerDFASerializer.cpp.o -c /workspaces/codespaces-blank/runtime/src/dfa/LexerDFASerializer.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/dfa/LexerDFASerializer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/dfa/LexerDFASerializer.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/dfa/LexerDFASerializer.cpp > CMakeFiles/antlr4_static.dir/src/dfa/LexerDFASerializer.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/dfa/LexerDFASerializer.cpp > CMakeFiles/antlr4_static.dir/src/dfa/LexerDFASerializer.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/dfa/LexerDFASerializer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/dfa/LexerDFASerializer.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/dfa/LexerDFASerializer.cpp -o CMakeFiles/antlr4_static.dir/src/dfa/LexerDFASerializer.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/dfa/LexerDFASerializer.cpp -o CMakeFiles/antlr4_static.dir/src/dfa/LexerDFASerializer.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/internal/Synchronization.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/internal/Synchronization.cpp.o: ../runtime/src/internal/Synchronization.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/internal/Synchronization.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/internal/Synchronization.cpp.o -c /workspaces/codespaces-blank/runtime/src/internal/Synchronization.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/internal/Synchronization.cpp.o -c /workspaces/codespaces-blank/runtime/src/internal/Synchronization.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/internal/Synchronization.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/internal/Synchronization.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/internal/Synchronization.cpp > CMakeFiles/antlr4_static.dir/src/internal/Synchronization.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/internal/Synchronization.cpp > CMakeFiles/antlr4_static.dir/src/internal/Synchronization.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/internal/Synchronization.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/internal/Synchronization.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/internal/Synchronization.cpp -o CMakeFiles/antlr4_static.dir/src/internal/Synchronization.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/internal/Synchronization.cpp -o CMakeFiles/antlr4_static.dir/src/internal/Synchronization.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/misc/InterpreterDataReader.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/misc/InterpreterDataReader.cpp.o: ../runtime/src/misc/InterpreterDataReader.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/misc/InterpreterDataReader.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/misc/InterpreterDataReader.cpp.o -c /workspaces/codespaces-blank/runtime/src/misc/InterpreterDataReader.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/misc/InterpreterDataReader.cpp.o -c /workspaces/codespaces-blank/runtime/src/misc/InterpreterDataReader.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/misc/InterpreterDataReader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/misc/InterpreterDataReader.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/misc/InterpreterDataReader.cpp > CMakeFiles/antlr4_static.dir/src/misc/InterpreterDataReader.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/misc/InterpreterDataReader.cpp > CMakeFiles/antlr4_static.dir/src/misc/InterpreterDataReader.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/misc/InterpreterDataReader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/misc/InterpreterDataReader.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/misc/InterpreterDataReader.cpp -o CMakeFiles/antlr4_static.dir/src/misc/InterpreterDataReader.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/misc/InterpreterDataReader.cpp -o CMakeFiles/antlr4_static.dir/src/misc/InterpreterDataReader.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/misc/Interval.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/misc/Interval.cpp.o: ../runtime/src/misc/Interval.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/misc/Interval.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/misc/Interval.cpp.o -c /workspaces/codespaces-blank/runtime/src/misc/Interval.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/misc/Interval.cpp.o -c /workspaces/codespaces-blank/runtime/src/misc/Interval.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/misc/Interval.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/misc/Interval.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/misc/Interval.cpp > CMakeFiles/antlr4_static.dir/src/misc/Interval.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/misc/Interval.cpp > CMakeFiles/antlr4_static.dir/src/misc/Interval.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/misc/Interval.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/misc/Interval.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/misc/Interval.cpp -o CMakeFiles/antlr4_static.dir/src/misc/Interval.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/misc/Interval.cpp -o CMakeFiles/antlr4_static.dir/src/misc/Interval.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/misc/IntervalSet.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/misc/IntervalSet.cpp.o: ../runtime/src/misc/IntervalSet.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/misc/IntervalSet.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/misc/IntervalSet.cpp.o -c /workspaces/codespaces-blank/runtime/src/misc/IntervalSet.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/misc/IntervalSet.cpp.o -c /workspaces/codespaces-blank/runtime/src/misc/IntervalSet.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/misc/IntervalSet.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/misc/IntervalSet.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/misc/IntervalSet.cpp > CMakeFiles/antlr4_static.dir/src/misc/IntervalSet.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/misc/IntervalSet.cpp > CMakeFiles/antlr4_static.dir/src/misc/IntervalSet.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/misc/IntervalSet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/misc/IntervalSet.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/misc/IntervalSet.cpp -o CMakeFiles/antlr4_static.dir/src/misc/IntervalSet.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/misc/IntervalSet.cpp -o CMakeFiles/antlr4_static.dir/src/misc/IntervalSet.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/misc/MurmurHash.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/misc/MurmurHash.cpp.o: ../runtime/src/misc/MurmurHash.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/misc/MurmurHash.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/misc/MurmurHash.cpp.o -c /workspaces/codespaces-blank/runtime/src/misc/MurmurHash.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/misc/MurmurHash.cpp.o -c /workspaces/codespaces-blank/runtime/src/misc/MurmurHash.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/misc/MurmurHash.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/misc/MurmurHash.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/misc/MurmurHash.cpp > CMakeFiles/antlr4_static.dir/src/misc/MurmurHash.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/misc/MurmurHash.cpp > CMakeFiles/antlr4_static.dir/src/misc/MurmurHash.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/misc/MurmurHash.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/misc/MurmurHash.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/misc/MurmurHash.cpp -o CMakeFiles/antlr4_static.dir/src/misc/MurmurHash.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/misc/MurmurHash.cpp -o CMakeFiles/antlr4_static.dir/src/misc/MurmurHash.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/misc/Predicate.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/misc/Predicate.cpp.o: ../runtime/src/misc/Predicate.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/misc/Predicate.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/misc/Predicate.cpp.o -c /workspaces/codespaces-blank/runtime/src/misc/Predicate.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/misc/Predicate.cpp.o -c /workspaces/codespaces-blank/runtime/src/misc/Predicate.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/misc/Predicate.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/misc/Predicate.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/misc/Predicate.cpp > CMakeFiles/antlr4_static.dir/src/misc/Predicate.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/misc/Predicate.cpp > CMakeFiles/antlr4_static.dir/src/misc/Predicate.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/misc/Predicate.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/misc/Predicate.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/misc/Predicate.cpp -o CMakeFiles/antlr4_static.dir/src/misc/Predicate.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/misc/Predicate.cpp -o CMakeFiles/antlr4_static.dir/src/misc/Predicate.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/support/Any.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/support/Any.cpp.o: ../runtime/src/support/Any.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/support/Any.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/support/Any.cpp.o -c /workspaces/codespaces-blank/runtime/src/support/Any.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/support/Any.cpp.o -c /workspaces/codespaces-blank/runtime/src/support/Any.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/support/Any.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/support/Any.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/support/Any.cpp > CMakeFiles/antlr4_static.dir/src/support/Any.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/support/Any.cpp > CMakeFiles/antlr4_static.dir/src/support/Any.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/support/Any.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/support/Any.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/support/Any.cpp -o CMakeFiles/antlr4_static.dir/src/support/Any.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/support/Any.cpp -o CMakeFiles/antlr4_static.dir/src/support/Any.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/support/Arrays.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/support/Arrays.cpp.o: ../runtime/src/support/Arrays.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/support/Arrays.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/support/Arrays.cpp.o -c /workspaces/codespaces-blank/runtime/src/support/Arrays.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/support/Arrays.cpp.o -c /workspaces/codespaces-blank/runtime/src/support/Arrays.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/support/Arrays.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/support/Arrays.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/support/Arrays.cpp > CMakeFiles/antlr4_static.dir/src/support/Arrays.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/support/Arrays.cpp > CMakeFiles/antlr4_static.dir/src/support/Arrays.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/support/Arrays.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/support/Arrays.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/support/Arrays.cpp -o CMakeFiles/antlr4_static.dir/src/support/Arrays.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/support/Arrays.cpp -o CMakeFiles/antlr4_static.dir/src/support/Arrays.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/support/CPPUtils.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/support/CPPUtils.cpp.o: ../runtime/src/support/CPPUtils.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/support/CPPUtils.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/support/CPPUtils.cpp.o -c /workspaces/codespaces-blank/runtime/src/support/CPPUtils.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/support/CPPUtils.cpp.o -c /workspaces/codespaces-blank/runtime/src/support/CPPUtils.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/support/CPPUtils.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/support/CPPUtils.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/support/CPPUtils.cpp > CMakeFiles/antlr4_static.dir/src/support/CPPUtils.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/support/CPPUtils.cpp > CMakeFiles/antlr4_static.dir/src/support/CPPUtils.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/support/CPPUtils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/support/CPPUtils.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/support/CPPUtils.cpp -o CMakeFiles/antlr4_static.dir/src/support/CPPUtils.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/support/CPPUtils.cpp -o CMakeFiles/antlr4_static.dir/src/support/CPPUtils.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/support/StringUtils.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/support/StringUtils.cpp.o: ../runtime/src/support/StringUtils.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/support/StringUtils.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/support/StringUtils.cpp.o -c /workspaces/codespaces-blank/runtime/src/support/StringUtils.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/support/StringUtils.cpp.o -c /workspaces/codespaces-blank/runtime/src/support/StringUtils.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/support/StringUtils.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/support/StringUtils.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/support/StringUtils.cpp > CMakeFiles/antlr4_static.dir/src/support/StringUtils.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/support/StringUtils.cpp > CMakeFiles/antlr4_static.dir/src/support/StringUtils.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/support/StringUtils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/support/StringUtils.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/support/StringUtils.cpp -o CMakeFiles/antlr4_static.dir/src/support/StringUtils.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/support/StringUtils.cpp -o CMakeFiles/antlr4_static.dir/src/support/StringUtils.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/support/Utf8.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/support/Utf8.cpp.o: ../runtime/src/support/Utf8.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/support/Utf8.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/support/Utf8.cpp.o -c /workspaces/codespaces-blank/runtime/src/support/Utf8.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/support/Utf8.cpp.o -c /workspaces/codespaces-blank/runtime/src/support/Utf8.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/support/Utf8.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/support/Utf8.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/support/Utf8.cpp > CMakeFiles/antlr4_static.dir/src/support/Utf8.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/support/Utf8.cpp > CMakeFiles/antlr4_static.dir/src/support/Utf8.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/support/Utf8.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/support/Utf8.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/support/Utf8.cpp -o CMakeFiles/antlr4_static.dir/src/support/Utf8.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/support/Utf8.cpp -o CMakeFiles/antlr4_static.dir/src/support/Utf8.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/ErrorNodeImpl.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/tree/ErrorNodeImpl.cpp.o: ../runtime/src/tree/ErrorNodeImpl.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/tree/ErrorNodeImpl.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/ErrorNodeImpl.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/ErrorNodeImpl.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/ErrorNodeImpl.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/ErrorNodeImpl.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/ErrorNodeImpl.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/tree/ErrorNodeImpl.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/ErrorNodeImpl.cpp > CMakeFiles/antlr4_static.dir/src/tree/ErrorNodeImpl.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/ErrorNodeImpl.cpp > CMakeFiles/antlr4_static.dir/src/tree/ErrorNodeImpl.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/ErrorNodeImpl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/tree/ErrorNodeImpl.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/ErrorNodeImpl.cpp -o CMakeFiles/antlr4_static.dir/src/tree/ErrorNodeImpl.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/ErrorNodeImpl.cpp -o CMakeFiles/antlr4_static.dir/src/tree/ErrorNodeImpl.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/IterativeParseTreeWalker.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/tree/IterativeParseTreeWalker.cpp.o: ../runtime/src/tree/IterativeParseTreeWalker.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/tree/IterativeParseTreeWalker.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/IterativeParseTreeWalker.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/IterativeParseTreeWalker.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/IterativeParseTreeWalker.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/IterativeParseTreeWalker.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/IterativeParseTreeWalker.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/tree/IterativeParseTreeWalker.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/IterativeParseTreeWalker.cpp > CMakeFiles/antlr4_static.dir/src/tree/IterativeParseTreeWalker.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/IterativeParseTreeWalker.cpp > CMakeFiles/antlr4_static.dir/src/tree/IterativeParseTreeWalker.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/IterativeParseTreeWalker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/tree/IterativeParseTreeWalker.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/IterativeParseTreeWalker.cpp -o CMakeFiles/antlr4_static.dir/src/tree/IterativeParseTreeWalker.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/IterativeParseTreeWalker.cpp -o CMakeFiles/antlr4_static.dir/src/tree/IterativeParseTreeWalker.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/ParseTree.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/tree/ParseTree.cpp.o: ../runtime/src/tree/ParseTree.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/tree/ParseTree.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/ParseTree.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/ParseTree.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/ParseTree.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/ParseTree.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/ParseTree.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/tree/ParseTree.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/ParseTree.cpp > CMakeFiles/antlr4_static.dir/src/tree/ParseTree.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/ParseTree.cpp > CMakeFiles/antlr4_static.dir/src/tree/ParseTree.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/ParseTree.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/tree/ParseTree.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/ParseTree.cpp -o CMakeFiles/antlr4_static.dir/src/tree/ParseTree.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/ParseTree.cpp -o CMakeFiles/antlr4_static.dir/src/tree/ParseTree.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/ParseTreeListener.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/tree/ParseTreeListener.cpp.o: ../runtime/src/tree/ParseTreeListener.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/tree/ParseTreeListener.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/ParseTreeListener.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/ParseTreeListener.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/ParseTreeListener.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/ParseTreeListener.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/ParseTreeListener.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/tree/ParseTreeListener.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/ParseTreeListener.cpp > CMakeFiles/antlr4_static.dir/src/tree/ParseTreeListener.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/ParseTreeListener.cpp > CMakeFiles/antlr4_static.dir/src/tree/ParseTreeListener.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/ParseTreeListener.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/tree/ParseTreeListener.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/ParseTreeListener.cpp -o CMakeFiles/antlr4_static.dir/src/tree/ParseTreeListener.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/ParseTreeListener.cpp -o CMakeFiles/antlr4_static.dir/src/tree/ParseTreeListener.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/ParseTreeVisitor.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/tree/ParseTreeVisitor.cpp.o: ../runtime/src/tree/ParseTreeVisitor.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_115) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/tree/ParseTreeVisitor.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/ParseTreeVisitor.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/ParseTreeVisitor.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/ParseTreeVisitor.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/ParseTreeVisitor.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/ParseTreeVisitor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/tree/ParseTreeVisitor.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/ParseTreeVisitor.cpp > CMakeFiles/antlr4_static.dir/src/tree/ParseTreeVisitor.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/ParseTreeVisitor.cpp > CMakeFiles/antlr4_static.dir/src/tree/ParseTreeVisitor.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/ParseTreeVisitor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/tree/ParseTreeVisitor.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/ParseTreeVisitor.cpp -o CMakeFiles/antlr4_static.dir/src/tree/ParseTreeVisitor.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/ParseTreeVisitor.cpp -o CMakeFiles/antlr4_static.dir/src/tree/ParseTreeVisitor.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/ParseTreeWalker.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/tree/ParseTreeWalker.cpp.o: ../runtime/src/tree/ParseTreeWalker.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_116) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/tree/ParseTreeWalker.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/ParseTreeWalker.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/ParseTreeWalker.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/ParseTreeWalker.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/ParseTreeWalker.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/ParseTreeWalker.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/tree/ParseTreeWalker.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/ParseTreeWalker.cpp > CMakeFiles/antlr4_static.dir/src/tree/ParseTreeWalker.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/ParseTreeWalker.cpp > CMakeFiles/antlr4_static.dir/src/tree/ParseTreeWalker.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/ParseTreeWalker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/tree/ParseTreeWalker.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/ParseTreeWalker.cpp -o CMakeFiles/antlr4_static.dir/src/tree/ParseTreeWalker.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/ParseTreeWalker.cpp -o CMakeFiles/antlr4_static.dir/src/tree/ParseTreeWalker.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/TerminalNodeImpl.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/tree/TerminalNodeImpl.cpp.o: ../runtime/src/tree/TerminalNodeImpl.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_117) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/tree/TerminalNodeImpl.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/TerminalNodeImpl.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/TerminalNodeImpl.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/TerminalNodeImpl.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/TerminalNodeImpl.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/TerminalNodeImpl.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/tree/TerminalNodeImpl.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/TerminalNodeImpl.cpp > CMakeFiles/antlr4_static.dir/src/tree/TerminalNodeImpl.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/TerminalNodeImpl.cpp > CMakeFiles/antlr4_static.dir/src/tree/TerminalNodeImpl.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/TerminalNodeImpl.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/tree/TerminalNodeImpl.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/TerminalNodeImpl.cpp -o CMakeFiles/antlr4_static.dir/src/tree/TerminalNodeImpl.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/TerminalNodeImpl.cpp -o CMakeFiles/antlr4_static.dir/src/tree/TerminalNodeImpl.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/Trees.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/tree/Trees.cpp.o: ../runtime/src/tree/Trees.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_118) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/tree/Trees.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/Trees.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/Trees.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/Trees.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/Trees.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/Trees.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/tree/Trees.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/Trees.cpp > CMakeFiles/antlr4_static.dir/src/tree/Trees.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/Trees.cpp > CMakeFiles/antlr4_static.dir/src/tree/Trees.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/Trees.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/tree/Trees.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/Trees.cpp -o CMakeFiles/antlr4_static.dir/src/tree/Trees.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/Trees.cpp -o CMakeFiles/antlr4_static.dir/src/tree/Trees.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/Chunk.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/Chunk.cpp.o: ../runtime/src/tree/pattern/Chunk.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_119) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/Chunk.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/pattern/Chunk.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/pattern/Chunk.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/pattern/Chunk.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/pattern/Chunk.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/Chunk.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/tree/pattern/Chunk.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/pattern/Chunk.cpp > CMakeFiles/antlr4_static.dir/src/tree/pattern/Chunk.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/pattern/Chunk.cpp > CMakeFiles/antlr4_static.dir/src/tree/pattern/Chunk.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/Chunk.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/tree/pattern/Chunk.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/pattern/Chunk.cpp -o CMakeFiles/antlr4_static.dir/src/tree/pattern/Chunk.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/pattern/Chunk.cpp -o CMakeFiles/antlr4_static.dir/src/tree/pattern/Chunk.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreeMatch.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreeMatch.cpp.o: ../runtime/src/tree/pattern/ParseTreeMatch.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_120) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreeMatch.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreeMatch.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/pattern/ParseTreeMatch.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreeMatch.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/pattern/ParseTreeMatch.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreeMatch.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreeMatch.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/pattern/ParseTreeMatch.cpp > CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreeMatch.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/pattern/ParseTreeMatch.cpp > CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreeMatch.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreeMatch.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreeMatch.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/pattern/ParseTreeMatch.cpp -o CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreeMatch.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/pattern/ParseTreeMatch.cpp -o CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreeMatch.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreePattern.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreePattern.cpp.o: ../runtime/src/tree/pattern/ParseTreePattern.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_121) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreePattern.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreePattern.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/pattern/ParseTreePattern.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreePattern.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/pattern/ParseTreePattern.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreePattern.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreePattern.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/pattern/ParseTreePattern.cpp > CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreePattern.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/pattern/ParseTreePattern.cpp > CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreePattern.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreePattern.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreePattern.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/pattern/ParseTreePattern.cpp -o CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreePattern.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/pattern/ParseTreePattern.cpp -o CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreePattern.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreePatternMatcher.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreePatternMatcher.cpp.o: ../runtime/src/tree/pattern/ParseTreePatternMatcher.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_122) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreePatternMatcher.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreePatternMatcher.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/pattern/ParseTreePatternMatcher.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreePatternMatcher.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/pattern/ParseTreePatternMatcher.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreePatternMatcher.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreePatternMatcher.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/pattern/ParseTreePatternMatcher.cpp > CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreePatternMatcher.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/pattern/ParseTreePatternMatcher.cpp > CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreePatternMatcher.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreePatternMatcher.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreePatternMatcher.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/pattern/ParseTreePatternMatcher.cpp -o CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreePatternMatcher.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/pattern/ParseTreePatternMatcher.cpp -o CMakeFiles/antlr4_static.dir/src/tree/pattern/ParseTreePatternMatcher.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/RuleTagToken.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/RuleTagToken.cpp.o: ../runtime/src/tree/pattern/RuleTagToken.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_123) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/RuleTagToken.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/pattern/RuleTagToken.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/pattern/RuleTagToken.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/pattern/RuleTagToken.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/pattern/RuleTagToken.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/RuleTagToken.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/tree/pattern/RuleTagToken.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/pattern/RuleTagToken.cpp > CMakeFiles/antlr4_static.dir/src/tree/pattern/RuleTagToken.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/pattern/RuleTagToken.cpp > CMakeFiles/antlr4_static.dir/src/tree/pattern/RuleTagToken.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/RuleTagToken.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/tree/pattern/RuleTagToken.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/pattern/RuleTagToken.cpp -o CMakeFiles/antlr4_static.dir/src/tree/pattern/RuleTagToken.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/pattern/RuleTagToken.cpp -o CMakeFiles/antlr4_static.dir/src/tree/pattern/RuleTagToken.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/TagChunk.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/TagChunk.cpp.o: ../runtime/src/tree/pattern/TagChunk.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_124) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/TagChunk.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/pattern/TagChunk.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/pattern/TagChunk.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/pattern/TagChunk.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/pattern/TagChunk.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/TagChunk.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/tree/pattern/TagChunk.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/pattern/TagChunk.cpp > CMakeFiles/antlr4_static.dir/src/tree/pattern/TagChunk.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/pattern/TagChunk.cpp > CMakeFiles/antlr4_static.dir/src/tree/pattern/TagChunk.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/TagChunk.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/tree/pattern/TagChunk.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/pattern/TagChunk.cpp -o CMakeFiles/antlr4_static.dir/src/tree/pattern/TagChunk.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/pattern/TagChunk.cpp -o CMakeFiles/antlr4_static.dir/src/tree/pattern/TagChunk.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/TextChunk.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/TextChunk.cpp.o: ../runtime/src/tree/pattern/TextChunk.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_125) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/TextChunk.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/pattern/TextChunk.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/pattern/TextChunk.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/pattern/TextChunk.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/pattern/TextChunk.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/TextChunk.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/tree/pattern/TextChunk.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/pattern/TextChunk.cpp > CMakeFiles/antlr4_static.dir/src/tree/pattern/TextChunk.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/pattern/TextChunk.cpp > CMakeFiles/antlr4_static.dir/src/tree/pattern/TextChunk.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/TextChunk.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/tree/pattern/TextChunk.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/pattern/TextChunk.cpp -o CMakeFiles/antlr4_static.dir/src/tree/pattern/TextChunk.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/pattern/TextChunk.cpp -o CMakeFiles/antlr4_static.dir/src/tree/pattern/TextChunk.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/TokenTagToken.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/TokenTagToken.cpp.o: ../runtime/src/tree/pattern/TokenTagToken.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_126) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/TokenTagToken.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/pattern/TokenTagToken.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/pattern/TokenTagToken.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/pattern/TokenTagToken.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/pattern/TokenTagToken.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/TokenTagToken.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/tree/pattern/TokenTagToken.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/pattern/TokenTagToken.cpp > CMakeFiles/antlr4_static.dir/src/tree/pattern/TokenTagToken.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/pattern/TokenTagToken.cpp > CMakeFiles/antlr4_static.dir/src/tree/pattern/TokenTagToken.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/pattern/TokenTagToken.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/tree/pattern/TokenTagToken.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/pattern/TokenTagToken.cpp -o CMakeFiles/antlr4_static.dir/src/tree/pattern/TokenTagToken.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/pattern/TokenTagToken.cpp -o CMakeFiles/antlr4_static.dir/src/tree/pattern/TokenTagToken.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPath.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPath.cpp.o: ../runtime/src/tree/xpath/XPath.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_127) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPath.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPath.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/xpath/XPath.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPath.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/xpath/XPath.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPath.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/tree/xpath/XPath.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/xpath/XPath.cpp > CMakeFiles/antlr4_static.dir/src/tree/xpath/XPath.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/xpath/XPath.cpp > CMakeFiles/antlr4_static.dir/src/tree/xpath/XPath.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPath.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/tree/xpath/XPath.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/xpath/XPath.cpp -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPath.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/xpath/XPath.cpp -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPath.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathElement.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathElement.cpp.o: ../runtime/src/tree/xpath/XPathElement.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_128) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathElement.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathElement.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathElement.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathElement.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathElement.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathElement.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathElement.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathElement.cpp > CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathElement.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathElement.cpp > CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathElement.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathElement.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathElement.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathElement.cpp -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathElement.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathElement.cpp -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathElement.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathLexer.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathLexer.cpp.o: ../runtime/src/tree/xpath/XPathLexer.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_129) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathLexer.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathLexer.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathLexer.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathLexer.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathLexer.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathLexer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathLexer.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathLexer.cpp > CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathLexer.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathLexer.cpp > CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathLexer.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathLexer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathLexer.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathLexer.cpp -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathLexer.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathLexer.cpp -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathLexer.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathLexerErrorListener.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathLexerErrorListener.cpp.o: ../runtime/src/tree/xpath/XPathLexerErrorListener.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_130) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathLexerErrorListener.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathLexerErrorListener.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathLexerErrorListener.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathLexerErrorListener.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathLexerErrorListener.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathLexerErrorListener.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathLexerErrorListener.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathLexerErrorListener.cpp > CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathLexerErrorListener.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathLexerErrorListener.cpp > CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathLexerErrorListener.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathLexerErrorListener.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathLexerErrorListener.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathLexerErrorListener.cpp -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathLexerErrorListener.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathLexerErrorListener.cpp -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathLexerErrorListener.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathRuleAnywhereElement.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathRuleAnywhereElement.cpp.o: ../runtime/src/tree/xpath/XPathRuleAnywhereElement.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_131) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathRuleAnywhereElement.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathRuleAnywhereElement.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathRuleAnywhereElement.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathRuleAnywhereElement.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathRuleAnywhereElement.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathRuleAnywhereElement.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathRuleAnywhereElement.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathRuleAnywhereElement.cpp > CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathRuleAnywhereElement.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathRuleAnywhereElement.cpp > CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathRuleAnywhereElement.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathRuleAnywhereElement.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathRuleAnywhereElement.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathRuleAnywhereElement.cpp -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathRuleAnywhereElement.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathRuleAnywhereElement.cpp -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathRuleAnywhereElement.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathRuleElement.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathRuleElement.cpp.o: ../runtime/src/tree/xpath/XPathRuleElement.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_132) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathRuleElement.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathRuleElement.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathRuleElement.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathRuleElement.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathRuleElement.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathRuleElement.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathRuleElement.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathRuleElement.cpp > CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathRuleElement.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathRuleElement.cpp > CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathRuleElement.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathRuleElement.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathRuleElement.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathRuleElement.cpp -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathRuleElement.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathRuleElement.cpp -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathRuleElement.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathTokenAnywhereElement.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathTokenAnywhereElement.cpp.o: ../runtime/src/tree/xpath/XPathTokenAnywhereElement.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_133) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathTokenAnywhereElement.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathTokenAnywhereElement.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathTokenAnywhereElement.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathTokenAnywhereElement.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathTokenAnywhereElement.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathTokenAnywhereElement.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathTokenAnywhereElement.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathTokenAnywhereElement.cpp > CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathTokenAnywhereElement.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathTokenAnywhereElement.cpp > CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathTokenAnywhereElement.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathTokenAnywhereElement.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathTokenAnywhereElement.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathTokenAnywhereElement.cpp -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathTokenAnywhereElement.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathTokenAnywhereElement.cpp -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathTokenAnywhereElement.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathTokenElement.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathTokenElement.cpp.o: ../runtime/src/tree/xpath/XPathTokenElement.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_134) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathTokenElement.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathTokenElement.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathTokenElement.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathTokenElement.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathTokenElement.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathTokenElement.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathTokenElement.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathTokenElement.cpp > CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathTokenElement.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathTokenElement.cpp > CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathTokenElement.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathTokenElement.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathTokenElement.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathTokenElement.cpp -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathTokenElement.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathTokenElement.cpp -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathTokenElement.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathWildcardAnywhereElement.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathWildcardAnywhereElement.cpp.o: ../runtime/src/tree/xpath/XPathWildcardAnywhereElement.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_135) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathWildcardAnywhereElement.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathWildcardAnywhereElement.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathWildcardAnywhereElement.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathWildcardAnywhereElement.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathWildcardAnywhereElement.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathWildcardAnywhereElement.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathWildcardAnywhereElement.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathWildcardAnywhereElement.cpp > CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathWildcardAnywhereElement.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathWildcardAnywhereElement.cpp > CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathWildcardAnywhereElement.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathWildcardAnywhereElement.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathWildcardAnywhereElement.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathWildcardAnywhereElement.cpp -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathWildcardAnywhereElement.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathWildcardAnywhereElement.cpp -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathWildcardAnywhereElement.cpp.s
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathWildcardElement.cpp.o: runtime/CMakeFiles/antlr4_static.dir/flags.make
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathWildcardElement.cpp.o: ../runtime/src/tree/xpath/XPathWildcardElement.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/codespaces-blank/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_136) "Building CXX object runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathWildcardElement.cpp.o"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathWildcardElement.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathWildcardElement.cpp
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathWildcardElement.cpp.o -c /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathWildcardElement.cpp
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathWildcardElement.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathWildcardElement.cpp.i"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathWildcardElement.cpp > CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathWildcardElement.cpp.i
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathWildcardElement.cpp > CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathWildcardElement.cpp.i
 
 runtime/CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathWildcardElement.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathWildcardElement.cpp.s"
-	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathWildcardElement.cpp -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathWildcardElement.cpp.s
+	cd /workspaces/codespaces-blank/build/runtime && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/codespaces-blank/runtime/src/tree/xpath/XPathWildcardElement.cpp -o CMakeFiles/antlr4_static.dir/src/tree/xpath/XPathWildcardElement.cpp.s
 
 # Object files for target antlr4_static
 antlr4_static_OBJECTS = \
