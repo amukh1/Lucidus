@@ -34,24 +34,12 @@ public:
         return visitChildren(ctx);
     }
 
-    antlrcpp::Any visitExpr(LucidusParser::ExprContext *ctx) override {
-        // std::cout << "Visiting expression" << std::endl;
-        return visitChildren(ctx);
-    }
+    antlrcpp::Any visitDec(LucidusParser::DecContext *ctx) override;
 
-    antlrcpp::Any visitDec(LucidusParser::DecContext *ctx) override {
-        std::string functionName = ctx->ID()->getText();
-        llvm::Type* rtype = getTypes(ctx->type(), controller);
-        std::vector<llvm::Type*> types;
-        bool ellip = false;
-        for(int i = 0; i<ctx->param().size(); i++) {
-            if(ctx->param(i)->DOTS() != nullptr) { // fixed the typo here and used size() method
-                ellip = true;
-            }else
-            types.push_back(getTypes(ctx->param(i)->idec()->type(), controller));
-        }
-        controller->declareFunction(functionName.c_str(), llvm::FunctionType::get(rtype, types, ellip));
-        return visitChildren(ctx);
-    }
+    antlrcpp::Any visitFunc(LucidusParser::FuncContext *ctx) override;
+
+    antlrcpp::Any visitExpr(LucidusParser::ExprContext *ctx) override;
+
+    antlrcpp::Any visitDef(LucidusParser::DefContext *ctx) override;
 
 };
