@@ -1,0 +1,52 @@
+
+// Generated from LucidusLexer.g4 by ANTLR 4.13.1
+
+#pragma once
+
+
+#include "antlr4-runtime.h"
+
+
+
+
+class  LucidusLexer : public antlr4::Lexer {
+public:
+  enum {
+    AND = 1, OR = 2, NOT = 3, EQ = 4, PLUS = 5, SUB = 6, STAR = 7, DIV = 8, 
+    OPAREN = 9, CPAREN = 10, COMMA = 11, SEMI = 12, DEF = 13, DECL = 14, 
+    ARROW = 15, COL = 16, RETURN = 17, DOTS = 18, LCURLY = 19, RCURLY = 20, 
+    INT = 21, ID = 22, WS = 23, STRING = 24
+  };
+
+  explicit LucidusLexer(antlr4::CharStream *input);
+
+  ~LucidusLexer() override;
+
+
+  std::string getGrammarFileName() const override;
+
+  const std::vector<std::string>& getRuleNames() const override;
+
+  const std::vector<std::string>& getChannelNames() const override;
+
+  const std::vector<std::string>& getModeNames() const override;
+
+  const antlr4::dfa::Vocabulary& getVocabulary() const override;
+
+  antlr4::atn::SerializedATNView getSerializedATN() const override;
+
+  const antlr4::atn::ATN& getATN() const override;
+
+  // By default the static state used to implement the lexer is lazily initialized during the first
+  // call to the constructor. You can call this function if you wish to initialize the static state
+  // ahead of time.
+  static void initialize();
+
+private:
+
+  // Individual action functions triggered by action() above.
+
+  // Individual semantic predicate functions triggered by sempred() above.
+
+};
+

@@ -1,0 +1,12 @@
+decl printf(x:i8*, ...) -> int;
+
+decl add(x:int, y:int) -> int;
+defn add(x:int,y:int) -> int {
+    c = (x+y)-y;
+    return x->(int) + y;
+}
+
+decl main() -> int;
+defn main() -> int {
+    printf("485");
+}
