@@ -1,13 +1,4 @@
-decl printf(x:char*, ...) -> int;
-
-decl add(x:int, y:int) -> int;
-defn add(x:int,y:int) -> int {
-    c = (x+y)-y;
-    return x->(int) + y;
-}
-
-decl main() -> int;
-defn main() -> int {
-    printf("Hello world!");
-    return 5;
+decl out() -> char*;
+defn out() -> char* {
+    return "Hello\n";
 }

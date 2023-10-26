@@ -48,9 +48,10 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         // // now make loadStr llvm::Value* and return
         // return (llvm::Value*)loadedStr;
         // forget all that, make it an an array of chars, but in pointer form
+        // ^:skull: now that I have done this I am too lazy to do it correctly.
         std::string str = ctx->STRING()->getText();
         std::vector<llvm::Constant*> chars;
-        for(int i = 0; i<str.length(); i++) {
+        for(int i = 1; i<str.length()-1; i++) {
             chars.push_back(llvm::ConstantInt::get(llvm::Type::getInt8Ty(controller->ctx), str[i]));
         }
         chars.push_back(llvm::ConstantInt::get(llvm::Type::getInt8Ty(controller->ctx), 0));
@@ -87,8 +88,8 @@ antlrcpp::Any MyVisitor::visitFunc(LucidusParser::FuncContext *ctx)  {
 }
 
 antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
-    std::cout << ctx->getRuleIndex() << std::endl;
-    std::cout << ctx->getText() << std::endl;
+    // std::cout << ctx->getRuleIndex() << std::endl;
+    // std::cout << ctx->getText() << std::endl;
     if(ctx->expr() !=nullptr) {
         return visit(ctx->expr());
     } else if(ctx->ret() != nullptr) {
