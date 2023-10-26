@@ -9,11 +9,12 @@ type: (ID) (STAR)*;
 idec: ID COL type ;
 param: (idec|DOTS);
 dec: DECL ID '(' (param (',' param)*)? ')' ARROW type ';';
+ret: RETURN expr ';';
 stat
     : ID '=' expr ';'
     | expr ';'
     | dec
-    | RETURN expr ';'
+    | ret
     ;
 def : DEF ID '(' (idec (',' idec)*)? ')' ARROW ID '{' stat* '}' ;
 

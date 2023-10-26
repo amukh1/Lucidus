@@ -87,8 +87,13 @@ antlrcpp::Any MyVisitor::visitFunc(LucidusParser::FuncContext *ctx)  {
 }
 
 antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
-    if(ctx->expr() != nullptr) {
+    std::cout << ctx->getRuleIndex() << std::endl;
+    std::cout << ctx->getText() << std::endl;
+    if(ctx->expr() !=nullptr) {
         return visit(ctx->expr());
+    } else if(ctx->ret() != nullptr) {
+        std::cout << "handling return" << std::endl;
+        return controller->builder->CreateRet(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->ret()->expr())));
     }
     return visitChildren(ctx);
 }

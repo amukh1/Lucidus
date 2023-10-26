@@ -8,5 +8,6 @@ defn add(x:int,y:int) -> int {
 
 decl main() -> int;
 defn main() -> int {
-    printf("485");
+    printf("Hello world!");
+    return 5;
 }

@@ -20,7 +20,7 @@ public:
 
   enum {
     RuleProgram = 0, RuleRawtype = 1, RuleType = 2, RuleIdec = 3, RuleParam = 4, 
-    RuleDec = 5, RuleStat = 6, RuleDef = 7, RuleExpr = 8, RuleFunc = 9
+    RuleDec = 5, RuleRet = 6, RuleStat = 7, RuleDef = 8, RuleExpr = 9, RuleFunc = 10
   };
 
   explicit LucidusParser(antlr4::TokenStream *input);
@@ -46,6 +46,7 @@ public:
   class IdecContext;
   class ParamContext;
   class DecContext;
+  class RetContext;
   class StatContext;
   class DefContext;
   class ExprContext;
@@ -148,6 +149,21 @@ public:
 
   DecContext* dec();
 
+  class  RetContext : public antlr4::ParserRuleContext {
+  public:
+    RetContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *RETURN();
+    ExprContext *expr();
+    antlr4::tree::TerminalNode *SEMI();
+
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  RetContext* ret();
+
   class  StatContext : public antlr4::ParserRuleContext {
   public:
     StatContext(antlr4::ParserRuleContext *parent, size_t invokingState);
@@ -157,7 +173,7 @@ public:
     ExprContext *expr();
     antlr4::tree::TerminalNode *SEMI();
     DecContext *dec();
-    antlr4::tree::TerminalNode *RETURN();
+    RetContext *ret();
 
 
     virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;

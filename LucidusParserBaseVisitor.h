@@ -39,6 +39,10 @@ public:
     return visitChildren(ctx);
   }
 
+  virtual std::any visitRet(LucidusParser::RetContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
   virtual std::any visitStat(LucidusParser::StatContext *ctx) override {
     return visitChildren(ctx);
   }
