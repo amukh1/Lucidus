@@ -1,4 +1,7 @@
-decl out() -> char*;
-defn out() -> char* {
-    return "Hello\n";
+decl printf(tmp:char*, ...) -> int;
+
+decl main() -> int;
+defn main() -> int {
+    printf("Hello\n");
+    return 0;
 }

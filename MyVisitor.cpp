@@ -21,6 +21,16 @@
 
 #include "MyVisitor.h"
 
+void replaceAll(std::string& str, const std::string& from, const std::string& to) {
+    if(from.empty())
+        return;
+    size_t start_pos = 0;
+    while((start_pos = str.find(from, start_pos)) != std::string::npos) {
+        str.replace(start_pos, from.length(), to);
+        start_pos += to.length(); // In case 'to' contains 'from', like replacing 'x' with 'yx'
+    }
+}
+
 antlrcpp::Any MyVisitor::visitDec(LucidusParser::DecContext *ctx) {
         std::string functionName = ctx->ID()->getText();
         llvm::Type* rtype = getTypes(ctx->type(), this->controller);
@@ -50,6 +60,7 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         // forget all that, make it an an array of chars, but in pointer form
         // ^:skull: now that I have done this I am too lazy to do it correctly.
         std::string str = ctx->STRING()->getText();
+        replaceAll(str, "\\n", "\n");
         std::vector<llvm::Constant*> chars;
         for(int i = 1; i<str.length()-1; i++) {
             chars.push_back(llvm::ConstantInt::get(llvm::Type::getInt8Ty(controller->ctx), str[i]));
