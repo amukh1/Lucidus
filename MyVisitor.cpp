@@ -61,6 +61,18 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         // ^:skull: now that I have done this I am too lazy to do it correctly.
         std::string str = ctx->STRING()->getText();
         replaceAll(str, "\\n", "\n");
+        replaceAll(str, "\\t", "\t");
+        replaceAll(str, "\\r", "\r");
+        replaceAll(str, "\\v", "\v");
+        replaceAll(str, "\\b", "\b");
+        replaceAll(str, "\\f", "\f");
+        replaceAll(str, "\\a", "\a");
+        replaceAll(str, "\\e", "\e");
+        replaceAll(str, "\\0", "\0");
+        replaceAll(str, "\\'", "\'");
+        replaceAll(str, "\\\"", "\"");
+        replaceAll(str, "\\\\", "\\");
+        replaceAll(str, "\\?", "\?");
         std::vector<llvm::Constant*> chars;
         for(int i = 1; i<str.length()-1; i++) {
             chars.push_back(llvm::ConstantInt::get(llvm::Type::getInt8Ty(controller->ctx), str[i]));

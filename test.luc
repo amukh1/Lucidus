@@ -2,6 +2,8 @@ decl printf(tmp:char*, ...) -> int;
 
 decl main() -> int;
 defn main() -> int {
-    printf("Hello\n");
+    printf("Hello World\n");
+    printf("Programming my %dth \" compiler\n", 3)
+    printf("After ~%d years of programming..\n", 4)
     return 0;
 }
