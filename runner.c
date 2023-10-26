@@ -2,7 +2,6 @@ int printf(char*, ...);
 char* out();
 
 int main() {
-    printf(out());
-    printf("hello \n");
+    printf("%s", out());
     return 0;
 }
