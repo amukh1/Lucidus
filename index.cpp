@@ -47,6 +47,9 @@ int main() {
     visitor.visit(tree);
 
      llvm::outs() << *Controller->module << '\n';
+std::error_code ec;
+    llvm::raw_fd_ostream os("output.ll", ec);
+    Controller->module->print(os, nullptr);
 
     return 0;
 }

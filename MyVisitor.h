@@ -29,11 +29,8 @@ public:
         return visitChildren(ctx);
     }
 
-    antlrcpp::Any visitStat(LucidusParser::StatContext *ctx) override {
-        // std::cout << "Visiting statement" << std::endl;
-        return visitChildren(ctx);
-    }
-
+    antlrcpp::Any visitStat(LucidusParser::StatContext *ctx) override;
+    
     antlrcpp::Any visitDec(LucidusParser::DecContext *ctx) override;
 
     antlrcpp::Any visitFunc(LucidusParser::FuncContext *ctx) override;

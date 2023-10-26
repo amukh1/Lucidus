@@ -35,7 +35,7 @@ llvm::BasicBlock* LLVMController::defineFunction(std::string name) {
     }
 
     llvm::BasicBlock* entry = llvm::BasicBlock::Create(this->ctx, "entry", fn);
-    // this->builder->SetInsertPoint(entry);
+    this->builder->SetInsertPoint(entry);
     return entry;
 }
 
