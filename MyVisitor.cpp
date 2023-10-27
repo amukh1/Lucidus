@@ -38,7 +38,7 @@ antlrcpp::Any MyVisitor::visitDec(LucidusParser::DecContext *ctx) {
         std::vector<llvm::Type*> types;
         bool ellip = false;
         // std::cout << ctx->param().size() << std::endl;
-        this->functionNameScope.insert({functionName, {}});
+        this->functionNameScope.insert({functionName, {std::vector<std::string>(), false}});
         if(ctx->param().size() !=0) {
             llvm::Type* type;
             LucidusParser::IdecContext * idec;
@@ -98,8 +98,8 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         return visit(ctx->func());;
     }else if(ctx->ID() != nullptr && ctx->children.size() == 1) {
         return (llvm::Value*) controller->builder->CreateLoad(((llvm::AllocaInst*)this->functionScope[ctx->ID()->getText()])->getAllocatedType(),this->functionScope[ctx->ID()->getText()]);
-    }else if(ctx->STAR() != nullptr && ctx->expr().size() == 1) {
-        
+    }else if(ctx->PLUS() != nullptr) {
+        return (llvm::Value*) controller->builder->CreateAdd(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))), std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
     }else
     // return (llvm::Value *)llvm::ConstantInt::get(llvm::Type::getInt32Ty(controller->ctx), 0);
     // return llvm nullptr LOOOL
@@ -116,7 +116,7 @@ antlrcpp::Any MyVisitor::visitDef(LucidusParser::DefContext *ctx) {
                 this->functionScope[ctx->param(i)->idec()->ID()->getText()] = controller->declareVariable(ctx->param(i)->idec()->ID()->getText(),getTypes(ctx->param(i)->idec()->type(), controller));
                 // llvm::StoreInst* val = controller->assignVariable((llvm::AllocaInst*)this->functionScope[ctx->param(i)->idec()->ID()->getText()], this->functionParamScope[ctx->ID(i)->getText()][ctx->param(i)->idec()->ID()->getText()]);
                 // ith argument value (from llvm):
-                llvm::Value* arg = this->controller->module->getFunction(ctx->ID(i)->getText())->getArg(i);
+                llvm::Value* arg = this->controller->module->getFunction(ctx->ID(0)->getText())->getArg(i);
                 llvm::StoreInst* val = controller->assignVariable((llvm::AllocaInst*)this->functionScope[ctx->param(i)->idec()->ID()->getText()], arg);
             }
         }

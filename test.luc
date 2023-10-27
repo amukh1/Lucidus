@@ -1,19 +1,13 @@
 dec printf(tmp:char*, ...) -> int;
 
-dec foo(x:int) -> int;
-def foo(x:int) -> int  {
-    printf("%d", x);
-    return 0;
-}
-
-dec bar(x:int) -> int;
-def bar(x:int) -> int {
-    return x;
+dec add(a:int, b:int) -> int;
+def add(a:int, b:int) -> int {
+    return a+b;
 }
 
 dec main() -> int;
 def main() -> int {
-    x:int := 3;
+    x:int := add(1,2);
     printf("Hello World\n");
     printf("Programming my %dth \'compiler\'\n", x);
     x = 4;
