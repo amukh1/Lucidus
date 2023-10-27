@@ -100,7 +100,7 @@ void lucidusparserParserInitialize() {
   	92,3,16,8,0,86,87,3,22,11,0,87,88,5,12,0,0,88,92,1,0,0,0,89,92,3,10,5,
   	0,90,92,3,12,6,0,91,84,1,0,0,0,91,85,1,0,0,0,91,86,1,0,0,0,91,89,1,0,
   	0,0,91,90,1,0,0,0,92,19,1,0,0,0,93,94,5,13,0,0,94,95,5,23,0,0,95,104,
-  	5,9,0,0,96,101,3,6,3,0,97,98,5,11,0,0,98,100,3,6,3,0,99,97,1,0,0,0,100,
+  	5,9,0,0,96,101,3,8,4,0,97,98,5,11,0,0,98,100,3,8,4,0,99,97,1,0,0,0,100,
   	103,1,0,0,0,101,99,1,0,0,0,101,102,1,0,0,0,102,105,1,0,0,0,103,101,1,
   	0,0,0,104,96,1,0,0,0,104,105,1,0,0,0,105,106,1,0,0,0,106,107,5,10,0,0,
   	107,108,5,15,0,0,108,109,5,23,0,0,109,113,5,20,0,0,110,112,3,18,9,0,111,
@@ -987,12 +987,12 @@ tree::TerminalNode* LucidusParser::DefContext::RCURLY() {
   return getToken(LucidusParser::RCURLY, 0);
 }
 
-std::vector<LucidusParser::IdecContext *> LucidusParser::DefContext::idec() {
-  return getRuleContexts<LucidusParser::IdecContext>();
+std::vector<LucidusParser::ParamContext *> LucidusParser::DefContext::param() {
+  return getRuleContexts<LucidusParser::ParamContext>();
 }
 
-LucidusParser::IdecContext* LucidusParser::DefContext::idec(size_t i) {
-  return getRuleContext<LucidusParser::IdecContext>(i);
+LucidusParser::ParamContext* LucidusParser::DefContext::param(size_t i) {
+  return getRuleContext<LucidusParser::ParamContext>(i);
 }
 
 std::vector<LucidusParser::StatContext *> LucidusParser::DefContext::stat() {
@@ -1048,9 +1048,11 @@ LucidusParser::DefContext* LucidusParser::def() {
     _errHandler->sync(this);
 
     _la = _input->LA(1);
-    if (_la == LucidusParser::ID) {
+    if (_la == LucidusParser::DOTS
+
+    || _la == LucidusParser::ID) {
       setState(96);
-      idec();
+      param();
       setState(101);
       _errHandler->sync(this);
       _la = _input->LA(1);
@@ -1058,7 +1060,7 @@ LucidusParser::DefContext* LucidusParser::def() {
         setState(97);
         match(LucidusParser::COMMA);
         setState(98);
-        idec();
+        param();
         setState(103);
         _errHandler->sync(this);
         _la = _input->LA(1);

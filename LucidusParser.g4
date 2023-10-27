@@ -19,7 +19,7 @@ stat
     | dec
     | ret
     ;
-def : DEF ID '(' (idec (',' idec)*)? ')' ARROW ID '{' stat* '}' ;
+def : DEF ID '(' (param (',' param)*)? ')' ARROW ID '{' stat* '}' ;
 
 expr: ID
     | INT

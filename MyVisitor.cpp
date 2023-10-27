@@ -11,6 +11,7 @@
 #include <llvm/IR/IRBuilder.h>
 #include <llvm/IR/Verifier.h>
 #include <llvm/IR/Instructions.h>
+#include <llvm/IR/Argument.h>
 #include <llvm/Support/raw_ostream.h>
 
 #include "LLVMController.h"
@@ -37,12 +38,20 @@ antlrcpp::Any MyVisitor::visitDec(LucidusParser::DecContext *ctx) {
         std::vector<llvm::Type*> types;
         bool ellip = false;
         std::cout << ctx->param().size() << std::endl;
+        this->functionNameScope.insert({functionName, {}});
         if(ctx->param().size() !=0) {
+            llvm::Type* type;
+            LucidusParser::IdecContext * idec;
             for(int i = 0; i<ctx->param().size(); i++) {
-                if(ctx->param(i)->DOTS() != nullptr) { // fixed the typo here and used size() method
+                if(ctx->param(i)->DOTS() != nullptr) {
                     ellip = true;
-                }else
-                types.push_back(getTypes(ctx->param(i)->idec()->type(), this->controller));
+                    this->functionNameScope[functionName].second = true;
+                } else {
+                    idec = ctx->param(i)->idec();
+                    type = getTypes(idec->type(), this->controller);
+                    types.push_back(type);
+                    this->functionNameScope[functionName].first.push_back(idec->ID()->getText());
+                }
             }
         }
         controller->declareFunction(functionName.c_str(), llvm::FunctionType::get(rtype, types, ellip));
@@ -99,9 +108,16 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
 
 antlrcpp::Any MyVisitor::visitDef(LucidusParser::DefContext *ctx) {
     this->controller->defineFunction(ctx->ID(0)->getText());
-    // for(int i = 0; i<ctx->stat().size(); i++) {
-    //     visit(ctx->stat(i));
-    // }
+    this->functionScope = {};
+    for(int i = 0; i<ctx->param().size(); i++) {
+            if(ctx->param(i)->DOTS() == nullptr){
+                this->functionScope[ctx->param(i)->idec()->ID()->getText()] = controller->declareVariable(ctx->param(i)->idec()->ID()->getText(),getTypes(ctx->param(i)->idec()->type(), controller));
+                // llvm::StoreInst* val = controller->assignVariable((llvm::AllocaInst*)this->functionScope[ctx->param(i)->idec()->ID()->getText()], this->functionParamScope[ctx->ID(i)->getText()][ctx->param(i)->idec()->ID()->getText()]);
+                // ith argument value (from llvm):
+                llvm::Value* arg = this->controller->module->getFunction(ctx->ID(i)->getText())->getArg(i);
+                llvm::StoreInst* val = controller->assignVariable((llvm::AllocaInst*)this->functionScope[ctx->param(i)->idec()->ID()->getText()], arg);
+            }
+        }
     return visitChildren(ctx);
 }
 
@@ -111,8 +127,7 @@ antlrcpp::Any MyVisitor::visitFunc(LucidusParser::FuncContext *ctx)  {
         std::vector<llvm::Value*> params;
         for(int i = 0; i<ctx->expr().size(); i++) {
             params.push_back(std::any_cast<llvm::Value*>((std::any)visit(ctx->expr(i))));
-
-            // params.push_back(std::any_cast<llvm::Value*>(visit(ctx->expr(i))));
+            // param name
         }
         return this->controller->builder->CreateCall(func, params);
 }
@@ -135,6 +150,7 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
     }else if(ctx->vdef() != nullptr) {
         std::string name = ctx->vdef()->ID()->getText();
         llvm::Value* val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->vdef()->expr()));
+        
         controller->assignVariable((llvm::AllocaInst*)this->functionScope[name], val);
         return this->functionScope[name];
     }else

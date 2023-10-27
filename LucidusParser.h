@@ -229,8 +229,8 @@ public:
     antlr4::tree::TerminalNode *ARROW();
     antlr4::tree::TerminalNode *LCURLY();
     antlr4::tree::TerminalNode *RCURLY();
-    std::vector<IdecContext *> idec();
-    IdecContext* idec(size_t i);
+    std::vector<ParamContext *> param();
+    ParamContext* param(size_t i);
     std::vector<StatContext *> stat();
     StatContext* stat(size_t i);
     std::vector<antlr4::tree::TerminalNode *> COMMA();
