@@ -1,7 +1,7 @@
 int printf(char*, ...);
-char* out();
+int add(int a, int b);
 
 int main() {
-    printf("%s", out());
+    printf("%d", add(1,2));
     return 0;
 }
