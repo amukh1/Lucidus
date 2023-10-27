@@ -14,13 +14,14 @@ public:
   enum {
     AND = 1, OR = 2, NOT = 3, EQ = 4, PLUS = 5, SUB = 6, STAR = 7, DIV = 8, 
     OPAREN = 9, CPAREN = 10, COMMA = 11, SEMI = 12, DEF = 13, DECL = 14, 
-    ARROW = 15, COL = 16, RETURN = 17, DOTS = 18, LCURLY = 19, RCURLY = 20, 
-    INT = 21, ID = 22, WS = 23, STRING = 24
+    ARROW = 15, DCOL = 16, COL = 17, RETURN = 18, DOTS = 19, LCURLY = 20, 
+    RCURLY = 21, INT = 22, ID = 23, WS = 24, STRING = 25
   };
 
   enum {
     RuleProgram = 0, RuleRawtype = 1, RuleType = 2, RuleIdec = 3, RuleParam = 4, 
-    RuleDec = 5, RuleRet = 6, RuleStat = 7, RuleDef = 8, RuleExpr = 9, RuleFunc = 10
+    RuleDec = 5, RuleRet = 6, RuleVdec = 7, RuleVdef = 8, RuleStat = 9, 
+    RuleDef = 10, RuleExpr = 11, RuleFunc = 12
   };
 
   explicit LucidusParser(antlr4::TokenStream *input);
@@ -47,6 +48,8 @@ public:
   class ParamContext;
   class DecContext;
   class RetContext;
+  class VdecContext;
+  class VdefContext;
   class StatContext;
   class DefContext;
   class ExprContext;
@@ -164,12 +167,44 @@ public:
 
   RetContext* ret();
 
+  class  VdecContext : public antlr4::ParserRuleContext {
+  public:
+    VdecContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *ID();
+    antlr4::tree::TerminalNode *DCOL();
+    ExprContext *expr();
+    antlr4::tree::TerminalNode *SEMI();
+
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  VdecContext* vdec();
+
+  class  VdefContext : public antlr4::ParserRuleContext {
+  public:
+    VdefContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *ID();
+    antlr4::tree::TerminalNode *EQ();
+    ExprContext *expr();
+    antlr4::tree::TerminalNode *SEMI();
+
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  VdefContext* vdef();
+
   class  StatContext : public antlr4::ParserRuleContext {
   public:
     StatContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    antlr4::tree::TerminalNode *ID();
-    antlr4::tree::TerminalNode *EQ();
+    VdecContext *vdec();
+    VdefContext *vdef();
     ExprContext *expr();
     antlr4::tree::TerminalNode *SEMI();
     DecContext *dec();
@@ -214,16 +249,17 @@ public:
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *ID();
     antlr4::tree::TerminalNode *INT();
+    antlr4::tree::TerminalNode *STRING();
     FuncContext *func();
-    antlr4::tree::TerminalNode *NOT();
     std::vector<ExprContext *> expr();
     ExprContext* expr(size_t i);
+    std::vector<antlr4::tree::TerminalNode *> STAR();
+    antlr4::tree::TerminalNode* STAR(size_t i);
+    antlr4::tree::TerminalNode *NOT();
     antlr4::tree::TerminalNode *OPAREN();
     antlr4::tree::TerminalNode *CPAREN();
-    antlr4::tree::TerminalNode *STRING();
     antlr4::tree::TerminalNode *AND();
     antlr4::tree::TerminalNode *OR();
-    antlr4::tree::TerminalNode *STAR();
     antlr4::tree::TerminalNode *DIV();
     antlr4::tree::TerminalNode *PLUS();
     antlr4::tree::TerminalNode *SUB();

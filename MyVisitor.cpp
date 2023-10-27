@@ -47,11 +47,11 @@ antlrcpp::Any MyVisitor::visitDec(LucidusParser::DecContext *ctx) {
 }
 
 antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
-    if(ctx->INT() != nullptr) {
+    if(ctx->INT() != nullptr && ctx->children.size() == 1) {
         int v = std::stoi(ctx->INT()->getText());
         llvm::Value *val = llvm::ConstantInt::get(llvm::Type::getInt32Ty(controller->ctx), v);
         return val;
-    }else if(ctx->STRING() != nullptr) {
+    }else if(ctx->STRING() != nullptr && ctx->children.size() == 1) {
         // auto str = controller->builder->CreateGlobalStringPtr(ctx->STRING()->getText());
         // // load and return str
         // auto loadedStr = controller->builder->CreateLoad(str->getType(), str);
@@ -84,8 +84,12 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         return ptr;
     }else if(ctx->func() != nullptr) {
         return visit(ctx->func());;
+    }else if(ctx->ID() != nullptr && ctx->children.size() == 1) {
+        // return controller->builder->CreateLoad(controller->namedValues[ctx->ID()->getText()]);
     }else
-    return (llvm::Value *)llvm::ConstantInt::get(llvm::Type::getInt32Ty(controller->ctx), 0);
+    // return (llvm::Value *)llvm::ConstantInt::get(llvm::Type::getInt32Ty(controller->ctx), 0);
+    // return llvm nullptr LOOOL
+    return (llvm::Value*) llvm::ConstantPointerNull::get(llvm::Type::getInt32PtrTy(controller->ctx));
     // return visitChildren(ctx);
     // return  controller->builder->CreateCall(controller->module->getFunction("printf"), {});
 }
@@ -116,7 +120,6 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
     if(ctx->expr() !=nullptr) {
         return visit(ctx->expr());
     } else if(ctx->ret() != nullptr) {
-        std::cout << "handling return" << std::endl;
         return controller->builder->CreateRet(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->ret()->expr())));
     }
     return visitChildren(ctx);

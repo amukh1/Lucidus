@@ -14,9 +14,10 @@ CPAREN: ')';
 COMMA : ',' ;
 SEMI : ';' ;
 
-DEF: 'defn';
-DECL: 'decl';
+DEF: 'def';
+DECL: 'dec';
 ARROW: '->';
+DCOL: ':=';
 COL: ':';
 RETURN: 'return';
 DOTS: '...';

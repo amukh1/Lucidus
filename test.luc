@@ -1,9 +1,9 @@
-decl printf(tmp:char*, ...) -> int;
+dec printf(tmp:char*, ...) -> int;
 
-decl main() -> int;
-defn main() -> int {
+dec main() -> int;
+def main() -> int {
     printf("Hello World\n");
-    printf("Programming my %dth \" compiler\n", 3)
-    printf("After ~%d years of programming..\n", 4)
+    printf("Programming my %dth \'compiler\'\n", 3);
+    printf("After ~%d years of programming..\n", 4);
     return 0;
 }

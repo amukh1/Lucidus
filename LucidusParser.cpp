@@ -52,71 +52,78 @@ void lucidusparserParserInitialize() {
 #endif
   auto staticData = std::make_unique<LucidusParserStaticData>(
     std::vector<std::string>{
-      "program", "rawtype", "type", "idec", "param", "dec", "ret", "stat", 
-      "def", "expr", "func"
+      "program", "rawtype", "type", "idec", "param", "dec", "ret", "vdec", 
+      "vdef", "stat", "def", "expr", "func"
     },
     std::vector<std::string>{
       "", "'&&'", "'||'", "'!'", "'='", "'+'", "'-'", "'*'", "'/'", "'('", 
-      "')'", "','", "';'", "'defn'", "'decl'", "'->'", "':'", "'return'", 
+      "')'", "','", "';'", "'def'", "'dec'", "'->'", "':='", "':'", "'return'", 
       "'...'", "'{'", "'}'"
     },
     std::vector<std::string>{
       "", "AND", "OR", "NOT", "EQ", "PLUS", "SUB", "STAR", "DIV", "OPAREN", 
-      "CPAREN", "COMMA", "SEMI", "DEF", "DECL", "ARROW", "COL", "RETURN", 
-      "DOTS", "LCURLY", "RCURLY", "INT", "ID", "WS", "STRING"
+      "CPAREN", "COMMA", "SEMI", "DEF", "DECL", "ARROW", "DCOL", "COL", 
+      "RETURN", "DOTS", "LCURLY", "RCURLY", "INT", "ID", "WS", "STRING"
     }
   );
   static const int32_t serializedATNSegment[] = {
-  	4,1,24,162,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,
-  	7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,1,0,1,0,5,0,25,8,0,10,0,12,0,28,9,0,1,
-  	0,1,0,1,1,1,1,1,2,1,2,5,2,36,8,2,10,2,12,2,39,9,2,1,3,1,3,1,3,1,3,1,4,
-  	1,4,3,4,47,8,4,1,5,1,5,1,5,1,5,1,5,1,5,5,5,55,8,5,10,5,12,5,58,9,5,3,
-  	5,60,8,5,1,5,1,5,1,5,1,5,1,5,1,6,1,6,1,6,1,6,1,7,1,7,1,7,1,7,1,7,1,7,
-  	1,7,1,7,1,7,1,7,3,7,81,8,7,1,8,1,8,1,8,1,8,1,8,1,8,5,8,89,8,8,10,8,12,
-  	8,92,9,8,3,8,94,8,8,1,8,1,8,1,8,1,8,1,8,5,8,101,8,8,10,8,12,8,104,9,8,
-  	1,8,1,8,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,3,9,119,8,9,1,9,1,
-  	9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,1,9,
-  	1,9,1,9,1,9,1,9,1,9,5,9,145,8,9,10,9,12,9,148,9,9,1,10,1,10,1,10,1,10,
-  	1,10,5,10,155,8,10,10,10,12,10,158,9,10,1,10,1,10,1,10,0,1,18,11,0,2,
-  	4,6,8,10,12,14,16,18,20,0,0,175,0,26,1,0,0,0,2,31,1,0,0,0,4,33,1,0,0,
-  	0,6,40,1,0,0,0,8,46,1,0,0,0,10,48,1,0,0,0,12,66,1,0,0,0,14,80,1,0,0,0,
-  	16,82,1,0,0,0,18,118,1,0,0,0,20,149,1,0,0,0,22,25,3,14,7,0,23,25,3,16,
-  	8,0,24,22,1,0,0,0,24,23,1,0,0,0,25,28,1,0,0,0,26,24,1,0,0,0,26,27,1,0,
-  	0,0,27,29,1,0,0,0,28,26,1,0,0,0,29,30,5,0,0,1,30,1,1,0,0,0,31,32,5,22,
-  	0,0,32,3,1,0,0,0,33,37,5,22,0,0,34,36,5,7,0,0,35,34,1,0,0,0,36,39,1,0,
-  	0,0,37,35,1,0,0,0,37,38,1,0,0,0,38,5,1,0,0,0,39,37,1,0,0,0,40,41,5,22,
-  	0,0,41,42,5,16,0,0,42,43,3,4,2,0,43,7,1,0,0,0,44,47,3,6,3,0,45,47,5,18,
-  	0,0,46,44,1,0,0,0,46,45,1,0,0,0,47,9,1,0,0,0,48,49,5,14,0,0,49,50,5,22,
-  	0,0,50,59,5,9,0,0,51,56,3,8,4,0,52,53,5,11,0,0,53,55,3,8,4,0,54,52,1,
-  	0,0,0,55,58,1,0,0,0,56,54,1,0,0,0,56,57,1,0,0,0,57,60,1,0,0,0,58,56,1,
-  	0,0,0,59,51,1,0,0,0,59,60,1,0,0,0,60,61,1,0,0,0,61,62,5,10,0,0,62,63,
-  	5,15,0,0,63,64,3,4,2,0,64,65,5,12,0,0,65,11,1,0,0,0,66,67,5,17,0,0,67,
-  	68,3,18,9,0,68,69,5,12,0,0,69,13,1,0,0,0,70,71,5,22,0,0,71,72,5,4,0,0,
-  	72,73,3,18,9,0,73,74,5,12,0,0,74,81,1,0,0,0,75,76,3,18,9,0,76,77,5,12,
-  	0,0,77,81,1,0,0,0,78,81,3,10,5,0,79,81,3,12,6,0,80,70,1,0,0,0,80,75,1,
-  	0,0,0,80,78,1,0,0,0,80,79,1,0,0,0,81,15,1,0,0,0,82,83,5,13,0,0,83,84,
-  	5,22,0,0,84,93,5,9,0,0,85,90,3,6,3,0,86,87,5,11,0,0,87,89,3,6,3,0,88,
-  	86,1,0,0,0,89,92,1,0,0,0,90,88,1,0,0,0,90,91,1,0,0,0,91,94,1,0,0,0,92,
-  	90,1,0,0,0,93,85,1,0,0,0,93,94,1,0,0,0,94,95,1,0,0,0,95,96,5,10,0,0,96,
-  	97,5,15,0,0,97,98,5,22,0,0,98,102,5,19,0,0,99,101,3,14,7,0,100,99,1,0,
-  	0,0,101,104,1,0,0,0,102,100,1,0,0,0,102,103,1,0,0,0,103,105,1,0,0,0,104,
-  	102,1,0,0,0,105,106,5,20,0,0,106,17,1,0,0,0,107,108,6,9,-1,0,108,119,
-  	5,22,0,0,109,119,5,21,0,0,110,119,3,20,10,0,111,112,5,3,0,0,112,119,3,
-  	18,9,10,113,114,5,9,0,0,114,115,3,18,9,0,115,116,5,10,0,0,116,119,1,0,
-  	0,0,117,119,5,24,0,0,118,107,1,0,0,0,118,109,1,0,0,0,118,110,1,0,0,0,
-  	118,111,1,0,0,0,118,113,1,0,0,0,118,117,1,0,0,0,119,146,1,0,0,0,120,121,
-  	10,9,0,0,121,122,5,1,0,0,122,145,3,18,9,10,123,124,10,8,0,0,124,125,5,
-  	2,0,0,125,145,3,18,9,9,126,127,10,7,0,0,127,128,5,7,0,0,128,145,3,18,
-  	9,8,129,130,10,6,0,0,130,131,5,8,0,0,131,145,3,18,9,7,132,133,10,5,0,
-  	0,133,134,5,5,0,0,134,145,3,18,9,6,135,136,10,4,0,0,136,137,5,6,0,0,137,
-  	145,3,18,9,5,138,139,10,3,0,0,139,140,5,15,0,0,140,141,5,9,0,0,141,142,
-  	3,18,9,0,142,143,5,10,0,0,143,145,1,0,0,0,144,120,1,0,0,0,144,123,1,0,
-  	0,0,144,126,1,0,0,0,144,129,1,0,0,0,144,132,1,0,0,0,144,135,1,0,0,0,144,
-  	138,1,0,0,0,145,148,1,0,0,0,146,144,1,0,0,0,146,147,1,0,0,0,147,19,1,
-  	0,0,0,148,146,1,0,0,0,149,150,5,22,0,0,150,151,5,9,0,0,151,156,3,18,9,
-  	0,152,153,5,11,0,0,153,155,3,18,9,0,154,152,1,0,0,0,155,158,1,0,0,0,156,
-  	154,1,0,0,0,156,157,1,0,0,0,157,159,1,0,0,0,158,156,1,0,0,0,159,160,5,
-  	10,0,0,160,21,1,0,0,0,14,24,26,37,46,56,59,80,90,93,102,118,144,146,156
+  	4,1,25,179,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,
+  	7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,1,0,1,0,5,0,29,8,
+  	0,10,0,12,0,32,9,0,1,0,1,0,1,1,1,1,1,2,1,2,5,2,40,8,2,10,2,12,2,43,9,
+  	2,1,3,1,3,1,3,1,3,1,4,1,4,3,4,51,8,4,1,5,1,5,1,5,1,5,1,5,1,5,5,5,59,8,
+  	5,10,5,12,5,62,9,5,3,5,64,8,5,1,5,1,5,1,5,1,5,1,5,1,6,1,6,1,6,1,6,1,7,
+  	1,7,1,7,1,7,1,7,1,8,1,8,1,8,1,8,1,8,1,9,1,9,1,9,1,9,1,9,1,9,1,9,3,9,92,
+  	8,9,1,10,1,10,1,10,1,10,1,10,1,10,5,10,100,8,10,10,10,12,10,103,9,10,
+  	3,10,105,8,10,1,10,1,10,1,10,1,10,1,10,5,10,112,8,10,10,10,12,10,115,
+  	9,10,1,10,1,10,1,11,1,11,1,11,1,11,1,11,1,11,4,11,125,8,11,11,11,12,11,
+  	126,1,11,1,11,1,11,1,11,1,11,1,11,1,11,3,11,136,8,11,1,11,1,11,1,11,1,
+  	11,1,11,1,11,1,11,1,11,1,11,1,11,1,11,1,11,1,11,1,11,1,11,1,11,1,11,1,
+  	11,1,11,1,11,1,11,1,11,1,11,1,11,5,11,162,8,11,10,11,12,11,165,9,11,1,
+  	12,1,12,1,12,1,12,1,12,5,12,172,8,12,10,12,12,12,175,9,12,1,12,1,12,1,
+  	12,0,1,22,13,0,2,4,6,8,10,12,14,16,18,20,22,24,0,0,193,0,30,1,0,0,0,2,
+  	35,1,0,0,0,4,37,1,0,0,0,6,44,1,0,0,0,8,50,1,0,0,0,10,52,1,0,0,0,12,70,
+  	1,0,0,0,14,74,1,0,0,0,16,79,1,0,0,0,18,91,1,0,0,0,20,93,1,0,0,0,22,135,
+  	1,0,0,0,24,166,1,0,0,0,26,29,3,18,9,0,27,29,3,20,10,0,28,26,1,0,0,0,28,
+  	27,1,0,0,0,29,32,1,0,0,0,30,28,1,0,0,0,30,31,1,0,0,0,31,33,1,0,0,0,32,
+  	30,1,0,0,0,33,34,5,0,0,1,34,1,1,0,0,0,35,36,5,23,0,0,36,3,1,0,0,0,37,
+  	41,5,23,0,0,38,40,5,7,0,0,39,38,1,0,0,0,40,43,1,0,0,0,41,39,1,0,0,0,41,
+  	42,1,0,0,0,42,5,1,0,0,0,43,41,1,0,0,0,44,45,5,23,0,0,45,46,5,17,0,0,46,
+  	47,3,4,2,0,47,7,1,0,0,0,48,51,3,6,3,0,49,51,5,19,0,0,50,48,1,0,0,0,50,
+  	49,1,0,0,0,51,9,1,0,0,0,52,53,5,14,0,0,53,54,5,23,0,0,54,63,5,9,0,0,55,
+  	60,3,8,4,0,56,57,5,11,0,0,57,59,3,8,4,0,58,56,1,0,0,0,59,62,1,0,0,0,60,
+  	58,1,0,0,0,60,61,1,0,0,0,61,64,1,0,0,0,62,60,1,0,0,0,63,55,1,0,0,0,63,
+  	64,1,0,0,0,64,65,1,0,0,0,65,66,5,10,0,0,66,67,5,15,0,0,67,68,3,4,2,0,
+  	68,69,5,12,0,0,69,11,1,0,0,0,70,71,5,18,0,0,71,72,3,22,11,0,72,73,5,12,
+  	0,0,73,13,1,0,0,0,74,75,5,23,0,0,75,76,5,16,0,0,76,77,3,22,11,0,77,78,
+  	5,12,0,0,78,15,1,0,0,0,79,80,5,23,0,0,80,81,5,4,0,0,81,82,3,22,11,0,82,
+  	83,5,12,0,0,83,17,1,0,0,0,84,92,3,14,7,0,85,92,3,16,8,0,86,87,3,22,11,
+  	0,87,88,5,12,0,0,88,92,1,0,0,0,89,92,3,10,5,0,90,92,3,12,6,0,91,84,1,
+  	0,0,0,91,85,1,0,0,0,91,86,1,0,0,0,91,89,1,0,0,0,91,90,1,0,0,0,92,19,1,
+  	0,0,0,93,94,5,13,0,0,94,95,5,23,0,0,95,104,5,9,0,0,96,101,3,6,3,0,97,
+  	98,5,11,0,0,98,100,3,6,3,0,99,97,1,0,0,0,100,103,1,0,0,0,101,99,1,0,0,
+  	0,101,102,1,0,0,0,102,105,1,0,0,0,103,101,1,0,0,0,104,96,1,0,0,0,104,
+  	105,1,0,0,0,105,106,1,0,0,0,106,107,5,10,0,0,107,108,5,15,0,0,108,109,
+  	5,23,0,0,109,113,5,20,0,0,110,112,3,18,9,0,111,110,1,0,0,0,112,115,1,
+  	0,0,0,113,111,1,0,0,0,113,114,1,0,0,0,114,116,1,0,0,0,115,113,1,0,0,0,
+  	116,117,5,21,0,0,117,21,1,0,0,0,118,119,6,11,-1,0,119,136,5,23,0,0,120,
+  	136,5,22,0,0,121,136,5,25,0,0,122,136,3,24,12,0,123,125,5,7,0,0,124,123,
+  	1,0,0,0,125,126,1,0,0,0,126,124,1,0,0,0,126,127,1,0,0,0,127,128,1,0,0,
+  	0,128,136,3,22,11,10,129,130,5,3,0,0,130,136,3,22,11,9,131,132,5,9,0,
+  	0,132,133,3,22,11,0,133,134,5,10,0,0,134,136,1,0,0,0,135,118,1,0,0,0,
+  	135,120,1,0,0,0,135,121,1,0,0,0,135,122,1,0,0,0,135,124,1,0,0,0,135,129,
+  	1,0,0,0,135,131,1,0,0,0,136,163,1,0,0,0,137,138,10,8,0,0,138,139,5,1,
+  	0,0,139,162,3,22,11,9,140,141,10,7,0,0,141,142,5,2,0,0,142,162,3,22,11,
+  	8,143,144,10,6,0,0,144,145,5,7,0,0,145,162,3,22,11,7,146,147,10,5,0,0,
+  	147,148,5,8,0,0,148,162,3,22,11,6,149,150,10,4,0,0,150,151,5,5,0,0,151,
+  	162,3,22,11,5,152,153,10,3,0,0,153,154,5,6,0,0,154,162,3,22,11,4,155,
+  	156,10,2,0,0,156,157,5,15,0,0,157,158,5,9,0,0,158,159,3,22,11,0,159,160,
+  	5,10,0,0,160,162,1,0,0,0,161,137,1,0,0,0,161,140,1,0,0,0,161,143,1,0,
+  	0,0,161,146,1,0,0,0,161,149,1,0,0,0,161,152,1,0,0,0,161,155,1,0,0,0,162,
+  	165,1,0,0,0,163,161,1,0,0,0,163,164,1,0,0,0,164,23,1,0,0,0,165,163,1,
+  	0,0,0,166,167,5,23,0,0,167,168,5,9,0,0,168,173,3,22,11,0,169,170,5,11,
+  	0,0,170,172,3,22,11,0,171,169,1,0,0,0,172,175,1,0,0,0,173,171,1,0,0,0,
+  	173,174,1,0,0,0,174,176,1,0,0,0,175,173,1,0,0,0,176,177,5,10,0,0,177,
+  	25,1,0,0,0,15,28,30,41,50,60,63,91,101,104,113,126,135,161,163,173
   };
   staticData->serializedATN = antlr4::atn::SerializedATNView(serializedATNSegment, sizeof(serializedATNSegment) / sizeof(serializedATNSegment[0]));
 
@@ -218,28 +225,29 @@ LucidusParser::ProgramContext* LucidusParser::program() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(26);
+    setState(30);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while ((((_la & ~ 0x3fULL) == 0) &&
-      ((1ULL << _la) & 23224840) != 0)) {
-      setState(24);
+      ((1ULL << _la) & 46424712) != 0)) {
+      setState(28);
       _errHandler->sync(this);
       switch (_input->LA(1)) {
         case LucidusParser::NOT:
+        case LucidusParser::STAR:
         case LucidusParser::OPAREN:
         case LucidusParser::DECL:
         case LucidusParser::RETURN:
         case LucidusParser::INT:
         case LucidusParser::ID:
         case LucidusParser::STRING: {
-          setState(22);
+          setState(26);
           stat();
           break;
         }
 
         case LucidusParser::DEF: {
-          setState(23);
+          setState(27);
           def();
           break;
         }
@@ -247,11 +255,11 @@ LucidusParser::ProgramContext* LucidusParser::program() {
       default:
         throw NoViableAltException(this);
       }
-      setState(28);
+      setState(32);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
-    setState(29);
+    setState(33);
     match(LucidusParser::EOF);
    
   }
@@ -300,7 +308,7 @@ LucidusParser::RawtypeContext* LucidusParser::rawtype() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(31);
+    setState(35);
     match(LucidusParser::ID);
    
   }
@@ -358,15 +366,15 @@ LucidusParser::TypeContext* LucidusParser::type() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(33);
-    match(LucidusParser::ID);
     setState(37);
+    match(LucidusParser::ID);
+    setState(41);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == LucidusParser::STAR) {
-      setState(34);
+      setState(38);
       match(LucidusParser::STAR);
-      setState(39);
+      setState(43);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -425,11 +433,11 @@ LucidusParser::IdecContext* LucidusParser::idec() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(40);
+    setState(44);
     match(LucidusParser::ID);
-    setState(41);
+    setState(45);
     match(LucidusParser::COL);
-    setState(42);
+    setState(46);
     type();
    
   }
@@ -482,17 +490,17 @@ LucidusParser::ParamContext* LucidusParser::param() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(46);
+    setState(50);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
       case LucidusParser::ID: {
-        setState(44);
+        setState(48);
         idec();
         break;
       }
 
       case LucidusParser::DOTS: {
-        setState(45);
+        setState(49);
         match(LucidusParser::DOTS);
         break;
       }
@@ -588,41 +596,41 @@ LucidusParser::DecContext* LucidusParser::dec() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(48);
+    setState(52);
     match(LucidusParser::DECL);
-    setState(49);
+    setState(53);
     match(LucidusParser::ID);
-    setState(50);
+    setState(54);
     match(LucidusParser::OPAREN);
-    setState(59);
+    setState(63);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == LucidusParser::DOTS
 
     || _la == LucidusParser::ID) {
-      setState(51);
+      setState(55);
       param();
-      setState(56);
+      setState(60);
       _errHandler->sync(this);
       _la = _input->LA(1);
       while (_la == LucidusParser::COMMA) {
-        setState(52);
+        setState(56);
         match(LucidusParser::COMMA);
-        setState(53);
+        setState(57);
         param();
-        setState(58);
+        setState(62);
         _errHandler->sync(this);
         _la = _input->LA(1);
       }
     }
-    setState(61);
+    setState(65);
     match(LucidusParser::CPAREN);
-    setState(62);
+    setState(66);
     match(LucidusParser::ARROW);
-    setState(63);
+    setState(67);
     type();
-    setState(64);
+    setState(68);
     match(LucidusParser::SEMI);
    
   }
@@ -679,11 +687,145 @@ LucidusParser::RetContext* LucidusParser::ret() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(66);
+    setState(70);
     match(LucidusParser::RETURN);
-    setState(67);
+    setState(71);
     expr(0);
-    setState(68);
+    setState(72);
+    match(LucidusParser::SEMI);
+   
+  }
+  catch (RecognitionException &e) {
+    _errHandler->reportError(this, e);
+    _localctx->exception = std::current_exception();
+    _errHandler->recover(this, _localctx->exception);
+  }
+
+  return _localctx;
+}
+
+//----------------- VdecContext ------------------------------------------------------------------
+
+LucidusParser::VdecContext::VdecContext(ParserRuleContext *parent, size_t invokingState)
+  : ParserRuleContext(parent, invokingState) {
+}
+
+tree::TerminalNode* LucidusParser::VdecContext::ID() {
+  return getToken(LucidusParser::ID, 0);
+}
+
+tree::TerminalNode* LucidusParser::VdecContext::DCOL() {
+  return getToken(LucidusParser::DCOL, 0);
+}
+
+LucidusParser::ExprContext* LucidusParser::VdecContext::expr() {
+  return getRuleContext<LucidusParser::ExprContext>(0);
+}
+
+tree::TerminalNode* LucidusParser::VdecContext::SEMI() {
+  return getToken(LucidusParser::SEMI, 0);
+}
+
+
+size_t LucidusParser::VdecContext::getRuleIndex() const {
+  return LucidusParser::RuleVdec;
+}
+
+
+std::any LucidusParser::VdecContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<LucidusParserVisitor*>(visitor))
+    return parserVisitor->visitVdec(this);
+  else
+    return visitor->visitChildren(this);
+}
+
+LucidusParser::VdecContext* LucidusParser::vdec() {
+  VdecContext *_localctx = _tracker.createInstance<VdecContext>(_ctx, getState());
+  enterRule(_localctx, 14, LucidusParser::RuleVdec);
+
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
+  auto onExit = finally([=] {
+#endif
+    exitRule();
+  });
+  try {
+    enterOuterAlt(_localctx, 1);
+    setState(74);
+    match(LucidusParser::ID);
+    setState(75);
+    match(LucidusParser::DCOL);
+    setState(76);
+    expr(0);
+    setState(77);
+    match(LucidusParser::SEMI);
+   
+  }
+  catch (RecognitionException &e) {
+    _errHandler->reportError(this, e);
+    _localctx->exception = std::current_exception();
+    _errHandler->recover(this, _localctx->exception);
+  }
+
+  return _localctx;
+}
+
+//----------------- VdefContext ------------------------------------------------------------------
+
+LucidusParser::VdefContext::VdefContext(ParserRuleContext *parent, size_t invokingState)
+  : ParserRuleContext(parent, invokingState) {
+}
+
+tree::TerminalNode* LucidusParser::VdefContext::ID() {
+  return getToken(LucidusParser::ID, 0);
+}
+
+tree::TerminalNode* LucidusParser::VdefContext::EQ() {
+  return getToken(LucidusParser::EQ, 0);
+}
+
+LucidusParser::ExprContext* LucidusParser::VdefContext::expr() {
+  return getRuleContext<LucidusParser::ExprContext>(0);
+}
+
+tree::TerminalNode* LucidusParser::VdefContext::SEMI() {
+  return getToken(LucidusParser::SEMI, 0);
+}
+
+
+size_t LucidusParser::VdefContext::getRuleIndex() const {
+  return LucidusParser::RuleVdef;
+}
+
+
+std::any LucidusParser::VdefContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<LucidusParserVisitor*>(visitor))
+    return parserVisitor->visitVdef(this);
+  else
+    return visitor->visitChildren(this);
+}
+
+LucidusParser::VdefContext* LucidusParser::vdef() {
+  VdefContext *_localctx = _tracker.createInstance<VdefContext>(_ctx, getState());
+  enterRule(_localctx, 16, LucidusParser::RuleVdef);
+
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
+  auto onExit = finally([=] {
+#endif
+    exitRule();
+  });
+  try {
+    enterOuterAlt(_localctx, 1);
+    setState(79);
+    match(LucidusParser::ID);
+    setState(80);
+    match(LucidusParser::EQ);
+    setState(81);
+    expr(0);
+    setState(82);
     match(LucidusParser::SEMI);
    
   }
@@ -702,12 +844,12 @@ LucidusParser::StatContext::StatContext(ParserRuleContext *parent, size_t invoki
   : ParserRuleContext(parent, invokingState) {
 }
 
-tree::TerminalNode* LucidusParser::StatContext::ID() {
-  return getToken(LucidusParser::ID, 0);
+LucidusParser::VdecContext* LucidusParser::StatContext::vdec() {
+  return getRuleContext<LucidusParser::VdecContext>(0);
 }
 
-tree::TerminalNode* LucidusParser::StatContext::EQ() {
-  return getToken(LucidusParser::EQ, 0);
+LucidusParser::VdefContext* LucidusParser::StatContext::vdef() {
+  return getRuleContext<LucidusParser::VdefContext>(0);
 }
 
 LucidusParser::ExprContext* LucidusParser::StatContext::expr() {
@@ -741,7 +883,7 @@ std::any LucidusParser::StatContext::accept(tree::ParseTreeVisitor *visitor) {
 
 LucidusParser::StatContext* LucidusParser::stat() {
   StatContext *_localctx = _tracker.createInstance<StatContext>(_ctx, getState());
-  enterRule(_localctx, 14, LucidusParser::RuleStat);
+  enterRule(_localctx, 18, LucidusParser::RuleStat);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -751,41 +893,42 @@ LucidusParser::StatContext* LucidusParser::stat() {
     exitRule();
   });
   try {
-    setState(80);
+    setState(91);
     _errHandler->sync(this);
     switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 6, _ctx)) {
     case 1: {
       enterOuterAlt(_localctx, 1);
-      setState(70);
-      match(LucidusParser::ID);
-      setState(71);
-      match(LucidusParser::EQ);
-      setState(72);
-      expr(0);
-      setState(73);
-      match(LucidusParser::SEMI);
+      setState(84);
+      vdec();
       break;
     }
 
     case 2: {
       enterOuterAlt(_localctx, 2);
-      setState(75);
-      expr(0);
-      setState(76);
-      match(LucidusParser::SEMI);
+      setState(85);
+      vdef();
       break;
     }
 
     case 3: {
       enterOuterAlt(_localctx, 3);
-      setState(78);
-      dec();
+      setState(86);
+      expr(0);
+      setState(87);
+      match(LucidusParser::SEMI);
       break;
     }
 
     case 4: {
       enterOuterAlt(_localctx, 4);
-      setState(79);
+      setState(89);
+      dec();
+      break;
+    }
+
+    case 5: {
+      enterOuterAlt(_localctx, 5);
+      setState(90);
       ret();
       break;
     }
@@ -881,7 +1024,7 @@ std::any LucidusParser::DefContext::accept(tree::ParseTreeVisitor *visitor) {
 
 LucidusParser::DefContext* LucidusParser::def() {
   DefContext *_localctx = _tracker.createInstance<DefContext>(_ctx, getState());
-  enterRule(_localctx, 16, LucidusParser::RuleDef);
+  enterRule(_localctx, 20, LucidusParser::RuleDef);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -893,52 +1036,52 @@ LucidusParser::DefContext* LucidusParser::def() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(82);
-    match(LucidusParser::DEF);
-    setState(83);
-    match(LucidusParser::ID);
-    setState(84);
-    match(LucidusParser::OPAREN);
     setState(93);
+    match(LucidusParser::DEF);
+    setState(94);
+    match(LucidusParser::ID);
+    setState(95);
+    match(LucidusParser::OPAREN);
+    setState(104);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == LucidusParser::ID) {
-      setState(85);
+      setState(96);
       idec();
-      setState(90);
+      setState(101);
       _errHandler->sync(this);
       _la = _input->LA(1);
       while (_la == LucidusParser::COMMA) {
-        setState(86);
+        setState(97);
         match(LucidusParser::COMMA);
-        setState(87);
+        setState(98);
         idec();
-        setState(92);
+        setState(103);
         _errHandler->sync(this);
         _la = _input->LA(1);
       }
     }
-    setState(95);
+    setState(106);
     match(LucidusParser::CPAREN);
-    setState(96);
+    setState(107);
     match(LucidusParser::ARROW);
-    setState(97);
+    setState(108);
     match(LucidusParser::ID);
-    setState(98);
+    setState(109);
     match(LucidusParser::LCURLY);
-    setState(102);
+    setState(113);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while ((((_la & ~ 0x3fULL) == 0) &&
-      ((1ULL << _la) & 23216648) != 0)) {
-      setState(99);
+      ((1ULL << _la) & 46416520) != 0)) {
+      setState(110);
       stat();
-      setState(104);
+      setState(115);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
-    setState(105);
+    setState(116);
     match(LucidusParser::RCURLY);
    
   }
@@ -965,12 +1108,12 @@ tree::TerminalNode* LucidusParser::ExprContext::INT() {
   return getToken(LucidusParser::INT, 0);
 }
 
-LucidusParser::FuncContext* LucidusParser::ExprContext::func() {
-  return getRuleContext<LucidusParser::FuncContext>(0);
+tree::TerminalNode* LucidusParser::ExprContext::STRING() {
+  return getToken(LucidusParser::STRING, 0);
 }
 
-tree::TerminalNode* LucidusParser::ExprContext::NOT() {
-  return getToken(LucidusParser::NOT, 0);
+LucidusParser::FuncContext* LucidusParser::ExprContext::func() {
+  return getRuleContext<LucidusParser::FuncContext>(0);
 }
 
 std::vector<LucidusParser::ExprContext *> LucidusParser::ExprContext::expr() {
@@ -981,6 +1124,18 @@ LucidusParser::ExprContext* LucidusParser::ExprContext::expr(size_t i) {
   return getRuleContext<LucidusParser::ExprContext>(i);
 }
 
+std::vector<tree::TerminalNode *> LucidusParser::ExprContext::STAR() {
+  return getTokens(LucidusParser::STAR);
+}
+
+tree::TerminalNode* LucidusParser::ExprContext::STAR(size_t i) {
+  return getToken(LucidusParser::STAR, i);
+}
+
+tree::TerminalNode* LucidusParser::ExprContext::NOT() {
+  return getToken(LucidusParser::NOT, 0);
+}
+
 tree::TerminalNode* LucidusParser::ExprContext::OPAREN() {
   return getToken(LucidusParser::OPAREN, 0);
 }
@@ -989,20 +1144,12 @@ tree::TerminalNode* LucidusParser::ExprContext::CPAREN() {
   return getToken(LucidusParser::CPAREN, 0);
 }
 
-tree::TerminalNode* LucidusParser::ExprContext::STRING() {
-  return getToken(LucidusParser::STRING, 0);
-}
-
 tree::TerminalNode* LucidusParser::ExprContext::AND() {
   return getToken(LucidusParser::AND, 0);
 }
 
 tree::TerminalNode* LucidusParser::ExprContext::OR() {
   return getToken(LucidusParser::OR, 0);
-}
-
-tree::TerminalNode* LucidusParser::ExprContext::STAR() {
-  return getToken(LucidusParser::STAR, 0);
 }
 
 tree::TerminalNode* LucidusParser::ExprContext::DIV() {
@@ -1045,8 +1192,8 @@ LucidusParser::ExprContext* LucidusParser::expr(int precedence) {
   LucidusParser::ExprContext *_localctx = _tracker.createInstance<ExprContext>(_ctx, parentState);
   LucidusParser::ExprContext *previousContext = _localctx;
   (void)previousContext; // Silence compiler, in case the context is not used by generated code.
-  size_t startState = 18;
-  enterRecursionRule(_localctx, 18, LucidusParser::RuleExpr, precedence);
+  size_t startState = 22;
+  enterRecursionRule(_localctx, 22, LucidusParser::RuleExpr, precedence);
 
     
 
@@ -1060,48 +1207,72 @@ LucidusParser::ExprContext* LucidusParser::expr(int precedence) {
   try {
     size_t alt;
     enterOuterAlt(_localctx, 1);
-    setState(118);
+    setState(135);
     _errHandler->sync(this);
-    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 10, _ctx)) {
+    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 11, _ctx)) {
     case 1: {
-      setState(108);
+      setState(119);
       match(LucidusParser::ID);
       break;
     }
 
     case 2: {
-      setState(109);
+      setState(120);
       match(LucidusParser::INT);
       break;
     }
 
     case 3: {
-      setState(110);
-      func();
+      setState(121);
+      match(LucidusParser::STRING);
       break;
     }
 
     case 4: {
-      setState(111);
-      match(LucidusParser::NOT);
-      setState(112);
-      expr(10);
+      setState(122);
+      func();
       break;
     }
 
     case 5: {
-      setState(113);
-      match(LucidusParser::OPAREN);
-      setState(114);
-      expr(0);
-      setState(115);
-      match(LucidusParser::CPAREN);
+      setState(124); 
+      _errHandler->sync(this);
+      alt = 1;
+      do {
+        switch (alt) {
+          case 1: {
+                setState(123);
+                match(LucidusParser::STAR);
+                break;
+              }
+
+        default:
+          throw NoViableAltException(this);
+        }
+        setState(126); 
+        _errHandler->sync(this);
+        alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 10, _ctx);
+      } while (alt != 2 && alt != atn::ATN::INVALID_ALT_NUMBER);
+      setState(128);
+      expr(10);
       break;
     }
 
     case 6: {
-      setState(117);
-      match(LucidusParser::STRING);
+      setState(129);
+      match(LucidusParser::NOT);
+      setState(130);
+      expr(9);
+      break;
+    }
+
+    case 7: {
+      setState(131);
+      match(LucidusParser::OPAREN);
+      setState(132);
+      expr(0);
+      setState(133);
+      match(LucidusParser::CPAREN);
       break;
     }
 
@@ -1109,108 +1280,108 @@ LucidusParser::ExprContext* LucidusParser::expr(int precedence) {
       break;
     }
     _ctx->stop = _input->LT(-1);
-    setState(146);
+    setState(163);
     _errHandler->sync(this);
-    alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 12, _ctx);
+    alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 13, _ctx);
     while (alt != 2 && alt != atn::ATN::INVALID_ALT_NUMBER) {
       if (alt == 1) {
         if (!_parseListeners.empty())
           triggerExitRuleEvent();
         previousContext = _localctx;
-        setState(144);
+        setState(161);
         _errHandler->sync(this);
-        switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 11, _ctx)) {
+        switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 12, _ctx)) {
         case 1: {
           _localctx = _tracker.createInstance<ExprContext>(parentContext, parentState);
           pushNewRecursionContext(_localctx, startState, RuleExpr);
-          setState(120);
+          setState(137);
 
-          if (!(precpred(_ctx, 9))) throw FailedPredicateException(this, "precpred(_ctx, 9)");
-          setState(121);
+          if (!(precpred(_ctx, 8))) throw FailedPredicateException(this, "precpred(_ctx, 8)");
+          setState(138);
           match(LucidusParser::AND);
-          setState(122);
-          expr(10);
+          setState(139);
+          expr(9);
           break;
         }
 
         case 2: {
           _localctx = _tracker.createInstance<ExprContext>(parentContext, parentState);
           pushNewRecursionContext(_localctx, startState, RuleExpr);
-          setState(123);
+          setState(140);
 
-          if (!(precpred(_ctx, 8))) throw FailedPredicateException(this, "precpred(_ctx, 8)");
-          setState(124);
+          if (!(precpred(_ctx, 7))) throw FailedPredicateException(this, "precpred(_ctx, 7)");
+          setState(141);
           match(LucidusParser::OR);
-          setState(125);
-          expr(9);
+          setState(142);
+          expr(8);
           break;
         }
 
         case 3: {
           _localctx = _tracker.createInstance<ExprContext>(parentContext, parentState);
           pushNewRecursionContext(_localctx, startState, RuleExpr);
-          setState(126);
+          setState(143);
 
-          if (!(precpred(_ctx, 7))) throw FailedPredicateException(this, "precpred(_ctx, 7)");
-          setState(127);
+          if (!(precpred(_ctx, 6))) throw FailedPredicateException(this, "precpred(_ctx, 6)");
+          setState(144);
           match(LucidusParser::STAR);
-          setState(128);
-          expr(8);
+          setState(145);
+          expr(7);
           break;
         }
 
         case 4: {
           _localctx = _tracker.createInstance<ExprContext>(parentContext, parentState);
           pushNewRecursionContext(_localctx, startState, RuleExpr);
-          setState(129);
+          setState(146);
 
-          if (!(precpred(_ctx, 6))) throw FailedPredicateException(this, "precpred(_ctx, 6)");
-          setState(130);
+          if (!(precpred(_ctx, 5))) throw FailedPredicateException(this, "precpred(_ctx, 5)");
+          setState(147);
           match(LucidusParser::DIV);
-          setState(131);
-          expr(7);
+          setState(148);
+          expr(6);
           break;
         }
 
         case 5: {
           _localctx = _tracker.createInstance<ExprContext>(parentContext, parentState);
           pushNewRecursionContext(_localctx, startState, RuleExpr);
-          setState(132);
+          setState(149);
 
-          if (!(precpred(_ctx, 5))) throw FailedPredicateException(this, "precpred(_ctx, 5)");
-          setState(133);
+          if (!(precpred(_ctx, 4))) throw FailedPredicateException(this, "precpred(_ctx, 4)");
+          setState(150);
           match(LucidusParser::PLUS);
-          setState(134);
-          expr(6);
+          setState(151);
+          expr(5);
           break;
         }
 
         case 6: {
           _localctx = _tracker.createInstance<ExprContext>(parentContext, parentState);
           pushNewRecursionContext(_localctx, startState, RuleExpr);
-          setState(135);
+          setState(152);
 
-          if (!(precpred(_ctx, 4))) throw FailedPredicateException(this, "precpred(_ctx, 4)");
-          setState(136);
+          if (!(precpred(_ctx, 3))) throw FailedPredicateException(this, "precpred(_ctx, 3)");
+          setState(153);
           match(LucidusParser::SUB);
-          setState(137);
-          expr(5);
+          setState(154);
+          expr(4);
           break;
         }
 
         case 7: {
           _localctx = _tracker.createInstance<ExprContext>(parentContext, parentState);
           pushNewRecursionContext(_localctx, startState, RuleExpr);
-          setState(138);
+          setState(155);
 
-          if (!(precpred(_ctx, 3))) throw FailedPredicateException(this, "precpred(_ctx, 3)");
-          setState(139);
+          if (!(precpred(_ctx, 2))) throw FailedPredicateException(this, "precpred(_ctx, 2)");
+          setState(156);
           match(LucidusParser::ARROW);
-          setState(140);
+          setState(157);
           match(LucidusParser::OPAREN);
-          setState(141);
+          setState(158);
           expr(0);
-          setState(142);
+          setState(159);
           match(LucidusParser::CPAREN);
           break;
         }
@@ -1219,9 +1390,9 @@ LucidusParser::ExprContext* LucidusParser::expr(int precedence) {
           break;
         } 
       }
-      setState(148);
+      setState(165);
       _errHandler->sync(this);
-      alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 12, _ctx);
+      alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 13, _ctx);
     }
   }
   catch (RecognitionException &e) {
@@ -1281,7 +1452,7 @@ std::any LucidusParser::FuncContext::accept(tree::ParseTreeVisitor *visitor) {
 
 LucidusParser::FuncContext* LucidusParser::func() {
   FuncContext *_localctx = _tracker.createInstance<FuncContext>(_ctx, getState());
-  enterRule(_localctx, 20, LucidusParser::RuleFunc);
+  enterRule(_localctx, 24, LucidusParser::RuleFunc);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -1293,25 +1464,25 @@ LucidusParser::FuncContext* LucidusParser::func() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(149);
+    setState(166);
     match(LucidusParser::ID);
-    setState(150);
+    setState(167);
     match(LucidusParser::OPAREN);
-    setState(151);
+    setState(168);
     expr(0);
-    setState(156);
+    setState(173);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == LucidusParser::COMMA) {
-      setState(152);
+      setState(169);
       match(LucidusParser::COMMA);
-      setState(153);
+      setState(170);
       expr(0);
-      setState(158);
+      setState(175);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
-    setState(159);
+    setState(176);
     match(LucidusParser::CPAREN);
    
   }
@@ -1326,7 +1497,7 @@ LucidusParser::FuncContext* LucidusParser::func() {
 
 bool LucidusParser::sempred(RuleContext *context, size_t ruleIndex, size_t predicateIndex) {
   switch (ruleIndex) {
-    case 9: return exprSempred(antlrcpp::downCast<ExprContext *>(context), predicateIndex);
+    case 11: return exprSempred(antlrcpp::downCast<ExprContext *>(context), predicateIndex);
 
   default:
     break;
@@ -1336,13 +1507,13 @@ bool LucidusParser::sempred(RuleContext *context, size_t ruleIndex, size_t predi
 
 bool LucidusParser::exprSempred(ExprContext *_localctx, size_t predicateIndex) {
   switch (predicateIndex) {
-    case 0: return precpred(_ctx, 9);
-    case 1: return precpred(_ctx, 8);
-    case 2: return precpred(_ctx, 7);
-    case 3: return precpred(_ctx, 6);
-    case 4: return precpred(_ctx, 5);
-    case 5: return precpred(_ctx, 4);
-    case 6: return precpred(_ctx, 3);
+    case 0: return precpred(_ctx, 8);
+    case 1: return precpred(_ctx, 7);
+    case 2: return precpred(_ctx, 6);
+    case 3: return precpred(_ctx, 5);
+    case 4: return precpred(_ctx, 4);
+    case 5: return precpred(_ctx, 3);
+    case 6: return precpred(_ctx, 2);
 
   default:
     break;
