@@ -18,6 +18,7 @@ DEF: 'def';
 DECL: 'dec';
 ARROW: '->';
 DCOL: ':=';
+PTR: 'ptr';
 COL: ':';
 RETURN: 'return';
 DOTS: '...';

@@ -95,15 +95,30 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         auto ptr = controller->builder->CreateInBoundsGEP(global->getValueType(), global, {controller->builder->getInt32(0), controller->builder->getInt32(0)});
         return ptr;
     }else if(ctx->func() != nullptr) {
-        return visit(ctx->func());;
+        return visit(ctx->func());
     }else if(ctx->ID() != nullptr && ctx->children.size() == 1) {
         return (llvm::Value*) controller->builder->CreateLoad(((llvm::AllocaInst*)this->functionScope[ctx->ID()->getText()])->getAllocatedType(),this->functionScope[ctx->ID()->getText()]);
     }else if(ctx->PLUS() != nullptr) {
         return (llvm::Value*) controller->builder->CreateAdd(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))), std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
-    }else
-    // return (llvm::Value *)llvm::ConstantInt::get(llvm::Type::getInt32Ty(controller->ctx), 0);
-    // return llvm nullptr LOOOL
-    return (llvm::Value*) llvm::ConstantPointerNull::get(llvm::Type::getInt32PtrTy(controller->ctx));
+    }else if(ctx->PTR() != nullptr) {
+        // make ref
+        auto val = (llvm::Value*) std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));
+        auto valptrptr = controller->builder->CreateAlloca(val->getType(), nullptr);
+        controller->assignVariable((llvm::AllocaInst*)valptrptr, val);
+        return (llvm::Value*)valptrptr;
+        // return (llvm::Value*)llvm::ConstantPointerNull::get(llvm::Type::getInt32PtrTy(controller->ctx));
+    } else if (ctx->STAR(0) && ctx->children.size() == ctx->STAR().size() + 1) {
+        // make ref
+        auto val = (llvm::AllocaInst*) std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));
+        auto valptrptr = controller->builder->CreateAlloca(val->getAllocatedType(), nullptr);
+        controller->assignVariable((llvm::AllocaInst*)valptrptr, controller->getVariable(val));
+        return (llvm::Value*)valptrptr;
+    } else {
+        // return (llvm::Value *)llvm::ConstantInt::get(llvm::Type::getInt32Ty(controller->ctx), 0);
+        // return llvm nullptr LOOOL
+        return (llvm::Value*) llvm::ConstantPointerNull::get(llvm::Type::getInt32PtrTy(controller->ctx));
+    }
+
     // return visitChildren(ctx);
     // return  controller->builder->CreateCall(controller->module->getFunction("printf"), {});
 }

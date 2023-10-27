@@ -14,8 +14,8 @@ public:
   enum {
     AND = 1, OR = 2, NOT = 3, EQ = 4, PLUS = 5, SUB = 6, STAR = 7, DIV = 8, 
     OPAREN = 9, CPAREN = 10, COMMA = 11, SEMI = 12, DEF = 13, DECL = 14, 
-    ARROW = 15, DCOL = 16, COL = 17, RETURN = 18, DOTS = 19, LCURLY = 20, 
-    RCURLY = 21, INT = 22, ID = 23, WS = 24, STRING = 25
+    ARROW = 15, DCOL = 16, PTR = 17, COL = 18, RETURN = 19, DOTS = 20, LCURLY = 21, 
+    RCURLY = 22, INT = 23, ID = 24, WS = 25, STRING = 26
   };
 
   enum {
@@ -251,6 +251,7 @@ public:
     antlr4::tree::TerminalNode *INT();
     antlr4::tree::TerminalNode *STRING();
     FuncContext *func();
+    antlr4::tree::TerminalNode *PTR();
     std::vector<ExprContext *> expr();
     ExprContext* expr(size_t i);
     std::vector<antlr4::tree::TerminalNode *> STAR();

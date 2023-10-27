@@ -25,6 +25,7 @@ expr: ID
     | INT
     | STRING
     | func
+    | PTR expr
     | STAR+ expr
     | NOT expr
     | expr AND expr

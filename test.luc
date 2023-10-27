@@ -1,17 +1,12 @@
 dec printf(tmp:char*, ...) -> int;
 
-dec add(a:int, b:int) -> int;
-def add(a:int, b:int) -> int {
-    return a+b;
-}
-
 dec main() -> int;
 def main() -> int {
-    x:int := add(1,2);
     printf("Hello World\n");
-    printf("Programming my %dth \'compiler\'\n", x);
-    x = 4;
-    printf("After ~%d years of programming..\n", x);
-    x = 0;
-    return x;
+    printf("Programming my %dth \'compiler\'\n", 3);
+    printf("After ~%d years of programming..\n", 4);
+    x:int := 3;
+    y:int* := ptr x;
+    z:int := *y;
+    return 0;
 }
