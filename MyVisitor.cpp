@@ -36,11 +36,14 @@ antlrcpp::Any MyVisitor::visitDec(LucidusParser::DecContext *ctx) {
         llvm::Type* rtype = getTypes(ctx->type(), this->controller);
         std::vector<llvm::Type*> types;
         bool ellip = false;
-        for(int i = 0; i<ctx->param().size(); i++) {
-            if(ctx->param(i)->DOTS() != nullptr) { // fixed the typo here and used size() method
-                ellip = true;
-            }else
-            types.push_back(getTypes(ctx->param(i)->idec()->type(), this->controller));
+        std::cout << ctx->param().size() << std::endl;
+        if(ctx->param().size() !=0) {
+            for(int i = 0; i<ctx->param().size(); i++) {
+                if(ctx->param(i)->DOTS() != nullptr) { // fixed the typo here and used size() method
+                    ellip = true;
+                }else
+                types.push_back(getTypes(ctx->param(i)->idec()->type(), this->controller));
+            }
         }
         controller->declareFunction(functionName.c_str(), llvm::FunctionType::get(rtype, types, ellip));
         return visitChildren(ctx);
@@ -85,7 +88,7 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
     }else if(ctx->func() != nullptr) {
         return visit(ctx->func());;
     }else if(ctx->ID() != nullptr && ctx->children.size() == 1) {
-        // return controller->builder->CreateLoad(controller->namedValues[ctx->ID()->getText()]);
+        return (llvm::Value*) controller->builder->CreateLoad(((llvm::AllocaInst*)this->functionScope[ctx->ID()->getText()])->getAllocatedType(),this->functionScope[ctx->ID()->getText()]);
     }else
     // return (llvm::Value *)llvm::ConstantInt::get(llvm::Type::getInt32Ty(controller->ctx), 0);
     // return llvm nullptr LOOOL
@@ -124,14 +127,16 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
     }else if(ctx->vdec() != nullptr) {
         std::string name = ctx->vdec()->idec()->ID()->getText();
         llvm::Type* type = getTypes(ctx->vdec()->idec()->type(), this->controller);
-        llvm::Value* val = controller->builder->CreateAlloca(type, std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->vdec()->expr())), name);
-        // controller->namedValues[name] = val;
-        return val;
+        // llvm::Value* val = controller->builder->CreateAlloca(type, std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->vdec()->expr())), name);
+        llvm::AllocaInst* ptr = controller->declareVariable(name, type);
+        llvm::StoreInst* val = controller->assignVariable(ptr, std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->vdec()->expr())));
+        this->functionScope[name] = (llvm::Value*)ptr;
+        return ptr;
     }else if(ctx->vdef() != nullptr) {
         std::string name = ctx->vdef()->ID()->getText();
         llvm::Value* val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->vdef()->expr()));
-        // controller->namedValues[name] = val;
-        return val;
+        controller->assignVariable((llvm::AllocaInst*)this->functionScope[name], val);
+        return this->functionScope[name];
     }else
     return visitChildren(ctx);
 }

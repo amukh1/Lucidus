@@ -22,6 +22,8 @@
 #include "LucidusParserBaseVisitor.h"
 
 class MyVisitor : public LucidusParserBaseVisitor {
+std::map<std::string, llvm::Value*> globalScope;
+std::map<std::string, llvm::Value*> functionScope;
 public:
     std::shared_ptr<LLVMController> controller;
     antlrcpp::Any visitProgram(LucidusParser::ProgramContext *ctx) override {

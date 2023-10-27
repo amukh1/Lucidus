@@ -38,4 +38,4 @@ expr: ID
     
     ;
 
-func :  ID '(' expr (',' expr)* ')' ;
+func :  ID '(' (expr (',' expr)*)? ')' ;
