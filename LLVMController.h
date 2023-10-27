@@ -18,6 +18,10 @@
 
 #include "LucidusParser.h"
 
+class LLVMContext {
+
+};
+
 class LLVMController {
     public:
 
@@ -27,7 +31,7 @@ class LLVMController {
 
     // global variable context (dictionary/map)
 
-    std::map<std::string, llvm::Value*> globalScope;
+    std::vector<std::shared_ptr<LLVMContext>> contexts;
 
     LLVMController();
 

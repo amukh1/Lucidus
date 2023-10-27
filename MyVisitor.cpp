@@ -121,6 +121,17 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         return visit(ctx->expr());
     } else if(ctx->ret() != nullptr) {
         return controller->builder->CreateRet(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->ret()->expr())));
-    }
+    }else if(ctx->vdec() != nullptr) {
+        std::string name = ctx->vdec()->idec()->ID()->getText();
+        llvm::Type* type = getTypes(ctx->vdec()->idec()->type(), this->controller);
+        llvm::Value* val = controller->builder->CreateAlloca(type, std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->vdec()->expr())), name);
+        // controller->namedValues[name] = val;
+        return val;
+    }else if(ctx->vdef() != nullptr) {
+        std::string name = ctx->vdef()->ID()->getText();
+        llvm::Value* val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->vdef()->expr()));
+        // controller->namedValues[name] = val;
+        return val;
+    }else
     return visitChildren(ctx);
 }

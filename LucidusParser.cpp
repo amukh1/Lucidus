@@ -94,7 +94,7 @@ void lucidusparserParserInitialize() {
   	58,1,0,0,0,60,61,1,0,0,0,61,64,1,0,0,0,62,60,1,0,0,0,63,55,1,0,0,0,63,
   	64,1,0,0,0,64,65,1,0,0,0,65,66,5,10,0,0,66,67,5,15,0,0,67,68,3,4,2,0,
   	68,69,5,12,0,0,69,11,1,0,0,0,70,71,5,18,0,0,71,72,3,22,11,0,72,73,5,12,
-  	0,0,73,13,1,0,0,0,74,75,5,23,0,0,75,76,5,16,0,0,76,77,3,22,11,0,77,78,
+  	0,0,73,13,1,0,0,0,74,75,3,6,3,0,75,76,5,16,0,0,76,77,3,22,11,0,77,78,
   	5,12,0,0,78,15,1,0,0,0,79,80,5,23,0,0,80,81,5,4,0,0,81,82,3,22,11,0,82,
   	83,5,12,0,0,83,17,1,0,0,0,84,92,3,14,7,0,85,92,3,16,8,0,86,87,3,22,11,
   	0,87,88,5,12,0,0,88,92,1,0,0,0,89,92,3,10,5,0,90,92,3,12,6,0,91,84,1,
@@ -710,8 +710,8 @@ LucidusParser::VdecContext::VdecContext(ParserRuleContext *parent, size_t invoki
   : ParserRuleContext(parent, invokingState) {
 }
 
-tree::TerminalNode* LucidusParser::VdecContext::ID() {
-  return getToken(LucidusParser::ID, 0);
+LucidusParser::IdecContext* LucidusParser::VdecContext::idec() {
+  return getRuleContext<LucidusParser::IdecContext>(0);
 }
 
 tree::TerminalNode* LucidusParser::VdecContext::DCOL() {
@@ -753,7 +753,7 @@ LucidusParser::VdecContext* LucidusParser::vdec() {
   try {
     enterOuterAlt(_localctx, 1);
     setState(74);
-    match(LucidusParser::ID);
+    idec();
     setState(75);
     match(LucidusParser::DCOL);
     setState(76);
