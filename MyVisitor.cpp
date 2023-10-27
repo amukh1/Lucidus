@@ -32,6 +32,15 @@ void replaceAll(std::string& str, const std::string& from, const std::string& to
     }
 }
 
+llvm::Value *get_size(llvm::Type *t, llvm::IRBuilder<>& irb)
+{
+    llvm::Value *sizePtr = irb.CreateGEP(t->getContainedType(0),
+            irb.CreateIntToPtr(llvm::ConstantInt::get(irb.getInt8Ty(), 0), t),
+            llvm::ConstantInt::get(irb.getInt8Ty(), 1));
+
+    return irb.CreatePtrToInt(sizePtr, irb.getInt64Ty());
+}
+
 antlrcpp::Any MyVisitor::visitDec(LucidusParser::DecContext *ctx) {
         std::string functionName = ctx->ID()->getText();
         llvm::Type* rtype = getTypes(ctx->type(), this->controller);
@@ -109,10 +118,14 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         // return (llvm::Value*)llvm::ConstantPointerNull::get(llvm::Type::getInt32PtrTy(controller->ctx));
     } else if (ctx->STAR(0) && ctx->children.size() == ctx->STAR().size() + 1) {
         // make ref
-        auto val = (llvm::AllocaInst*) std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));
-        auto valptrptr = controller->builder->CreateAlloca(val->getAllocatedType(), nullptr);
-        controller->assignVariable((llvm::AllocaInst*)valptrptr, controller->getVariable(val));
-        return (llvm::Value*)valptrptr;
+        auto val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));
+        // get dereferenced type
+        auto dtype = val->getType(); // doesnt work
+        dtype = dtype->getContainedType(0);
+        auto valptr = controller->builder->CreateLoad(dtype, val);
+        auto valptrptr = controller->builder->CreateAlloca(dtype, nullptr);
+        controller->assignVariable((llvm::AllocaInst*)valptrptr, valptr);
+        return (llvm::Value*)controller->getVariable(valptrptr);
     } else {
         // return (llvm::Value *)llvm::ConstantInt::get(llvm::Type::getInt32Ty(controller->ctx), 0);
         // return llvm nullptr LOOOL
