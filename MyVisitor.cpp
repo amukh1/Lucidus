@@ -98,6 +98,8 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         return visit(ctx->func());;
     }else if(ctx->ID() != nullptr && ctx->children.size() == 1) {
         return (llvm::Value*) controller->builder->CreateLoad(((llvm::AllocaInst*)this->functionScope[ctx->ID()->getText()])->getAllocatedType(),this->functionScope[ctx->ID()->getText()]);
+    }else if(ctx->STAR() != nullptr && ctx->expr().size() == 1) {
+        
     }else
     // return (llvm::Value *)llvm::ConstantInt::get(llvm::Type::getInt32Ty(controller->ctx), 0);
     // return llvm nullptr LOOOL

@@ -36,9 +36,6 @@ entry:
   %3 = load i32, i32* %x
   %4 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([34 x i8], [34 x i8]* @str.3, i32 0, i32 0), i32 %3)
   store i32 0, i32* %x
-  %5 = call i32 @bar(i32 6)
-  %6 = call i32 @foo(i32 %5)
-  store i32 %6, i32* %x
-  %7 = load i32, i32* %x
-  ret i32 %7
+  %5 = load i32, i32* %x
+  ret i32 %5
 }
