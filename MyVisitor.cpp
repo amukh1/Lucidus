@@ -37,7 +37,7 @@ antlrcpp::Any MyVisitor::visitDec(LucidusParser::DecContext *ctx) {
         llvm::Type* rtype = getTypes(ctx->type(), this->controller);
         std::vector<llvm::Type*> types;
         bool ellip = false;
-        std::cout << ctx->param().size() << std::endl;
+        // std::cout << ctx->param().size() << std::endl;
         this->functionNameScope.insert({functionName, {}});
         if(ctx->param().size() !=0) {
             llvm::Type* type;
@@ -129,17 +129,17 @@ antlrcpp::Any MyVisitor::visitFunc(LucidusParser::FuncContext *ctx)  {
             params.push_back(std::any_cast<llvm::Value*>((std::any)visit(ctx->expr(i))));
             // param name
         }
-        return this->controller->builder->CreateCall(func, params);
+        return (llvm::Value*)this->controller->builder->CreateCall(func, params);
 }
 
 antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
     // std::cout << ctx->getRuleIndex() << std::endl;
     // std::cout << ctx->getText() << std::endl;
-    if(ctx->expr() !=nullptr) {
+    if(ctx->expr() !=nullptr && ctx->children.size() == 1) {
         return visit(ctx->expr());
-    } else if(ctx->ret() != nullptr) {
+    } else if(ctx->ret() != nullptr && ctx->children.size() == 1) {
         return controller->builder->CreateRet(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->ret()->expr())));
-    }else if(ctx->vdec() != nullptr) {
+    }else if(ctx->vdec() != nullptr && ctx->children.size() == 1) {
         std::string name = ctx->vdec()->idec()->ID()->getText();
         llvm::Type* type = getTypes(ctx->vdec()->idec()->type(), this->controller);
         // llvm::Value* val = controller->builder->CreateAlloca(type, std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->vdec()->expr())), name);
@@ -147,7 +147,7 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         llvm::StoreInst* val = controller->assignVariable(ptr, std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->vdec()->expr())));
         this->functionScope[name] = (llvm::Value*)ptr;
         return ptr;
-    }else if(ctx->vdef() != nullptr) {
+    }else if(ctx->vdef() != nullptr && ctx->children.size() == 1) {
         std::string name = ctx->vdef()->ID()->getText();
         llvm::Value* val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->vdef()->expr()));
         
