@@ -11,10 +11,12 @@ param: (idec|DOTS);
 dec: DECL ID '(' (param (',' param)*)? ')' ARROW type ';';
 ret: RETURN expr ';';
 vdec: idec DCOL expr ';';
+edec: idec ';';
 vdef: ID '=' expr ';';
 stat
     : vdec
     | vdef
+    | edec
     | expr ';'
     | dec
     | ret

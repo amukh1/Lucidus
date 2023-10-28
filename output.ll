@@ -1,9 +1,7 @@
 ; ModuleID = 'amukh'
 source_filename = "amukh"
 
-%Car = type { i8*, i32, %float }
-%float = type opaque
-%Car.0 = type opaque
+%Car = type { i8*, i32, i32 }
 
 @Car = external global %Car
 @str = private constant [13 x i8] c"Hello World\0A\00"
@@ -31,8 +29,9 @@ entry:
   store i32 %6, i32* %7
   %8 = load i32, i32* %7
   store i32 %8, i32* %z
-  %abc = alloca %Car.0
-  store i32 2, %Car.0* %abc
-  %9 = load i32, i32* %x
-  ret i32 %9
+  %abc = alloca %Car*
+  %9 = load %Car*, %Car** %abc
+  %10 = getelementptr inbounds %Car, %Car* %9, i32 0, i32 0
+  %11 = load i32, i32* %x
+  ret i32 %11
 }

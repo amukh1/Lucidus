@@ -143,7 +143,7 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         // auto structMemberIndex = this->structs[structName]->getStructMemberIndex(structMember); // doesnt work, function is not defined
         auto structMemberIndex = 0;
         for(int i = 0; i<this->structs[structName]->getNumElements(); i++) {
-            if(this->structs[structName]->getStructElementType(i)->getStructName() == structMember) {
+            if(this->structNames[structName][i]==structMember) {
                 structMemberIndex = i;
                 break;
             }
@@ -151,7 +151,7 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         auto structMemberType = this->structs[structName]->getStructElementType(structMemberIndex);
         auto structMemberPtr = controller->builder->CreateStructGEP(structType, structPtr, structMemberIndex);
         return (llvm::Value*)structMemberPtr;
-
+        // return visitChildren(ctx);
     }else {
         // return (llvm::Value *)llvm::ConstantInt::get(llvm::Type::getInt32Ty(controller->ctx), 0);
         // return llvm nullptr LOOOL
@@ -209,6 +209,14 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         
         controller->assignVariable((llvm::AllocaInst*)this->functionScope[name], val);
         return this->functionScope[name];
+    }else if(ctx->edec() != nullptr && ctx->children.size() == 1) {
+        std::string name = ctx->edec()->idec()->ID()->getText();
+        llvm::Type* type = getTypes(ctx->edec()->idec()->type(), this->controller, this->structs);
+        // llvm::Value* val = controller->builder->CreateAlloca(type, std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->vdec()->expr())), name);
+        llvm::AllocaInst* ptr = controller->declareVariable(name, type);
+        this->functionScope[name] = (llvm::Value*)ptr;
+        // return ptr;
+        return visitChildren(ctx);
     }else
     return visitChildren(ctx);
 }
@@ -224,6 +232,11 @@ std::any MyVisitor::visitStruct(LucidusParser::StructContext *ctx) {
     stype->setName(name);
     // put struct into ir
     this->controller->module->getOrInsertGlobal(name, stype); // why does this segfault..
-    // add as a global variable
+    // now for the names or whatever they are (ID inside idec)
+    std::vector<std::string> names;
+    for(int i = 0; i<ctx->idec().size(); i++) {
+        names.push_back(ctx->idec(i)->ID()->getText());
+    }
+    this->structNames[name] = names;
     return stype;
 }

@@ -27,6 +27,7 @@ public:
     std::map<std::string, std::map<std::string, llvm::Value*>> functionParamScope;
     std::map<std::string, std::pair<std::vector<std::string>,int>> functionNameScope;
     std::map<std::string, llvm::StructType*> structs;
+    std::map<std::string, std::vector<std::string>> structNames;
     std::shared_ptr<LLVMController> controller;
     antlrcpp::Any visitProgram(LucidusParser::ProgramContext *ctx) override {
         // std::cout << "Visiting program" << std::endl;

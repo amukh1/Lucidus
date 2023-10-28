@@ -3,7 +3,7 @@ dec printf(tmp:char*, ...) -> int;
 struct Car {
     name: char*,
     year: int,
-    price: float
+    price: int
 };
 
 dec main() -> int;
@@ -14,6 +14,7 @@ def main() -> int {
     x:int := 0;
     y:int* := ptr x;
     z:int := *y;
-    abc:Car := 2;
+    abc:Car;
+    abc.name;
     return x;
 }

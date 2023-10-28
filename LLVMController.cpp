@@ -86,7 +86,10 @@ llvm::Type* getTypes(LucidusParser::TypeContext *ctx, std::shared_ptr<LLVMContro
   }else {
     // we know it is a struct
     // ltype = structs[type]; // cannot do this, causes problems later on
-    ltype = llvm::StructType::create(controller->ctx, type);
+    // ltype = llvm::StructType::create(controller->ctx, type);
+    // std::cout << "type: " << type << std::endl;
+    ltype = controller->module->getNamedGlobal(type)->getType();
+
   }
 
   // now for the pointer bit.
