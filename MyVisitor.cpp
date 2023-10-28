@@ -150,8 +150,12 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         }
         auto structMemberType = this->structs[structName]->getStructElementType(structMemberIndex);
         auto structMemberPtr = controller->builder->CreateStructGEP(structType, structPtr, structMemberIndex);
+
+        
         return (llvm::Value*)structMemberPtr;
         // return visitChildren(ctx);
+    }else if(ctx->expr(0) != nullptr && ctx->children.size() == 3) {
+        return visit(ctx->expr(0));
     }else {
         // return (llvm::Value *)llvm::ConstantInt::get(llvm::Type::getInt32Ty(controller->ctx), 0);
         // return llvm nullptr LOOOL
@@ -189,8 +193,8 @@ antlrcpp::Any MyVisitor::visitFunc(LucidusParser::FuncContext *ctx)  {
 }
 
 antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
-    // std::cout << ctx->getRuleIndex() << std::endl;
-    // std::cout << ctx->getText() << std::endl;
+    std::cout << ctx->children.size()  << std::endl;
+    std::cout << ctx->getText() << std::endl;
     if(ctx->expr() !=nullptr && ctx->children.size() == 1) {
         return visit(ctx->expr());
     } else if(ctx->ret() != nullptr && ctx->children.size() == 1) {
@@ -217,6 +221,14 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         this->functionScope[name] = (llvm::Value*)ptr;
         // return ptr;
         return visitChildren(ctx);
+    }else if(ctx->assign() != nullptr && ctx->children.size() == 1) {
+        std::cout << "here" << std::endl;
+        // expr = expr, first exp is probably a pointer.
+        auto ptr = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->assign()->expr(0)));
+        auto val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->assign()->expr(1)));
+
+        controller->assignVariable((llvm::AllocaInst*)ptr, val);
+        return ptr;
     }else
     return visitChildren(ctx);
 }

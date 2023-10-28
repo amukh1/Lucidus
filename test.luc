@@ -15,7 +15,7 @@ def main() -> int {
     y:int* := ptr x;
     z:int := *y;
     abc:Car;
-    abc.name; 
-    // abc.name = ...; // invalid.
+    abc.year = 4; 
+    printf("%d\n", *abc.year);
     return x;
 }

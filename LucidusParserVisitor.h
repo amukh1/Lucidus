@@ -39,6 +39,8 @@ public:
 
     virtual std::any visitVdef(LucidusParser::VdefContext *context) = 0;
 
+    virtual std::any visitAssign(LucidusParser::AssignContext *context) = 0;
+
     virtual std::any visitStat(LucidusParser::StatContext *context) = 0;
 
     virtual std::any visitDef(LucidusParser::DefContext *context) = 0;

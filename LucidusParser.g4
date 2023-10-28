@@ -13,10 +13,12 @@ ret: RETURN expr ';';
 vdec: idec DCOL expr ';';
 edec: idec ';';
 vdef: ID '=' expr ';';
+assign: expr '=' expr ';';
 stat
     : vdec
     | vdef
     | edec
+    | assign
     | expr ';'
     | dec
     | ret

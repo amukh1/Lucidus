@@ -112,6 +112,18 @@ public class LucidusParserBaseListener implements LucidusParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterEdec(LucidusParser.EdecContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitEdec(LucidusParser.EdecContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterVdef(LucidusParser.VdefContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -155,6 +167,18 @@ public class LucidusParserBaseListener implements LucidusParserListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitExpr(LucidusParser.ExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterStruct(LucidusParser.StructContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitStruct(LucidusParser.StructContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
