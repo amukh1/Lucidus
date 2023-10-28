@@ -63,6 +63,10 @@ public:
     return visitChildren(ctx);
   }
 
+  virtual std::any visitStruct(LucidusParser::StructContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
   virtual std::any visitFunc(LucidusParser::FuncContext *ctx) override {
     return visitChildren(ctx);
   }

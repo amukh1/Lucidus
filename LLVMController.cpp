@@ -9,6 +9,7 @@
 #include <llvm/Support/raw_ostream.h>
 
 #include "LLVMController.h"
+#include "MyVisitor.h"
 
 LLVMController::LLVMController() {
     // this->ctx = std::make_unique<llvm::LLVMContext>();
@@ -66,24 +67,26 @@ llvm::LoadInst* LLVMController::getArray(llvm::AllocaInst* ref, llvm::Value* ind
 return this->builder->CreateLoad(type, ptr);
 }
 
-llvm::Type* getTypes(LucidusParser::TypeContext *ctx, std::shared_ptr<LLVMController> controller) {
+llvm::Type* getTypes(LucidusParser::TypeContext *ctx, std::shared_ptr<LLVMController> controller, std::map<std::string, llvm::StructType*> structs) {
   // given a string like int** or int or int* deduce the type and output llvm type
   //int: controller->builder->getInt32Ty()
   llvm::Type* ltype;
   std::string type = ctx->ID()->getText();
-  if((type == "int"|| type == "char")) {
+  if((type == "int"|| type == "char" || type == "void" || type == "bool")) {
     // we know it is primitive type
     if(type == "int") {
       ltype = controller->builder->getInt32Ty();
     }else if(type == "char") {
       ltype = controller->builder->getInt8Ty();
+    }else if(type == "void") {
+      ltype = controller->builder->getVoidTy();
+    }else if(type == "bool") {
+      ltype = controller->builder->getInt1Ty();
     }
   }else {
-    // it is not. it is a struct type
-    std::cout << "User defined types not yet implemented!" << std::endl;
-    // return int
-    return controller->builder->getInt32Ty();
-    // ltype == 
+    // we know it is a struct
+    // ltype = structs[type]; // cannot do this, causes problems later on
+    ltype = llvm::StructType::create(controller->ctx, type);
   }
 
   // now for the pointer bit.

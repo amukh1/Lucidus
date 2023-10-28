@@ -1,5 +1,11 @@
 dec printf(tmp:char*, ...) -> int;
 
+struct Car {
+    name: char*,
+    year: int,
+    price: float
+};
+
 dec main() -> int;
 def main() -> int {
     printf("Hello World\n");
@@ -8,5 +14,6 @@ def main() -> int {
     x:int := 0;
     y:int* := ptr x;
     z:int := *y;
+    abc:Car := 2;
     return x;
 }

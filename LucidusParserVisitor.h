@@ -43,6 +43,8 @@ public:
 
     virtual std::any visitExpr(LucidusParser::ExprContext *context) = 0;
 
+    virtual std::any visitStruct(LucidusParser::StructContext *context) = 0;
+
     virtual std::any visitFunc(LucidusParser::FuncContext *context) = 0;
 
 

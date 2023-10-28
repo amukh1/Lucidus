@@ -22,11 +22,11 @@
 #include "LucidusParserBaseVisitor.h"
 
 class MyVisitor : public LucidusParserBaseVisitor {
-std::map<std::string, llvm::Value*> globalScope;
-std::map<std::string, llvm::Value*> functionScope;
-std::map<std::string, std::map<std::string, llvm::Value*>> functionParamScope;
-std::map<std::string, std::pair<std::vector<std::string>,int>> functionNameScope;
 public:
+    std::map<std::string, llvm::Value*> functionScope;
+    std::map<std::string, std::map<std::string, llvm::Value*>> functionParamScope;
+    std::map<std::string, std::pair<std::vector<std::string>,int>> functionNameScope;
+    std::map<std::string, llvm::StructType*> structs;
     std::shared_ptr<LLVMController> controller;
     antlrcpp::Any visitProgram(LucidusParser::ProgramContext *ctx) override {
         // std::cout << "Visiting program" << std::endl;
@@ -42,5 +42,7 @@ public:
     antlrcpp::Any visitExpr(LucidusParser::ExprContext *ctx) override;
 
     antlrcpp::Any visitDef(LucidusParser::DefContext *ctx) override;
+
+    std::any visitStruct(LucidusParser::StructContext *ctx) override;
 
 };

@@ -15,12 +15,14 @@ COMMA : ',' ;
 SEMI : ';' ;
 
 DEF: 'def';
+STRUCT: 'struct';
 DECL: 'dec';
 ARROW: '->';
 DCOL: ':=';
 PTR: 'ptr';
 COL: ':';
 RETURN: 'return';
+DOT: '.';
 DOTS: '...';
 
 LCURLY : '{' ;

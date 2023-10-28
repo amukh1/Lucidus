@@ -13,15 +13,15 @@ class  LucidusParser : public antlr4::Parser {
 public:
   enum {
     AND = 1, OR = 2, NOT = 3, EQ = 4, PLUS = 5, SUB = 6, STAR = 7, DIV = 8, 
-    OPAREN = 9, CPAREN = 10, COMMA = 11, SEMI = 12, DEF = 13, DECL = 14, 
-    ARROW = 15, DCOL = 16, PTR = 17, COL = 18, RETURN = 19, DOTS = 20, LCURLY = 21, 
-    RCURLY = 22, INT = 23, ID = 24, WS = 25, STRING = 26
+    OPAREN = 9, CPAREN = 10, COMMA = 11, SEMI = 12, DEF = 13, STRUCT = 14, 
+    DECL = 15, ARROW = 16, DCOL = 17, PTR = 18, COL = 19, RETURN = 20, DOT = 21, 
+    DOTS = 22, LCURLY = 23, RCURLY = 24, INT = 25, ID = 26, WS = 27, STRING = 28
   };
 
   enum {
     RuleProgram = 0, RuleRawtype = 1, RuleType = 2, RuleIdec = 3, RuleParam = 4, 
     RuleDec = 5, RuleRet = 6, RuleVdec = 7, RuleVdef = 8, RuleStat = 9, 
-    RuleDef = 10, RuleExpr = 11, RuleFunc = 12
+    RuleDef = 10, RuleExpr = 11, RuleStruct = 12, RuleFunc = 13
   };
 
   explicit LucidusParser(antlr4::TokenStream *input);
@@ -53,6 +53,7 @@ public:
   class StatContext;
   class DefContext;
   class ExprContext;
+  class StructContext;
   class FuncContext; 
 
   class  ProgramContext : public antlr4::ParserRuleContext {
@@ -64,6 +65,8 @@ public:
     StatContext* stat(size_t i);
     std::vector<DefContext *> def();
     DefContext* def(size_t i);
+    std::vector<StructContext *> struct_();
+    StructContext* struct_(size_t i);
 
 
     virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
@@ -264,6 +267,7 @@ public:
     antlr4::tree::TerminalNode *DIV();
     antlr4::tree::TerminalNode *PLUS();
     antlr4::tree::TerminalNode *SUB();
+    antlr4::tree::TerminalNode *DOT();
     antlr4::tree::TerminalNode *ARROW();
 
 
@@ -273,6 +277,27 @@ public:
 
   ExprContext* expr();
   ExprContext* expr(int precedence);
+  class  StructContext : public antlr4::ParserRuleContext {
+  public:
+    StructContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *STRUCT();
+    antlr4::tree::TerminalNode *ID();
+    antlr4::tree::TerminalNode *LCURLY();
+    antlr4::tree::TerminalNode *RCURLY();
+    antlr4::tree::TerminalNode *SEMI();
+    std::vector<IdecContext *> idec();
+    IdecContext* idec(size_t i);
+    std::vector<antlr4::tree::TerminalNode *> COMMA();
+    antlr4::tree::TerminalNode* COMMA(size_t i);
+
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  StructContext* struct_();
+
   class  FuncContext : public antlr4::ParserRuleContext {
   public:
     FuncContext(antlr4::ParserRuleContext *parent, size_t invokingState);

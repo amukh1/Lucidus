@@ -55,4 +55,4 @@ class LLVMController {
 };
 
 
-llvm::Type* getTypes(LucidusParser::TypeContext *ctx, std::shared_ptr<LLVMController> controller);
+llvm::Type* getTypes(LucidusParser::TypeContext *ctx, std::shared_ptr<LLVMController> controller, std::map<std::string, llvm::StructType*> structs);

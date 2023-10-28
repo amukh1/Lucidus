@@ -1,6 +1,11 @@
 ; ModuleID = 'amukh'
 source_filename = "amukh"
 
+%Car = type { i8*, i32, %float }
+%float = type opaque
+%Car.0 = type opaque
+
+@Car = external global %Car
 @str = private constant [13 x i8] c"Hello World\0A\00"
 @str.1 = private constant [32 x i8] c"Programming my %dth 'compiler'\0A\00"
 @str.2 = private constant [34 x i8] c"After ~%d years of programming..\0A\00"
@@ -26,6 +31,8 @@ entry:
   store i32 %6, i32* %7
   %8 = load i32, i32* %7
   store i32 %8, i32* %z
+  %abc = alloca %Car.0
+  store i32 2, %Car.0* %abc
   %9 = load i32, i32* %x
   ret i32 %9
 }

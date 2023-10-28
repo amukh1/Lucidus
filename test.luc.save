@@ -1,0 +1,11 @@
+dec printf(tmp:char*, ...) -> int;
+
+dec main() -> int;
+def main() -> int {
+    printf("Hello World\n");
+    printf("Programming my %dth \'compiler\'\n", 3);
+    printf("After ~%d years of programming..\n", 4);
+    x:int := 3;
+    y:
+    return 0;
+}

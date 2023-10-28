@@ -13,9 +13,9 @@ class  LucidusLexer : public antlr4::Lexer {
 public:
   enum {
     AND = 1, OR = 2, NOT = 3, EQ = 4, PLUS = 5, SUB = 6, STAR = 7, DIV = 8, 
-    OPAREN = 9, CPAREN = 10, COMMA = 11, SEMI = 12, DEF = 13, DECL = 14, 
-    ARROW = 15, DCOL = 16, PTR = 17, COL = 18, RETURN = 19, DOTS = 20, LCURLY = 21, 
-    RCURLY = 22, INT = 23, ID = 24, WS = 25, STRING = 26
+    OPAREN = 9, CPAREN = 10, COMMA = 11, SEMI = 12, DEF = 13, STRUCT = 14, 
+    DECL = 15, ARROW = 16, DCOL = 17, PTR = 18, COL = 19, RETURN = 20, DOT = 21, 
+    DOTS = 22, LCURLY = 23, RCURLY = 24, INT = 25, ID = 26, WS = 27, STRING = 28
   };
 
   explicit LucidusLexer(antlr4::CharStream *input);

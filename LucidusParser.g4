@@ -2,7 +2,7 @@ parser grammar LucidusParser;
 options { tokenVocab=LucidusLexer;}
 
 program
-    : (stat | def)*  EOF
+    : (stat | def | struct)*  EOF
     ;
 rawtype: (ID);
 type: (ID) (STAR)*;
@@ -24,6 +24,7 @@ def : DEF ID '(' (param (',' param)*)? ')' ARROW ID '{' stat* '}' ;
 expr: ID
     | INT
     | STRING
+    | expr DOT ID
     | func
     | PTR expr
     | STAR+ expr
@@ -38,5 +39,7 @@ expr: ID
     | '(' expr ')'
     
     ;
+    
+struct: 'struct' ID '{' (idec (',' idec)*)? '}' ';';
 
 func :  ID '(' (expr (',' expr)*)? ')' ;
