@@ -15,6 +15,7 @@ def main() -> int {
     y:int* := ptr x;
     z:int := *y;
     abc:Car;
-    abc.name;
+    abc.name; 
+    // abc.name = ...; // invalid.
     return x;
 }
