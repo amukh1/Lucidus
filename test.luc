@@ -2,20 +2,23 @@ dec printf(tmp:char*, ...) -> int;
 
 struct Car {
     name: char*,
+    brand: char*,
     year: int,
     price: int
-};
+}
 
-dec main() -> int;
-def main() -> int {
-    printf("Hello World\n");
-    printf("Programming my %dth \'compiler\'\n", 3);
-    printf("After ~%d years of programming..\n", 4);
-    x:int := 0;
-    y:int* := ptr x;
-    z:int := *y;
-    abc:Car;
-    abc.year = 4; 
-    printf("%d\n", *abc.year);
-    return x;
+dec car(name:char*, brand:char*, year:int, price: int) -> int;
+def car(name:char*, brand:char*, year:int, price: int) -> int {
+    Camaro: Car;
+    Camaro.name = name;
+    Camaro.brand = brand;
+    Camaro.year = year;
+    Camaro.price = price;
+
+    printf("Car name: %s\n", *Camaro.name);
+    printf("Car brand: %s\n", *Camaro.brand);
+    printf("Car year: %d\n", *Camaro.year);
+    printf("Car price: %d\n", *Camaro.price);
+
+    return 0;
 }

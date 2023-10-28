@@ -1,7 +1,8 @@
 int printf(char*, ...);
-int add(int a, int b);
+
+int car(char* s, char* b, int i, int j);
 
 int main() {
-    printf("%d", add(1,2));
+    car("Camaro", "Chevy", 1969, 50000);
     return 0;
 }
