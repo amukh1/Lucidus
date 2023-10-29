@@ -8,14 +8,14 @@ struct Car {
 }
 
 
-dec main() -> int;
+dec main() -> int; 
 def main() -> int {
     Camaro: Car;
     Camaro.name = "Camaro";
     Camaro.brand = "Chevvy";
     Camaro.year = 1969;
     Camaro.price = 50000;
-
+    
     printf("Car name: %s\n", *Camaro.name);
     printf("Car brand: %s\n", *Camaro.brand);
     printf("Car year: %d\n", *Camaro.year);
