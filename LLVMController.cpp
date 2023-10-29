@@ -72,7 +72,7 @@ llvm::Type* getTypes(LucidusParser::TypeContext *ctx, std::shared_ptr<LLVMContro
   //int: controller->builder->getInt32Ty()
   llvm::Type* ltype;
   std::string type = ctx->ID()->getText();
-  if((type == "int"|| type == "char" || type == "void" || type == "bool")) {
+  if((type == "int"|| type == "char" || type == "void" || type == "bool" || type=="float")) {
     // we know it is primitive type
     if(type == "int") {
       ltype = controller->builder->getInt32Ty();
@@ -82,6 +82,8 @@ llvm::Type* getTypes(LucidusParser::TypeContext *ctx, std::shared_ptr<LLVMContro
       ltype = controller->builder->getVoidTy();
     }else if(type == "bool") {
       ltype = controller->builder->getInt1Ty();
+    }else if(type == "float") {
+      ltype = controller->builder->getFloatTy();
     }
   }else {
     // we know it is a struct

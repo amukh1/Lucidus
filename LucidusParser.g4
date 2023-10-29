@@ -27,6 +27,7 @@ def : DEF ID '(' (param (',' param)*)? ')' ARROW ID '{' stat* '}' ;
 
 expr: ID
     | INT
+    | FLOAT
     | STRING
     | expr DOT ID
     | func
@@ -39,7 +40,7 @@ expr: ID
     | expr DIV expr
     | expr PLUS expr
     | expr SUB expr
-    | expr ARROW '(' expr ')'
+    | expr ARROW '(' type ')'
     | '(' expr ')'
     
     ;

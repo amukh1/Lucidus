@@ -72,6 +72,10 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         int v = std::stoi(ctx->INT()->getText());
         llvm::Value *val = llvm::ConstantInt::get(llvm::Type::getInt32Ty(controller->ctx), v);
         return val;
+    }else if(ctx->FLOAT() != nullptr && ctx->children.size() == 1) {
+        float v = std::stof(ctx->FLOAT()->getText());
+        llvm::Value *val = llvm::ConstantFP::get(llvm::Type::getFloatTy(controller->ctx), v);
+        return val;
     }else if(ctx->STRING() != nullptr && ctx->children.size() == 1) {
         // auto str = controller->builder->CreateGlobalStringPtr(ctx->STRING()->getText());
         // // load and return str
@@ -156,6 +160,11 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         // return visitChildren(ctx);
     }else if(ctx->expr(0) != nullptr && ctx->children.size() == 3) {
         return visit(ctx->expr(0));
+    }else if(ctx->ARROW() != nullptr && ctx->children.size() == 5) {
+        // bitcast, ex: C: (int) 3.5; Source Syntax: (3.5)->(int)
+        auto val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));
+        auto type = getTypes(ctx->type(), this->controller, this->structs);
+        return (llvm::Value*)controller->builder->CreateBitCast(val, type);
     }else {
         // return (llvm::Value *)llvm::ConstantInt::get(llvm::Type::getInt32Ty(controller->ctx), 0);
         // return llvm nullptr LOOOL
@@ -193,8 +202,8 @@ antlrcpp::Any MyVisitor::visitFunc(LucidusParser::FuncContext *ctx)  {
 }
 
 antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
-    std::cout << ctx->children.size()  << std::endl;
-    std::cout << ctx->getText() << std::endl;
+    // std::cout << ctx->children.size()  << std::endl;
+    // std::cout << ctx->getText() << std::endl;
     if(ctx->expr() !=nullptr && ctx->children.size() == 1) {
         return visit(ctx->expr());
     } else if(ctx->ret() != nullptr && ctx->children.size() == 1) {
@@ -222,7 +231,7 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         // return ptr;
         return visitChildren(ctx);
     }else if(ctx->assign() != nullptr && ctx->children.size() == 1) {
-        std::cout << "here" << std::endl;
+        // std::cout << "here" << std::endl;
         // expr = expr, first exp is probably a pointer.
         auto ptr = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->assign()->expr(0)));
         auto val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->assign()->expr(1)));

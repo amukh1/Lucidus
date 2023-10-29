@@ -15,8 +15,8 @@ public:
     AND = 1, OR = 2, NOT = 3, EQ = 4, PLUS = 5, SUB = 6, STAR = 7, DIV = 8, 
     OPAREN = 9, CPAREN = 10, COMMA = 11, SEMI = 12, DEF = 13, STRUCT = 14, 
     DECL = 15, ARROW = 16, DCOL = 17, PTR = 18, COL = 19, RETURN = 20, DOT = 21, 
-    DOTS = 22, LCURLY = 23, RCURLY = 24, INT = 25, ID = 26, WS = 27, COMMENT = 28, 
-    STRING = 29
+    DOTS = 22, LCURLY = 23, RCURLY = 24, INT = 25, FLOAT = 26, ID = 27, 
+    WS = 28, COMMENT = 29, STRING = 30
   };
 
   enum {
@@ -288,6 +288,7 @@ public:
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *ID();
     antlr4::tree::TerminalNode *INT();
+    antlr4::tree::TerminalNode *FLOAT();
     antlr4::tree::TerminalNode *STRING();
     FuncContext *func();
     antlr4::tree::TerminalNode *PTR();
@@ -305,6 +306,7 @@ public:
     antlr4::tree::TerminalNode *SUB();
     antlr4::tree::TerminalNode *DOT();
     antlr4::tree::TerminalNode *ARROW();
+    TypeContext *type();
 
 
     virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
