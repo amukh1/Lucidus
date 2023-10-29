@@ -1,10 +1,25 @@
 dec printf(tmp:char*, ...) -> int;
-// declare ptrtoint cast from c std lib/llvm std lib
-dec ptrtoint(p:int*) -> int;
+
+struct Car {
+    name: char*,
+    brand: char*,
+    year: int,
+    price: int
+}
+
 
 dec main() -> int;
 def main() -> int {
-    
+    Camaro: Car;
+    Camaro.name = "Camaro";
+    Camaro.brand = "Chevvy";
+    Camaro.year = 1969;
+    Camaro.price = 50000;
+
+    printf("Car name: %s\n", *Camaro.name);
+    printf("Car brand: %s\n", *Camaro.brand);
+    printf("Car year: %d\n", *Camaro.year);
+    printf("Car price: %d\n", *Camaro.price);
 
     return 0;
 }

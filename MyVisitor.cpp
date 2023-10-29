@@ -162,9 +162,22 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         return visit(ctx->expr(0));
     }else if(ctx->ARROW() != nullptr && ctx->children.size() == 5) {
         // bitcast, ex: C: (int) 3.5; Source Syntax: (3.5)->(int)
+        /*
         auto val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));
         auto type = getTypes(ctx->type(), this->controller, this->structs);
         return (llvm::Value*)controller->builder->CreateBitCast(val, type);
+        */ // why are compilers so smart? wrote this and thought i was home free. now i need to program logic to decide which cast to use smh
+        auto val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));
+        auto type = getTypes(ctx->type(), this->controller, this->structs);
+        // if type is a ptr
+        if(val->getType()->isPointerTy() && type->isIntegerTy()) {
+            return (llvm::Value*)controller->builder->CreatePtrToInt(val, type);
+        }else if(val->getType()->isIntegerTy() && type->isPointerTy() && type->getContainedType(0)->isIntegerTy()) {
+            return (llvm::Value*)controller->builder->CreateIntToPtr(val, type);
+        }else {
+            // least powerful cast lol
+            return (llvm::Value*)controller->builder->CreateBitCast(val, type);
+        }
     }else {
         // return (llvm::Value *)llvm::ConstantInt::get(llvm::Type::getInt32Ty(controller->ctx), 0);
         // return llvm nullptr LOOOL
@@ -235,8 +248,8 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         // expr = expr, first exp is probably a pointer.
         auto ptr = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->assign()->expr(0)));
         auto val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->assign()->expr(1)));
-
-        controller->assignVariable((llvm::AllocaInst*)ptr, val);
+        controller->builder->CreateStore(val, ptr);
+        // controller->assignVariable((llvm::AllocaInst*)ptr, val);
         return ptr;
     }else
     return visitChildren(ctx);
