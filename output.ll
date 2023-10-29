@@ -4,67 +4,57 @@ source_filename = "amukh"
 %Car = type { i8*, i8*, i32, i32 }
 
 @Car = external global %Car
-@str = private constant [14 x i8] c"Car name: %s\0A\00"
-@str.1 = private constant [15 x i8] c"Car brand: %s\0A\00"
-@str.2 = private constant [14 x i8] c"Car year: %d\0A\00"
-@str.3 = private constant [15 x i8] c"Car price: %d\0A\00"
+@str = private constant [5 x i8] c"name\00"
+@str.1 = private constant [6 x i8] c"brand\00"
+@str.2 = private constant [14 x i8] c"Car name: %s\0A\00"
+@str.3 = private constant [15 x i8] c"Car brand: %s\0A\00"
+@str.4 = private constant [14 x i8] c"Car year: %d\0A\00"
+@str.5 = private constant [15 x i8] c"Car price: %d\0A\00"
 
 declare i32 @printf(i8*, ...)
 
-define i32 @car(i8* %0, i8* %1, i32 %2, i32 %3) {
+define i32 @main() {
 entry:
-  %name = alloca i8*
-  store i8* %0, i8** %name
-  %brand = alloca i8*
-  store i8* %1, i8** %brand
-  %year = alloca i32
-  store i32 %2, i32* %year
-  %price = alloca i32
-  store i32 %3, i32* %price
   %Camaro = alloca %Car*
+  %0 = load %Car*, %Car** %Camaro
+  %1 = getelementptr inbounds %Car, %Car* %0, i32 0, i32 0
+  store i8* getelementptr inbounds ([5 x i8], [5 x i8]* @str, i32 0, i32 0), i8** %1
+  %2 = load %Car*, %Car** %Camaro
+  %3 = getelementptr inbounds %Car, %Car* %2, i32 0, i32 1
+  store i8* getelementptr inbounds ([6 x i8], [6 x i8]* @str.1, i32 0, i32 0), i8** %3
   %4 = load %Car*, %Car** %Camaro
-  %5 = getelementptr inbounds %Car, %Car* %4, i32 0, i32 0
-  %6 = load i8*, i8** %name
-  store i8* %6, i8** %5
-  %7 = load %Car*, %Car** %Camaro
-  %8 = getelementptr inbounds %Car, %Car* %7, i32 0, i32 1
-  %9 = load i8*, i8** %brand
-  store i8* %9, i8** %8
-  %10 = load %Car*, %Car** %Camaro
-  %11 = getelementptr inbounds %Car, %Car* %10, i32 0, i32 2
-  %12 = load i32, i32* %year
-  store i32 %12, i32* %11
-  %13 = load %Car*, %Car** %Camaro
-  %14 = getelementptr inbounds %Car, %Car* %13, i32 0, i32 3
-  %15 = load i32, i32* %price
-  store i32 %15, i32* %14
-  %16 = load %Car*, %Car** %Camaro
-  %17 = getelementptr inbounds %Car, %Car* %16, i32 0, i32 0
+  %5 = getelementptr inbounds %Car, %Car* %4, i32 0, i32 2
+  store i32 5, i32* %5
+  %6 = load %Car*, %Car** %Camaro
+  %7 = getelementptr inbounds %Car, %Car* %6, i32 0, i32 3
+  store i32 5, i32* %7
+  %8 = load %Car*, %Car** %Camaro
+  %9 = getelementptr inbounds %Car, %Car* %8, i32 0, i32 0
+  %10 = load i8*, i8** %9
+  %11 = alloca i8*
+  store i8* %10, i8** %11
+  %12 = load i8*, i8** %11
+  %13 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @str.2, i32 0, i32 0), i8* %12)
+  %14 = load %Car*, %Car** %Camaro
+  %15 = getelementptr inbounds %Car, %Car* %14, i32 0, i32 1
+  %16 = load i8*, i8** %15
+  %17 = alloca i8*
+  store i8* %16, i8** %17
   %18 = load i8*, i8** %17
-  %19 = alloca i8*
-  store i8* %18, i8** %19
-  %20 = load i8*, i8** %19
-  %21 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @str, i32 0, i32 0), i8* %20)
-  %22 = load %Car*, %Car** %Camaro
-  %23 = getelementptr inbounds %Car, %Car* %22, i32 0, i32 1
-  %24 = load i8*, i8** %23
-  %25 = alloca i8*
-  store i8* %24, i8** %25
-  %26 = load i8*, i8** %25
-  %27 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @str.1, i32 0, i32 0), i8* %26)
-  %28 = load %Car*, %Car** %Camaro
-  %29 = getelementptr inbounds %Car, %Car* %28, i32 0, i32 2
+  %19 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @str.3, i32 0, i32 0), i8* %18)
+  %20 = load %Car*, %Car** %Camaro
+  %21 = getelementptr inbounds %Car, %Car* %20, i32 0, i32 2
+  %22 = load i32, i32* %21
+  %23 = alloca i32
+  store i32 %22, i32* %23
+  %24 = load i32, i32* %23
+  %25 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @str.4, i32 0, i32 0), i32 %24)
+  %26 = load %Car*, %Car** %Camaro
+  %27 = getelementptr inbounds %Car, %Car* %26, i32 0, i32 3
+  %28 = load i32, i32* %27
+  %29 = alloca i32
+  store i32 %28, i32* %29
   %30 = load i32, i32* %29
-  %31 = alloca i32
-  store i32 %30, i32* %31
-  %32 = load i32, i32* %31
-  %33 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @str.2, i32 0, i32 0), i32 %32)
-  %34 = load %Car*, %Car** %Camaro
-  %35 = getelementptr inbounds %Car, %Car* %34, i32 0, i32 3
-  %36 = load i32, i32* %35
-  %37 = alloca i32
-  store i32 %36, i32* %37
-  %38 = load i32, i32* %37
-  %39 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @str.3, i32 0, i32 0), i32 %38)
+  %31 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @str.5, i32 0, i32 0), i32 %30)
   ret i32 0
 }
