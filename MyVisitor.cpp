@@ -248,8 +248,8 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         // expr = expr, first exp is probably a pointer.
         auto ptr = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->assign()->expr(0)));
         auto val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->assign()->expr(1)));
-        controller->builder->CreateStore(val, ptr);
-        // controller->assignVariable((llvm::AllocaInst*)ptr, val);
+        // controller->builder->CreateStore(val, ptr);
+        controller->assignVariable((llvm::AllocaInst*)ptr, val);
         return ptr;
     }else
     return visitChildren(ctx);
