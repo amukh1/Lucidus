@@ -1,7 +1,21 @@
 dec printf(tmp:char*, ...) -> int;
 
+struct Car {
+    name: char*,
+    brand: char*,
+    year: int,
+    price: int
+};
+
+
 dec main() -> int; 
 def main() -> int {
-    printf("Hello, world!\n");
+    x:int := 4;
+    y:int* := ptr x;
+
+    z:int := *y;
+    
+    printf("%d\n", *y);
+
     return 0;
 }

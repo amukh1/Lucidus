@@ -124,21 +124,30 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         return (llvm::Value*) controller->builder->CreateAdd(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))), std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
     }else if(ctx->PTR() != nullptr) {
         // make ref
+        /*
         auto val = (llvm::Value*) std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));
         auto valptrptr = controller->builder->CreateAlloca(val->getType(), nullptr);
         controller->assignVariable((llvm::AllocaInst*)valptrptr, val);
         return (llvm::Value*)valptrptr;
-        // return (llvm::Value*)llvm::ConstantPointerNull::get(llvm::Type::getInt32PtrTy(controller->ctx));
-    } else if (ctx->STAR(0) && ctx->children.size() == ctx->STAR().size() + 1) {
-        // make ref
+        */ // this doesnt get the pointer to a value, it allocates memory on the heap, puts the value there and gets the pointer to that. lol.
         auto val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));
+        auto valptr = controller->builder->CreateGEP(val, llvm::ConstantInt::get(llvm::Type::getInt32Ty(controller->ctx), 0));
+        return (llvm::Value*) valptr;
+        // get val ptr, NOT create alloca, create store, return alloca lol
+
+        // return (llvm::Value*)llvm::ConstantPointerNull::get(llvm::Type::getInt32PtrTy(controller->ctx));
+    } else if (ctx->STAR(0) && ctx->children.size() == 2) {
+        // make ref
+        // std::cout << ctx->getText() << std::endl;
+        auto val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));// gives bad any_cast  
+        // auto val = std::any_cast<llvm::AllocaInst*>((std::any)visitExpr(ctx->expr(0)));// also gives b_a_c
         // get dereferenced type
-        auto dtype = val->getType(); // doesnt work
-        dtype = dtype->getContainedType(0);
+        auto dtype = val->getType()->getContainedType(0);
         auto valptr = controller->builder->CreateLoad(dtype, val);
-        auto valptrptr = controller->builder->CreateAlloca(dtype, nullptr);
-        controller->assignVariable((llvm::AllocaInst*)valptrptr, valptr);
-        return (llvm::Value*)controller->getVariable(valptrptr);
+        // auto valptr = controller->getVariable(val);
+        // auto valptrptr = controller->builder->CreateAlloca(dtype, nullptr);
+        // controller->assignVariable((llvm::AllocaInst*)valptrptr, valptr);
+        return (llvm::Value*)valptr;
     } else if(ctx->DOT() != nullptr && ctx->children.size() == 3) {
         auto structPtr = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));
         auto structType = structPtr->getType()->getContainedType(0);
@@ -147,7 +156,7 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         // auto structMemberIndex = this->structs[structName]->getStructMemberIndex(structMember); // doesnt work, function is not defined
         auto structMemberIndex = 0;
         for(int i = 0; i<this->structs[structName]->getNumElements(); i++) {
-            if(this->structNames[structName][i]==structMember) {
+            if(this->structNames[structName][i] == structMember) {
                 structMemberIndex = i;
                 break;
             }
@@ -245,11 +254,19 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         return visitChildren(ctx);
     }else if(ctx->assign() != nullptr && ctx->children.size() == 1) {
         // std::cout << "here" << std::endl;
+        // any x = 4;
         // expr = expr, first exp is probably a pointer.
-        auto ptr = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->assign()->expr(0)));
+        auto non_ptr = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->assign()->expr(0)));
+        // get ptr to non_ptr
+        llvm::Value* ptr = nullptr;
+        if (non_ptr->getType()->isPointerTy()) {
+            ptr = non_ptr;
+        } else {
+            ptr = controller->builder->CreatePointerCast(non_ptr, llvm::PointerType::get(non_ptr->getType(), 0));
+        }
         auto val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->assign()->expr(1)));
-        // controller->builder->CreateStore(val, ptr);
-        controller->assignVariable((llvm::AllocaInst*)ptr, val);
+        controller->builder->CreateStore(val, ptr);
+        // controller->assignVariable(ptr, val);
         return ptr;
     }else
     return visitChildren(ctx);
