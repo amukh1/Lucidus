@@ -52,6 +52,10 @@ llvm::LoadInst* LLVMController::getVariable(llvm::AllocaInst* ref) {
   return this->builder->CreateLoad(ref->getAllocatedType(),ref);
 }
 
+llvm::AllocaInst* LLVMController::getVariableRef(std::string name) {
+  return this->builder->CreateAlloca(this->module->getNamedGlobal(name)->getType(), nullptr, name);
+}
+
 
 llvm::AllocaInst* LLVMController::declareArray(std::string name, llvm::Type* type, llvm::Value* size) {
   return this->builder->CreateAlloca(type, size, name);

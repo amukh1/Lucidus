@@ -1,21 +1,12 @@
 dec printf(tmp:char*, ...) -> int;
-
-struct Car {
-    name: char*,
-    brand: char*,
-    year: int,
-    price: int
-};
-
+dec getFile(name:char*) -> char*;
+dec extractNum(nums:char*, i:int) -> int;
 
 dec main() -> int; 
 def main() -> int {
-    x:int := 4;
-    y:int* := ptr x;
-
-    z:int := *y;
-    
-    printf("%d\n", *y);
+    nums:char* := getFile("input.txt");
+    // extract 3 numbers from char* nums
+    printf("%d + %d + %d = %d\n", extractNum(nums, 0), extractNum(nums, 1), extractNum(nums, 2), extractNum(nums, 0) + extractNum(nums, 1) + extractNum(nums, 2));
 
     return 0;
 }
