@@ -1,12 +1,15 @@
 dec printf(tmp:char*, ...) -> int;
 dec getFile(name:char*) -> char*;
-dec extractNum(nums:char*, i:int) -> int;
+dec malloc(size:int) -> int*;
+dec atoi(str:char*) -> int;
+
+dec free(pointer:char*) -> void;
 
 dec main() -> int; 
 def main() -> int {
-    nums:char* := getFile("input.txt");
-    // extract 3 numbers from char* nums
-    printf("%d + %d + %d = %d\n", extractNum(nums, 0), extractNum(nums, 1), extractNum(nums, 2), extractNum(nums, 0) + extractNum(nums, 1) + extractNum(nums, 2));
+    num:char* := getFile("input.txt");
+    
+    printf("%d\n", atoi(num));
 
     return 0;
 }
