@@ -2,6 +2,8 @@ dec printf(tmp:char*, ...) -> int;
 dec getFile(name:char*) -> char*;
 dec malloc(size:int) -> int*;
 dec atoi(str:char*) -> int;
+dec set(x:int*, y:int) -> int;
+dec print(x:int*) -> int;
 
 dec free(pointer:char*) -> void;
 
@@ -11,5 +13,12 @@ def main() -> int {
     
     printf("%d\n", atoi(num));
 
+    x:int* := malloc(8);
+    set(x, 6);
+    set((x->(int)+4)->(int*), 7)
+
+    printf("%d\n", *x);
+    printf("%d\n", *(((x->(int))+4)->(int*)));
+    // can i just cry in peace? ^
     return 0;
 }

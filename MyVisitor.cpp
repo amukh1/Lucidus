@@ -135,9 +135,10 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
     }else if(ctx->PLUS() != nullptr) {
         return (llvm::Value*) controller->builder->CreateAdd(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))), std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
     } else if(ctx->PTR() != nullptr) {
+        bool old = this->loadingAvailable;
         loadingAvailable = false;
         auto ptr = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));
-        loadingAvailable = true;
+        loadingAvailable = old;
         return ptr;
         // controller->builder->CreateStore(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))), val);
         // auto temp = controller->builder->CreateAlloca(val->getType(), nullptr);
@@ -280,9 +281,10 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         // std::cout << "here" << std::endl;
         // any x = 4;
         // expr = expr, first exp is probably a pointer.
+                    bool old = this->loadingAvailable;
                     this->loadingAvailable = false;
         auto non_ptr = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->assign()->expr(0)));
-                    this->loadingAvailable = true;
+                    this->loadingAvailable = old;
         // get ptr to non_ptr
         
         auto val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->assign()->expr(1)));
