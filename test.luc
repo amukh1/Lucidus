@@ -9,16 +9,6 @@ dec free(pointer:char*) -> void;
 
 dec main() -> int; 
 def main() -> int {
-    num:char* := getFile("input.txt");
-    
-    printf("%d\n", atoi(num));
-
-    x:int* := malloc(8);
-    set(x, 6);
-    set((x->(int)+4)->(int*), 7)
-
-    printf("%d\n", *x);
-    printf("%d\n", *(((x->(int))+4)->(int*)));
-    // can i just cry in peace? ^
+    printf("hello world");
     return 0;
 }
