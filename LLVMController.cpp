@@ -76,33 +76,30 @@ llvm::Type* getTypes(LucidusParser::TypeContext *ctx, std::shared_ptr<LLVMContro
   //int: controller->builder->getInt32Ty()
   llvm::Type* ltype;
   std::string type = ctx->ID()->getText();
-  if((type == "int"|| type == "char" || type == "void" || type == "bool" || type=="float")) {
-    // we know it is primitive type
-    if(type == "int") {
-      ltype = controller->builder->getInt32Ty();
-    }else if(type == "char") {
-      ltype = controller->builder->getInt8Ty();
-    }else if(type == "void") {
-      ltype = controller->builder->getVoidTy();
-    }else if(type == "bool") {
-      ltype = controller->builder->getInt1Ty();
-    }else if(type == "float") {
-      ltype = controller->builder->getFloatTy();
-    }
+  
+  if(type == "int") {
+    ltype = controller->builder->getInt32Ty();
+  }else if(type == "char") {
+    ltype = controller->builder->getInt8Ty();
+  }else if(type == "void") {
+    ltype = controller->builder->getVoidTy();
+  }else if(type == "bool") {
+    ltype = controller->builder->getInt1Ty();
+  }else if(type == "float") {
+    ltype = controller->builder->getFloatTy();
   }else {
     // we know it is a struct
     // ltype = structs[type]; // cannot do this, causes problems later on
     // ltype = llvm::StructType::create(controller->ctx, type);
     // std::cout << "type: " << type << std::endl;
     ltype = controller->module->getNamedGlobal(type)->getType();
-
   }
-
+  
   // now for the pointer bit.
   for(int i = 0; i<ctx->STAR().size(); i++) {
     ltype = ltype->getPointerTo();
   }
-
+  
   return ltype;
 
 }
