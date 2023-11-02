@@ -32,7 +32,7 @@ expr: ID
     | expr DOT ID
     | func
     | PTR expr
-    | STAR+ expr
+    | STAR expr
     | NOT expr
     | expr AND expr
     | expr OR expr

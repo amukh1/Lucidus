@@ -27,11 +27,11 @@ $ cd build
 $ chmod +x ./install.sh
 $ ./install.sh
 $ chmod +x ./compile.sh ../run.sh
-$ cp ./luci /usr/bin
+$ cp ./lucy /usr/bin
 ```
 
 From APT:
-    
+(not set up yet)
 ```sh
 $ sudo apt install luci
 ```
@@ -44,7 +44,7 @@ $ sudo apt install luci
 # Usage
 
 <br>
-
+Docs: lucidus.amukh1.dev/docs
 <br>
 
 # Contributing

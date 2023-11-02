@@ -156,7 +156,7 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         // return (llvm::Value*)allocval;
         // auto valptr = controller->builder->CreateGEP(allocval->getType(), allocval, std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
         // return (llvm::Value*)val;
-    } else if (ctx->STAR(0) && ctx->children.size() == 2) {
+    } else if (ctx->STAR() && ctx->children.size() == 2) {
         // make ref
         // std::cout << ctx->getText() << std::endl;
         auto val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));// gives bad any_cast  
