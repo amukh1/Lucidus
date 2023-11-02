@@ -12,7 +12,6 @@ dec main() -> int;
 def main() -> int {
     x:int := 4;
     y:int* := ptr x;
-
     z:int := *y;
     
     printf("%d\n", *y);
