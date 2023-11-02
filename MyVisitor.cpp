@@ -111,32 +111,52 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         return visit(ctx->func());
     }else if(ctx->ID() != nullptr && ctx->children.size() == 1) {
         // if variable is in function scope
-        if(this->functionScope.count(ctx->ID()->getText()))
-            return (llvm::Value*) controller->builder->CreateLoad(((llvm::AllocaInst*)this->functionScope[ctx->ID()->getText()])->getAllocatedType(),this->functionScope[ctx->ID()->getText()]);
+        if(loadingAvailable == true) {
+            if(this->functionScope.count(ctx->ID()->getText()))
+                return (llvm::Value*) controller->builder->CreateLoad(((llvm::AllocaInst*)this->functionScope[ctx->ID()->getText()])->getAllocatedType(),this->functionScope[ctx->ID()->getText()]);
         // else check if it is in global vars, if so, this->controller->module->getNamedGlobal(name)
-        else if(this->controller->module->getNamedGlobal(ctx->ID()->getText()))
-            return (llvm::Value*) controller->builder->CreateLoad(this->controller->module->getNamedGlobal(ctx->ID()->getText())->getValueType(), this->controller->module->getNamedGlobal(ctx->ID()->getText()));
-        else {
-            std::cout << "Variable " << ctx->ID()->getText() << " not found" << std::endl;
-            return (llvm::Value*) llvm::ConstantPointerNull::get(llvm::Type::getInt32PtrTy(controller->ctx));
+            else if(this->controller->module->getNamedGlobal(ctx->ID()->getText()))
+                return (llvm::Value*) controller->builder->CreateLoad(this->controller->module->getNamedGlobal(ctx->ID()->getText())->getValueType(), this->controller->module->getNamedGlobal(ctx->ID()->getText()));
+            else {
+                std::cout << "Variable " << ctx->ID()->getText() << " not found" << std::endl;
+                return (llvm::Value*) llvm::ConstantPointerNull::get(llvm::Type::getInt32PtrTy(controller->ctx));
+            }
+        }else {
+            if(this->functionScope.count(ctx->ID()->getText()))
+                return (llvm::Value*) this->functionScope[ctx->ID()->getText()];
+        // else check if it is in global vars, if so, this->controller->module->getNamedGlobal(name)
+            else if(this->controller->module->getNamedGlobal(ctx->ID()->getText()))
+                return (llvm::Value*) this->controller->module->getNamedGlobal(ctx->ID()->getText());
+            else {
+                std::cout << "Variable " << ctx->ID()->getText() << " not found" << std::endl;
+                return (llvm::Value*) llvm::ConstantPointerNull::get(llvm::Type::getInt32PtrTy(controller->ctx));
+            }
         }
     }else if(ctx->PLUS() != nullptr) {
         return (llvm::Value*) controller->builder->CreateAdd(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))), std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
-    }else if(ctx->PTR() != nullptr) {
-        // make ref
-        /*
-        auto val = (llvm::Value*) std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));
-        auto valptrptr = controller->builder->CreateAlloca(val->getType(), nullptr);
-        controller->assignVariable((llvm::AllocaInst*)valptrptr, val);
-        return (llvm::Value*)valptrptr;
-        */ // this doesnt get the pointer to a value, it allocates memory on the heap, puts the value there and gets the pointer to that. lol.
-        auto val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));
-        auto valptr = controller->builder->CreateGEP(val, llvm::ConstantInt::get(llvm::Type::getInt32Ty(controller->ctx), 0));
-        return (llvm::Value*) valptr;
-        // get val ptr, NOT create alloca, create store, return alloca lol
-
-        // return (llvm::Value*)llvm::ConstantPointerNull::get(llvm::Type::getInt32PtrTy(controller->ctx));
-    } else if (ctx->STAR(0) && ctx->children.size() == 2) {
+    } else if(ctx->PTR() != nullptr) {
+        bool old = this->loadingAvailable;
+        loadingAvailable = false;
+        auto ptr = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));
+        loadingAvailable = old;
+        return ptr;
+        // controller->builder->CreateStore(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))), val);
+        // auto temp = controller->builder->CreateAlloca(val->getType(), nullptr);
+        // controller->builder->CreateStore(val, temp);
+        // return (llvm::Value*)controller->getVariable(temp);
+        // std::cout << llvm::isa<llvm::AllocaInst>(val) << std::endl;
+        // if(llvm::isa<llvm::AllocaInst>(val))
+        // return (llvm::Value*) llvm::dyn_cast<llvm::AllocaInst>(val);
+        // else {
+        //     auto allocaval = controller->builder->CreateAlloca(val->getType(), nullptr);
+        //     controller->builder->CreateStore(val, allocaval);
+        //     return (llvm::Value*)allocaval;
+        // }
+        // return ptr to allocainst
+        // return (llvm::Value*)allocval;
+        // auto valptr = controller->builder->CreateGEP(allocval->getType(), allocval, std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
+        // return (llvm::Value*)val;
+    } else if (ctx->STAR() && ctx->children.size() == 2) {
         // make ref
         // std::cout << ctx->getText() << std::endl;
         auto val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));// gives bad any_cast  
@@ -151,7 +171,7 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
     } else if(ctx->DOT() != nullptr && ctx->children.size() == 3) {
         auto structPtr = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));
         auto structType = structPtr->getType()->getContainedType(0);
-        auto structName = structType->getStructName();
+        auto structName = structType->getStructName().str();
         auto structMember = ctx->ID()->getText();
         // auto structMemberIndex = this->structs[structName]->getStructMemberIndex(structMember); // doesnt work, function is not defined
         auto structMemberIndex = 0;
@@ -215,12 +235,17 @@ antlrcpp::Any MyVisitor::visitDef(LucidusParser::DefContext *ctx) {
 antlrcpp::Any MyVisitor::visitFunc(LucidusParser::FuncContext *ctx)  {
         auto func = this->controller->module->getFunction(ctx->ID()->getText());
         // get params
+        if(func != nullptr){
         std::vector<llvm::Value*> params;
         for(int i = 0; i<ctx->expr().size(); i++) {
             params.push_back(std::any_cast<llvm::Value*>((std::any)visit(ctx->expr(i))));
             // param name
         }
         return (llvm::Value*)this->controller->builder->CreateCall(func, params);
+        }else {
+            std::cout << "Function " << ctx->ID()->getText() << " not found" << std::endl;
+            return nullptr;
+        }
 }
 
 antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
@@ -256,18 +281,16 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         // std::cout << "here" << std::endl;
         // any x = 4;
         // expr = expr, first exp is probably a pointer.
+                    bool old = this->loadingAvailable;
+                    this->loadingAvailable = false;
         auto non_ptr = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->assign()->expr(0)));
+                    this->loadingAvailable = old;
         // get ptr to non_ptr
-        llvm::Value* ptr = nullptr;
-        if (non_ptr->getType()->isPointerTy()) {
-            ptr = non_ptr;
-        } else {
-            ptr = controller->builder->CreatePointerCast(non_ptr, llvm::PointerType::get(non_ptr->getType(), 0));
-        }
+        
         auto val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->assign()->expr(1)));
-        controller->builder->CreateStore(val, ptr);
+        controller->builder->CreateStore(val, non_ptr);
         // controller->assignVariable(ptr, val);
-        return ptr;
+        return non_ptr;
     }else
     return visitChildren(ctx);
 }

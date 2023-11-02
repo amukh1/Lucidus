@@ -33,7 +33,7 @@ int main() {
 
 
     std::ifstream stream;
-    stream.open("test.luc");
+    stream.open("test.luci");
     antlr4::ANTLRInputStream inputStream(stream);
     LucidusLexer lexer(&inputStream);
     antlr4::CommonTokenStream tokens(&lexer);

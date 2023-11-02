@@ -294,8 +294,7 @@ public:
     antlr4::tree::TerminalNode *PTR();
     std::vector<ExprContext *> expr();
     ExprContext* expr(size_t i);
-    std::vector<antlr4::tree::TerminalNode *> STAR();
-    antlr4::tree::TerminalNode* STAR(size_t i);
+    antlr4::tree::TerminalNode *STAR();
     antlr4::tree::TerminalNode *NOT();
     antlr4::tree::TerminalNode *OPAREN();
     antlr4::tree::TerminalNode *CPAREN();

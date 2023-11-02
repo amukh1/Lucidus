@@ -47,6 +47,7 @@ class LLVMController {
     llvm::AllocaInst* declareVariable(std::string name, llvm::Type* type);
     llvm::StoreInst* assignVariable(llvm::AllocaInst* ref, llvm::Value* value);
     llvm::LoadInst* getVariable(llvm::AllocaInst* ref);
+    llvm::AllocaInst* getVariableRef(std::string name);
 
     // arrays
     llvm::AllocaInst* declareArray(std::string name, llvm::Type* type, llvm::Value* size);
