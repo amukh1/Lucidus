@@ -8,7 +8,7 @@ cd antlr4-cpp-runtime-4.13.1
 mkdir build && cd build
 cmake ..
 make
-// now made, put it somewhere s.t. it can be included easily
+
 sudo cp -r ../runtime/src /usr/local/include/antlr4-runtime
 sudo cp libantlr4-runtime.a /usr/local/lib
 cd ../..
