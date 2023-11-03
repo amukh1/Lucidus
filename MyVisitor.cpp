@@ -282,10 +282,10 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         // std::cout << "here" << std::endl;
         // any x = 4;
         // expr = expr, first exp is probably a pointer.
-                    bool old = this->loadingAvailable;
-                    this->loadingAvailable = false;
+                    // bool old = this->loadingAvailable;
+                    // this->loadingAvailable = false;
         auto non_ptr = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->assign()->expr(0)));
-                    this->loadingAvailable = old;
+                    // this->loadingAvailable = old;
         // get ptr to non_ptr
 
         // auto temp = controller->builder->CreateAlloca(non_ptr->getType(), nullptr);

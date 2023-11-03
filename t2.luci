@@ -1,26 +1,16 @@
 dec printf(tmp:char*, ...) -> int;
+dec malloc(size:int) -> int*;
 
 dec main() -> int;
 def main() -> int {
 
-    x:int := 3;
+    x:int* := malloc(100);
 
-    y:int* := ptr x;
+    x = 5;
+    ((x->(int)+4)->(int*)) = 10;
 
-    printf("%d\n", *y);
-    printf("%p\n", ptr x);
-    printf("%p\n", ptr x);
-
-    x = 4;
-
-    printf("%d\n", *y);
-    printf("%d\n", *(ptr x));
-
-    *y = 5;
-    
-
-    printf("%p\n", (*(ptr x)));
-    printf("%d\n", x);
+    printf("%d\n", *x);
+    printf("%d\n", *(((x->(int)+4)->(int*))));
 
     return 0;
 }
