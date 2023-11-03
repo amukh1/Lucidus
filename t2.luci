@@ -16,9 +16,11 @@ def main() -> int {
     printf("%d\n", *y);
     printf("%d\n", *(ptr x));
 
-    (*(ptr x)) = 5;
+    *y = 5;
+    
 
-    printf("%d\n", *y);
+    printf("%p\n", (*(ptr x)));
+    printf("%d\n", x);
 
     return 0;
 }

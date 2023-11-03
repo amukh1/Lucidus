@@ -164,11 +164,11 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         // auto val = std::any_cast<llvm::AllocaInst*>((std::any)visitExpr(ctx->expr(0)));// also gives b_a_c
         // get dereferenced type
         auto dtype = val->getType()->getContainedType(0);
-        auto valptr = controller->builder->CreateLoad(dtype, val);
+        auto valnotptr = controller->builder->CreateLoad(dtype, val);
         // auto valptr = controller->getVariable(val);
         // auto valptrptr = controller->builder->CreateAlloca(dtype, nullptr);
         // controller->assignVariable((llvm::AllocaInst*)valptrptr, valptr);
-        return (llvm::Value*)valptr;
+        return (llvm::Value*)valnotptr;
     } else if(ctx->DOT() != nullptr && ctx->children.size() == 3) {
         auto structPtr = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));
         auto structType = structPtr->getType()->getContainedType(0);
