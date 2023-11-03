@@ -139,7 +139,8 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         loadingAvailable = false;
         auto ptr = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));
         loadingAvailable = old;
-        return ptr;
+
+        return (llvm::Value*)ptr;
         // controller->builder->CreateStore(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))), val);
         // auto temp = controller->builder->CreateAlloca(val->getType(), nullptr);
         // controller->builder->CreateStore(val, temp);
@@ -156,7 +157,7 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         // return (llvm::Value*)allocval;
         // auto valptr = controller->builder->CreateGEP(allocval->getType(), allocval, std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
         // return (llvm::Value*)val;
-    } else if (ctx->STAR() && ctx->children.size() == 2) {
+    } else if (ctx->STAR()) {
         // make ref
         // std::cout << ctx->getText() << std::endl;
         auto val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));// gives bad any_cast  
@@ -263,12 +264,12 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         llvm::StoreInst* val = controller->assignVariable(ptr, std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->vdec()->expr())));
         this->functionScope[name] = (llvm::Value*)ptr;
         return ptr;
-    }else if(ctx->vdef() != nullptr && ctx->children.size() == 1) {
-        std::string name = ctx->vdef()->ID()->getText();
-        llvm::Value* val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->vdef()->expr()));
+    // }else if(ctx->vdef() != nullptr && ctx->children.size() == 1) {
+    //     std::string name = ctx->vdef()->ID()->getText();
+    //     llvm::Value* val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->vdef()->expr()));
         
-        controller->assignVariable((llvm::AllocaInst*)this->functionScope[name], val);
-        return this->functionScope[name];
+    //     controller->assignVariable((llvm::AllocaInst*)this->functionScope[name], val);
+    //     return this->functionScope[name];
     }else if(ctx->edec() != nullptr && ctx->children.size() == 1) {
         std::string name = ctx->edec()->idec()->ID()->getText();
         llvm::Type* type = getTypes(ctx->edec()->idec()->type(), this->controller, this->structs);
@@ -286,11 +287,15 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         auto non_ptr = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->assign()->expr(0)));
                     this->loadingAvailable = old;
         // get ptr to non_ptr
+
+        // auto temp = controller->builder->CreateAlloca(non_ptr->getType(), nullptr);
+        // controller->builder->CreateStore(non_ptr, temp);
+        // auto ptr = controller->getVariable(temp);
         
         auto val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->assign()->expr(1)));
         controller->builder->CreateStore(val, non_ptr);
         // controller->assignVariable(ptr, val);
-        return non_ptr;
+        return (llvm::Value*)non_ptr;
     }else
     return visitChildren(ctx);
 }
