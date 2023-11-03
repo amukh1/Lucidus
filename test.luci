@@ -5,7 +5,7 @@ dec atoi(str:char*) -> int;
 dec set(x:int*, y:int, i:int) -> int;
 dec get(x:int*, i:int) -> int;
 dec print(x:int*) -> int;
-dec outFile(name:char*, data:char*=) -> int;
+dec outFile(name:char*, data:char*) -> int;
 dec free(pointer:char*) -> void;
 dec to_string(x:int) -> char*;
 dec concat(x:char*, y:char*) -> char*;
