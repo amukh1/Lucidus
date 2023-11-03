@@ -12,11 +12,11 @@ dec: DECL ID '(' (param (',' param)*)? ')' ARROW type ';';
 ret: RETURN expr ';';
 vdec: idec DCOL expr ';';
 edec: idec ';';
-vdef: ID '=' expr ';';
+// vdef: ID '=' expr ';';
 assign: expr '=' expr ';';
 stat
     : vdec
-    | vdef
+    // | vdef
     | edec
     | assign
     | expr ';'

@@ -26,14 +26,14 @@
 
 
 
-int main() {
+int main(int argc, char **argv) {
     // antlr
     std::shared_ptr<LLVMController> Controller = std::make_shared<LLVMController>();
     // Controller->module->getOrInsertFunction("printf", llvm::FunctionType::get(Controller->builder->getInt32Ty(), Controller->builder->getInt8PtrTy(), true));
 
 
     std::ifstream stream;
-    stream.open("test.luci");
+    stream.open(argv[1]);
     antlr4::ANTLRInputStream inputStream(stream);
     LucidusLexer lexer(&inputStream);
     antlr4::CommonTokenStream tokens(&lexer);
@@ -48,7 +48,7 @@ int main() {
 
      llvm::outs() << *Controller->module << '\n';
     std::error_code ec;
-    llvm::raw_fd_ostream os("output.ll", ec);
+    llvm::raw_fd_ostream os(argv[2], ec);
     Controller->module->print(os, nullptr);
 
     return 0;

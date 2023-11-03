@@ -51,10 +51,6 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual std::any visitVdef(LucidusParser::VdefContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
   virtual std::any visitAssign(LucidusParser::AssignContext *ctx) override {
     return visitChildren(ctx);
   }
