@@ -27,7 +27,7 @@ llvm::Function* LLVMController::declareFunction(std::string name, llvm::Function
     fn = llvm::Function::Create(type, llvm::Function::ExternalLinkage, name, *module);
     verifyFunction(*fn);
     return fn;
-}
+}//suf
 
 llvm::BasicBlock* LLVMController::defineFunction(std::string name) {
     llvm::Function* fn = this->module->getFunction(name);
