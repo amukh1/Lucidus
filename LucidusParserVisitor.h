@@ -35,6 +35,8 @@ public:
 
     virtual std::any visitVdec(LucidusParser::VdecContext *context) = 0;
 
+    virtual std::any visitInfdec(LucidusParser::InfdecContext *context) = 0;
+
     virtual std::any visitEdec(LucidusParser::EdecContext *context) = 0;
 
     virtual std::any visitAssign(LucidusParser::AssignContext *context) = 0;

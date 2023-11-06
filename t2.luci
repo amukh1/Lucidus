@@ -4,13 +4,7 @@ dec malloc(size:int) -> int*;
 dec main() -> int;
 def main() -> int {
 
-    x:int* := malloc(100);
-
-    x = 5;
-    ((x->(int)+4)->(int*)) = 10;
-
-    printf("%d\n", *x);
-    printf("%d\n", *(((x->(int)+4)->(int*))));
+    printf("Hello World");
 
     return 0;
 }

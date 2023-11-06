@@ -21,8 +21,9 @@ public:
 
   enum {
     RuleProgram = 0, RuleRawtype = 1, RuleType = 2, RuleIdec = 3, RuleParam = 4, 
-    RuleDec = 5, RuleRet = 6, RuleVdec = 7, RuleEdec = 8, RuleAssign = 9, 
-    RuleStat = 10, RuleDef = 11, RuleExpr = 12, RuleStruct = 13, RuleFunc = 14
+    RuleDec = 5, RuleRet = 6, RuleVdec = 7, RuleInfdec = 8, RuleEdec = 9, 
+    RuleAssign = 10, RuleStat = 11, RuleDef = 12, RuleExpr = 13, RuleStruct = 14, 
+    RuleFunc = 15
   };
 
   explicit LucidusParser(antlr4::TokenStream *input);
@@ -50,6 +51,7 @@ public:
   class DecContext;
   class RetContext;
   class VdecContext;
+  class InfdecContext;
   class EdecContext;
   class AssignContext;
   class StatContext;
@@ -177,7 +179,7 @@ public:
     VdecContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     IdecContext *idec();
-    antlr4::tree::TerminalNode *DCOL();
+    antlr4::tree::TerminalNode *EQ();
     ExprContext *expr();
     antlr4::tree::TerminalNode *SEMI();
 
@@ -187,6 +189,22 @@ public:
   };
 
   VdecContext* vdec();
+
+  class  InfdecContext : public antlr4::ParserRuleContext {
+  public:
+    InfdecContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *ID();
+    antlr4::tree::TerminalNode *DCOL();
+    ExprContext *expr();
+    antlr4::tree::TerminalNode *SEMI();
+
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  InfdecContext* infdec();
 
   class  EdecContext : public antlr4::ParserRuleContext {
   public:
@@ -223,6 +241,7 @@ public:
     StatContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     VdecContext *vdec();
+    InfdecContext *infdec();
     EdecContext *edec();
     AssignContext *assign();
     ExprContext *expr();

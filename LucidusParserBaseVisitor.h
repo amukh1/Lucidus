@@ -47,6 +47,10 @@ public:
     return visitChildren(ctx);
   }
 
+  virtual std::any visitInfdec(LucidusParser::InfdecContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
   virtual std::any visitEdec(LucidusParser::EdecContext *ctx) override {
     return visitChildren(ctx);
   }

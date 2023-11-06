@@ -278,6 +278,14 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         this->functionScope[name] = (llvm::Value*)ptr;
         // return ptr;
         return visitChildren(ctx);
+    }else if(ctx->infdec() != nullptr && ctx->children.size() == 1) {
+        std::string name = ctx->infdec()->ID()->getText();
+        auto val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->infdec()->expr()));
+        llvm::Type* type = val->getType();
+        llvm::AllocaInst* ptr = controller->declareVariable(name, type);
+        controller->assignVariable(ptr, val);
+        this->functionScope[name] = (llvm::Value*)ptr;
+        return ptr;
     }else if(ctx->assign() != nullptr && ctx->children.size() == 1) {
         // std::cout << "here" << std::endl;
         // any x = 4;

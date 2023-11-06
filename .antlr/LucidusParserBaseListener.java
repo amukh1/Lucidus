@@ -124,18 +124,6 @@ public class LucidusParserBaseListener implements LucidusParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVdef(LucidusParser.VdefContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitVdef(LucidusParser.VdefContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterAssign(LucidusParser.AssignContext ctx) { }
 	/**
 	 * {@inheritDoc}

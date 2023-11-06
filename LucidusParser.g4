@@ -10,13 +10,15 @@ idec: ID COL type ;
 param: (idec|DOTS);
 dec: DECL ID '(' (param (',' param)*)? ')' ARROW type ';';
 ret: RETURN expr ';';
-vdec: idec DCOL expr ';';
+vdec: idec '=' expr ';';
+infdec: ID DCOL expr ';';
 edec: idec ';';
 // vdef: ID '=' expr ';';
 assign: expr '=' expr ';';
 stat
     : vdec
     // | vdef
+    | infdec
     | edec
     | assign
     | expr ';'

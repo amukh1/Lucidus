@@ -97,16 +97,6 @@ public interface LucidusParserListener extends ParseTreeListener {
 	 */
 	void exitEdec(LucidusParser.EdecContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link LucidusParser#vdef}.
-	 * @param ctx the parse tree
-	 */
-	void enterVdef(LucidusParser.VdefContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link LucidusParser#vdef}.
-	 * @param ctx the parse tree
-	 */
-	void exitVdef(LucidusParser.VdefContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link LucidusParser#assign}.
 	 * @param ctx the parse tree
 	 */
