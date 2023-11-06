@@ -14,16 +14,16 @@ public:
   enum {
     AND = 1, OR = 2, NOT = 3, EQ = 4, PLUS = 5, SUB = 6, STAR = 7, DIV = 8, 
     OPAREN = 9, CPAREN = 10, COMMA = 11, SEMI = 12, DEF = 13, STRUCT = 14, 
-    DECL = 15, ARROW = 16, DCOL = 17, PTR = 18, COL = 19, RETURN = 20, DOT = 21, 
-    DOTS = 22, LCURLY = 23, RCURLY = 24, INT = 25, FLOAT = 26, ID = 27, 
-    WS = 28, COMMENT = 29, STRING = 30
+    DECL = 15, ARROW = 16, DCOL = 17, PTR = 18, COL = 19, RETURN = 20, LABEL = 21, 
+    GOTO = 22, DOT = 23, DOTS = 24, LCURLY = 25, RCURLY = 26, INT = 27, 
+    FLOAT = 28, ID = 29, WS = 30, COMMENT = 31, STRING = 32
   };
 
   enum {
     RuleProgram = 0, RuleRawtype = 1, RuleType = 2, RuleIdec = 3, RuleParam = 4, 
     RuleDec = 5, RuleRet = 6, RuleVdec = 7, RuleInfdec = 8, RuleEdec = 9, 
-    RuleAssign = 10, RuleStat = 11, RuleDef = 12, RuleExpr = 13, RuleStruct = 14, 
-    RuleFunc = 15
+    RuleAssign = 10, RuleLabel = 11, RuleGoto = 12, RuleStat = 13, RuleDef = 14, 
+    RuleExpr = 15, RuleStruct = 16, RuleFunc = 17
   };
 
   explicit LucidusParser(antlr4::TokenStream *input);
@@ -54,6 +54,8 @@ public:
   class InfdecContext;
   class EdecContext;
   class AssignContext;
+  class LabelContext;
+  class GotoContext;
   class StatContext;
   class DefContext;
   class ExprContext;
@@ -236,6 +238,36 @@ public:
 
   AssignContext* assign();
 
+  class  LabelContext : public antlr4::ParserRuleContext {
+  public:
+    LabelContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *LABEL();
+    antlr4::tree::TerminalNode *ID();
+    antlr4::tree::TerminalNode *COL();
+
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  LabelContext* label();
+
+  class  GotoContext : public antlr4::ParserRuleContext {
+  public:
+    GotoContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *GOTO();
+    antlr4::tree::TerminalNode *ID();
+    antlr4::tree::TerminalNode *SEMI();
+
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  GotoContext* goto_();
+
   class  StatContext : public antlr4::ParserRuleContext {
   public:
     StatContext(antlr4::ParserRuleContext *parent, size_t invokingState);
@@ -248,6 +280,8 @@ public:
     antlr4::tree::TerminalNode *SEMI();
     DecContext *dec();
     RetContext *ret();
+    LabelContext *label();
+    GotoContext *goto_();
 
 
     virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
@@ -261,11 +295,11 @@ public:
     DefContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *DEF();
-    std::vector<antlr4::tree::TerminalNode *> ID();
-    antlr4::tree::TerminalNode* ID(size_t i);
+    antlr4::tree::TerminalNode *ID();
     antlr4::tree::TerminalNode *OPAREN();
     antlr4::tree::TerminalNode *CPAREN();
     antlr4::tree::TerminalNode *ARROW();
+    TypeContext *type();
     antlr4::tree::TerminalNode *LCURLY();
     antlr4::tree::TerminalNode *RCURLY();
     std::vector<ParamContext *> param();

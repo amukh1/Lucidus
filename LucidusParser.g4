@@ -15,6 +15,9 @@ infdec: ID DCOL expr ';';
 edec: idec ';';
 // vdef: ID '=' expr ';';
 assign: expr '=' expr ';';
+label: LABEL ID ':';
+goto: GOTO ID ';';
+
 stat
     : vdec
     // | vdef
@@ -24,8 +27,10 @@ stat
     | expr ';'
     | dec
     | ret
+    | label
+    | goto
     ;
-def : DEF ID '(' (param (',' param)*)? ')' ARROW ID '{' stat* '}' ;
+def : DEF ID '(' (param (',' param)*)? ')' ARROW type '{' stat* '}' ;
 
 expr: ID
     | INT
@@ -34,11 +39,11 @@ expr: ID
     | expr DOT ID
     | func
     | PTR expr
+    | expr STAR expr
     | STAR expr
     | NOT expr
     | expr AND expr
     | expr OR expr
-    | expr STAR expr
     | expr DIV expr
     | expr PLUS expr
     | expr SUB expr

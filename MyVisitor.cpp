@@ -134,6 +134,12 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         }
     }else if(ctx->PLUS() != nullptr) {
         return (llvm::Value*) controller->builder->CreateAdd(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))), std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
+    }else if(ctx->STAR() != nullptr && ctx->children.size() == 3) {
+        return (llvm::Value*) controller->builder->CreateMul(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))), std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
+    }else if(ctx->SUB() != nullptr) {
+        return (llvm::Value*) controller->builder->CreateSub(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))), std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
+    }else if(ctx->DIV() != nullptr) {
+        return (llvm::Value*) controller->builder->CreateSDiv(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))), std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
     } else if(ctx->PTR() != nullptr) {
         bool old = this->loadingAvailable;
         loadingAvailable = false;
@@ -157,7 +163,7 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         // return (llvm::Value*)allocval;
         // auto valptr = controller->builder->CreateGEP(allocval->getType(), allocval, std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
         // return (llvm::Value*)val;
-    } else if (ctx->STAR()) {
+    } else if (ctx->STAR() && ctx->children.size() == 2) {
         // make ref
         // std::cout << ctx->getText() << std::endl;
         auto val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));// gives bad any_cast  
@@ -219,14 +225,14 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
 }
 
 antlrcpp::Any MyVisitor::visitDef(LucidusParser::DefContext *ctx) {
-    this->controller->defineFunction(ctx->ID(0)->getText());
+    this->controller->defineFunction(ctx->ID()->getText());
     this->functionScope = {};
     for(int i = 0; i<ctx->param().size(); i++) {
             if(ctx->param(i)->DOTS() == nullptr){
                 this->functionScope[ctx->param(i)->idec()->ID()->getText()] = controller->declareVariable(ctx->param(i)->idec()->ID()->getText(),getTypes(ctx->param(i)->idec()->type(), controller, this->structs));
                 // llvm::StoreInst* val = controller->assignVariable((llvm::AllocaInst*)this->functionScope[ctx->param(i)->idec()->ID()->getText()], this->functionParamScope[ctx->ID(i)->getText()][ctx->param(i)->idec()->ID()->getText()]);
                 // ith argument value (from llvm):
-                llvm::Value* arg = this->controller->module->getFunction(ctx->ID(0)->getText())->getArg(i);
+                llvm::Value* arg = this->controller->module->getFunction(ctx->ID()->getText())->getArg(i);
                 llvm::StoreInst* val = controller->assignVariable((llvm::AllocaInst*)this->functionScope[ctx->param(i)->idec()->ID()->getText()], arg);
             }
         }
@@ -304,7 +310,17 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         controller->builder->CreateStore(val, non_ptr);
         // controller->assignVariable(ptr, val);
         return (llvm::Value*)non_ptr;
-    }else
+    }else if(ctx->label() != nullptr && ctx->children.size() == 1) {
+        // make basic block
+        llvm::BasicBlock* bb = llvm::BasicBlock::Create(this->controller->ctx, ctx->label()->ID()->getText(), this->controller->module->getFunction(this->functionNameScope[ctx->label()->ID()->getText()].first[0]));
+        blocks.insert(std::pair(ctx->label()->ID()->getText(), bb));
+        return bb;
+    } else if(ctx->goto_() != nullptr && ctx->children.size() == 1) {
+        auto name = ctx->goto_()->ID();
+        // get  basic block from llvm by name
+        controller->builder->SetInsertPoint(blocks[name->getText()]);
+        return visitChildren(ctx);
+    } else
     return visitChildren(ctx);
 }
 

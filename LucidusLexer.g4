@@ -22,6 +22,8 @@ DCOL: ':=';
 PTR: 'ptr';
 COL: ':';
 RETURN: 'return';
+LABEL: 'label';
+GOTO: 'goto';
 DOT: '.';
 DOTS: '...';
 

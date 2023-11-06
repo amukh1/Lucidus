@@ -59,6 +59,14 @@ public:
     return visitChildren(ctx);
   }
 
+  virtual std::any visitLabel(LucidusParser::LabelContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitGoto(LucidusParser::GotoContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
   virtual std::any visitStat(LucidusParser::StatContext *ctx) override {
     return visitChildren(ctx);
   }

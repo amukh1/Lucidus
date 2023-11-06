@@ -1,10 +1,17 @@
 dec printf(tmp:char*, ...) -> int;
 dec malloc(size:int) -> int*;
 
+dec loop(n:int) -> int;
+
 dec main() -> int;
 def main() -> int {
-
-    printf("Hello World");
-
+    loop(16);
     return 0;
+}
+
+def loop(n:int) -> int {
+    printf("loop");
+    x := 4;
+    y := *x;
+    return y;
 }
