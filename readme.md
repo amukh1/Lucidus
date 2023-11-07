@@ -13,39 +13,75 @@
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-# Installation
+Welcome to the Lucidus wiki!
 
-<br>
-
-## To install and set up the library, run:
+## Installation
 
 From Github:
 
 ```sh
-$ git clone https://github.com/amukh1/Lucidus ./build
-$ cd build
-$ chmod +x ./install.sh
-$ ./install.sh
-$ chmod +x ./compile.sh ../run.sh
-$ cp ./lucy /usr/bin
+$ git clone https://github.com/amukh1/Lucidus ./Lucidus
+$ cd Lucidus
+$ sudo apt install antlr4
+$ chmod +x ./compile.sh
+$ sudo ./compile.sh
 ```
+> :warning: **LLVM**: Make sure to install LLVM first if you do not have it! (./llvm-install.sh)
 
 From APT:
 (not set up yet)
 ```sh
-$ sudo apt install luci
+$ sudo apt install lucy
 ```
 
-## There is also a vscode extension:
+## VSCODE Extention
 **[Extension Link](https://marketplace.visualstudio.com/items?itemName=amukh1.lucidus)**
 
 **Or  just search up "Lucidus" in the extensions section**
 
-# Usage
+## Basic Usage
 
-<br>
-Docs: lucidus.amukh1.dev/docs
-<br>
+Lets make hello world!
+
+First make a file named ``test.luci``:
+```c
+dec printf(fmt:char*, ...) -> int;
+```
+
+This block is declaring the printf function. it takes a static parameter "fmt" for format with type ``char*``, and returns an ``int``.
+During compilation, the c standard libraries are linked with your code so the definition of printf is provided.
+
+```c
+dec main() -> int;
+def main() -> int {
+    
+}
+```
+
+As you can see a big difference here over other common languages is that you **declare before you define** functions.
+
+Now for the hello world part:
+(In the main function)
+```c
+printf("Hello World!");
+return 0;
+```
+
+Now lets run it. 
+
+```sh
+$ lucy test.luci test.ll
+```
+This compiles test.luci to an llvm ll file.
+Now to run it, we can use ``lli``:
+```sh
+$ lli test.ll
+```
+or ``clang``:
+```sh
+$ clang test.ll -o test
+$ ./test
+```
 
 # Contributing
 
