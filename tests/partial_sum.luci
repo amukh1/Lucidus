@@ -1,11 +1,17 @@
 dec printf(tmp:char*, ...) -> int;
-dec malloc(size:int) -> int*;
+dec malloc(size:int) -> char*;
+dec gets(tmp:char*) -> char*;
+dec atoi(tmp:char*) -> int;
 
 dec partial(n:int, d:int) -> int;
 
 dec main() -> int;
 def main() -> int {
-    sum:int = partial(16, 2);
+    n:char* = malloc(100);
+    d:char* = malloc(100);
+    gets(n);
+    gets(d);
+    sum:int = partial(atoi(n), atoi(d));
     printf("%d\n", sum);
     return 0;
 }
@@ -15,7 +21,7 @@ def partial(n:int, d:int) -> int {
     sum:int = 0;
     goto while;
     label while:
-    if(i == n) -> {
+    if(i == n*d) -> {
         goto end;
     }
     printf("sum = %d\n", sum);

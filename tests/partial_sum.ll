@@ -7,7 +7,11 @@ source_filename = "amukh"
 
 declare i32 @printf(i8*, ...)
 
-declare i32* @malloc(i32)
+declare i8* @malloc(i32)
+
+declare i8* @gets(i8*)
+
+declare i32 @atoi(i8*)
 
 define i32 @partial(i32 %0, i32 %1) {
 entry:
@@ -54,10 +58,24 @@ end:                                              ; preds = %then
 
 define i32 @main() {
 entry:
+  %n = alloca i8*
+  %0 = call i8* @malloc(i32 100)
+  store i8* %0, i8** %n
+  %d = alloca i8*
+  %1 = call i8* @malloc(i32 100)
+  store i8* %1, i8** %d
+  %2 = load i8*, i8** %n
+  %3 = call i8* @gets(i8* %2)
+  %4 = load i8*, i8** %d
+  %5 = call i8* @gets(i8* %4)
   %sum = alloca i32
-  %0 = call i32 @partial(i32 16, i32 2)
-  store i32 %0, i32* %sum
-  %1 = load i32, i32* %sum
-  %2 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str, i32 0, i32 0), i32 %1)
+  %6 = load i8*, i8** %n
+  %7 = call i32 @atoi(i8* %6)
+  %8 = load i8*, i8** %d
+  %9 = call i32 @atoi(i8* %8)
+  %10 = call i32 @partial(i32 %7, i32 %9)
+  store i32 %10, i32* %sum
+  %11 = load i32, i32* %sum
+  %12 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str, i32 0, i32 0), i32 %11)
   ret i32 0
 }
