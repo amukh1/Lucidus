@@ -1,8 +1,8 @@
-extra
-build
-cmake
-demo
-dist
-emsdk
-run
-runtime
+extra/
+build/
+cmake/
+demo/
+dist/
+emsdk/
+run/
+runtime/
