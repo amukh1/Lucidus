@@ -343,8 +343,8 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         // get block
         controller->builder->CreateBr(blocks[name->getText()]);
         // increment opcode count
-        controller->builder->CreateAdd(controller->builder->getInt32(0), controller->builder->getInt32(0));
-         
+        // controller->builder->CreateAdd(controller->builder->getInt32(0), controller->builder->getInt32(0));
+        //  llvm::Instruction* inst = controller->builder->GetInsertBlock()->getTerminator();
         return visitChildren(ctx);
     }else if(ctx->if_() != nullptr && ctx->children.size() == 1) {
         // if statement
@@ -363,6 +363,7 @@ auto endThen = llvm::BasicBlock::Create(this->controller->ctx, "endThen", parent
 
 // insert basic blocks
 controller->builder->CreateCondBr(cond, then, endThen);
+//  controller->builder->CreateAdd(controller->builder->getInt32(0), controller->builder->getInt32(0));
 controller->builder->SetInsertPoint(then);
 // visit if block
 for(int i = 0; i<ctx->if_()->stat().size(); i++)
@@ -370,11 +371,11 @@ for(int i = 0; i<ctx->if_()->stat().size(); i++)
 
 
 // End of 'then' block
+if(then->getTerminator() == nullptr)
 controller->builder->CreateBr(endThen);
-controller->builder->CreateAdd(controller->builder->getInt32(0), controller->builder->getInt32(0));
+// controller->builder->CreateAdd(controller->builder->getInt32(0), controller->builder->getInt32(0));
 // inc opcode numbering
 // controller->builder->CreateAdd(controller->builder->getInt32(0), controller->builder->getInt32(0));
-
 controller->builder->SetInsertPoint(endThen);
 
 // merge block should be AFTER the if statement and NOT contain the then body

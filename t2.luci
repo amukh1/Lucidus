@@ -1,26 +1,28 @@
 dec printf(tmp:char*, ...) -> int;
 dec malloc(size:int) -> int*;
 
-dec loop(n:int) -> bool;
+dec partial(n:int, d:int) -> int;
 
 dec main() -> int;
 def main() -> int {
-    loop(16);
+    sum:int = partial(16, 2);
+    printf("%d\n", sum);
     return 0;
 }
 
-def loop(n:int) -> bool {
+def partial(n:int, d:int) -> int {
     i:int = 0;
     sum:int = 0;
     goto while;
     label while:
-    if (i > n) -> {
+    if(i == n) -> {
         goto end;
     }
-    sum = sum + i;
-    i = i + 1;
+    printf("sum = %d\n", sum);
+    (ptr i) = i + d;
+    (ptr sum) = sum + i;
     goto while;
     label end:
     printf("sum = %d\n", sum);
-    return true;
+    return sum->(int);
 }
