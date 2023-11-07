@@ -120,7 +120,7 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
                 return (llvm::Value*) controller->builder->CreateLoad(this->controller->module->getNamedGlobal(ctx->ID()->getText())->getValueType(), this->controller->module->getNamedGlobal(ctx->ID()->getText()));
             else {
                 std::cout << "Variable " << ctx->ID()->getText() << " not found" << std::endl;
-                return (llvm::Value*) llvm::ConstantPointerNull::get(llvm::Type::getInt32PtrTy(controller->ctx));
+                return (llvm::Value*) llvm::ConstantPointerNull::get(llvm::Type::getInt8PtrTy(controller->ctx));
             }
         }else {
             if(this->functionScope.count(ctx->ID()->getText()))
@@ -130,7 +130,7 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
                 return (llvm::Value*) this->controller->module->getNamedGlobal(ctx->ID()->getText());
             else {
                 std::cout << "Variable " << ctx->ID()->getText() << " not found" << std::endl;
-                return (llvm::Value*) llvm::ConstantPointerNull::get(llvm::Type::getInt32PtrTy(controller->ctx));
+                return (llvm::Value*) llvm::ConstantPointerNull::get(llvm::Type::getInt8PtrTy(controller->ctx));
             }
         }
     }else if(ctx->PLUS() != nullptr) {
@@ -227,7 +227,7 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
     }else {
         // return (llvm::Value *)llvm::ConstantInt::get(llvm::Type::getInt32Ty(controller->ctx), 0);
         // return llvm nullptr LOOOL
-        return (llvm::Value*) llvm::ConstantPointerNull::get(llvm::Type::getInt32PtrTy(controller->ctx));
+        return (llvm::Value*) llvm::ConstantPointerNull::get(llvm::Type::getInt8PtrTy(controller->ctx));
     }
 
     // return visitChildren(ctx);
