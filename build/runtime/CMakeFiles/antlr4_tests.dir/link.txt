@@ -1,1 +1,0 @@
-/usr/bin/clang++     -Wall -pedantic -W -g -O0 -g   -Wall -pedantic -W   CMakeFiles/antlr4_tests.dir/tests/Utf8Test.cpp.o  -o antlr4_tests  libantlr4-runtime.a ../lib/libgtest_maind.a ../lib/libgtestd.a -lpthread 
