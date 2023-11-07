@@ -1,0 +1,4 @@
+dec fun() -> char;
+def fun() -> char {
+	return "f"->(char);
+}
