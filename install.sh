@@ -1,7 +1,3 @@
-wget https://apt.llvm.org/llvm.sh
-chmod +x llvm.sh
-sudo ./llvm.sh all
-
 wget https://www.antlr.org/download/antlr4-cpp-runtime-4.13.1-source.zip
 unzip antlr4-cpp-runtime-4.13.1-source.zip
 cd antlr4-cpp-runtime-4.13.1
