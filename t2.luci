@@ -10,8 +10,17 @@ def main() -> int {
 }
 
 def loop(n:int) -> bool {
-    if(n == 16) -> {
-        printf("equal!");
+    i:int = 0;
+    sum:int = 0;
+    goto while;
+    label while:
+    if (i > n) -> {
+        goto end;
     }
-    return (n == 16);
+    sum = sum + i;
+    i = i + 1;
+    goto while;
+    label end:
+    printf("sum = %d\n", sum);
+    return true;
 }

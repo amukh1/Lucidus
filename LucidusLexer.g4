@@ -18,6 +18,8 @@ DEF: 'def';
 STRUCT: 'struct';
 DECL: 'dec';
 ARROW: '->';
+GTR: '>';
+LESS: '<';
 DCOL: ':=';
 PTR: 'ptr';
 COL: ':';

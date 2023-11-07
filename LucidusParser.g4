@@ -51,6 +51,8 @@ expr: ID
     | expr SUB expr
     | expr ARROW '(' type ')'
     | expr '=' '=' expr
+    | expr GTR expr
+    | expr LESS expr
     | '(' expr ')'
     
     ;

@@ -144,6 +144,12 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
     }else if(ctx->EQ(0) != nullptr && ctx->EQ().size() == 2){
         // ==
         return (llvm::Value*) controller->builder->CreateICmpEQ(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))), std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
+    }else if(ctx->GTR() != nullptr && ctx->children.size() == 3) {
+        // expr > expr
+        return (llvm::Value*) controller->builder->CreateICmpSGT(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))), std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
+    }else if(ctx->LESS() != nullptr && ctx->children.size() == 3) {
+        // expr < expr
+        return (llvm::Value*) controller->builder->CreateICmpSLT(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))), std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
     }else if(ctx->PTR() != nullptr) {
         bool old = this->loadingAvailable;
         loadingAvailable = false;
@@ -337,7 +343,7 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         // get block
         controller->builder->CreateBr(blocks[name->getText()]);
         // increment opcode count
-        
+        controller->builder->CreateAdd(controller->builder->getInt32(0), controller->builder->getInt32(0));
          
         return visitChildren(ctx);
     }else if(ctx->if_() != nullptr && ctx->children.size() == 1) {
@@ -362,14 +368,20 @@ controller->builder->SetInsertPoint(then);
 for(int i = 0; i<ctx->if_()->stat().size(); i++)
     visit(ctx->if_()->stat(i));
 
+
 // End of 'then' block
 controller->builder->CreateBr(endThen);
+controller->builder->CreateAdd(controller->builder->getInt32(0), controller->builder->getInt32(0));
+// inc opcode numbering
+// controller->builder->CreateAdd(controller->builder->getInt32(0), controller->builder->getInt32(0));
+
 controller->builder->SetInsertPoint(endThen);
 
 // merge block should be AFTER the if statement and NOT contain the then body
 // controller->builder->CreateBr(merge);
 // controller->builder->SetInsertPoint(merge);
-return visitChildren(ctx);
+// return visitChildren(ctx);
+return nullptr;
 
     } else
     return visitChildren(ctx);

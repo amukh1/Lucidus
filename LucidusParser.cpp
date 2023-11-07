@@ -58,19 +58,19 @@ void lucidusparserParserInitialize() {
     },
     std::vector<std::string>{
       "", "'&&'", "'||'", "'!'", "'='", "'+'", "'-'", "'*'", "'/'", "'('", 
-      "')'", "','", "';'", "'def'", "'struct'", "'dec'", "'->'", "':='", 
-      "'ptr'", "':'", "'return'", "'label'", "'goto'", "'.'", "'...'", "'if'", 
-      "'{'", "'}'"
+      "')'", "','", "';'", "'def'", "'struct'", "'dec'", "'->'", "'>'", 
+      "'<'", "':='", "'ptr'", "':'", "'return'", "'label'", "'goto'", "'.'", 
+      "'...'", "'if'", "'{'", "'}'"
     },
     std::vector<std::string>{
       "", "AND", "OR", "NOT", "EQ", "PLUS", "SUB", "STAR", "DIV", "OPAREN", 
-      "CPAREN", "COMMA", "SEMI", "DEF", "STRUCT", "DECL", "ARROW", "DCOL", 
-      "PTR", "COL", "RETURN", "LABEL", "GOTO", "DOT", "DOTS", "IF", "LCURLY", 
-      "RCURLY", "INT", "FLOAT", "ID", "WS", "COMMENT", "STRING"
+      "CPAREN", "COMMA", "SEMI", "DEF", "STRUCT", "DECL", "ARROW", "GTR", 
+      "LESS", "DCOL", "PTR", "COL", "RETURN", "LABEL", "GOTO", "DOT", "DOTS", 
+      "IF", "LCURLY", "RCURLY", "INT", "FLOAT", "ID", "WS", "COMMENT", "STRING"
     }
   );
   static const int32_t serializedATNSegment[] = {
-  	4,1,33,249,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,
+  	4,1,35,255,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,
   	7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,2,14,7,
   	14,2,15,7,15,2,16,7,16,2,17,7,17,2,18,7,18,1,0,1,0,1,0,5,0,42,8,0,10,
   	0,12,0,45,9,0,1,0,1,0,1,1,1,1,1,2,1,2,5,2,53,8,2,10,2,12,2,56,9,2,1,3,
@@ -85,73 +85,76 @@ void lucidusparserParserInitialize() {
   	1,16,1,16,1,16,1,16,1,16,1,16,1,16,1,16,1,16,1,16,1,16,1,16,1,16,3,16,
   	181,8,16,1,16,1,16,1,16,1,16,1,16,1,16,1,16,1,16,1,16,1,16,1,16,1,16,
   	1,16,1,16,1,16,1,16,1,16,1,16,1,16,1,16,1,16,1,16,1,16,1,16,1,16,1,16,
-  	1,16,1,16,1,16,1,16,1,16,5,16,214,8,16,10,16,12,16,217,9,16,1,17,1,17,
-  	1,17,1,17,1,17,1,17,5,17,225,8,17,10,17,12,17,228,9,17,3,17,230,8,17,
-  	1,17,1,17,1,17,1,18,1,18,1,18,1,18,1,18,5,18,240,8,18,10,18,12,18,243,
-  	9,18,3,18,245,8,18,1,18,1,18,1,18,0,1,32,19,0,2,4,6,8,10,12,14,16,18,
-  	20,22,24,26,28,30,32,34,36,0,0,270,0,43,1,0,0,0,2,48,1,0,0,0,4,50,1,0,
-  	0,0,6,57,1,0,0,0,8,63,1,0,0,0,10,65,1,0,0,0,12,83,1,0,0,0,14,87,1,0,0,
-  	0,16,92,1,0,0,0,18,97,1,0,0,0,20,100,1,0,0,0,22,105,1,0,0,0,24,109,1,
-  	0,0,0,26,113,1,0,0,0,28,137,1,0,0,0,30,139,1,0,0,0,32,180,1,0,0,0,34,
-  	218,1,0,0,0,36,234,1,0,0,0,38,42,3,28,14,0,39,42,3,30,15,0,40,42,3,34,
-  	17,0,41,38,1,0,0,0,41,39,1,0,0,0,41,40,1,0,0,0,42,45,1,0,0,0,43,41,1,
-  	0,0,0,43,44,1,0,0,0,44,46,1,0,0,0,45,43,1,0,0,0,46,47,5,0,0,1,47,1,1,
-  	0,0,0,48,49,5,30,0,0,49,3,1,0,0,0,50,54,5,30,0,0,51,53,5,7,0,0,52,51,
-  	1,0,0,0,53,56,1,0,0,0,54,52,1,0,0,0,54,55,1,0,0,0,55,5,1,0,0,0,56,54,
-  	1,0,0,0,57,58,5,30,0,0,58,59,5,19,0,0,59,60,3,4,2,0,60,7,1,0,0,0,61,64,
-  	3,6,3,0,62,64,5,24,0,0,63,61,1,0,0,0,63,62,1,0,0,0,64,9,1,0,0,0,65,66,
-  	5,15,0,0,66,67,5,30,0,0,67,76,5,9,0,0,68,73,3,8,4,0,69,70,5,11,0,0,70,
-  	72,3,8,4,0,71,69,1,0,0,0,72,75,1,0,0,0,73,71,1,0,0,0,73,74,1,0,0,0,74,
-  	77,1,0,0,0,75,73,1,0,0,0,76,68,1,0,0,0,76,77,1,0,0,0,77,78,1,0,0,0,78,
-  	79,5,10,0,0,79,80,5,16,0,0,80,81,3,4,2,0,81,82,5,12,0,0,82,11,1,0,0,0,
-  	83,84,5,20,0,0,84,85,3,32,16,0,85,86,5,12,0,0,86,13,1,0,0,0,87,88,3,6,
-  	3,0,88,89,5,4,0,0,89,90,3,32,16,0,90,91,5,12,0,0,91,15,1,0,0,0,92,93,
-  	5,30,0,0,93,94,5,17,0,0,94,95,3,32,16,0,95,96,5,12,0,0,96,17,1,0,0,0,
-  	97,98,3,6,3,0,98,99,5,12,0,0,99,19,1,0,0,0,100,101,3,32,16,0,101,102,
-  	5,4,0,0,102,103,3,32,16,0,103,104,5,12,0,0,104,21,1,0,0,0,105,106,5,21,
-  	0,0,106,107,5,30,0,0,107,108,5,19,0,0,108,23,1,0,0,0,109,110,5,22,0,0,
-  	110,111,5,30,0,0,111,112,5,12,0,0,112,25,1,0,0,0,113,114,5,25,0,0,114,
-  	115,3,32,16,0,115,116,5,16,0,0,116,120,5,26,0,0,117,119,3,28,14,0,118,
-  	117,1,0,0,0,119,122,1,0,0,0,120,118,1,0,0,0,120,121,1,0,0,0,121,123,1,
-  	0,0,0,122,120,1,0,0,0,123,124,5,27,0,0,124,27,1,0,0,0,125,138,3,14,7,
-  	0,126,138,3,16,8,0,127,138,3,18,9,0,128,138,3,20,10,0,129,130,3,32,16,
-  	0,130,131,5,12,0,0,131,138,1,0,0,0,132,138,3,10,5,0,133,138,3,12,6,0,
-  	134,138,3,22,11,0,135,138,3,24,12,0,136,138,3,26,13,0,137,125,1,0,0,0,
-  	137,126,1,0,0,0,137,127,1,0,0,0,137,128,1,0,0,0,137,129,1,0,0,0,137,132,
-  	1,0,0,0,137,133,1,0,0,0,137,134,1,0,0,0,137,135,1,0,0,0,137,136,1,0,0,
-  	0,138,29,1,0,0,0,139,140,5,13,0,0,140,141,5,30,0,0,141,150,5,9,0,0,142,
-  	147,3,8,4,0,143,144,5,11,0,0,144,146,3,8,4,0,145,143,1,0,0,0,146,149,
-  	1,0,0,0,147,145,1,0,0,0,147,148,1,0,0,0,148,151,1,0,0,0,149,147,1,0,0,
-  	0,150,142,1,0,0,0,150,151,1,0,0,0,151,152,1,0,0,0,152,153,5,10,0,0,153,
-  	154,5,16,0,0,154,155,3,4,2,0,155,159,5,26,0,0,156,158,3,28,14,0,157,156,
-  	1,0,0,0,158,161,1,0,0,0,159,157,1,0,0,0,159,160,1,0,0,0,160,162,1,0,0,
-  	0,161,159,1,0,0,0,162,163,5,27,0,0,163,31,1,0,0,0,164,165,6,16,-1,0,165,
-  	181,5,30,0,0,166,181,5,28,0,0,167,181,5,29,0,0,168,181,5,33,0,0,169,181,
-  	3,36,18,0,170,171,5,18,0,0,171,181,3,32,16,12,172,173,5,7,0,0,173,181,
-  	3,32,16,10,174,175,5,3,0,0,175,181,3,32,16,9,176,177,5,9,0,0,177,178,
-  	3,32,16,0,178,179,5,10,0,0,179,181,1,0,0,0,180,164,1,0,0,0,180,166,1,
-  	0,0,0,180,167,1,0,0,0,180,168,1,0,0,0,180,169,1,0,0,0,180,170,1,0,0,0,
-  	180,172,1,0,0,0,180,174,1,0,0,0,180,176,1,0,0,0,181,215,1,0,0,0,182,183,
-  	10,11,0,0,183,184,5,7,0,0,184,214,3,32,16,12,185,186,10,8,0,0,186,187,
-  	5,1,0,0,187,214,3,32,16,9,188,189,10,7,0,0,189,190,5,2,0,0,190,214,3,
-  	32,16,8,191,192,10,6,0,0,192,193,5,8,0,0,193,214,3,32,16,7,194,195,10,
-  	5,0,0,195,196,5,5,0,0,196,214,3,32,16,6,197,198,10,4,0,0,198,199,5,6,
-  	0,0,199,214,3,32,16,5,200,201,10,2,0,0,201,202,5,4,0,0,202,203,5,4,0,
-  	0,203,214,3,32,16,3,204,205,10,14,0,0,205,206,5,23,0,0,206,214,5,30,0,
-  	0,207,208,10,3,0,0,208,209,5,16,0,0,209,210,5,9,0,0,210,211,3,4,2,0,211,
-  	212,5,10,0,0,212,214,1,0,0,0,213,182,1,0,0,0,213,185,1,0,0,0,213,188,
-  	1,0,0,0,213,191,1,0,0,0,213,194,1,0,0,0,213,197,1,0,0,0,213,200,1,0,0,
-  	0,213,204,1,0,0,0,213,207,1,0,0,0,214,217,1,0,0,0,215,213,1,0,0,0,215,
-  	216,1,0,0,0,216,33,1,0,0,0,217,215,1,0,0,0,218,219,5,14,0,0,219,220,5,
-  	30,0,0,220,229,5,26,0,0,221,226,3,6,3,0,222,223,5,11,0,0,223,225,3,6,
-  	3,0,224,222,1,0,0,0,225,228,1,0,0,0,226,224,1,0,0,0,226,227,1,0,0,0,227,
-  	230,1,0,0,0,228,226,1,0,0,0,229,221,1,0,0,0,229,230,1,0,0,0,230,231,1,
-  	0,0,0,231,232,5,27,0,0,232,233,5,12,0,0,233,35,1,0,0,0,234,235,5,30,0,
-  	0,235,244,5,9,0,0,236,241,3,32,16,0,237,238,5,11,0,0,238,240,3,32,16,
-  	0,239,237,1,0,0,0,240,243,1,0,0,0,241,239,1,0,0,0,241,242,1,0,0,0,242,
-  	245,1,0,0,0,243,241,1,0,0,0,244,236,1,0,0,0,244,245,1,0,0,0,245,246,1,
-  	0,0,0,246,247,5,10,0,0,247,37,1,0,0,0,18,41,43,54,63,73,76,120,137,147,
-  	150,159,180,213,215,226,229,241,244
+  	1,16,1,16,1,16,1,16,1,16,1,16,1,16,1,16,1,16,1,16,1,16,5,16,220,8,16,
+  	10,16,12,16,223,9,16,1,17,1,17,1,17,1,17,1,17,1,17,5,17,231,8,17,10,17,
+  	12,17,234,9,17,3,17,236,8,17,1,17,1,17,1,17,1,18,1,18,1,18,1,18,1,18,
+  	5,18,246,8,18,10,18,12,18,249,9,18,3,18,251,8,18,1,18,1,18,1,18,0,1,32,
+  	19,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,0,0,278,0,43,1,
+  	0,0,0,2,48,1,0,0,0,4,50,1,0,0,0,6,57,1,0,0,0,8,63,1,0,0,0,10,65,1,0,0,
+  	0,12,83,1,0,0,0,14,87,1,0,0,0,16,92,1,0,0,0,18,97,1,0,0,0,20,100,1,0,
+  	0,0,22,105,1,0,0,0,24,109,1,0,0,0,26,113,1,0,0,0,28,137,1,0,0,0,30,139,
+  	1,0,0,0,32,180,1,0,0,0,34,224,1,0,0,0,36,240,1,0,0,0,38,42,3,28,14,0,
+  	39,42,3,30,15,0,40,42,3,34,17,0,41,38,1,0,0,0,41,39,1,0,0,0,41,40,1,0,
+  	0,0,42,45,1,0,0,0,43,41,1,0,0,0,43,44,1,0,0,0,44,46,1,0,0,0,45,43,1,0,
+  	0,0,46,47,5,0,0,1,47,1,1,0,0,0,48,49,5,32,0,0,49,3,1,0,0,0,50,54,5,32,
+  	0,0,51,53,5,7,0,0,52,51,1,0,0,0,53,56,1,0,0,0,54,52,1,0,0,0,54,55,1,0,
+  	0,0,55,5,1,0,0,0,56,54,1,0,0,0,57,58,5,32,0,0,58,59,5,21,0,0,59,60,3,
+  	4,2,0,60,7,1,0,0,0,61,64,3,6,3,0,62,64,5,26,0,0,63,61,1,0,0,0,63,62,1,
+  	0,0,0,64,9,1,0,0,0,65,66,5,15,0,0,66,67,5,32,0,0,67,76,5,9,0,0,68,73,
+  	3,8,4,0,69,70,5,11,0,0,70,72,3,8,4,0,71,69,1,0,0,0,72,75,1,0,0,0,73,71,
+  	1,0,0,0,73,74,1,0,0,0,74,77,1,0,0,0,75,73,1,0,0,0,76,68,1,0,0,0,76,77,
+  	1,0,0,0,77,78,1,0,0,0,78,79,5,10,0,0,79,80,5,16,0,0,80,81,3,4,2,0,81,
+  	82,5,12,0,0,82,11,1,0,0,0,83,84,5,22,0,0,84,85,3,32,16,0,85,86,5,12,0,
+  	0,86,13,1,0,0,0,87,88,3,6,3,0,88,89,5,4,0,0,89,90,3,32,16,0,90,91,5,12,
+  	0,0,91,15,1,0,0,0,92,93,5,32,0,0,93,94,5,19,0,0,94,95,3,32,16,0,95,96,
+  	5,12,0,0,96,17,1,0,0,0,97,98,3,6,3,0,98,99,5,12,0,0,99,19,1,0,0,0,100,
+  	101,3,32,16,0,101,102,5,4,0,0,102,103,3,32,16,0,103,104,5,12,0,0,104,
+  	21,1,0,0,0,105,106,5,23,0,0,106,107,5,32,0,0,107,108,5,21,0,0,108,23,
+  	1,0,0,0,109,110,5,24,0,0,110,111,5,32,0,0,111,112,5,12,0,0,112,25,1,0,
+  	0,0,113,114,5,27,0,0,114,115,3,32,16,0,115,116,5,16,0,0,116,120,5,28,
+  	0,0,117,119,3,28,14,0,118,117,1,0,0,0,119,122,1,0,0,0,120,118,1,0,0,0,
+  	120,121,1,0,0,0,121,123,1,0,0,0,122,120,1,0,0,0,123,124,5,29,0,0,124,
+  	27,1,0,0,0,125,138,3,14,7,0,126,138,3,16,8,0,127,138,3,18,9,0,128,138,
+  	3,20,10,0,129,130,3,32,16,0,130,131,5,12,0,0,131,138,1,0,0,0,132,138,
+  	3,10,5,0,133,138,3,12,6,0,134,138,3,22,11,0,135,138,3,24,12,0,136,138,
+  	3,26,13,0,137,125,1,0,0,0,137,126,1,0,0,0,137,127,1,0,0,0,137,128,1,0,
+  	0,0,137,129,1,0,0,0,137,132,1,0,0,0,137,133,1,0,0,0,137,134,1,0,0,0,137,
+  	135,1,0,0,0,137,136,1,0,0,0,138,29,1,0,0,0,139,140,5,13,0,0,140,141,5,
+  	32,0,0,141,150,5,9,0,0,142,147,3,8,4,0,143,144,5,11,0,0,144,146,3,8,4,
+  	0,145,143,1,0,0,0,146,149,1,0,0,0,147,145,1,0,0,0,147,148,1,0,0,0,148,
+  	151,1,0,0,0,149,147,1,0,0,0,150,142,1,0,0,0,150,151,1,0,0,0,151,152,1,
+  	0,0,0,152,153,5,10,0,0,153,154,5,16,0,0,154,155,3,4,2,0,155,159,5,28,
+  	0,0,156,158,3,28,14,0,157,156,1,0,0,0,158,161,1,0,0,0,159,157,1,0,0,0,
+  	159,160,1,0,0,0,160,162,1,0,0,0,161,159,1,0,0,0,162,163,5,29,0,0,163,
+  	31,1,0,0,0,164,165,6,16,-1,0,165,181,5,32,0,0,166,181,5,30,0,0,167,181,
+  	5,31,0,0,168,181,5,35,0,0,169,181,3,36,18,0,170,171,5,20,0,0,171,181,
+  	3,32,16,14,172,173,5,7,0,0,173,181,3,32,16,12,174,175,5,3,0,0,175,181,
+  	3,32,16,11,176,177,5,9,0,0,177,178,3,32,16,0,178,179,5,10,0,0,179,181,
+  	1,0,0,0,180,164,1,0,0,0,180,166,1,0,0,0,180,167,1,0,0,0,180,168,1,0,0,
+  	0,180,169,1,0,0,0,180,170,1,0,0,0,180,172,1,0,0,0,180,174,1,0,0,0,180,
+  	176,1,0,0,0,181,221,1,0,0,0,182,183,10,13,0,0,183,184,5,7,0,0,184,220,
+  	3,32,16,14,185,186,10,10,0,0,186,187,5,1,0,0,187,220,3,32,16,11,188,189,
+  	10,9,0,0,189,190,5,2,0,0,190,220,3,32,16,10,191,192,10,8,0,0,192,193,
+  	5,8,0,0,193,220,3,32,16,9,194,195,10,7,0,0,195,196,5,5,0,0,196,220,3,
+  	32,16,8,197,198,10,6,0,0,198,199,5,6,0,0,199,220,3,32,16,7,200,201,10,
+  	4,0,0,201,202,5,4,0,0,202,203,5,4,0,0,203,220,3,32,16,5,204,205,10,3,
+  	0,0,205,206,5,17,0,0,206,220,3,32,16,4,207,208,10,2,0,0,208,209,5,18,
+  	0,0,209,220,3,32,16,3,210,211,10,16,0,0,211,212,5,25,0,0,212,220,5,32,
+  	0,0,213,214,10,5,0,0,214,215,5,16,0,0,215,216,5,9,0,0,216,217,3,4,2,0,
+  	217,218,5,10,0,0,218,220,1,0,0,0,219,182,1,0,0,0,219,185,1,0,0,0,219,
+  	188,1,0,0,0,219,191,1,0,0,0,219,194,1,0,0,0,219,197,1,0,0,0,219,200,1,
+  	0,0,0,219,204,1,0,0,0,219,207,1,0,0,0,219,210,1,0,0,0,219,213,1,0,0,0,
+  	220,223,1,0,0,0,221,219,1,0,0,0,221,222,1,0,0,0,222,33,1,0,0,0,223,221,
+  	1,0,0,0,224,225,5,14,0,0,225,226,5,32,0,0,226,235,5,28,0,0,227,232,3,
+  	6,3,0,228,229,5,11,0,0,229,231,3,6,3,0,230,228,1,0,0,0,231,234,1,0,0,
+  	0,232,230,1,0,0,0,232,233,1,0,0,0,233,236,1,0,0,0,234,232,1,0,0,0,235,
+  	227,1,0,0,0,235,236,1,0,0,0,236,237,1,0,0,0,237,238,5,29,0,0,238,239,
+  	5,12,0,0,239,35,1,0,0,0,240,241,5,32,0,0,241,250,5,9,0,0,242,247,3,32,
+  	16,0,243,244,5,11,0,0,244,246,3,32,16,0,245,243,1,0,0,0,246,249,1,0,0,
+  	0,247,245,1,0,0,0,247,248,1,0,0,0,248,251,1,0,0,0,249,247,1,0,0,0,250,
+  	242,1,0,0,0,250,251,1,0,0,0,251,252,1,0,0,0,252,253,5,10,0,0,253,37,1,
+  	0,0,0,18,41,43,54,63,73,76,120,137,147,150,159,180,219,221,232,235,247,
+  	250
   };
   staticData->serializedATN = antlr4::atn::SerializedATNView(serializedATNSegment, sizeof(serializedATNSegment) / sizeof(serializedATNSegment[0]));
 
@@ -265,7 +268,7 @@ LucidusParser::ProgramContext* LucidusParser::program() {
     _errHandler->sync(this);
     _la = _input->LA(1);
     while ((((_la & ~ 0x3fULL) == 0) &&
-      ((1ULL << _la) & 10510197384) != 0)) {
+      ((1ULL << _la) & 42040615560) != 0)) {
       setState(41);
       _errHandler->sync(this);
       switch (_input->LA(1)) {
@@ -1202,7 +1205,7 @@ LucidusParser::IfContext* LucidusParser::if_() {
     _errHandler->sync(this);
     _la = _input->LA(1);
     while ((((_la & ~ 0x3fULL) == 0) &&
-      ((1ULL << _la) & 10510172808) != 0)) {
+      ((1ULL << _la) & 42040590984) != 0)) {
       setState(117);
       stat();
       setState(122);
@@ -1515,7 +1518,7 @@ LucidusParser::DefContext* LucidusParser::def() {
     _errHandler->sync(this);
     _la = _input->LA(1);
     while ((((_la & ~ 0x3fULL) == 0) &&
-      ((1ULL << _la) & 10510172808) != 0)) {
+      ((1ULL << _la) & 42040590984) != 0)) {
       setState(156);
       stat();
       setState(161);
@@ -1617,6 +1620,14 @@ tree::TerminalNode* LucidusParser::ExprContext::EQ(size_t i) {
   return getToken(LucidusParser::EQ, i);
 }
 
+tree::TerminalNode* LucidusParser::ExprContext::GTR() {
+  return getToken(LucidusParser::GTR, 0);
+}
+
+tree::TerminalNode* LucidusParser::ExprContext::LESS() {
+  return getToken(LucidusParser::LESS, 0);
+}
+
 tree::TerminalNode* LucidusParser::ExprContext::DOT() {
   return getToken(LucidusParser::DOT, 0);
 }
@@ -1705,7 +1716,7 @@ LucidusParser::ExprContext* LucidusParser::expr(int precedence) {
       setState(170);
       match(LucidusParser::PTR);
       setState(171);
-      expr(12);
+      expr(14);
       break;
     }
 
@@ -1713,7 +1724,7 @@ LucidusParser::ExprContext* LucidusParser::expr(int precedence) {
       setState(172);
       match(LucidusParser::STAR);
       setState(173);
-      expr(10);
+      expr(12);
       break;
     }
 
@@ -1721,7 +1732,7 @@ LucidusParser::ExprContext* LucidusParser::expr(int precedence) {
       setState(174);
       match(LucidusParser::NOT);
       setState(175);
-      expr(9);
+      expr(11);
       break;
     }
 
@@ -1739,7 +1750,7 @@ LucidusParser::ExprContext* LucidusParser::expr(int precedence) {
       break;
     }
     _ctx->stop = _input->LT(-1);
-    setState(215);
+    setState(221);
     _errHandler->sync(this);
     alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 13, _ctx);
     while (alt != 2 && alt != atn::ATN::INVALID_ALT_NUMBER) {
@@ -1747,7 +1758,7 @@ LucidusParser::ExprContext* LucidusParser::expr(int precedence) {
         if (!_parseListeners.empty())
           triggerExitRuleEvent();
         previousContext = _localctx;
-        setState(213);
+        setState(219);
         _errHandler->sync(this);
         switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 12, _ctx)) {
         case 1: {
@@ -1755,11 +1766,11 @@ LucidusParser::ExprContext* LucidusParser::expr(int precedence) {
           pushNewRecursionContext(_localctx, startState, RuleExpr);
           setState(182);
 
-          if (!(precpred(_ctx, 11))) throw FailedPredicateException(this, "precpred(_ctx, 11)");
+          if (!(precpred(_ctx, 13))) throw FailedPredicateException(this, "precpred(_ctx, 13)");
           setState(183);
           match(LucidusParser::STAR);
           setState(184);
-          expr(12);
+          expr(14);
           break;
         }
 
@@ -1768,11 +1779,11 @@ LucidusParser::ExprContext* LucidusParser::expr(int precedence) {
           pushNewRecursionContext(_localctx, startState, RuleExpr);
           setState(185);
 
-          if (!(precpred(_ctx, 8))) throw FailedPredicateException(this, "precpred(_ctx, 8)");
+          if (!(precpred(_ctx, 10))) throw FailedPredicateException(this, "precpred(_ctx, 10)");
           setState(186);
           match(LucidusParser::AND);
           setState(187);
-          expr(9);
+          expr(11);
           break;
         }
 
@@ -1781,11 +1792,11 @@ LucidusParser::ExprContext* LucidusParser::expr(int precedence) {
           pushNewRecursionContext(_localctx, startState, RuleExpr);
           setState(188);
 
-          if (!(precpred(_ctx, 7))) throw FailedPredicateException(this, "precpred(_ctx, 7)");
+          if (!(precpred(_ctx, 9))) throw FailedPredicateException(this, "precpred(_ctx, 9)");
           setState(189);
           match(LucidusParser::OR);
           setState(190);
-          expr(8);
+          expr(10);
           break;
         }
 
@@ -1794,11 +1805,11 @@ LucidusParser::ExprContext* LucidusParser::expr(int precedence) {
           pushNewRecursionContext(_localctx, startState, RuleExpr);
           setState(191);
 
-          if (!(precpred(_ctx, 6))) throw FailedPredicateException(this, "precpred(_ctx, 6)");
+          if (!(precpred(_ctx, 8))) throw FailedPredicateException(this, "precpred(_ctx, 8)");
           setState(192);
           match(LucidusParser::DIV);
           setState(193);
-          expr(7);
+          expr(9);
           break;
         }
 
@@ -1807,11 +1818,11 @@ LucidusParser::ExprContext* LucidusParser::expr(int precedence) {
           pushNewRecursionContext(_localctx, startState, RuleExpr);
           setState(194);
 
-          if (!(precpred(_ctx, 5))) throw FailedPredicateException(this, "precpred(_ctx, 5)");
+          if (!(precpred(_ctx, 7))) throw FailedPredicateException(this, "precpred(_ctx, 7)");
           setState(195);
           match(LucidusParser::PLUS);
           setState(196);
-          expr(6);
+          expr(8);
           break;
         }
 
@@ -1820,11 +1831,11 @@ LucidusParser::ExprContext* LucidusParser::expr(int precedence) {
           pushNewRecursionContext(_localctx, startState, RuleExpr);
           setState(197);
 
-          if (!(precpred(_ctx, 4))) throw FailedPredicateException(this, "precpred(_ctx, 4)");
+          if (!(precpred(_ctx, 6))) throw FailedPredicateException(this, "precpred(_ctx, 6)");
           setState(198);
           match(LucidusParser::SUB);
           setState(199);
-          expr(5);
+          expr(7);
           break;
         }
 
@@ -1833,13 +1844,13 @@ LucidusParser::ExprContext* LucidusParser::expr(int precedence) {
           pushNewRecursionContext(_localctx, startState, RuleExpr);
           setState(200);
 
-          if (!(precpred(_ctx, 2))) throw FailedPredicateException(this, "precpred(_ctx, 2)");
+          if (!(precpred(_ctx, 4))) throw FailedPredicateException(this, "precpred(_ctx, 4)");
           setState(201);
           match(LucidusParser::EQ);
           setState(202);
           match(LucidusParser::EQ);
           setState(203);
-          expr(3);
+          expr(5);
           break;
         }
 
@@ -1848,11 +1859,11 @@ LucidusParser::ExprContext* LucidusParser::expr(int precedence) {
           pushNewRecursionContext(_localctx, startState, RuleExpr);
           setState(204);
 
-          if (!(precpred(_ctx, 14))) throw FailedPredicateException(this, "precpred(_ctx, 14)");
+          if (!(precpred(_ctx, 3))) throw FailedPredicateException(this, "precpred(_ctx, 3)");
           setState(205);
-          match(LucidusParser::DOT);
+          match(LucidusParser::GTR);
           setState(206);
-          match(LucidusParser::ID);
+          expr(4);
           break;
         }
 
@@ -1861,14 +1872,40 @@ LucidusParser::ExprContext* LucidusParser::expr(int precedence) {
           pushNewRecursionContext(_localctx, startState, RuleExpr);
           setState(207);
 
-          if (!(precpred(_ctx, 3))) throw FailedPredicateException(this, "precpred(_ctx, 3)");
+          if (!(precpred(_ctx, 2))) throw FailedPredicateException(this, "precpred(_ctx, 2)");
           setState(208);
-          match(LucidusParser::ARROW);
+          match(LucidusParser::LESS);
           setState(209);
-          match(LucidusParser::OPAREN);
+          expr(3);
+          break;
+        }
+
+        case 10: {
+          _localctx = _tracker.createInstance<ExprContext>(parentContext, parentState);
+          pushNewRecursionContext(_localctx, startState, RuleExpr);
           setState(210);
-          type();
+
+          if (!(precpred(_ctx, 16))) throw FailedPredicateException(this, "precpred(_ctx, 16)");
           setState(211);
+          match(LucidusParser::DOT);
+          setState(212);
+          match(LucidusParser::ID);
+          break;
+        }
+
+        case 11: {
+          _localctx = _tracker.createInstance<ExprContext>(parentContext, parentState);
+          pushNewRecursionContext(_localctx, startState, RuleExpr);
+          setState(213);
+
+          if (!(precpred(_ctx, 5))) throw FailedPredicateException(this, "precpred(_ctx, 5)");
+          setState(214);
+          match(LucidusParser::ARROW);
+          setState(215);
+          match(LucidusParser::OPAREN);
+          setState(216);
+          type();
+          setState(217);
           match(LucidusParser::CPAREN);
           break;
         }
@@ -1877,7 +1914,7 @@ LucidusParser::ExprContext* LucidusParser::expr(int precedence) {
           break;
         } 
       }
-      setState(217);
+      setState(223);
       _errHandler->sync(this);
       alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 13, _ctx);
     }
@@ -1959,35 +1996,35 @@ LucidusParser::StructContext* LucidusParser::struct_() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(218);
+    setState(224);
     match(LucidusParser::STRUCT);
-    setState(219);
+    setState(225);
     match(LucidusParser::ID);
-    setState(220);
+    setState(226);
     match(LucidusParser::LCURLY);
-    setState(229);
+    setState(235);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == LucidusParser::ID) {
-      setState(221);
+      setState(227);
       idec();
-      setState(226);
+      setState(232);
       _errHandler->sync(this);
       _la = _input->LA(1);
       while (_la == LucidusParser::COMMA) {
-        setState(222);
-        match(LucidusParser::COMMA);
-        setState(223);
-        idec();
         setState(228);
+        match(LucidusParser::COMMA);
+        setState(229);
+        idec();
+        setState(234);
         _errHandler->sync(this);
         _la = _input->LA(1);
       }
     }
-    setState(231);
+    setState(237);
     match(LucidusParser::RCURLY);
-    setState(232);
+    setState(238);
     match(LucidusParser::SEMI);
    
   }
@@ -2061,32 +2098,32 @@ LucidusParser::FuncContext* LucidusParser::func() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(234);
+    setState(240);
     match(LucidusParser::ID);
-    setState(235);
+    setState(241);
     match(LucidusParser::OPAREN);
-    setState(244);
+    setState(250);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if ((((_la & ~ 0x3fULL) == 0) &&
-      ((1ULL << _la) & 10469245576) != 0)) {
-      setState(236);
+      ((1ULL << _la) & 41876980360) != 0)) {
+      setState(242);
       expr(0);
-      setState(241);
+      setState(247);
       _errHandler->sync(this);
       _la = _input->LA(1);
       while (_la == LucidusParser::COMMA) {
-        setState(237);
-        match(LucidusParser::COMMA);
-        setState(238);
-        expr(0);
         setState(243);
+        match(LucidusParser::COMMA);
+        setState(244);
+        expr(0);
+        setState(249);
         _errHandler->sync(this);
         _la = _input->LA(1);
       }
     }
-    setState(246);
+    setState(252);
     match(LucidusParser::CPAREN);
    
   }
@@ -2111,15 +2148,17 @@ bool LucidusParser::sempred(RuleContext *context, size_t ruleIndex, size_t predi
 
 bool LucidusParser::exprSempred(ExprContext *_localctx, size_t predicateIndex) {
   switch (predicateIndex) {
-    case 0: return precpred(_ctx, 11);
-    case 1: return precpred(_ctx, 8);
-    case 2: return precpred(_ctx, 7);
-    case 3: return precpred(_ctx, 6);
-    case 4: return precpred(_ctx, 5);
-    case 5: return precpred(_ctx, 4);
-    case 6: return precpred(_ctx, 2);
-    case 7: return precpred(_ctx, 14);
-    case 8: return precpred(_ctx, 3);
+    case 0: return precpred(_ctx, 13);
+    case 1: return precpred(_ctx, 10);
+    case 2: return precpred(_ctx, 9);
+    case 3: return precpred(_ctx, 8);
+    case 4: return precpred(_ctx, 7);
+    case 5: return precpred(_ctx, 6);
+    case 6: return precpred(_ctx, 4);
+    case 7: return precpred(_ctx, 3);
+    case 8: return precpred(_ctx, 2);
+    case 9: return precpred(_ctx, 16);
+    case 10: return precpred(_ctx, 5);
 
   default:
     break;

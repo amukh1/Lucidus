@@ -14,9 +14,9 @@ public:
   enum {
     AND = 1, OR = 2, NOT = 3, EQ = 4, PLUS = 5, SUB = 6, STAR = 7, DIV = 8, 
     OPAREN = 9, CPAREN = 10, COMMA = 11, SEMI = 12, DEF = 13, STRUCT = 14, 
-    DECL = 15, ARROW = 16, DCOL = 17, PTR = 18, COL = 19, RETURN = 20, LABEL = 21, 
-    GOTO = 22, DOT = 23, DOTS = 24, IF = 25, LCURLY = 26, RCURLY = 27, INT = 28, 
-    FLOAT = 29, ID = 30, WS = 31, COMMENT = 32, STRING = 33
+    DECL = 15, ARROW = 16, GTR = 17, LESS = 18, DCOL = 19, PTR = 20, COL = 21, 
+    RETURN = 22, LABEL = 23, GOTO = 24, DOT = 25, DOTS = 26, IF = 27, LCURLY = 28, 
+    RCURLY = 29, INT = 30, FLOAT = 31, ID = 32, WS = 33, COMMENT = 34, STRING = 35
   };
 
   enum {
@@ -360,6 +360,8 @@ public:
     antlr4::tree::TerminalNode *SUB();
     std::vector<antlr4::tree::TerminalNode *> EQ();
     antlr4::tree::TerminalNode* EQ(size_t i);
+    antlr4::tree::TerminalNode *GTR();
+    antlr4::tree::TerminalNode *LESS();
     antlr4::tree::TerminalNode *DOT();
     antlr4::tree::TerminalNode *ARROW();
     TypeContext *type();
