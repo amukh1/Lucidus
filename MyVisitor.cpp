@@ -287,7 +287,7 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
     }else if(ctx->infdec() != nullptr && ctx->children.size() == 1) {
         std::string name = ctx->infdec()->ID()->getText();
         auto val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->infdec()->expr()));
-        llvm::Type* type = val->getType();
+        llvm::Type* type = val->getType(); 
         llvm::AllocaInst* ptr = controller->declareVariable(name, type);
         controller->assignVariable(ptr, val);
         this->functionScope[name] = (llvm::Value*)ptr;
@@ -312,13 +312,26 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         return (llvm::Value*)non_ptr;
     }else if(ctx->label() != nullptr && ctx->children.size() == 1) {
         // make basic block
-        llvm::BasicBlock* bb = llvm::BasicBlock::Create(this->controller->ctx, ctx->label()->ID()->getText(), this->controller->module->getFunction(this->functionNameScope[ctx->label()->ID()->getText()].first[0]));
+        // parent function
+        llvm::BasicBlock*  bb;
+        auto parent = controller->builder->GetInsertBlock()->getParent();
+        if(blocks[ctx->label()->ID()->getText()] == nullptr)
+        bb = llvm::BasicBlock::Create(this->controller->ctx, ctx->label()->ID()->getText(), parent);
+        else bb = blocks[ctx->label()->ID()->getText()];
+        // insert basic block
         blocks.insert(std::pair(ctx->label()->ID()->getText(), bb));
-        return bb;
+        controller->builder->SetInsertPoint(bb);
+        // return bb;
+        return visitChildren(ctx);
     } else if(ctx->goto_() != nullptr && ctx->children.size() == 1) {
         auto name = ctx->goto_()->ID();
+        if(blocks[name->getText()] == nullptr)
+            // make block
+            blocks[name->getText()] = llvm::BasicBlock::Create(this->controller->ctx, name->getText(), controller->builder->GetInsertBlock()->getParent());
         // get  basic block from llvm by name
-        controller->builder->SetInsertPoint(blocks[name->getText()]);
+         // goto statement/ jump statment
+        // get block
+        controller->builder->CreateBr(blocks[name->getText()]);
         return visitChildren(ctx);
     } else
     return visitChildren(ctx);
