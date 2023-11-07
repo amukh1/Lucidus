@@ -1,7 +1,7 @@
 dec printf(tmp:char*, ...) -> int;
 dec malloc(size:int) -> int*;
 
-dec loop(n:int) -> int*;
+dec loop(n:int) -> bool;
 
 dec main() -> int;
 def main() -> int {
@@ -9,15 +9,9 @@ def main() -> int {
     return 0;
 }
 
-def loop(n:int) -> int* {
-    goto h;
-    
-    label h:
-    
-    printf("loop\n");
-
-    goto h;
-    x := 4;
-    y := ptr x;
-    return y;
+def loop(n:int) -> bool {
+    if(n == 16) -> {
+        printf("equal!");
+    }
+    return (n == 16);
 }

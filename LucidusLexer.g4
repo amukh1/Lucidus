@@ -26,6 +26,7 @@ LABEL: 'label';
 GOTO: 'goto';
 DOT: '.';
 DOTS: '...';
+IF: 'if';
 
 LCURLY : '{' ;
 RCURLY : '}' ;

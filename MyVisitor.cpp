@@ -13,6 +13,7 @@
 #include <llvm/IR/Instructions.h>
 #include <llvm/IR/Argument.h>
 #include <llvm/Support/raw_ostream.h>
+#include <llvm/Bitcode/LLVMBitCodes.h>
 
 #include "LLVMController.h"
 
@@ -140,7 +141,10 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         return (llvm::Value*) controller->builder->CreateSub(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))), std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
     }else if(ctx->DIV() != nullptr) {
         return (llvm::Value*) controller->builder->CreateSDiv(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))), std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
-    } else if(ctx->PTR() != nullptr) {
+    }else if(ctx->EQ(0) != nullptr && ctx->EQ().size() == 2){
+        // ==
+        return (llvm::Value*) controller->builder->CreateICmpEQ(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))), std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
+    }else if(ctx->PTR() != nullptr) {
         bool old = this->loadingAvailable;
         loadingAvailable = false;
         auto ptr = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));
@@ -332,7 +336,41 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
          // goto statement/ jump statment
         // get block
         controller->builder->CreateBr(blocks[name->getText()]);
+        // increment opcode count
+        
+         
         return visitChildren(ctx);
+    }else if(ctx->if_() != nullptr && ctx->children.size() == 1) {
+        // if statement
+        // get condition
+        auto cond = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->if_()->expr()));
+        // get parent function
+        auto parent = controller->builder->GetInsertBlock()->getParent();
+        // make basic blocks
+        // no else block just regular if then
+
+        // auto iff = llvm::BasicBlock::Create(this->controller->ctx, "if", parent);
+        // auto iff = llvm::BasicBlock::Create(this->controller->ctx, "if", parent);
+auto then = llvm::BasicBlock::Create(this->controller->ctx, "then", parent);
+auto endThen = llvm::BasicBlock::Create(this->controller->ctx, "endThen", parent);
+// auto merge = llvm::BasicBlock::Create(this->controller->ctx, "merge", parent);
+
+// insert basic blocks
+controller->builder->CreateCondBr(cond, then, endThen);
+controller->builder->SetInsertPoint(then);
+// visit if block
+for(int i = 0; i<ctx->if_()->stat().size(); i++)
+    visit(ctx->if_()->stat(i));
+
+// End of 'then' block
+controller->builder->CreateBr(endThen);
+controller->builder->SetInsertPoint(endThen);
+
+// merge block should be AFTER the if statement and NOT contain the then body
+// controller->builder->CreateBr(merge);
+// controller->builder->SetInsertPoint(merge);
+return visitChildren(ctx);
+
     } else
     return visitChildren(ctx);
 }

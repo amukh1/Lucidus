@@ -17,6 +17,7 @@ edec: idec ';';
 assign: expr '=' expr ';';
 label: LABEL ID ':';
 goto: GOTO ID ';';
+if: 'if' expr ARROW '{' stat* '}';
 
 stat
     : vdec
@@ -29,6 +30,7 @@ stat
     | ret
     | label
     | goto
+    | if
     ;
 def : DEF ID '(' (param (',' param)*)? ')' ARROW type '{' stat* '}' ;
 
@@ -48,6 +50,7 @@ expr: ID
     | expr PLUS expr
     | expr SUB expr
     | expr ARROW '(' type ')'
+    | expr '=' '=' expr
     | '(' expr ')'
     
     ;

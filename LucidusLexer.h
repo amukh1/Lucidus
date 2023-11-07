@@ -15,8 +15,8 @@ public:
     AND = 1, OR = 2, NOT = 3, EQ = 4, PLUS = 5, SUB = 6, STAR = 7, DIV = 8, 
     OPAREN = 9, CPAREN = 10, COMMA = 11, SEMI = 12, DEF = 13, STRUCT = 14, 
     DECL = 15, ARROW = 16, DCOL = 17, PTR = 18, COL = 19, RETURN = 20, LABEL = 21, 
-    GOTO = 22, DOT = 23, DOTS = 24, LCURLY = 25, RCURLY = 26, INT = 27, 
-    FLOAT = 28, ID = 29, WS = 30, COMMENT = 31, STRING = 32
+    GOTO = 22, DOT = 23, DOTS = 24, IF = 25, LCURLY = 26, RCURLY = 27, INT = 28, 
+    FLOAT = 29, ID = 30, WS = 31, COMMENT = 32, STRING = 33
   };
 
   explicit LucidusLexer(antlr4::CharStream *input);
