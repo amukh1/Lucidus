@@ -1,0 +1,22 @@
+dec printf(tmp:char*, ...) -> int;
+dec malloc(size:int) -> char*;
+dec gets(tmp:char*) -> char*;
+dec atoi(tmp:char*) -> int;
+dec socket(domain:int, type:int, protocol:int) -> int;
+dec connect(sockfd:int, serv_addr:char*, addrlen:int) -> int;
+dec sprintf(tmp:char*, ...) -> int;
+dec read(fd:int, buf:char*, count:int) -> int;
+dec write(fd:int, buf:char*, count:int) -> int;
+dec close(fd:int) -> int;
+dec memcpy(dest:char*, src:char*, n:int) -> char*;
+dec memset(s:char*, c:int, n:int) -> char*;
+dec gethostbyname(name:char*) -> char*;
+dec htons(hostshort:int) -> int;
+dec inet_addr(cp:char*) -> int;
+dec strlen(s:char*) -> int;
+
+dec main() -> int;
+def main() -> int {
+    
+    return 0;
+}
