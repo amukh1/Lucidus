@@ -1,8 +1,3 @@
-/*
-This program contains a structure for a car and gets information about a specific
-instance of it from a file
-*/
-
 dec printf(tmp:char*, ...) -> int;
 dec malloc(size:int) -> char*;
 dec free(pointer:char*) -> char*;
@@ -17,12 +12,19 @@ dec gets(tmp:char*) -> char*;
 dec atoi(tmp:char*) -> int;
 dec fseek(stream:char*, offset:int, origin:int) -> int;
 
+dec froggyfun() -> int;
+def froggyfun() -> int {
+    printf("Froggy fun...\n");
+    return 0;
+}
+
 struct Car {
     make: char*,
     model: char*,
     mileage: int,
     year: int,
-    cost: int
+    cost: int,
+    fun: () -> (int)
 };
 
 dec main() -> int;
