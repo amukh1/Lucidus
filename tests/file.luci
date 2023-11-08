@@ -1,0 +1,44 @@
+dec printf(tmp:char*, ...) -> int;
+dec malloc(size:int) -> char*;
+dec free(pointer:char*) -> char*;
+dec fprintf(stream:char*, tmp:char*, ...) -> int;
+dec fputs(tmp:char*, stream:char*) -> int;
+dec fgets(tmp:char*, n:int, stream:char*) -> char*;
+dec fopen(tmp:char*, mode:char*) -> char*;
+dec fclose(stream:char*) -> int;
+dec strlen(tmp:char*) -> int;
+dec strcpy(dest:char*, src:char*) -> char*;
+dec gets(tmp:char*) -> char*;
+dec atoi(tmp:char*) -> int;
+dec fseek(stream:char*, offset:int, origin:int) -> int;
+
+dec main() -> int;
+def main() -> int {
+    printf("Starting..\n");
+    file:char* = malloc(100);
+    printf("Enter file name: ");
+    gets(file);
+    printf("Opening file %s\n", file);
+    stream:char* = fopen(file, "r+");
+    if (stream->(int) == 0) -> {
+        printf("Error opening file %s\n", file);
+        return 1;
+    }
+    printf("File opened\n");
+    line:char* = malloc(100);
+    fseek(stream, 0, 2);
+    fputs("Hello, world!\n", stream);
+    fseek(stream, 0, 0);
+    goto while;
+    label while:
+    if (fgets(line, 100, stream)->(int) == 0) -> {
+        goto end;
+    }
+    printf("%s", line);
+    goto while;
+    label end:
+    printf("Closing file %s\n", file);
+    fclose(stream);
+    printf("File closed\n");
+    return 0;
+}

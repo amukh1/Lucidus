@@ -11,8 +11,6 @@ declare i8* @gets(i8*)
 
 declare i32 @atoi(i8*)
 
-declare i32 @socket(i32, i32, i32)
-
 define i32 @factorial(i32 %0) {
 entry:
   %n = alloca i32
