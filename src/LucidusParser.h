@@ -20,10 +20,10 @@ public:
   };
 
   enum {
-    RuleProgram = 0, RuleRawtype = 1, RuleType = 2, RuleIdec = 3, RuleParam = 4, 
-    RuleDec = 5, RuleRet = 6, RuleVdec = 7, RuleInfdec = 8, RuleEdec = 9, 
-    RuleAssign = 10, RuleLabel = 11, RuleGoto = 12, RuleIf = 13, RuleStat = 14, 
-    RuleDef = 15, RuleExpr = 16, RuleStruct = 17, RuleFunc = 18
+    RuleProgram = 0, RuleRawtype = 1, RuleFptr = 2, RuleType = 3, RuleIdec = 4, 
+    RuleParam = 5, RuleDec = 6, RuleRet = 7, RuleVdec = 8, RuleInfdec = 9, 
+    RuleEdec = 10, RuleAssign = 11, RuleLabel = 12, RuleGoto = 13, RuleIf = 14, 
+    RuleStat = 15, RuleDef = 16, RuleExpr = 17, RuleStruct = 18, RuleFunc = 19
   };
 
   explicit LucidusParser(antlr4::TokenStream *input);
@@ -45,6 +45,7 @@ public:
 
   class ProgramContext;
   class RawtypeContext;
+  class FptrContext;
   class TypeContext;
   class IdecContext;
   class ParamContext;
@@ -95,6 +96,27 @@ public:
 
   RawtypeContext* rawtype();
 
+  class  FptrContext : public antlr4::ParserRuleContext {
+  public:
+    FptrContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<antlr4::tree::TerminalNode *> OPAREN();
+    antlr4::tree::TerminalNode* OPAREN(size_t i);
+    std::vector<antlr4::tree::TerminalNode *> CPAREN();
+    antlr4::tree::TerminalNode* CPAREN(size_t i);
+    antlr4::tree::TerminalNode *ARROW();
+    std::vector<TypeContext *> type();
+    TypeContext* type(size_t i);
+    std::vector<antlr4::tree::TerminalNode *> COMMA();
+    antlr4::tree::TerminalNode* COMMA(size_t i);
+
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  FptrContext* fptr();
+
   class  TypeContext : public antlr4::ParserRuleContext {
   public:
     TypeContext(antlr4::ParserRuleContext *parent, size_t invokingState);
@@ -102,6 +124,7 @@ public:
     antlr4::tree::TerminalNode *ID();
     std::vector<antlr4::tree::TerminalNode *> STAR();
     antlr4::tree::TerminalNode* STAR(size_t i);
+    FptrContext *fptr();
 
 
     virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;

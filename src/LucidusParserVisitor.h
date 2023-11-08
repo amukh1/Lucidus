@@ -23,6 +23,8 @@ public:
 
     virtual std::any visitRawtype(LucidusParser::RawtypeContext *context) = 0;
 
+    virtual std::any visitFptr(LucidusParser::FptrContext *context) = 0;
+
     virtual std::any visitType(LucidusParser::TypeContext *context) = 0;
 
     virtual std::any visitIdec(LucidusParser::IdecContext *context) = 0;

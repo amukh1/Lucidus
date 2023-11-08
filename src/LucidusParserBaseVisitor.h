@@ -23,6 +23,10 @@ public:
     return visitChildren(ctx);
   }
 
+  virtual std::any visitFptr(LucidusParser::FptrContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
   virtual std::any visitType(LucidusParser::TypeContext *ctx) override {
     return visitChildren(ctx);
   }

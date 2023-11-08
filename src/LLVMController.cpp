@@ -89,6 +89,16 @@ llvm::Type* getTypes(LucidusParser::TypeContext *ctx, std::shared_ptr<LLVMContro
     }else if(type == "float") {
       ltype = controller->builder->getFloatTy();
     }
+    // else if(type[0] == '(') {
+    //   // function type
+    //   std::vector<llvm::Type*> args;
+    //   for(int i = 0; i<ctx->type().size(); i++) {
+    //     args.push_back(getTypes(ctx->type(i), controller, structs));
+    //   }
+      // param types are all the types except the last one
+      // return type is the last one
+      // ltype = llvm::FunctionType::get(args.back(), llvm::ArrayRef<llvm::Type*>(args.begin(), args.end()-1), false);  
+    // }
   }else {
     // we know it is a struct
     // ltype = structs[type]; // cannot do this, causes problems later on

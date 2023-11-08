@@ -5,7 +5,8 @@ program
     : (stat | def | struct)*  EOF
     ;
 rawtype: (ID);
-type: (ID) (STAR)*;
+fptr: '(' (type (',' type)*)? ')' '->' '(' type ')';
+type: (ID) (STAR)* | fptr;
 idec: ID COL type ;
 param: (idec|DOTS);
 dec: DECL ID '(' (param (',' param)*)? ')' ARROW type ';';

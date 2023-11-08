@@ -75,7 +75,9 @@
         "ios": "cpp",
         "locale": "cpp",
         "queue": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "__split_buffer": "cpp",
+        "span": "cpp"
     },
     "C_Cpp.default.compilerPath": "/usr/bin/clang++"
 }
