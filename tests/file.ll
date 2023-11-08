@@ -7,7 +7,7 @@ source_filename = "amukh"
 @str.3 = private constant [3 x i8] c"r+\00"
 @str.4 = private constant [23 x i8] c"Error opening file %s\0A\00"
 @str.5 = private constant [13 x i8] c"File opened\0A\00"
-@str.6 = private constant [15 x i8] c"Hello, world!\0A\00"
+@str.6 = private constant [19 x i8] c"\0ALucidus was here\0A\00"
 @str.7 = private constant [3 x i8] c"%s\00"
 @str.8 = private constant [17 x i8] c"Closing file %s\0A\00"
 @str.9 = private constant [13 x i8] c"File closed\0A\00"
@@ -71,7 +71,7 @@ endThen:                                          ; preds = %entry
   %16 = load i8*, i8** %stream
   %17 = call i32 @fseek(i8* %16, i32 0, i32 2)
   %18 = load i8*, i8** %stream
-  %19 = call i32 @fputs(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @str.6, i32 0, i32 0), i8* %18)
+  %19 = call i32 @fputs(i8* getelementptr inbounds ([19 x i8], [19 x i8]* @str.6, i32 0, i32 0), i8* %18)
   %20 = load i8*, i8** %stream
   %21 = call i32 @fseek(i8* %20, i32 0, i32 0)
   br label %while
