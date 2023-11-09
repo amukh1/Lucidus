@@ -14,6 +14,7 @@
 #include <llvm/Support/raw_ostream.h>
 
 #include "LLVMController.h"
+#include "errorHandler.h"
 
 // antlr files in ./antlr
 #include "antlr4-runtime.h"
@@ -41,9 +42,14 @@ int main(int argc, char **argv) {
     antlr4::tree::ParseTree *tree = parser.program();
     // std::cout << tree->toStringTree(&parser) << std::endl;
 
+    errorHandler e_handler;
+    e_handler.llvmController = Controller;
+
     // visitor
     MyVisitor visitor;
     visitor.controller = Controller;
+    e_handler.structs = visitor.structs;
+    visitor.e_handler = std::make_shared<errorHandler>(e_handler);
     visitor.visit(tree);
 
     //  llvm::outs() << *Controller->module << '\n';

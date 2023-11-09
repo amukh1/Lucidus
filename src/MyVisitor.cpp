@@ -20,6 +20,7 @@
 // listener and visitor
 #include "LucidusParserVisitor.h"
 #include "LucidusParserBaseVisitor.h"
+#include "errorHandler.h"
 
 #include "MyVisitor.h"
 
@@ -237,6 +238,55 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
 }
 
 antlrcpp::Any MyVisitor::visitDef(LucidusParser::DefContext *ctx) {
+    // check if function is declared, if not, declare it first.
+    /* for refernce, this is the dec function:
+    std::string functionName = ctx->ID()->getText();
+        llvm::Type* rtype = getTypes(ctx->type(), this->controller, this->structs);
+        std::vector<llvm::Type*> types;
+        bool ellip = false;
+        // std::cout << ctx->param().size() << std::endl;
+        this->functionNameScope.insert({functionName, {std::vector<std::string>(), false}});
+        if(ctx->param().size() !=0) {
+            llvm::Type* type;
+            LucidusParser::IdecContext * idec;
+            for(int i = 0; i<ctx->param().size(); i++) {
+                if(ctx->param(i)->DOTS() != nullptr) {
+                    ellip = true;
+                    this->functionNameScope[functionName].second = true;
+                } else {
+                    idec = ctx->param(i)->idec();
+                    type = getTypes(idec->type(), this->controller, this->structs);
+                    types.push_back(type);
+                    this->functionNameScope[functionName].first.push_back(idec->ID()->getText());
+                }
+            }
+        }
+        controller->declareFunction(functionName.c_str(), llvm::FunctionType::get(rtype, types, ellip));
+    */
+    if (this->controller->module->getFunction(ctx->ID()->getText()) == nullptr){
+        std::string functionName = ctx->ID()->getText();
+        llvm::Type* rtype = getTypes(ctx->type(), this->controller, this->structs);
+        std::vector<llvm::Type*> types;
+        bool ellip = false;
+        // std::cout << ctx->param().size() << std::endl;
+        this->functionNameScope.insert({functionName, {std::vector<std::string>(), false}});
+        if(ctx->param().size() !=0) {
+            llvm::Type* type;
+            LucidusParser::IdecContext * idec;
+            for(int i = 0; i<ctx->param().size(); i++) {
+                if(ctx->param(i)->DOTS() != nullptr) {
+                    ellip = true;
+                    this->functionNameScope[functionName].second = true;
+                } else {
+                    idec = ctx->param(i)->idec();
+                    type = getTypes(idec->type(), this->controller, this->structs);
+                    types.push_back(type);
+                    this->functionNameScope[functionName].first.push_back(idec->ID()->getText());
+                }
+            }
+        }
+        controller->declareFunction(functionName.c_str(), llvm::FunctionType::get(rtype, types, ellip));
+    }
     this->controller->defineFunction(ctx->ID()->getText());
     this->functionScope = {};
     for(int i = 0; i<ctx->param().size(); i++) {
@@ -268,7 +318,8 @@ antlrcpp::Any MyVisitor::visitFunc(LucidusParser::FuncContext *ctx)  {
             std::cout << "Parameter mismatch at line " << ctx->getStart()->getLine() << std::endl;
             std::cout << "> " << ctx->getText() << std::endl;
             std::cout << func->getName().str() << " expects " << func->arg_size() << " parameters, but " << params.size() << " were given" << std::endl;
-            exit(1);
+            std::cout << "---------------------" << std::endl;
+            // exit(1);
         };
         for(int i = 0; i<params.size(); i++) {
             if(params[i]->getType() != func->getArg(i)->getType()) {
@@ -294,7 +345,9 @@ antlrcpp::Any MyVisitor::visitFunc(LucidusParser::FuncContext *ctx)  {
                 error = true;
             }
         }
-        if(error) exit(1);
+
+        if(error) std::cout << "---------------------" << std::endl;
+        // exit(1);
 
         return (llvm::Value*)this->controller->builder->CreateCall(func, params);
         }else {
@@ -309,7 +362,33 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
     if(ctx->expr() !=nullptr && ctx->children.size() == 1) {
         return visit(ctx->expr());
     } else if(ctx->ret() != nullptr && ctx->children.size() == 1) {
-        return controller->builder->CreateRet(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->ret()->expr())));
+        auto rvalue = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->ret()->expr()));
+        // error checking (type)
+        // if rvalue->getType() neq parent func return type, we got a problem
+        if(rvalue->getType() != controller->builder->GetInsertBlock()->getParent()->getReturnType()) {
+            std::cout << "Type error at line " << ctx->ret()->getStart()->getLine() << std::endl;
+            std::cout << "> " << ctx->ret()->getText() << std::endl;
+            // show types/ underline types
+            // figure out what character the first type is on, and put an arrow under it + its type
+            // do the same for the second type
+            // put spaces upto the start of the type
+            int chars = ctx->ret()->expr()->getStart()->getCharPositionInLine();
+            for(int i = 0; i<chars; i++) {
+                std::cout << " ";
+            }
+            std::string typeStr;
+            typeStr.clear();
+            llvm::raw_string_ostream rso2(typeStr);
+            rvalue->getType()->print(rso2);
+            std::cout << "^ " << rso2.str() << ", expected ";
+            typeStr.clear();
+            llvm::raw_string_ostream rso3(typeStr);
+            controller->builder->GetInsertBlock()->getParent()->getReturnType()->print(rso3);
+            std::cout << rso3.str() << std::endl;
+            std::cout << "---------------------" << std::endl;
+            // exit(1);
+        }
+        return controller->builder->CreateRet(rvalue);
     }else if(ctx->vdec() != nullptr && ctx->children.size() == 1) {
         std::string name = ctx->vdec()->idec()->ID()->getText();
         llvm::Type* type = getTypes(ctx->vdec()->idec()->type(), this->controller, this->structs);
@@ -319,6 +398,14 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         this->functionScope[name] = (llvm::Value*)ptr;
 
         // error checking (type)
+        // errorHandler e_handler2;
+        // e_handler2.llvmController = this->controller;
+        // // e_handler2.visitor = std::make_shared<MyVisitor>(this);
+        // e_handler2.structs = this->structs;
+        // e_handler2.typeError<LucidusParser::VdecContext*>(ctx->vdec()->idec()->type(), ctx->vdec()->expr()->type(), ctx->vdec());
+        // this->e_handler->typeError<LucidusParser::VdecContext*>(ctx->vdec()->idec()->type(), ctx->vdec()->expr()->type(), ctx->vdec());
+
+
         if(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->vdec()->expr()))->getType() != type) {
             std::cout << "Type error at line " << ctx->vdec()->getStart()->getLine() << std::endl;
             std::cout << "> " << ctx->vdec()->getText() << std::endl;
@@ -342,7 +429,8 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
             llvm::raw_string_ostream rso2(typeStr);
             std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->vdec()->expr()))->getType()->print(rso2);
             std::cout << "^ " << rso2.str() << std::endl;
-            exit(1);
+            std::cout << "---------------------" << std::endl;
+            // exit(1);
         }
 
         return ptr;
@@ -395,9 +483,19 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
             std::string typeStr;
             typeStr.clear();
             llvm::raw_string_ostream rso2(typeStr);
-            val->getType()->print(rso2);
+            type->print(rso2);
             std::cout << "^ " << rso2.str() << std::endl;
-            exit(1);
+            // underline next object
+            chars = ctx->assign()->expr(1)->getStart()->getCharPositionInLine();
+            for(int i = 0; i<chars; i++) {
+                std::cout << " ";
+            }
+            typeStr.clear();
+            llvm::raw_string_ostream rso3(typeStr);
+            val->getType()->print(rso3);
+            std::cout << "^ " << rso3.str() << std::endl;
+            std::cout << "---------------------" << std::endl;
+            // exit(1);
         }
         // controller->assignVariable(ptr, val);
         return (llvm::Value*)non_ptr;

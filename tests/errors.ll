@@ -1,6 +1,8 @@
 ; ModuleID = 'amukh'
 source_filename = "amukh"
 
+@str = private constant [4 x i8] c"hi\0A\00"
+
 declare i32 @printf(i8*, ...)
 
 declare i8* @malloc(i32)
@@ -29,7 +31,6 @@ declare i32 @fseek(i8*, i32, i32)
 
 define i32 @main() {
 entry:
-  %0 = call i32 (i8*, ...) @printf()
-  %1 = call i32 @main()
+  %0 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str, i32 0, i32 0))
   ret i32 0
 }

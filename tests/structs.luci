@@ -28,7 +28,9 @@ struct Car {
 
 dec main() -> int;
 def main() -> int {
-    x: () -> (int);
+    x:int = 4;
+    (ptr x) = "helo";
+
     FCar:Car = malloc(20)->(Car);
     FCar.make = malloc(100);
     FCar.model = malloc(100);

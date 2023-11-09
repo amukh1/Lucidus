@@ -1,3 +1,6 @@
+#include <memory>
+#include <math.h>
+
 #include <llvm/IR/LLVMContext.h>
 #include <llvm/IR/Module.h>
 #include <llvm/IR/IRBuilder.h>
@@ -15,10 +18,37 @@
 
 #include "errorHandler.h"
 
-void errorHandler::typeError(LucidusParser::TypeContext* ctx1, LucidusParser::TypeContext* ctx2) {
-    std::cout << "<!!Error!!> Type error at line " << ctx1->getStart()->getLine() << std::endl;
-    std::cout << "> " << ctx1->getText() << "&&" << ctx2->getText() << std::endl;
 
-    std::cout << std::endl;
-    exit(1);
-}
+// template <typename T>
+// void errorHandler::typeError(LucidusParser::TypeContext* expected, LucidusParser::TypeContext* returned, T parent) {
+//     std::cout << "Type error at line " << expected->getStart()->getLine() << std::endl;
+//     std::cout << "Expected type: " << expected->getText() << " got:" << returned->getText() << std::endl;
+//     std::cout << "(" << getTypes(expected, this->llvmController, this->structs) << " vs " << getTypes(returned, this->llvmController, this->structs) << ")" << std::endl;
+
+//     std::cout << parent->getText() << std::endl;
+//     // put pretty underlining and show types
+//     int spaces = parent->getStart()->getCharPositionInLine();
+//     for(int i = 0; i < spaces; i++) {
+//         std::cout << " ";
+//     }
+//     std::cout << "^";
+//     for(int i = 0; i < parent->getText().length() - 1; i++) {
+//         std::cout << "~";
+//     }
+//     // cout type (llvm type)
+//     std::cout << getTypes(expected, this->llvmController, this->structs);
+
+//     // spaces until second type
+//     int nonabs = expected->getText().length() - returned->getText().length();
+//     for(int i = 0; i < std::abs(nonabs); i++) {
+//         std::cout << " ";
+//     }
+//     std::cout << "^";
+//     for(int i = 0; i < parent->getText().length() - 1; i++) {
+//         std::cout << "~";
+//     }
+//     std::cout << getTypes(returned, this->llvmController, this->structs);
+    
+
+//     std::cout << std::endl;
+// }

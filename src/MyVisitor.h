@@ -20,6 +20,7 @@
 // listener and visitor
 #include "LucidusParserVisitor.h"
 #include "LucidusParserBaseVisitor.h"
+#include "errorHandler.h"
 
 class MyVisitor : public LucidusParserBaseVisitor {
 public:
@@ -31,6 +32,7 @@ public:
     bool loadingAvailable = true;
     std::map<std::string, llvm::BasicBlock*> blocks;
     std::shared_ptr<LLVMController> controller;
+    std::shared_ptr<errorHandler> e_handler;
     antlrcpp::Any visitProgram(LucidusParser::ProgramContext *ctx) override {
         // std::cout << "Visiting program" << std::endl;
         return visitChildren(ctx);
