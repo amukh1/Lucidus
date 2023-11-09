@@ -29,7 +29,7 @@ declare i32 @fseek(i8*, i32, i32)
 
 define i32 @main() {
 entry:
-  %x = alloca i32
-  store i32 4, i32* %x
+  %0 = call i32 (i8*, ...) @printf()
+  %1 = call i32 @main()
   ret i32 0
 }

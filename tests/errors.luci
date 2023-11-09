@@ -14,7 +14,7 @@ dec fseek(stream:char*, offset:int, origin:int) -> int;
 
 dec main() -> int;
 def main() -> int {
-    x:int = "hello";
-    ptr x = 6;
+    printf();
+    main(4);
     return 0;
 }
