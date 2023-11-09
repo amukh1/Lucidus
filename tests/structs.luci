@@ -56,5 +56,7 @@ def main() -> int {
     printf("Car Year: %d\n", *FCar.year);
     printf("Car Cost: %d\n", *FCar.cost);
 
+    free(FCar);
+
     return 0;
 }
