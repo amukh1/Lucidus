@@ -23,12 +23,12 @@ struct Car {
     model: char*,
     mileage: int,
     year: int,
-    cost: int,
-    fun: () -> (int)
+    cost: int
 };
 
 dec main() -> int;
 def main() -> int {
+    x: () -> (int);
     FCar:Car = malloc(20)->(Car);
     FCar.make = malloc(100);
     FCar.model = malloc(100);

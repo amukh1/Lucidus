@@ -47,6 +47,7 @@ entry:
 
 define i32 @main() {
 entry:
+  %x = alloca i32 ()
   %FCar = alloca %Car*
   %0 = call i8* @malloc(i32 20)
   %1 = bitcast i8* %0 to %Car*

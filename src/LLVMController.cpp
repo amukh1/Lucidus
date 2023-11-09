@@ -75,8 +75,10 @@ llvm::Type* getTypes(LucidusParser::TypeContext *ctx, std::shared_ptr<LLVMContro
   // given a string like int** or int or int* deduce the type and output llvm type
   //int: controller->builder->getInt32Ty()
   llvm::Type* ltype;
-  std::string type = ctx->ID()->getText();
-  if((type == "int"|| type == "char" || type == "void" || type == "bool" || type=="float")) {
+  std::string type = ctx->getText();
+  if(ctx->ID() != nullptr)
+  type = ctx->ID()->getText();
+  if((type == "int"|| type == "char" || type == "void" || type == "bool" || type=="float" || ctx->fptr() != nullptr)) {
     // we know it is primitive type
     if(type == "int") {
       ltype = controller->builder->getInt32Ty();
@@ -91,6 +93,7 @@ llvm::Type* getTypes(LucidusParser::TypeContext *ctx, std::shared_ptr<LLVMContro
     }
     else if(ctx->fptr() != nullptr) {
       // function type
+      // std::cout << "function type" << std::endl;
       std::vector<llvm::Type*> args;
       auto size = ctx->fptr()->type().size();
       for(int i = 0; i<ctx->fptr()->type().size()-1; i++) {
@@ -101,6 +104,8 @@ llvm::Type* getTypes(LucidusParser::TypeContext *ctx, std::shared_ptr<LLVMContro
       // make args into llvm arrayref
       llvm::ArrayRef<llvm::Type*> argsRef(args);
       ltype = llvm::FunctionType::get(getTypes(ctx->fptr()->type(size-1), controller, structs), argsRef, false);
+      // return function type with no parameters and return type int
+      // ltype = llvm::FunctionType::get(controller->builder->getInt32Ty(), false);
     }
   }else {
     // we know it is a struct

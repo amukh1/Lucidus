@@ -126,9 +126,11 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
             if(this->functionScope.count(ctx->ID()->getText()))
                 return (llvm::Value*) this->functionScope[ctx->ID()->getText()];
         // else check if it is in global vars, if so, this->controller->module->getNamedGlobal(name)
-            else if(this->controller->module->getNamedGlobal(ctx->ID()->getText()))
+            else if(this->controller->module->getNamedGlobal(ctx->ID()->getText()) != nullptr)
                 return (llvm::Value*) this->controller->module->getNamedGlobal(ctx->ID()->getText());
-            else {
+            else if(this->controller->module->getFunction(ctx->ID()->getText()) != nullptr) {
+                return (llvm::Value*) this->controller->module->getFunction(ctx->ID()->getText());
+            }else {
                 std::cout << "Variable " << ctx->ID()->getText() << " not found" << std::endl;
                 return (llvm::Value*) llvm::ConstantPointerNull::get(llvm::Type::getInt8PtrTy(controller->ctx));
             }
@@ -251,6 +253,7 @@ antlrcpp::Any MyVisitor::visitDef(LucidusParser::DefContext *ctx) {
 
 antlrcpp::Any MyVisitor::visitFunc(LucidusParser::FuncContext *ctx)  {
         auto func = this->controller->module->getFunction(ctx->ID()->getText());
+        // auto func = std::any_cast<llvm::Function*>(visit(ctx->ID()));
         // get params
         if(func != nullptr){
         std::vector<llvm::Value*> params;
