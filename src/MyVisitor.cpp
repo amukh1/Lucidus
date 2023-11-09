@@ -282,13 +282,35 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         llvm::AllocaInst* ptr = controller->declareVariable(name, type);
         llvm::StoreInst* val = controller->assignVariable(ptr, std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->vdec()->expr())));
         this->functionScope[name] = (llvm::Value*)ptr;
+
+        // error checking (type)
+        if(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->vdec()->expr()))->getType() != type) {
+            std::cout << "Type error at line " << ctx->vdec()->getStart()->getLine() << std::endl;
+            std::cout << "> " << ctx->vdec()->getText() << std::endl;
+            // show types/ underline types
+            // figure out what character the first type is on, and put an arrow under it + its type
+            // do the same for the second type
+            auto charOfTypeOne = ctx->vdec()->idec()->type()->getStart()->getCharPositionInLine();
+            // put spaces upto the start of the type
+            for(int i = 0; i<charOfTypeOne; i++) {
+                std::cout << " ";
+            }
+            std::string typeStr;
+            llvm::raw_string_ostream rso(typeStr);
+            type->print(rso);
+            std::cout << "^ " << rso.str();
+            // add more spaces to get to where second type is
+            for(int i = 0; i<ctx->vdec()->idec()->type()->getText().length(); i++) {
+                std::cout << " ";
+            }
+            typeStr.clear();
+            llvm::raw_string_ostream rso2(typeStr);
+            std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->vdec()->expr()))->getType()->print(rso2);
+            std::cout << "^ " << rso2.str() << std::endl;
+            exit(1);
+        }
+
         return ptr;
-    // }else if(ctx->vdef() != nullptr && ctx->children.size() == 1) {
-    //     std::string name = ctx->vdef()->ID()->getText();
-    //     llvm::Value* val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->vdef()->expr()));
-        
-    //     controller->assignVariable((llvm::AllocaInst*)this->functionScope[name], val);
-    //     return this->functionScope[name];
     }else if(ctx->edec() != nullptr && ctx->children.size() == 1) {
         std::string name = ctx->edec()->idec()->ID()->getText();
         llvm::Type* type = getTypes(ctx->edec()->idec()->type(), this->controller, this->structs);
@@ -321,6 +343,27 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         
         auto val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->assign()->expr(1)));
         controller->builder->CreateStore(val, non_ptr);
+
+        // error checking (type)
+        auto type = non_ptr->getType();
+        if(val->getType() != type) {
+            std::cout << "Type error at line " << ctx->assign()->getStart()->getLine() << std::endl;
+            std::cout << "> " << ctx->assign()->getText() << std::endl;
+            // show types/ underline types
+            // figure out what character the first type is on, and put an arrow under it + its type
+            // do the same for the second type
+            // put spaces upto the start of the type
+            int chars = ctx->assign()->expr(0)->getStart()->getCharPositionInLine();
+            for(int i = 0; i<chars; i++) {
+                std::cout << " ";
+            }
+            std::string typeStr;
+            typeStr.clear();
+            llvm::raw_string_ostream rso2(typeStr);
+            val->getType()->print(rso2);
+            std::cout << "^ " << rso2.str() << std::endl;
+            exit(1);
+        }
         // controller->assignVariable(ptr, val);
         return (llvm::Value*)non_ptr;
     }else if(ctx->label() != nullptr && ctx->children.size() == 1) {

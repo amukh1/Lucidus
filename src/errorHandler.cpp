@@ -15,7 +15,10 @@
 
 #include "errorHandler.h"
 
-void errorHandler::typeError(LucidusParser::TypeContext* ctx) {
-    std::cout << "Type error at line " << ctx->getStart()->getLine() << std::endl;
+void errorHandler::typeError(LucidusParser::TypeContext* ctx1, LucidusParser::TypeContext* ctx2) {
+    std::cout << "<!!Error!!> Type error at line " << ctx1->getStart()->getLine() << std::endl;
+    std::cout << "> " << ctx1->getText() << "&&" << ctx2->getText() << std::endl;
+
+    std::cout << std::endl;
     exit(1);
 }

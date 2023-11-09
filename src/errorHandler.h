@@ -18,6 +18,5 @@
 
 class errorHandler {
     public:
-    void typeError(LucidusParser::TypeContext* ctx);
-    
+    void typeError(LucidusParser::TypeContext* ctx1, LucidusParser::TypeContext* ctx2);
 };
