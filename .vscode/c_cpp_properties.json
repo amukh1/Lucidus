@@ -5,7 +5,8 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "/usr/include/llvm-17",
-                "/usr/include/llvm-c-17"
+                "/usr/include/llvm-c-17",
+                "/usr/local/include/antlr4-runtime"
             ],
             "defines": [],
             "cStandard": "c17",

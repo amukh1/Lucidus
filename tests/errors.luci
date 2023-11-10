@@ -12,9 +12,7 @@ dec gets(tmp:char*) -> char*;
 dec atoi(tmp:char*) -> int;
 dec fseek(stream:char*, offset:int, origin:int) -> int;
 
-dec main() -> int;
 def main() -> int {
-    printf();
-    main(4);
+    printf("hi\n");
     return 0;
 }
