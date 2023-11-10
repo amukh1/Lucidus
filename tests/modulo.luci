@@ -1,0 +1,40 @@
+dec printf(tmp:char*, ...) -> int;
+dec malloc(size:int) -> char*;
+dec free(pointer:char*) -> char*;
+dec fprintf(stream:char*, tmp:char*, ...) -> int;
+dec fputs(tmp:char*, stream:char*) -> int;
+dec fgets(tmp:char*, n:int, stream:char*) -> char*;
+dec fgetc(stream:char*) -> int;
+dec fopen(tmp:char*, mode:char*) -> char*;
+dec fclose(stream:char*) -> int;
+dec strlen(tmp:char*) -> int;
+dec strcpy(dest:char*, src:char*) -> char*;
+dec gets(tmp:char*) -> char*;
+dec atoi(tmp:char*) -> int;
+dec fseek(stream:char*, offset:int, origin:int) -> int;
+
+dec main() -> int;
+def main() -> int {
+    n_char:char* = malloc(4);
+    gets(n_char);
+    n:int = atoi(n_char);
+
+    // return modulo n
+    r:int = 0;
+    i:int = n;
+    goto while;
+    label while:
+    if (i == 0) -> {
+        goto end;
+    }
+    if(r == (n - 1)) -> {
+        (ptr r) = 0;
+        (ptr i) = i - 1;
+        goto while;
+    }
+    (ptr r) = r + 1;
+    (ptr i) = i - 1;
+    label end:
+    printf("%d\n", r);
+    return r;
+}

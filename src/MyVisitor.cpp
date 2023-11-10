@@ -263,38 +263,38 @@ antlrcpp::Any MyVisitor::visitFunc(LucidusParser::FuncContext *ctx)  {
         }
 
         // error handling (type) (check all params)
-        bool error = false;
-        if(params.size() != func->arg_size()) {
-            std::cout << "Parameter mismatch at line " << ctx->getStart()->getLine() << std::endl;
-            std::cout << "> " << ctx->getText() << std::endl;
-            std::cout << func->getName().str() << " expects " << func->arg_size() << " parameters, but " << params.size() << " were given" << std::endl;
-            exit(1);
-        };
-        for(int i = 0; i<params.size(); i++) {
-            if(params[i]->getType() != func->getArg(i)->getType()) {
-                std::cout << "Type error at line " << ctx->getStart()->getLine() << std::endl;
-                std::cout << "> " << ctx->getText() << std::endl;
-                // show types/ underline types
-                // figure out what character the first type is on, and put an arrow under it + its type
-                // do the same for the second type
-                // put spaces upto the start of the type
-                int chars = ctx->expr(i)->getStart()->getCharPositionInLine();
-                for(int i = 0; i<chars; i++) {
-                    std::cout << " ";
-                }
-                std::string typeStr;
-                typeStr.clear();
-                llvm::raw_string_ostream rso2(typeStr);
-                params[i]->getType()->print(rso2);
-                std::cout << "^ " << rso2.str() << ", expected ";
-                typeStr.clear();
-                llvm::raw_string_ostream rso3(typeStr);
-                func->getArg(i)->getType()->print(rso3);
-                std::cout << rso3.str() << std::endl;
-                error = true;
-            }
-        }
-        if(error) exit(1);
+        // bool error = false;
+        // if(params.size() != func->arg_size()) {
+        //     std::cout << "Parameter mismatch at line " << ctx->getStart()->getLine() << std::endl;
+        //     std::cout << "> " << ctx->getText() << std::endl;
+        //     std::cout << func->getName().str() << " expects " << func->arg_size() << " parameters, but " << params.size() << " were given" << std::endl;
+        //     exit(1);
+        // };
+        // for(int i = 0; i<params.size(); i++) {
+        //     if(params[i]->getType() != func->getArg(i)->getType()) {
+        //         std::cout << "Type error at line " << ctx->getStart()->getLine() << std::endl;
+        //         std::cout << "> " << ctx->getText() << std::endl;
+        //         // show types/ underline types
+        //         // figure out what character the first type is on, and put an arrow under it + its type
+        //         // do the same for the second type
+        //         // put spaces upto the start of the type
+        //         int chars = ctx->expr(i)->getStart()->getCharPositionInLine();
+        //         for(int i = 0; i<chars; i++) {
+        //             std::cout << " ";
+        //         }
+        //         std::string typeStr;
+        //         typeStr.clear();
+        //         llvm::raw_string_ostream rso2(typeStr);
+        //         params[i]->getType()->print(rso2);
+        //         std::cout << "^ " << rso2.str() << ", expected ";
+        //         typeStr.clear();
+        //         llvm::raw_string_ostream rso3(typeStr);
+        //         func->getArg(i)->getType()->print(rso3);
+        //         std::cout << rso3.str() << std::endl;
+        //         error = true;
+        //     }
+        // }
+        // if(error) exit(1);
 
         return (llvm::Value*)this->controller->builder->CreateCall(func, params);
         }else {
@@ -380,7 +380,7 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         controller->builder->CreateStore(val, non_ptr);
 
         // error checking (type)
-        auto type = non_ptr->getType();
+        auto type = ((llvm::AllocaInst*)non_ptr)->getAllocatedType();
         if(val->getType() != type) {
             std::cout << "Type error at line " << ctx->assign()->getStart()->getLine() << std::endl;
             std::cout << "> " << ctx->assign()->getText() << std::endl;
