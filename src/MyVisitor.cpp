@@ -533,8 +533,8 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
 
         // auto iff = llvm::BasicBlock::Create(this->controller->ctx, "if", parent);
         // auto iff = llvm::BasicBlock::Create(this->controller->ctx, "if", parent);
-auto then = llvm::BasicBlock::Create(this->controller->ctx, "then", parent);
-auto endThen = llvm::BasicBlock::Create(this->controller->ctx, "endThen", parent);
+auto then = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
+auto endThen = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
 // auto merge = llvm::BasicBlock::Create(this->controller->ctx, "merge", parent);
 
 // insert basic blocks
