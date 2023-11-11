@@ -1,7 +1,11 @@
 ; ModuleID = 'amukh'
 source_filename = "amukh"
 
-@str = private constant [4 x i8] c"%d\0A\00"
+%Car = type {}
+
+@Car = external global %Car
+@str = private constant [13 x i8] c"%d mod %d = \00"
+@str.1 = private constant [4 x i8] c"%d\0A\00"
 
 declare i32 @printf(i8*, ...)
 
@@ -31,8 +35,14 @@ declare i32 @atoi(i8*)
 
 declare i32 @fseek(i8*, i32, i32)
 
+define i32 @frog() {
+entry:
+  ret i32 42
+}
+
 define i32 @main() {
 entry:
+  %x = alloca %Car*
   %n_char = alloca i8*
   %0 = call i8* @malloc(i32 4)
   store i8* %0, i8** %n_char
@@ -57,48 +67,50 @@ entry:
   store i32 %13, i32* %k
   %14 = load i8*, i8** %k_char
   %15 = call i32 @atoi(i8* %14)
+  %16 = load i32, i32* %k
+  %17 = load i32, i32* %n
+  %18 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @str, i32 0, i32 0), i32 %16, i32 %17)
   %r = alloca i32
   store i32 0, i32* %r
   %i = alloca i32
-  %16 = load i32, i32* %k
-  store i32 %16, i32* %i
-  %17 = load i32, i32* %k
+  %19 = load i32, i32* %k
+  store i32 %19, i32* %i
+  %20 = load i32, i32* %k
   br label %while
 
-while:                                            ; preds = %32, %29, %entry
-  %18 = load i32, i32* %i
-  %19 = icmp eq i32 %18, 0
-  br i1 %19, label %20, label %21
+while:                                            ; preds = %34, %31, %entry
+  %21 = load i32, i32* %i
+  %22 = icmp eq i32 %21, 0
+  br i1 %22, label %23, label %24
 
-20:                                               ; preds = %while
+23:                                               ; preds = %while
   br label %end
 
-21:                                               ; preds = %while
-  %22 = load i32, i32* %n
-  %23 = sub i32 %22, 1
-  %24 = load i32, i32* %r
-  %25 = icmp eq i32 %24, %23
-  br i1 %25, label %29, label %32
+24:                                               ; preds = %while
+  %25 = load i32, i32* %n
+  %26 = sub i32 %25, 1
+  %27 = load i32, i32* %r
+  %28 = icmp eq i32 %27, %26
+  br i1 %28, label %31, label %34
 
-end:                                              ; preds = %20
-  %26 = load i32, i32* %r
-  %27 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str, i32 0, i32 0), i32 %26)
-  %28 = load i32, i32* %r
-  ret i32 %28
+end:                                              ; preds = %23
+  %29 = load i32, i32* %r
+  %30 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.1, i32 0, i32 0), i32 %29)
+  ret i32 0
 
-29:                                               ; preds = %21
+31:                                               ; preds = %24
   store i32 0, i32* %r
-  %30 = load i32, i32* %i
-  %31 = sub i32 %30, 1
-  store i32 %31, i32* %i
+  %32 = load i32, i32* %i
+  %33 = sub i32 %32, 1
+  store i32 %33, i32* %i
   br label %while
 
-32:                                               ; preds = %21
-  %33 = load i32, i32* %r
-  %34 = add i32 %33, 1
-  store i32 %34, i32* %r
-  %35 = load i32, i32* %i
-  %36 = sub i32 %35, 1
-  store i32 %36, i32* %i
+34:                                               ; preds = %24
+  %35 = load i32, i32* %r
+  %36 = add i32 %35, 1
+  store i32 %36, i32* %r
+  %37 = load i32, i32* %i
+  %38 = sub i32 %37, 1
+  store i32 %38, i32* %i
   br label %while
 }

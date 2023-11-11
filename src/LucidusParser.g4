@@ -19,6 +19,7 @@ assign: expr '=' expr ';';
 label: LABEL ID ':';
 goto: GOTO ID ';';
 if: 'if' expr ARROW '{' stat* '}';
+imrt: 'import' STRING;
 
 stat
     : vdec
@@ -32,6 +33,7 @@ stat
     | label
     | goto
     | if
+    | imrt
     ;
 def : DEF ID '(' (param (',' param)*)? ')' ARROW type '{' stat* '}' ;
 

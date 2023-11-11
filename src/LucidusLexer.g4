@@ -29,6 +29,8 @@ GOTO: 'goto';
 DOT: '.';
 DOTS: '...';
 IF: 'if';
+IMPRT: 'import';
+ELSE: 'else';
 
 LCURLY : '{' ;
 RCURLY : '}' ;

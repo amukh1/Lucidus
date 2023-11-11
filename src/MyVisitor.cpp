@@ -23,6 +23,7 @@
 #include "errorHandler.h"
 
 #include "MyVisitor.h"
+#include "compile.h"
 
 void replaceAll(std::string& str, const std::string& from, const std::string& to) {
     if(from.empty())
@@ -558,8 +559,18 @@ controller->builder->SetInsertPoint(endThen);
 // controller->builder->CreateBr(merge);
 // controller->builder->SetInsertPoint(merge);
 // return visitChildren(ctx);
-return nullptr;
+    return nullptr;
 
+    }else if(ctx->imrt() != nullptr) {
+        // import statement
+        // 'import' STRING
+
+        // get string
+        std::string str = ctx->imrt()->STRING()->getText();
+        // put string in std::ifstring
+        std::ifstream file(str.substr(1, str.length()-2));
+        compile(this->controller, file, *this);
+        return nullptr;
     } else
     return visitChildren(ctx);
 }

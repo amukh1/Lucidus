@@ -15,15 +15,17 @@ public:
     AND = 1, OR = 2, NOT = 3, EQ = 4, PLUS = 5, SUB = 6, STAR = 7, DIV = 8, 
     OPAREN = 9, CPAREN = 10, COMMA = 11, SEMI = 12, DEF = 13, STRUCT = 14, 
     DECL = 15, ARROW = 16, GTR = 17, LESS = 18, DCOL = 19, PTR = 20, COL = 21, 
-    RETURN = 22, LABEL = 23, GOTO = 24, DOT = 25, DOTS = 26, IF = 27, LCURLY = 28, 
-    RCURLY = 29, INT = 30, FLOAT = 31, ID = 32, WS = 33, COMMENT = 34, STRING = 35
+    RETURN = 22, LABEL = 23, GOTO = 24, DOT = 25, DOTS = 26, IF = 27, IMPRT = 28, 
+    ELSE = 29, LCURLY = 30, RCURLY = 31, INT = 32, FLOAT = 33, ID = 34, 
+    WS = 35, COMMENT = 36, STRING = 37
   };
 
   enum {
     RuleProgram = 0, RuleRawtype = 1, RuleFptr = 2, RuleType = 3, RuleIdec = 4, 
     RuleParam = 5, RuleDec = 6, RuleRet = 7, RuleVdec = 8, RuleInfdec = 9, 
     RuleEdec = 10, RuleAssign = 11, RuleLabel = 12, RuleGoto = 13, RuleIf = 14, 
-    RuleStat = 15, RuleDef = 16, RuleExpr = 17, RuleStruct = 18, RuleFunc = 19
+    RuleImrt = 15, RuleStat = 16, RuleDef = 17, RuleExpr = 18, RuleStruct = 19, 
+    RuleFunc = 20
   };
 
   explicit LucidusParser(antlr4::TokenStream *input);
@@ -58,6 +60,7 @@ public:
   class LabelContext;
   class GotoContext;
   class IfContext;
+  class ImrtContext;
   class StatContext;
   class DefContext;
   class ExprContext;
@@ -311,6 +314,20 @@ public:
 
   IfContext* if_();
 
+  class  ImrtContext : public antlr4::ParserRuleContext {
+  public:
+    ImrtContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *IMPRT();
+    antlr4::tree::TerminalNode *STRING();
+
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  ImrtContext* imrt();
+
   class  StatContext : public antlr4::ParserRuleContext {
   public:
     StatContext(antlr4::ParserRuleContext *parent, size_t invokingState);
@@ -326,6 +343,7 @@ public:
     LabelContext *label();
     GotoContext *goto_();
     IfContext *if_();
+    ImrtContext *imrt();
 
 
     virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
