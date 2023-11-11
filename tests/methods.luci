@@ -1,0 +1,29 @@
+import "include.luci"
+
+struct S {
+    x: () -> (int)*
+};
+
+dec useless() -> int;
+def useless() -> int {
+    printf("hello\n");
+    return 0;
+}
+
+dec caller(callee: ()->(int)*) -> int;
+def caller(callee: ()->(int)*) -> int {
+    return 0;
+}
+
+dec main() -> int;
+def main() -> int {
+    x: () -> (int)* = (ptr useless);
+    printf("hello\n");
+    (x)();
+
+    s: S = malloc(1)->(S);
+    s.x = (ptr useless);
+    (*s.x)();
+
+    return 0;
+}

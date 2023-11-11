@@ -6,7 +6,7 @@ program
     ;
 rawtype: (ID);
 fptr: '(' (type (',' type)*)? ')' '->' '(' type ')';
-type: ((ID) (STAR)*) | fptr;
+type: (ID | fptr) (STAR)*;
 idec: ID COL type ;
 param: (idec|DOTS);
 dec: DECL ID '(' (param (',' param)*)? ')' ARROW type ';';
@@ -37,6 +37,8 @@ stat
     ;
 def : DEF ID '(' (param (',' param)*)? ')' ARROW type '{' stat* '}' ;
 
+func :  (ID | '(' expr ')') '(' (expr (',' expr)*)? ')' ;
+
 expr: ID
     | INT
     | FLOAT
@@ -61,5 +63,3 @@ expr: ID
     ;
     
 struct: 'struct' ID '{' (idec (',' idec)*)? '}' ';';
-
-func :  ID '(' (expr (',' expr)*)? ')' ;

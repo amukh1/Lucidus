@@ -12,10 +12,4 @@ dec strcpy(dest:char*, src:char*) -> char*;
 dec gets(tmp:char*) -> char*;
 dec atoi(tmp:char*) -> int;
 dec fseek(stream:char*, offset:int, origin:int) -> int;
-dec frog() -> int;
-
-struct Car {};
-
-def frog() -> int {
-    return 42;
-}
+dec scanf(tmp:char*, ...) -> int;

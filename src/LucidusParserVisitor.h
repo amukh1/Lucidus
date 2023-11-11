@@ -55,11 +55,11 @@ public:
 
     virtual std::any visitDef(LucidusParser::DefContext *context) = 0;
 
+    virtual std::any visitFunc(LucidusParser::FuncContext *context) = 0;
+
     virtual std::any visitExpr(LucidusParser::ExprContext *context) = 0;
 
     virtual std::any visitStruct(LucidusParser::StructContext *context) = 0;
-
-    virtual std::any visitFunc(LucidusParser::FuncContext *context) = 0;
 
 
 };

@@ -1,0 +1,16 @@
+import "import.luci"
+
+struct Vector_int {
+    v:int*,
+    len:int
+};
+
+struct Vector_char {
+    v:int*,
+    len:int
+};
+
+struct Vector_string {
+    v:int*,
+    len:int
+};

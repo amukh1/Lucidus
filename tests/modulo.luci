@@ -1,14 +1,19 @@
 import "import.luci"
+import "vector.luci"
 
 dec main() -> int;
 def main() -> int {
-    x:Car;
-    n_char:char* = malloc(4);
-    k_char:char* = malloc(4);
-    gets(k_char);
-    gets(n_char);
-    n:int = atoi(n_char);
-    k:int = atoi(k_char);
+    // n_char:char* = malloc(4);
+    // k_char:char* = malloc(4);
+    // gets(k_char);
+    // gets(n_char);
+    // n:int = atoi(n_char);
+    // k:int = atoi(k_char);
+    n_ptr:int* = malloc(4)->(int*);
+    k_ptr:int* = malloc(4)->(int*);
+    scanf("%d, %d", k_ptr, n_ptr);
+    k:int = *k_ptr;
+    n:int = *n_ptr;
     printf("%d mod %d = ", k, n);
 
     // return k mod n
