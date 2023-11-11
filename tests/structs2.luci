@@ -12,12 +12,6 @@ dec gets(tmp:char*) -> char*;
 dec atoi(tmp:char*) -> int;
 dec fseek(stream:char*, offset:int, origin:int) -> int;
 
-dec froggyfun() -> int;
-def froggyfun() -> int {
-    printf("Froggy fun...\n");
-    return 0;
-}
-
 struct Car {
     make: char*,
     model: char*,

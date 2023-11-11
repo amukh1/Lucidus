@@ -12,12 +12,6 @@ dec gets(tmp:char*) -> char*;
 dec atoi(tmp:char*) -> int;
 dec fseek(stream:char*, offset:int, origin:int) -> int;
 
-dec froggyfun() -> int;
-def froggyfun() -> int {
-    printf("Froggy fun...\n");
-    return 0;
-}
-
 struct Car {
     make: char*,
     model: char*,
@@ -28,9 +22,6 @@ struct Car {
 
 dec main() -> int;
 def main() -> int {
-    x:int = 4;
-    (ptr x) = "helo";
-
     FCar:Car = malloc(20)->(Car);
     FCar.make = malloc(100);
     FCar.model = malloc(100);
