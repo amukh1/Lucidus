@@ -37,13 +37,12 @@ stat
     ;
 def : DEF ID '(' (param (',' param)*)? ')' ARROW type '{' stat* '}' ;
 
-func :  (ID | '(' expr ')') '(' (expr (',' expr)*)? ')' ;
-
 expr: ID
     | INT
     | FLOAT
     | STRING
     | expr DOT ID
+    // | func=expr '(' (expr (',' expr)*)? ')'
     | func
     | PTR expr
     | expr STAR expr
@@ -61,5 +60,7 @@ expr: ID
     | '(' expr ')'
     
     ;
+func: ID '(' (expr (',' expr)*)? ')';
+// func :  (ID |  expr ) '(' (expr (',' expr)*)? ')' ;
     
 struct: 'struct' ID '{' (idec (',' idec)*)? '}' ';';

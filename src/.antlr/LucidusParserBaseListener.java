@@ -196,6 +196,18 @@ public class LucidusParserBaseListener implements LucidusParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterImrt(LucidusParser.ImrtContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitImrt(LucidusParser.ImrtContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterStat(LucidusParser.StatContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -220,6 +232,18 @@ public class LucidusParserBaseListener implements LucidusParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterFunc(LucidusParser.FuncContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFunc(LucidusParser.FuncContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterExpr(LucidusParser.ExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -239,18 +263,6 @@ public class LucidusParserBaseListener implements LucidusParserListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitStruct(LucidusParser.StructContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterFunc(LucidusParser.FuncContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitFunc(LucidusParser.FuncContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

@@ -157,6 +157,16 @@ public interface LucidusParserListener extends ParseTreeListener {
 	 */
 	void exitIf(LucidusParser.IfContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link LucidusParser#imrt}.
+	 * @param ctx the parse tree
+	 */
+	void enterImrt(LucidusParser.ImrtContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LucidusParser#imrt}.
+	 * @param ctx the parse tree
+	 */
+	void exitImrt(LucidusParser.ImrtContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link LucidusParser#stat}.
 	 * @param ctx the parse tree
 	 */
@@ -177,6 +187,16 @@ public interface LucidusParserListener extends ParseTreeListener {
 	 */
 	void exitDef(LucidusParser.DefContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link LucidusParser#func}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunc(LucidusParser.FuncContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LucidusParser#func}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunc(LucidusParser.FuncContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link LucidusParser#expr}.
 	 * @param ctx the parse tree
 	 */
@@ -196,14 +216,4 @@ public interface LucidusParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitStruct(LucidusParser.StructContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link LucidusParser#func}.
-	 * @param ctx the parse tree
-	 */
-	void enterFunc(LucidusParser.FuncContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link LucidusParser#func}.
-	 * @param ctx the parse tree
-	 */
-	void exitFunc(LucidusParser.FuncContext ctx);
 }

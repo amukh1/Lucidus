@@ -477,7 +477,20 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         controller->builder->CreateStore(val, non_ptr);
 
         // error checking (type)
+        // if it is not a struct type
         auto type = ((llvm::AllocaInst*)non_ptr)->getAllocatedType();
+        if(llvm::isa<llvm::StructType>(type)){
+        // n = the nth member of the struct, check the index of the member called
+        int n = 0;
+        for(int i = 0; i<this->structs[type->getStructName().str()]->getNumElements(); i++) {
+            if(this->structNames[type->getStructName().str()][i] == ctx->assign()->expr(0)->ID()->getText()) {
+                n = i;
+                break;
+            }
+        }
+        type = type->getContainedType(n);
+        }
+
         if(val->getType() != type) {
             std::cout << "Type error at line " << ctx->assign()->getStart()->getLine() << std::endl;
             std::cout << "> " << ctx->assign()->getText() << std::endl;

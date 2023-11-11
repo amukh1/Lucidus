@@ -1,7 +1,7 @@
 import "include.luci"
 
 struct S {
-    x: () -> (int)*
+    frog: () -> (int)*
 };
 
 dec useless() -> int;
@@ -22,8 +22,8 @@ def main() -> int {
     (x)();
 
     s: S = malloc(1)->(S);
-    s.x = (ptr useless);
-    (*s.x)();
+    s.frog = (useless);
+    (* s.frog)();
 
     return 0;
 }
