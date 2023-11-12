@@ -1,7 +1,7 @@
 ; ModuleID = 'amukh'
 source_filename = "amukh"
 
-%Car = type { i8*, i8*, i32, i32, i32, i32 (i32)* }
+%Car = type { i8*, i8*, i32, i32, i32, i32 (%Car*)* }
 
 @Car = external global %Car
 @str = private constant [10 x i8] c"Make: %s\0A\00"
@@ -94,10 +94,10 @@ entry:
   store i32 20000, i32* %13
   %14 = load %Car*, %Car** %camaro
   %15 = getelementptr inbounds %Car, %Car* %14, i32 0, i32 5
-  store i32 (%Car*)* @print, i32 (i32)** %15
+  store i32 (%Car*)* @print, i32 (%Car*)** %15
   %16 = load %Car*, %Car** %camaro
   %17 = getelementptr inbounds %Car, %Car* %16, i32 0, i32 5
-  %18 = load i32 (i32)*, i32 (i32)** %17
+  %18 = load i32 (%Car*)*, i32 (%Car*)** %17
   %19 = load %Car*, %Car** %camaro
   %20 = call i32 %18(%Car* %19)
   ret i32 0

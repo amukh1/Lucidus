@@ -6,7 +6,7 @@ struct Car {
     mileage: int,
     year: int,
     cost: int,
-    print: (Car*)->(int)*
+    print: (Car)->(int)*
 };
 
 dec print(car:Car) -> int;

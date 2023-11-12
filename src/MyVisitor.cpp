@@ -619,15 +619,21 @@ controller->builder->SetInsertPoint(endThen);
 
 std::any MyVisitor::visitStruct(LucidusParser::StructContext *ctx) {
     std::string name = ctx->ID()->getText();
+
+    // declare struct before defining it
+
     std::vector<llvm::Type*> types;
-    for(int i = 0; i<ctx->idec().size(); i++) {
-        types.push_back(getTypes(ctx->idec(i)->type(), this->controller, this->structs));
-    }
-    llvm::StructType* stype = llvm::StructType::create(this->controller->ctx, types, name);
-    this->structs[name] = stype;
-    stype->setName(name);
+    llvm::StructType* stype = llvm::StructType::create(this->controller->ctx, name);
     // put struct into ir
     this->controller->module->getOrInsertGlobal(name, stype); // why does this segfault..
+    for(int i = 0; i<ctx->idec().size(); i++) {
+        // std::cout << ctx->idec(i)->getText() << std::endl;
+        types.push_back(getTypes(ctx->idec(i)->type(), this->controller, this->structs));
+    }
+    this->structs[name] = stype;
+    stype->setName(name);
+    // setbody
+    stype->setBody(types);
     // now for the names or whatever they are (ID inside idec)
     std::vector<std::string> names;
     for(int i = 0; i<ctx->idec().size(); i++) {
