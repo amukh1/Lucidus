@@ -1,5 +1,4 @@
-import "import.luci"
-import "vector.luci"
+import "include.luci"
 
 dec main() -> int;
 def main() -> int {

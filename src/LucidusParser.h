@@ -13,11 +13,11 @@ class  LucidusParser : public antlr4::Parser {
 public:
   enum {
     AND = 1, OR = 2, NOT = 3, EQ = 4, PLUS = 5, SUB = 6, STAR = 7, DIV = 8, 
-    OPAREN = 9, CPAREN = 10, COMMA = 11, SEMI = 12, DEF = 13, STRUCT = 14, 
-    DECL = 15, ARROW = 16, GTR = 17, LESS = 18, DCOL = 19, PTR = 20, COL = 21, 
-    RETURN = 22, LABEL = 23, GOTO = 24, DOT = 25, DOTS = 26, IF = 27, IMPRT = 28, 
-    ELSE = 29, LCURLY = 30, RCURLY = 31, INT = 32, FLOAT = 33, ID = 34, 
-    WS = 35, COMMENT = 36, STRING = 37
+    MOD = 9, OPAREN = 10, CPAREN = 11, COMMA = 12, SEMI = 13, DEF = 14, 
+    STRUCT = 15, DECL = 16, ARROW = 17, GTR = 18, LESS = 19, DCOL = 20, 
+    PTR = 21, COL = 22, RETURN = 23, LABEL = 24, GOTO = 25, DOT = 26, DOTS = 27, 
+    IF = 28, IMPRT = 29, ELSE = 30, LCURLY = 31, RCURLY = 32, INT = 33, 
+    FLOAT = 34, ID = 35, WS = 36, COMMENT = 37, STRING = 38
   };
 
   enum {
@@ -420,6 +420,7 @@ public:
     antlr4::tree::TerminalNode *DIV();
     antlr4::tree::TerminalNode *PLUS();
     antlr4::tree::TerminalNode *SUB();
+    antlr4::tree::TerminalNode *MOD();
     std::vector<antlr4::tree::TerminalNode *> EQ();
     antlr4::tree::TerminalNode* EQ(size_t i);
     antlr4::tree::TerminalNode *GTR();

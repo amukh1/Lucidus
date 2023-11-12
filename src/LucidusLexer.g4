@@ -9,6 +9,7 @@ PLUS: '+';
 SUB: '-';
 STAR: '*';
 DIV: '/';
+MOD: '%';
 OPAREN: '(';
 CPAREN: ')';
 COMMA : ',' ;

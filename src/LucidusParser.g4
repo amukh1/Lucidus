@@ -55,6 +55,7 @@ expr: ID
     | expr DIV expr
     | expr PLUS expr
     | expr SUB expr
+    | expr MOD expr
     | expr ARROW '(' type ')'
     | expr '=' '=' expr
     | expr GTR expr
