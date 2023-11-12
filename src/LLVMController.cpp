@@ -97,7 +97,13 @@ llvm::Type* getTypes(LucidusParser::TypeContext *ctx, std::shared_ptr<LLVMContro
       std::vector<llvm::Type*> args;
       auto size = ctx->fptr()->type().size();
       for(int i = 0; i<ctx->fptr()->type().size()-1; i++) {
+        // check if nullptr
+        if(!(getTypes(ctx->fptr()->type(i), controller, structs) == nullptr))
         args.push_back(getTypes(ctx->fptr()->type(i), controller, structs));
+        else {
+          std::cout << "error: type " << ctx->fptr()->type(i)->getText() << " not found" << std::endl;
+          exit(1);
+        }
       }
       // param types are all the types except the last one
       // return type is the last one

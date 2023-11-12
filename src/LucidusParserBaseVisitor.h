@@ -87,11 +87,11 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual std::any visitExpr(LucidusParser::ExprContext *ctx) override {
+  virtual std::any visitFunc(LucidusParser::FuncContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual std::any visitFunc(LucidusParser::FuncContext *ctx) override {
+  virtual std::any visitExpr(LucidusParser::ExprContext *ctx) override {
     return visitChildren(ctx);
   }
 

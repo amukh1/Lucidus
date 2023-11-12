@@ -191,7 +191,7 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         // auto valptrptr = controller->builder->CreateAlloca(dtype, nullptr);
         // controller->assignVariable((llvm::AllocaInst*)valptrptr, valptr);
         return (llvm::Value*)valnotptr;
-    } else if(ctx->DOT() != nullptr && ctx->children.size() == 3) {
+    } else if(ctx->ARROW() != nullptr && ctx->children.size() == 3) {
         auto structPtr = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));
         auto structType = structPtr->getType()->getContainedType(0);
         auto structName = structType->getStructName().str();
@@ -209,6 +209,24 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
 
         
         return (llvm::Value*)structMemberPtr;
+        // return visitChildren(ctx);
+    }else if(ctx->DOT() != nullptr && ctx->children.size() == 3) {
+        auto structPtr = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));
+        auto structType = structPtr->getType()->getContainedType(0);
+        auto structName = structType->getStructName().str();
+        auto structMember = ctx->ID()->getText();
+        // auto structMemberIndex = this->structs[structName]->getStructMemberIndex(structMember); // doesnt work, function is not defined
+        auto structMemberIndex = 0;
+        for(int i = 0; i<this->structs[structName]->getNumElements(); i++) {
+            if(this->structNames[structName][i] == structMember) {
+                structMemberIndex = i;
+                break;
+            }
+        }
+        auto structMemberType = this->structs[structName]->getStructElementType(structMemberIndex);
+        auto structMemberPtr = controller->builder->CreateStructGEP(structType, structPtr, structMemberIndex);
+
+        return (llvm::Value*)controller->builder->CreateLoad(structMemberType, structMemberPtr);
         // return visitChildren(ctx);
     }else if(ctx->expr(0) != nullptr && ctx->children.size() == 3) {
         return visit(ctx->expr(0));
