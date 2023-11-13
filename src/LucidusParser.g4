@@ -61,6 +61,7 @@ expr: ID
     | expr GTR expr
     | expr LESS expr
     | '(' expr ')'
+    | expr '[' INT ']'
     
     ;
     

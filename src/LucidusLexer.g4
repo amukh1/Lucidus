@@ -35,6 +35,8 @@ ELSE: 'else';
 
 LCURLY : '{' ;
 RCURLY : '}' ;
+LBRACK : '[' ;
+RBRACK : ']' ;
 
 INT : SUB?[0-9]+ ; 
 FLOAT : SUB?[0-9]+ '.' [0-9]* ;

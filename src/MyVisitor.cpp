@@ -250,7 +250,28 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
             // least powerful cast lol
             return (llvm::Value*)controller->builder->CreateBitCast(val, type);
         }
-    }else {
+    }else if(ctx->LBRACK() != nullptr && ctx->RBRACK() != nullptr && ctx->children.size() == 4) {
+        // expr [ int ]
+        // bascially return (expr->(int) + int*sizeof type)- >(type*)
+        auto val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));
+        // auto type = (llvm::PointerType*)val->getType()->getContainedType(0);
+        auto pointerType = llvm::dyn_cast<llvm::PointerType>(val->getType());
+        // auto type = pointerType->getContainedType(0);
+        // check if this is ok
+        if(!pointerType->isPointerTy()) {
+            std::cout << "WE HAVE A PROBLEM" << std::endl;
+        }
+        auto type = val->getType()->getContainedType(0);
+        auto size = get_size(type, *controller->builder);
+        auto index = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1)));
+        auto offset = controller->builder->CreateMul(index, size);
+        auto ptr_0_int = controller->builder->CreatePtrToInt(val, llvm::Type::getInt64Ty(controller->ctx));
+        auto ptr_0_int_plus_offset = controller->builder->CreateAdd(ptr_0_int, offset);
+        auto ptr_0_int_plus_offset_ptr = controller->builder->CreateIntToPtr(ptr_0_int_plus_offset, type);
+        return (llvm::Value*)ptr_0_int_plus_offset_ptr;
+
+
+    } else{
         // return (llvm::Value *)llvm::ConstantInt::get(llvm::Type::getInt32Ty(controller->ctx), 0);
         // return llvm nullptr LOOOL
         return (llvm::Value*) llvm::ConstantPointerNull::get(llvm::Type::getInt8PtrTy(controller->ctx));

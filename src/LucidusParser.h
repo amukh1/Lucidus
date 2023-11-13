@@ -16,8 +16,8 @@ public:
     MOD = 9, OPAREN = 10, CPAREN = 11, COMMA = 12, SEMI = 13, DEF = 14, 
     STRUCT = 15, DECL = 16, ARROW = 17, GTR = 18, LESS = 19, DCOL = 20, 
     PTR = 21, COL = 22, RETURN = 23, LABEL = 24, GOTO = 25, DOT = 26, DOTS = 27, 
-    IF = 28, IMPRT = 29, ELSE = 30, LCURLY = 31, RCURLY = 32, INT = 33, 
-    FLOAT = 34, ID = 35, WS = 36, COMMENT = 37, STRING = 38
+    IF = 28, IMPRT = 29, ELSE = 30, LCURLY = 31, RCURLY = 32, LBRACK = 33, 
+    RBRACK = 34, INT = 35, FLOAT = 36, ID = 37, WS = 38, COMMENT = 39, STRING = 40
   };
 
   enum {
@@ -428,6 +428,8 @@ public:
     antlr4::tree::TerminalNode *DOT();
     antlr4::tree::TerminalNode *ARROW();
     TypeContext *type();
+    antlr4::tree::TerminalNode *LBRACK();
+    antlr4::tree::TerminalNode *RBRACK();
 
 
     virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
