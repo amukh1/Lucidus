@@ -1,0 +1,26 @@
+import "include.luci"
+
+struct Graph {
+    nodesc:int,
+    edgesc:int,
+    nodes:int*,
+    edges:int**
+};
+
+dec edgeList(G:Graph) -> int**;
+def edgeList(G:Graph) -> int** {
+    return G.edges;
+}
+
+dec main() -> int;
+def main() -> int {
+    G:Graph = malloc(16)->(Graph);
+    G->nodesc = 4;
+    G->edgesc = 5;
+    nodes:int* = malloc(16)->(int*);
+    nodes = 0;
+    // (nodes->(int) + 1*4)->(int*) = 1;
+    // (nodes->(int) + 2*4)->(int*) = 2;
+    // (nodes->(int) + 3*4)->(int*) = 3;
+    return 0;
+}

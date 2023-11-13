@@ -15,9 +15,3 @@ struct Vector_string {
     len:int
 };
 
-struct Graph {
-    nodesc:int;
-    edgesc:int;
-    nodes:int*;
-    edges:int**;
-}
