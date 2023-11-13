@@ -1,6 +1,5 @@
 import "include.luci"
 
-
 dec main() -> int;
 def main() -> int {
     a:int* = malloc(4)->(int*);

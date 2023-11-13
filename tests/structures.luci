@@ -14,3 +14,10 @@ struct Vector_string {
     v:int*,
     len:int
 };
+
+struct Graph {
+    nodesc:int;
+    edgesc:int;
+    nodes:int*;
+    edges:int**;
+}
