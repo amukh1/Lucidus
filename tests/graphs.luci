@@ -18,7 +18,7 @@ def main() -> int {
     G->nodesc = 4;
     G->edgesc = 5;
     nodes:int* = malloc(16)->(int*);
-    nodes = 0;
+    (nodes) = 4;
     // (nodes->(int) + 1*4)->(int*) = 1;
     // (nodes->(int) + 2*4)->(int*) = 2;
     // (nodes->(int) + 3*4)->(int*) = 3;

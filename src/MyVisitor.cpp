@@ -488,7 +488,6 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         auto non_ptr = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->assign()->expr(0)));
                     // this->loadingAvailable = old;
         // get ptr to non_ptr
-
         // auto temp = controller->builder->CreateAlloca(non_ptr->getType(), nullptr);
         // controller->builder->CreateStore(non_ptr, temp);
         // auto ptr = controller->getVariable(temp);
@@ -498,7 +497,10 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
 
         // error checking (type)
         // if it is not a struct type
-        auto type = ((llvm::AllocaInst*)non_ptr)->getAllocatedType();
+        // get the type of the allocated value
+        // auto type = ((llvm::AllocaInst*)non_ptr)->getAllocatedType();
+        // do the same thing as line above but make it work for other types of pointers besides allocas
+        auto type = non_ptr->getType()->getContainedType(0);
         if(llvm::isa<llvm::StructType>(type)){
         // n = the nth member of the struct, check the index of the member called
         int n = 0;
