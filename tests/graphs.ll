@@ -94,12 +94,13 @@ while_end:                                        ; preds = %6
   ret i32 0
 }
 
-define i32* @getEdge(%Graph* %0, i32 %1) {
+define i32** @getEdge(%Graph* %0, i32 %1) {
 entry:
   %G = alloca %Graph*
   store %Graph* %0, %Graph** %G
   %i = alloca i32
   store i32 %1, i32* %i
+  %edge_temp = alloca i32*
   %2 = load i32, i32* %i
   %3 = mul i32 %2, 4
   %4 = load %Graph*, %Graph** %G
@@ -108,7 +109,23 @@ entry:
   %7 = ptrtoint i32** %6 to i32
   %8 = add i32 %7, %3
   %9 = inttoptr i32 %8 to i32*
-  ret i32* %9
+  store i32* %9, i32** %edge_temp
+  %10 = load i32, i32* %i
+  %11 = mul i32 %10, 4
+  %12 = load %Graph*, %Graph** %G
+  %13 = getelementptr inbounds %Graph, %Graph* %12, i32 0, i32 2
+  %14 = load i32**, i32*** %13
+  %15 = ptrtoint i32** %14 to i32
+  %16 = add i32 %15, %11
+  %17 = inttoptr i32 %16 to i32*
+  %edge = alloca i32**
+  %18 = load i32*, i32** %edge_temp
+  %19 = bitcast i32* %18 to i32**
+  store i32** %19, i32*** %edge
+  %20 = load i32*, i32** %edge_temp
+  %21 = bitcast i32* %20 to i32**
+  %22 = load i32**, i32*** %edge
+  ret i32** %22
 }
 
 define i32* @getEdgeTuple(%Graph* %0, i32 %1, i32 %2) {
@@ -119,7 +136,7 @@ entry:
   store i32 %1, i32* %i
   %j = alloca i32
   store i32 %2, i32* %j
-  %indexedEdge = alloca i32*
+  %edge_temp = alloca i32*
   %3 = load i32, i32* %i
   %4 = mul i32 %3, 4
   %5 = load %Graph*, %Graph** %G
@@ -128,7 +145,7 @@ entry:
   %8 = ptrtoint i32** %7 to i32
   %9 = add i32 %8, %4
   %10 = inttoptr i32 %9 to i32*
-  store i32* %10, i32** %indexedEdge
+  store i32* %10, i32** %edge_temp
   %11 = load i32, i32* %i
   %12 = mul i32 %11, 4
   %13 = load %Graph*, %Graph** %G
@@ -137,22 +154,30 @@ entry:
   %16 = ptrtoint i32** %15 to i32
   %17 = add i32 %16, %12
   %18 = inttoptr i32 %17 to i32*
-  %indexedPointer = alloca i32*
-  %19 = load i32, i32* %j
-  %20 = mul i32 %19, 4
-  %21 = load i32*, i32** %indexedEdge
-  %22 = ptrtoint i32* %21 to i32
-  %23 = add i32 %22, %20
-  %24 = inttoptr i32 %23 to i32*
-  store i32* %24, i32** %indexedPointer
-  %25 = load i32, i32* %j
-  %26 = mul i32 %25, 4
-  %27 = load i32*, i32** %indexedEdge
-  %28 = ptrtoint i32* %27 to i32
-  %29 = add i32 %28, %26
-  %30 = inttoptr i32 %29 to i32*
-  %31 = load i32*, i32** %indexedPointer
-  ret i32* %31
+  %edge = alloca i32**
+  %19 = load i32*, i32** %edge_temp
+  %20 = bitcast i32* %19 to i32**
+  store i32** %20, i32*** %edge
+  %21 = load i32*, i32** %edge_temp
+  %22 = bitcast i32* %21 to i32**
+  %p = alloca i32*
+  %23 = load i32, i32* %j
+  %24 = mul i32 %23, 4
+  %25 = load i32**, i32*** %edge
+  %26 = load i32*, i32** %25
+  %27 = ptrtoint i32* %26 to i32
+  %28 = add i32 %27, %24
+  %29 = inttoptr i32 %28 to i32*
+  store i32* %29, i32** %p
+  %30 = load i32, i32* %j
+  %31 = mul i32 %30, 4
+  %32 = load i32**, i32*** %edge
+  %33 = load i32*, i32** %32
+  %34 = ptrtoint i32* %33 to i32
+  %35 = add i32 %34, %31
+  %36 = inttoptr i32 %35 to i32*
+  %37 = load i32*, i32** %p
+  ret i32* %37
 }
 
 define i32 @isIsomorphic(%Graph* %0, %Graph* %1) {
@@ -374,89 +399,99 @@ entry:
   %6 = load %Graph*, %Graph** %G
   %7 = getelementptr inbounds %Graph, %Graph* %6, i32 0, i32 1
   store i32 2, i32* %7
-  %edges = alloca i32**
-  %8 = call i8* @malloc(i32 20)
-  %9 = bitcast i8* %8 to i32**
-  store i32** %9, i32*** %edges
+  %8 = load %Graph*, %Graph** %G
+  %9 = getelementptr inbounds %Graph, %Graph* %8, i32 0, i32 2
   %10 = call i8* @malloc(i32 20)
   %11 = bitcast i8* %10 to i32**
+  store i32** %11, i32*** %9
   %12 = load %Graph*, %Graph** %G
-  %13 = getelementptr inbounds %Graph, %Graph* %12, i32 0, i32 2
-  %14 = load i32**, i32*** %edges
-  store i32** %14, i32*** %13
-  %15 = load %Graph*, %Graph** %G
-  %16 = call i32* @getEdgeTuple(%Graph* %15, i32 0, i32 0)
-  store i32 0, i32* %16
-  %17 = load %Graph*, %Graph** %G
-  %18 = call i32* @getEdgeTuple(%Graph* %17, i32 0, i32 1)
-  store i32 1, i32* %18
-  %19 = load %Graph*, %Graph** %G
-  %20 = call i32* @getEdgeTuple(%Graph* %19, i32 1, i32 0)
-  store i32 1, i32* %20
-  %21 = load %Graph*, %Graph** %G
-  %22 = call i32* @getEdgeTuple(%Graph* %21, i32 1, i32 1)
-  store i32 2, i32* %22
+  %13 = call i32** @getEdge(%Graph* %12, i32 0)
+  %14 = call i8* @malloc(i32 8)
+  %15 = bitcast i8* %14 to i32*
+  store i32* %15, i32** %13
+  %16 = load %Graph*, %Graph** %G
+  %17 = call i32** @getEdge(%Graph* %16, i32 1)
+  %18 = call i8* @malloc(i32 8)
+  %19 = bitcast i8* %18 to i32*
+  store i32* %19, i32** %17
+  %20 = load %Graph*, %Graph** %G
+  %21 = call i32* @getEdgeTuple(%Graph* %20, i32 0, i32 0)
+  store i32 4, i32* %21
+  %22 = load %Graph*, %Graph** %G
+  %23 = call i32* @getEdgeTuple(%Graph* %22, i32 0, i32 1)
+  store i32 10, i32* %23
+  %24 = load %Graph*, %Graph** %G
+  %25 = call i32* @getEdgeTuple(%Graph* %24, i32 1, i32 0)
+  store i32 1, i32* %25
+  %26 = load %Graph*, %Graph** %G
+  %27 = call i32* @getEdgeTuple(%Graph* %26, i32 1, i32 1)
+  store i32 2, i32* %27
   %H = alloca %Graph*
-  %23 = call i8* @malloc(i32 16)
-  %24 = bitcast i8* %23 to %Graph*
-  store %Graph* %24, %Graph** %H
-  %25 = call i8* @malloc(i32 16)
-  %26 = bitcast i8* %25 to %Graph*
-  %27 = load %Graph*, %Graph** %H
-  %28 = getelementptr inbounds %Graph, %Graph* %27, i32 0, i32 0
-  store i32 3, i32* %28
-  %29 = load %Graph*, %Graph** %H
-  %30 = getelementptr inbounds %Graph, %Graph* %29, i32 0, i32 1
-  store i32 2, i32* %30
-  %edges2 = alloca i32**
-  %31 = call i8* @malloc(i32 20)
-  %32 = bitcast i8* %31 to i32**
-  store i32** %32, i32*** %edges2
-  %33 = call i8* @malloc(i32 20)
-  %34 = bitcast i8* %33 to i32**
-  %35 = load %Graph*, %Graph** %H
-  %36 = getelementptr inbounds %Graph, %Graph* %35, i32 0, i32 2
-  %37 = load i32**, i32*** %edges2
-  store i32** %37, i32*** %36
-  %38 = load %Graph*, %Graph** %H
-  %39 = call i32* @getEdgeTuple(%Graph* %38, i32 0, i32 0)
-  store i32 0, i32* %39
+  %28 = call i8* @malloc(i32 16)
+  %29 = bitcast i8* %28 to %Graph*
+  store %Graph* %29, %Graph** %H
+  %30 = call i8* @malloc(i32 16)
+  %31 = bitcast i8* %30 to %Graph*
+  %32 = load %Graph*, %Graph** %H
+  %33 = getelementptr inbounds %Graph, %Graph* %32, i32 0, i32 0
+  store i32 3, i32* %33
+  %34 = load %Graph*, %Graph** %H
+  %35 = getelementptr inbounds %Graph, %Graph* %34, i32 0, i32 1
+  store i32 2, i32* %35
+  %36 = load %Graph*, %Graph** %H
+  %37 = getelementptr inbounds %Graph, %Graph* %36, i32 0, i32 2
+  %38 = call i8* @malloc(i32 20)
+  %39 = bitcast i8* %38 to i32**
+  store i32** %39, i32*** %37
   %40 = load %Graph*, %Graph** %H
-  %41 = call i32* @getEdgeTuple(%Graph* %40, i32 0, i32 1)
-  store i32 1, i32* %41
-  %42 = load %Graph*, %Graph** %H
-  %43 = call i32* @getEdgeTuple(%Graph* %42, i32 1, i32 0)
-  store i32 1, i32* %43
+  %41 = call i32** @getEdge(%Graph* %40, i32 0)
+  %42 = call i8* @malloc(i32 8)
+  %43 = bitcast i8* %42 to i32*
+  store i32* %43, i32** %41
   %44 = load %Graph*, %Graph** %H
-  %45 = call i32* @getEdgeTuple(%Graph* %44, i32 1, i32 1)
-  store i32 2, i32* %45
-  %46 = load %Graph*, %Graph** %G
-  %47 = call i32 @printEdgeList(%Graph* %46)
-  %48 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.1, i32 0, i32 0))
-  %49 = load %Graph*, %Graph** %H
-  %50 = call i32 @printEdgeList(%Graph* %49)
-  %51 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.2, i32 0, i32 0))
-  %52 = load %Graph*, %Graph** %G
-  %53 = load %Graph*, %Graph** %H
-  %54 = call i32 @isIsomorphic(%Graph* %52, %Graph* %53)
-  %55 = icmp eq i32 %54, 1
-  br i1 %55, label %56, label %58
+  %45 = call i32** @getEdge(%Graph* %44, i32 1)
+  %46 = call i8* @malloc(i32 8)
+  %47 = bitcast i8* %46 to i32*
+  store i32* %47, i32** %45
+  %48 = load %Graph*, %Graph** %H
+  %49 = call i32* @getEdgeTuple(%Graph* %48, i32 0, i32 0)
+  store i32 0, i32* %49
+  %50 = load %Graph*, %Graph** %H
+  %51 = call i32* @getEdgeTuple(%Graph* %50, i32 0, i32 1)
+  store i32 2, i32* %51
+  %52 = load %Graph*, %Graph** %H
+  %53 = call i32* @getEdgeTuple(%Graph* %52, i32 1, i32 0)
+  store i32 1, i32* %53
+  %54 = load %Graph*, %Graph** %H
+  %55 = call i32* @getEdgeTuple(%Graph* %54, i32 1, i32 1)
+  store i32 2, i32* %55
+  %56 = load %Graph*, %Graph** %G
+  %57 = call i32 @printEdgeList(%Graph* %56)
+  %58 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.1, i32 0, i32 0))
+  %59 = load %Graph*, %Graph** %H
+  %60 = call i32 @printEdgeList(%Graph* %59)
+  %61 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.2, i32 0, i32 0))
+  %62 = load %Graph*, %Graph** %G
+  %63 = load %Graph*, %Graph** %H
+  %64 = call i32 @isIsomorphic(%Graph* %62, %Graph* %63)
+  %65 = icmp eq i32 %64, 1
+  br i1 %65, label %66, label %68
 
-56:                                               ; preds = %entry
-  %57 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([24 x i8], [24 x i8]* @str.3, i32 0, i32 0))
-  br label %58
+66:                                               ; preds = %entry
+  %67 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([24 x i8], [24 x i8]* @str.3, i32 0, i32 0))
+  br label %68
 
-58:                                               ; preds = %56, %entry
-  %59 = load %Graph*, %Graph** %G
-  %60 = load %Graph*, %Graph** %H
-  %61 = call i32 @isIsomorphic(%Graph* %59, %Graph* %60)
-  %62 = icmp eq i32 %61, 0
-  br i1 %62, label %63, label %65
+68:                                               ; preds = %66, %entry
+  %69 = load %Graph*, %Graph** %G
+  %70 = load %Graph*, %Graph** %H
+  %71 = call i32 @isIsomorphic(%Graph* %69, %Graph* %70)
+  %72 = icmp eq i32 %71, 0
+  br i1 %72, label %73, label %75
 
-63:                                               ; preds = %58
-  %64 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([28 x i8], [28 x i8]* @str.4, i32 0, i32 0))
-  br label %65
+73:                                               ; preds = %68
+  %74 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([28 x i8], [28 x i8]* @str.4, i32 0, i32 0))
+  br label %75
 
-65:                                               ; preds = %63, %58
+75:                                               ; preds = %73, %68
   ret i32 0
 }
