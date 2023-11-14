@@ -24,10 +24,10 @@ def main() -> int {
     H->edges = malloc(20)->(int**);
     getEdge(H,0) = malloc(8)->(int*);
     getEdge(H,1) = malloc(8)->(int*);
-    getEdgeTuple(H, 0, 0) = 0;
+    getEdgeTuple(H, 0, 0) = 1;
     getEdgeTuple(H, 0, 1) = 2;
-    getEdgeTuple(H, 1, 0) = 1;
-    getEdgeTuple(H, 1, 1) = 2;
+    getEdgeTuple(H, 1, 0) = 10;
+    getEdgeTuple(H, 1, 1) = 4;
 
     printEdgeList(G);
     printf("--------------------\n");

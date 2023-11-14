@@ -228,7 +228,7 @@ entry:
   store i32 0, i32* %i
   br label %while_i
 
-while_i:                                          ; preds = %123, %19
+while_i:                                          ; preds = %95, %19
   %28 = load %Graph*, %Graph** %G
   %29 = getelementptr inbounds %Graph, %Graph* %28, i32 0, i32 1
   %30 = load i32, i32* %29
@@ -240,44 +240,6 @@ while_i:                                          ; preds = %123, %19
   br label %while_i_end
 
 34:                                               ; preds = %while_i
-  %G_edge = alloca i32*
-  %35 = load i32, i32* %i
-  %36 = mul i32 %35, 4
-  %37 = load i32**, i32*** %G_edges
-  %38 = ptrtoint i32** %37 to i32
-  %39 = add i32 %38, %36
-  %40 = inttoptr i32 %39 to i32*
-  store i32* %40, i32** %G_edge
-  %41 = load i32, i32* %i
-  %42 = mul i32 %41, 4
-  %43 = load i32**, i32*** %G_edges
-  %44 = ptrtoint i32** %43 to i32
-  %45 = add i32 %44, %42
-  %46 = inttoptr i32 %45 to i32*
-  %G_edge_0 = alloca i32
-  %47 = load i32*, i32** %G_edge
-  %48 = ptrtoint i32* %47 to i32
-  %49 = add i32 %48, 0
-  %50 = inttoptr i32 %49 to i32*
-  %51 = load i32, i32* %50
-  store i32 %51, i32* %G_edge_0
-  %52 = load i32*, i32** %G_edge
-  %53 = ptrtoint i32* %52 to i32
-  %54 = add i32 %53, 0
-  %55 = inttoptr i32 %54 to i32*
-  %56 = load i32, i32* %55
-  %G_edge_1 = alloca i32
-  %57 = load i32*, i32** %G_edge
-  %58 = ptrtoint i32* %57 to i32
-  %59 = add i32 %58, 4
-  %60 = inttoptr i32 %59 to i32*
-  %61 = load i32, i32* %60
-  store i32 %61, i32* %G_edge_1
-  %62 = load i32*, i32** %G_edge
-  %63 = ptrtoint i32* %62 to i32
-  %64 = add i32 %63, 4
-  %65 = inttoptr i32 %64 to i32*
-  %66 = load i32, i32* %65
   %j = alloca i32
   store i32 0, i32* %j
   %firstsMatch = alloca i32
@@ -289,99 +251,107 @@ while_i:                                          ; preds = %123, %19
 while_i_end:                                      ; preds = %33
   ret i32 1
 
-while_i_two:                                      ; preds = %115, %34
-  %67 = load %Graph*, %Graph** %H
-  %68 = getelementptr inbounds %Graph, %Graph* %67, i32 0, i32 1
-  %69 = load i32, i32* %68
-  %70 = load i32, i32* %j
-  %71 = icmp eq i32 %70, %69
-  br i1 %71, label %72, label %73
+while_i_two:                                      ; preds = %87, %34
+  %35 = load %Graph*, %Graph** %H
+  %36 = getelementptr inbounds %Graph, %Graph* %35, i32 0, i32 1
+  %37 = load i32, i32* %36
+  %38 = load i32, i32* %j
+  %39 = icmp eq i32 %38, %37
+  br i1 %39, label %40, label %41
 
-72:                                               ; preds = %while_i_two
+40:                                               ; preds = %while_i_two
   br label %while_i_two_end
 
-73:                                               ; preds = %while_i_two
-  %H_edge = alloca i32*
-  %74 = load i32, i32* %j
-  %75 = mul i32 %74, 4
-  %76 = load %Graph*, %Graph** %H
-  %77 = getelementptr inbounds %Graph, %Graph* %76, i32 0, i32 2
-  %78 = load i32**, i32*** %77
-  %79 = ptrtoint i32** %78 to i32
-  %80 = add i32 %79, %75
-  %81 = inttoptr i32 %80 to i32*
-  store i32* %81, i32** %H_edge
-  %82 = load i32, i32* %j
-  %83 = mul i32 %82, 4
-  %84 = load %Graph*, %Graph** %H
-  %85 = getelementptr inbounds %Graph, %Graph* %84, i32 0, i32 2
-  %86 = load i32**, i32*** %85
-  %87 = ptrtoint i32** %86 to i32
-  %88 = add i32 %87, %83
-  %89 = inttoptr i32 %88 to i32*
-  %H_edge_0 = alloca i32
-  %90 = load i32*, i32** %H_edge
-  %91 = load i32, i32* %90
-  store i32 %91, i32* %H_edge_0
-  %92 = load i32*, i32** %H_edge
-  %93 = load i32, i32* %92
-  %H_edge_1 = alloca i32
-  %94 = load i32*, i32** %H_edge
-  %95 = ptrtoint i32* %94 to i32
-  %96 = add i32 %95, 4
-  %97 = inttoptr i32 %96 to i32*
-  %98 = load i32, i32* %97
-  store i32 %98, i32* %H_edge_1
-  %99 = load i32*, i32** %H_edge
-  %100 = ptrtoint i32* %99 to i32
-  %101 = add i32 %100, 4
-  %102 = inttoptr i32 %101 to i32*
-  %103 = load i32, i32* %102
-  %104 = load i32, i32* %H_edge_0
-  %105 = load i32, i32* %G_edge_0
-  %106 = icmp eq i32 %105, %104
-  br i1 %106, label %109, label %110
+41:                                               ; preds = %while_i_two
+  %42 = load %Graph*, %Graph** %H
+  %43 = load i32, i32* %j
+  %44 = call i32* @getEdgeTuple(%Graph* %42, i32 %43, i32 0)
+  %45 = load i32, i32* %44
+  %46 = load %Graph*, %Graph** %G
+  %47 = load i32, i32* %i
+  %48 = call i32* @getEdgeTuple(%Graph* %46, i32 %47, i32 0)
+  %49 = load i32, i32* %48
+  %50 = icmp eq i32 %49, %45
+  br i1 %50, label %53, label %54
 
-while_i_two_end:                                  ; preds = %72
-  %107 = load i32, i32* %firstsMatch
-  %108 = icmp ne i32 %107, 1
-  br i1 %108, label %118, label %119
+while_i_two_end:                                  ; preds = %40
+  %51 = load i32, i32* %firstsMatch
+  %52 = icmp ne i32 %51, 1
+  br i1 %52, label %90, label %91
 
-109:                                              ; preds = %73
+53:                                               ; preds = %41
   store i32 1, i32* %firstsMatch
-  br label %110
+  br label %54
 
-110:                                              ; preds = %109, %73
-  %111 = load i32, i32* %H_edge_1
-  %112 = load i32, i32* %G_edge_1
-  %113 = icmp eq i32 %112, %111
-  br i1 %113, label %114, label %115
+54:                                               ; preds = %53, %41
+  %55 = load %Graph*, %Graph** %H
+  %56 = load i32, i32* %j
+  %57 = call i32* @getEdgeTuple(%Graph* %55, i32 %56, i32 1)
+  %58 = load i32, i32* %57
+  %59 = load %Graph*, %Graph** %G
+  %60 = load i32, i32* %i
+  %61 = call i32* @getEdgeTuple(%Graph* %59, i32 %60, i32 1)
+  %62 = load i32, i32* %61
+  %63 = icmp eq i32 %62, %58
+  br i1 %63, label %64, label %65
 
-114:                                              ; preds = %110
+64:                                               ; preds = %54
   store i32 1, i32* %secondsMatch
-  br label %115
+  br label %65
 
-115:                                              ; preds = %114, %110
-  %116 = load i32, i32* %j
-  %117 = add i32 %116, 1
-  store i32 %117, i32* %j
+65:                                               ; preds = %64, %54
+  %66 = load %Graph*, %Graph** %H
+  %67 = load i32, i32* %j
+  %68 = call i32* @getEdgeTuple(%Graph* %66, i32 %67, i32 1)
+  %69 = load i32, i32* %68
+  %70 = load %Graph*, %Graph** %G
+  %71 = load i32, i32* %i
+  %72 = call i32* @getEdgeTuple(%Graph* %70, i32 %71, i32 0)
+  %73 = load i32, i32* %72
+  %74 = icmp eq i32 %73, %69
+  br i1 %74, label %75, label %76
+
+75:                                               ; preds = %65
+  store i32 1, i32* %firstsMatch
+  br label %76
+
+76:                                               ; preds = %75, %65
+  %77 = load %Graph*, %Graph** %H
+  %78 = load i32, i32* %j
+  %79 = call i32* @getEdgeTuple(%Graph* %77, i32 %78, i32 0)
+  %80 = load i32, i32* %79
+  %81 = load %Graph*, %Graph** %G
+  %82 = load i32, i32* %i
+  %83 = call i32* @getEdgeTuple(%Graph* %81, i32 %82, i32 1)
+  %84 = load i32, i32* %83
+  %85 = icmp eq i32 %84, %80
+  br i1 %85, label %86, label %87
+
+86:                                               ; preds = %76
+  store i32 1, i32* %secondsMatch
+  br label %87
+
+87:                                               ; preds = %86, %76
+  %88 = load i32, i32* %j
+  %89 = add i32 %88, 1
+  store i32 %89, i32* %j
   br label %while_i_two
 
-118:                                              ; preds = %while_i_two_end
+90:                                               ; preds = %while_i_two_end
   ret i32 0
 
-119:                                              ; preds = %while_i_two_end
-  %120 = load i32, i32* %secondsMatch
-  %121 = icmp ne i32 %120, 1
-  br i1 %121, label %122, label %123
+91:                                               ; preds = %while_i_two_end
+  %92 = load i32, i32* %secondsMatch
+  %93 = icmp ne i32 %92, 1
+  br i1 %93, label %94, label %95
 
-122:                                              ; preds = %119
+94:                                               ; preds = %91
   ret i32 0
 
-123:                                              ; preds = %119
-  %124 = load i32, i32* %i
-  %125 = add i32 %124, 1
-  store i32 %125, i32* %i
+95:                                               ; preds = %91
+  %96 = load i32, i32* %i
+  %97 = add i32 %96, 1
+  store i32 %97, i32* %i
   br label %while_i
 }
 
@@ -455,16 +425,16 @@ entry:
   store i32* %47, i32** %45
   %48 = load %Graph*, %Graph** %H
   %49 = call i32* @getEdgeTuple(%Graph* %48, i32 0, i32 0)
-  store i32 0, i32* %49
+  store i32 1, i32* %49
   %50 = load %Graph*, %Graph** %H
   %51 = call i32* @getEdgeTuple(%Graph* %50, i32 0, i32 1)
   store i32 2, i32* %51
   %52 = load %Graph*, %Graph** %H
   %53 = call i32* @getEdgeTuple(%Graph* %52, i32 1, i32 0)
-  store i32 1, i32* %53
+  store i32 10, i32* %53
   %54 = load %Graph*, %Graph** %H
   %55 = call i32* @getEdgeTuple(%Graph* %54, i32 1, i32 1)
-  store i32 2, i32* %55
+  store i32 4, i32* %55
   %56 = load %Graph*, %Graph** %G
   %57 = call i32 @printEdgeList(%Graph* %56)
   %58 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.1, i32 0, i32 0))
