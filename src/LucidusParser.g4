@@ -58,6 +58,7 @@ expr: ID
     | expr MOD expr
     | expr ARROW '(' type ')'
     | expr '=' '=' expr
+    | expr '!=' expr
     | expr GTR expr
     | expr LESS expr
     | '(' expr ')'

@@ -1,28 +1,27 @@
 import "include.luci"
+import "structures.luci"
 
-struct Graph {
-    nodesc:int,
-    edgesc:int,
-    nodes:int*,
-    edges:int**
-};
-
-dec edgeList(G:Graph) -> int**;
-def edgeList(G:Graph) -> int** {
-    return G.edges;
+dec printEdgeList (G:Graph) -> int;
+def printEdgeList (G:Graph) -> int {
+    i:int = 0;
+    goto while;
+    label while:
+    if(i == (G.edgesc)) -> {
+        goto while_end;
+    }
+    printf("%d -- %d\n", *(((**(G->edges))->(int) + i*4)->(int*)), *((((((*(G->edges)))->(int) + i*4)->(int*))->(int) + 1*4)->(int*)));
+    (ptr i) = i + 1;
+    goto while;
+    label while_end:
+    return 0;
 }
 
 dec main() -> int;
 def main() -> int {
+    // graph G setup
     G:Graph = malloc(16)->(Graph);
-    G->nodesc = 4;
-    G->edgesc = 5;
-    nodes:int* = malloc(16)->(int*);
-    G->nodes = nodes;
-    (nodes) = 0;
-    (nodes->(int) + 1*4)->(int*) = 1;
-    (nodes->(int) + 2*4)->(int*) = 2;
-    (nodes->(int) + 3*4)->(int*) = 3;
+    G->nodesc = 3;
+    G->edgesc = 2;
 
     edges:int** = malloc(20)->(int**);
     G->edges = edges;
@@ -34,9 +33,39 @@ def main() -> int {
     (edgesTupleTwo->(int) + 0*4)->(int*) = 1;
     (edgesTupleTwo->(int) + 1*4)->(int*) = 2;
 
+    // graph H setup
+    H:Graph = malloc(16)->(Graph);
+    H->nodesc = 3;
+    H->edgesc = 2;
+
+    edges:int** = malloc(20)->(int**);
+    H->edges = edges;
+    edges = malloc(8)->(int*);
+    edgesTupleOne:int* = (*edges);
+    (edgesTupleOne->(int) + 0*4)->(int*) = 0;
+    (edgesTupleOne->(int) + 1*4)->(int*) = 1;
+    edgesTupleTwo:int* = (edges->(int) + 4)->(int*);
+    (edgesTupleTwo->(int) + 0*4)->(int*) = 1;
+    (edgesTupleTwo->(int) + 1*4)->(int*) = 2;
+
     
     // print some edges in the form n1 -- n2
-    printf("%d -- %d\n", *(((**(G->edges))->(int) + 0*4)->(int*)), *(((**(G->edges))->(int) + 1*4)->(int*)));
-    printf("%d -- %d\n", *(((**(G->edges))->(int) + 4)->(int*)), *((((((*(G->edges)))->(int) + 4)->(int*))->(int) + 1*4)->(int*)));
+    // printf("%d -- %d\n", *(((**(G->edges))->(int) + 0*4)->(int*)), *(((**(G->edges))->(int) + 1*4)->(int*)));
+    // printf("%d -- %d\n", *(((**(G->edges))->(int) + 4)->(int*)), *((((((*(G->edges)))->(int) + 4)->(int*))->(int) + 1*4)->(int*)));
+    // print edges
+
+    printEdgeList(G);
+    printf("--------------------\n");
+    printEdgeList(H);
+    printf("--------------------\n");
+
+    // check if G and H are isomorphic
+    if(isIsomorphic(G, H) == 1) -> {
+        printf("G and H are isomorphic\n");
+    } 
+    if(isIsomorphic(G, H) == 0) -> {
+        printf("G and H are not isomorphic\n");
+    }
+    
     return 0;
 }

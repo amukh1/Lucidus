@@ -152,7 +152,10 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
     }else if(ctx->EQ(0) != nullptr && ctx->EQ().size() == 2){
         // ==
         return (llvm::Value*) controller->builder->CreateICmpEQ(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))), std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
-    }else if(ctx->GTR() != nullptr && ctx->children.size() == 3) {
+    }else if(ctx->NEQ() != nullptr ) {
+        // !=
+        return (llvm::Value*) controller->builder->CreateICmpNE(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))), std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
+    } else if(ctx->GTR() != nullptr && ctx->children.size() == 3) {
         // expr > expr
         return (llvm::Value*) controller->builder->CreateICmpSGT(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))), std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
     }else if(ctx->LESS() != nullptr && ctx->children.size() == 3) {

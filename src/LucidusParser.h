@@ -12,12 +12,12 @@
 class  LucidusParser : public antlr4::Parser {
 public:
   enum {
-    AND = 1, OR = 2, NOT = 3, EQ = 4, PLUS = 5, SUB = 6, STAR = 7, DIV = 8, 
-    MOD = 9, OPAREN = 10, CPAREN = 11, COMMA = 12, SEMI = 13, DEF = 14, 
-    STRUCT = 15, DECL = 16, ARROW = 17, GTR = 18, LESS = 19, DCOL = 20, 
-    PTR = 21, COL = 22, RETURN = 23, LABEL = 24, GOTO = 25, DOT = 26, DOTS = 27, 
-    IF = 28, IMPRT = 29, ELSE = 30, LCURLY = 31, RCURLY = 32, LBRACK = 33, 
-    RBRACK = 34, INT = 35, FLOAT = 36, ID = 37, WS = 38, COMMENT = 39, STRING = 40
+    AND = 1, OR = 2, NOT = 3, EQ = 4, NEQ = 5, PLUS = 6, SUB = 7, STAR = 8, 
+    DIV = 9, MOD = 10, OPAREN = 11, CPAREN = 12, COMMA = 13, SEMI = 14, 
+    DEF = 15, STRUCT = 16, DECL = 17, ARROW = 18, GTR = 19, LESS = 20, DCOL = 21, 
+    PTR = 22, COL = 23, RETURN = 24, LABEL = 25, GOTO = 26, DOT = 27, DOTS = 28, 
+    IF = 29, IMPRT = 30, ELSE = 31, LCURLY = 32, RCURLY = 33, LBRACK = 34, 
+    RBRACK = 35, INT = 36, FLOAT = 37, ID = 38, WS = 39, COMMENT = 40, STRING = 41
   };
 
   enum {
@@ -423,6 +423,7 @@ public:
     antlr4::tree::TerminalNode *MOD();
     std::vector<antlr4::tree::TerminalNode *> EQ();
     antlr4::tree::TerminalNode* EQ(size_t i);
+    antlr4::tree::TerminalNode *NEQ();
     antlr4::tree::TerminalNode *GTR();
     antlr4::tree::TerminalNode *LESS();
     antlr4::tree::TerminalNode *DOT();
