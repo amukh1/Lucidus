@@ -18,9 +18,25 @@ def main() -> int {
     G->nodesc = 4;
     G->edgesc = 5;
     nodes:int* = malloc(16)->(int*);
-    (nodes) = 4;
-    // (nodes->(int) + 1*4)->(int*) = 1;
-    // (nodes->(int) + 2*4)->(int*) = 2;
-    // (nodes->(int) + 3*4)->(int*) = 3;
+    G->nodes = nodes;
+    (nodes) = 0;
+    (nodes->(int) + 1*4)->(int*) = 1;
+    (nodes->(int) + 2*4)->(int*) = 2;
+    (nodes->(int) + 3*4)->(int*) = 3;
+
+    edges:int** = malloc(20)->(int**);
+    G->edges = edges;
+    edges = malloc(8)->(int*);
+    edgesTupleOne:int* = (*edges);
+    (edgesTupleOne->(int) + 0*4)->(int*) = 0;
+    (edgesTupleOne->(int) + 1*4)->(int*) = 1;
+    edgesTupleTwo:int* = (edges->(int) + 4)->(int*);
+    (edgesTupleTwo->(int) + 0*4)->(int*) = 1;
+    (edgesTupleTwo->(int) + 1*4)->(int*) = 2;
+
+    
+    // print some edges in the form n1 -- n2
+    printf("%d -- %d\n", *(((**(G->edges))->(int) + 0*4)->(int*)), *(((**(G->edges))->(int) + 1*4)->(int*)));
+    printf("%d -- %d\n", *(((**(G->edges))->(int) + 4)->(int*)), *((((((*(G->edges)))->(int) + 4)->(int*))->(int) + 1*4)->(int*)));
     return 0;
 }
