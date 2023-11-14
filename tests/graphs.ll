@@ -11,12 +11,10 @@ source_filename = "amukh"
 @Vector_string = external global %Vector_string
 @Graph = external global %Graph
 @str = private constant [10 x i8] c"%d -- %d\0A\00"
-@str.1 = private constant [16 x i8] c"edge match (1)\0A\00"
-@str.2 = private constant [16 x i8] c"edge match (2)\0A\00"
-@str.3 = private constant [22 x i8] c"--------------------\0A\00"
-@str.4 = private constant [22 x i8] c"--------------------\0A\00"
-@str.5 = private constant [24 x i8] c"G and H are isomorphic\0A\00"
-@str.6 = private constant [28 x i8] c"G and H are not isomorphic\0A\00"
+@str.1 = private constant [22 x i8] c"--------------------\0A\00"
+@str.2 = private constant [22 x i8] c"--------------------\0A\00"
+@str.3 = private constant [24 x i8] c"G and H are isomorphic\0A\00"
+@str.4 = private constant [28 x i8] c"G and H are not isomorphic\0A\00"
 
 declare i32 @printf(i8*, ...)
 
@@ -78,36 +76,83 @@ while:                                            ; preds = %7, %entry
   br label %while_end
 
 7:                                                ; preds = %while
-  %8 = load i32, i32* %i
-  %9 = mul i32 %8, 4
-  %10 = load %Graph*, %Graph** %G
-  %11 = getelementptr inbounds %Graph, %Graph* %10, i32 0, i32 2
-  %12 = load i32**, i32*** %11
-  %13 = load i32*, i32** %12
-  %14 = ptrtoint i32* %13 to i32
-  %15 = add i32 %14, %9
-  %16 = inttoptr i32 %15 to i32*
-  %17 = load i32, i32* %16
-  %18 = load i32, i32* %i
-  %19 = mul i32 %18, 4
-  %20 = load %Graph*, %Graph** %G
-  %21 = getelementptr inbounds %Graph, %Graph* %20, i32 0, i32 2
-  %22 = load i32**, i32*** %21
-  %23 = ptrtoint i32** %22 to i32
-  %24 = add i32 %23, %19
-  %25 = inttoptr i32 %24 to i32*
-  %26 = ptrtoint i32* %25 to i32
-  %27 = add i32 %26, 4
-  %28 = inttoptr i32 %27 to i32*
-  %29 = load i32, i32* %28
-  %30 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @str, i32 0, i32 0), i32 %17, i32 %29)
-  %31 = load i32, i32* %i
-  %32 = add i32 %31, 1
-  store i32 %32, i32* %i
+  %8 = load %Graph*, %Graph** %G
+  %9 = load i32, i32* %i
+  %10 = call i32* @getEdgeTuple(%Graph* %8, i32 %9, i32 0)
+  %11 = load i32, i32* %10
+  %12 = load %Graph*, %Graph** %G
+  %13 = load i32, i32* %i
+  %14 = call i32* @getEdgeTuple(%Graph* %12, i32 %13, i32 1)
+  %15 = load i32, i32* %14
+  %16 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @str, i32 0, i32 0), i32 %11, i32 %15)
+  %17 = load i32, i32* %i
+  %18 = add i32 %17, 1
+  store i32 %18, i32* %i
   br label %while
 
 while_end:                                        ; preds = %6
   ret i32 0
+}
+
+define i32* @getEdge(%Graph* %0, i32 %1) {
+entry:
+  %G = alloca %Graph*
+  store %Graph* %0, %Graph** %G
+  %i = alloca i32
+  store i32 %1, i32* %i
+  %2 = load i32, i32* %i
+  %3 = mul i32 %2, 4
+  %4 = load %Graph*, %Graph** %G
+  %5 = getelementptr inbounds %Graph, %Graph* %4, i32 0, i32 2
+  %6 = load i32**, i32*** %5
+  %7 = ptrtoint i32** %6 to i32
+  %8 = add i32 %7, %3
+  %9 = inttoptr i32 %8 to i32*
+  ret i32* %9
+}
+
+define i32* @getEdgeTuple(%Graph* %0, i32 %1, i32 %2) {
+entry:
+  %G = alloca %Graph*
+  store %Graph* %0, %Graph** %G
+  %i = alloca i32
+  store i32 %1, i32* %i
+  %j = alloca i32
+  store i32 %2, i32* %j
+  %indexedEdge = alloca i32*
+  %3 = load i32, i32* %i
+  %4 = mul i32 %3, 4
+  %5 = load %Graph*, %Graph** %G
+  %6 = getelementptr inbounds %Graph, %Graph* %5, i32 0, i32 2
+  %7 = load i32**, i32*** %6
+  %8 = ptrtoint i32** %7 to i32
+  %9 = add i32 %8, %4
+  %10 = inttoptr i32 %9 to i32*
+  store i32* %10, i32** %indexedEdge
+  %11 = load i32, i32* %i
+  %12 = mul i32 %11, 4
+  %13 = load %Graph*, %Graph** %G
+  %14 = getelementptr inbounds %Graph, %Graph* %13, i32 0, i32 2
+  %15 = load i32**, i32*** %14
+  %16 = ptrtoint i32** %15 to i32
+  %17 = add i32 %16, %12
+  %18 = inttoptr i32 %17 to i32*
+  %indexedPointer = alloca i32*
+  %19 = load i32, i32* %j
+  %20 = mul i32 %19, 4
+  %21 = load i32*, i32** %indexedEdge
+  %22 = ptrtoint i32* %21 to i32
+  %23 = add i32 %22, %20
+  %24 = inttoptr i32 %23 to i32*
+  store i32* %24, i32** %indexedPointer
+  %25 = load i32, i32* %j
+  %26 = mul i32 %25, 4
+  %27 = load i32*, i32** %indexedEdge
+  %28 = ptrtoint i32* %27 to i32
+  %29 = add i32 %28, %26
+  %30 = inttoptr i32 %29 to i32*
+  %31 = load i32*, i32** %indexedPointer
+  ret i32* %31
 }
 
 define i32 @isIsomorphic(%Graph* %0, %Graph* %1) {
@@ -158,7 +203,7 @@ entry:
   store i32 0, i32* %i
   br label %while_i
 
-while_i:                                          ; preds = %125, %19
+while_i:                                          ; preds = %123, %19
   %28 = load %Graph*, %Graph** %G
   %29 = getelementptr inbounds %Graph, %Graph* %28, i32 0, i32 1
   %30 = load i32, i32* %29
@@ -219,7 +264,7 @@ while_i:                                          ; preds = %125, %19
 while_i_end:                                      ; preds = %33
   ret i32 1
 
-while_i_two:                                      ; preds = %117, %34
+while_i_two:                                      ; preds = %115, %34
   %67 = load %Graph*, %Graph** %H
   %68 = getelementptr inbounds %Graph, %Graph* %67, i32 0, i32 1
   %69 = load i32, i32* %68
@@ -270,50 +315,48 @@ while_i_two:                                      ; preds = %117, %34
   %104 = load i32, i32* %H_edge_0
   %105 = load i32, i32* %G_edge_0
   %106 = icmp eq i32 %105, %104
-  br i1 %106, label %109, label %111
+  br i1 %106, label %109, label %110
 
 while_i_two_end:                                  ; preds = %72
   %107 = load i32, i32* %firstsMatch
   %108 = icmp ne i32 %107, 1
-  br i1 %108, label %120, label %121
+  br i1 %108, label %118, label %119
 
 109:                                              ; preds = %73
-  %110 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @str.1, i32 0, i32 0))
   store i32 1, i32* %firstsMatch
-  br label %111
+  br label %110
 
-111:                                              ; preds = %109, %73
-  %112 = load i32, i32* %H_edge_1
-  %113 = load i32, i32* %G_edge_1
-  %114 = icmp eq i32 %113, %112
-  br i1 %114, label %115, label %117
+110:                                              ; preds = %109, %73
+  %111 = load i32, i32* %H_edge_1
+  %112 = load i32, i32* %G_edge_1
+  %113 = icmp eq i32 %112, %111
+  br i1 %113, label %114, label %115
 
-115:                                              ; preds = %111
-  %116 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @str.2, i32 0, i32 0))
+114:                                              ; preds = %110
   store i32 1, i32* %secondsMatch
-  br label %117
+  br label %115
 
-117:                                              ; preds = %115, %111
-  %118 = load i32, i32* %j
-  %119 = add i32 %118, 1
-  store i32 %119, i32* %j
+115:                                              ; preds = %114, %110
+  %116 = load i32, i32* %j
+  %117 = add i32 %116, 1
+  store i32 %117, i32* %j
   br label %while_i_two
 
-120:                                              ; preds = %while_i_two_end
+118:                                              ; preds = %while_i_two_end
   ret i32 0
 
-121:                                              ; preds = %while_i_two_end
-  %122 = load i32, i32* %secondsMatch
-  %123 = icmp ne i32 %122, 1
-  br i1 %123, label %124, label %125
+119:                                              ; preds = %while_i_two_end
+  %120 = load i32, i32* %secondsMatch
+  %121 = icmp ne i32 %120, 1
+  br i1 %121, label %122, label %123
 
-124:                                              ; preds = %121
+122:                                              ; preds = %119
   ret i32 0
 
-125:                                              ; preds = %121
-  %126 = load i32, i32* %i
-  %127 = add i32 %126, 1
-  store i32 %127, i32* %i
+123:                                              ; preds = %119
+  %124 = load i32, i32* %i
+  %125 = add i32 %124, 1
+  store i32 %125, i32* %i
   br label %while_i
 }
 
@@ -341,135 +384,79 @@ entry:
   %13 = getelementptr inbounds %Graph, %Graph* %12, i32 0, i32 2
   %14 = load i32**, i32*** %edges
   store i32** %14, i32*** %13
-  %15 = load i32**, i32*** %edges
-  %16 = call i8* @malloc(i32 8)
-  %17 = bitcast i8* %16 to i32*
-  store i32* %17, i32** %15
-  %edgesTupleOne = alloca i32*
-  %18 = load i32**, i32*** %edges
-  %19 = load i32*, i32** %18
-  store i32* %19, i32** %edgesTupleOne
-  %20 = load i32**, i32*** %edges
-  %21 = load i32*, i32** %20
-  %22 = load i32*, i32** %edgesTupleOne
-  %23 = ptrtoint i32* %22 to i32
-  %24 = add i32 %23, 0
-  %25 = inttoptr i32 %24 to i32*
-  store i32 0, i32* %25
-  %26 = load i32*, i32** %edgesTupleOne
-  %27 = ptrtoint i32* %26 to i32
-  %28 = add i32 %27, 4
-  %29 = inttoptr i32 %28 to i32*
-  store i32 1, i32* %29
-  %edgesTupleTwo = alloca i32*
-  %30 = load i32**, i32*** %edges
-  %31 = ptrtoint i32** %30 to i32
-  %32 = add i32 %31, 4
-  %33 = inttoptr i32 %32 to i32*
-  store i32* %33, i32** %edgesTupleTwo
-  %34 = load i32**, i32*** %edges
-  %35 = ptrtoint i32** %34 to i32
-  %36 = add i32 %35, 4
-  %37 = inttoptr i32 %36 to i32*
-  %38 = load i32*, i32** %edgesTupleTwo
-  %39 = ptrtoint i32* %38 to i32
-  %40 = add i32 %39, 0
-  %41 = inttoptr i32 %40 to i32*
-  store i32 1, i32* %41
-  %42 = load i32*, i32** %edgesTupleTwo
-  %43 = ptrtoint i32* %42 to i32
-  %44 = add i32 %43, 4
-  %45 = inttoptr i32 %44 to i32*
-  store i32 2, i32* %45
+  %15 = load %Graph*, %Graph** %G
+  %16 = call i32* @getEdgeTuple(%Graph* %15, i32 0, i32 0)
+  store i32 0, i32* %16
+  %17 = load %Graph*, %Graph** %G
+  %18 = call i32* @getEdgeTuple(%Graph* %17, i32 0, i32 1)
+  store i32 1, i32* %18
+  %19 = load %Graph*, %Graph** %G
+  %20 = call i32* @getEdgeTuple(%Graph* %19, i32 1, i32 0)
+  store i32 1, i32* %20
+  %21 = load %Graph*, %Graph** %G
+  %22 = call i32* @getEdgeTuple(%Graph* %21, i32 1, i32 1)
+  store i32 2, i32* %22
   %H = alloca %Graph*
-  %46 = call i8* @malloc(i32 16)
-  %47 = bitcast i8* %46 to %Graph*
-  store %Graph* %47, %Graph** %H
-  %48 = call i8* @malloc(i32 16)
-  %49 = bitcast i8* %48 to %Graph*
-  %50 = load %Graph*, %Graph** %H
-  %51 = getelementptr inbounds %Graph, %Graph* %50, i32 0, i32 0
-  store i32 3, i32* %51
-  %52 = load %Graph*, %Graph** %H
-  %53 = getelementptr inbounds %Graph, %Graph* %52, i32 0, i32 1
-  store i32 2, i32* %53
+  %23 = call i8* @malloc(i32 16)
+  %24 = bitcast i8* %23 to %Graph*
+  store %Graph* %24, %Graph** %H
+  %25 = call i8* @malloc(i32 16)
+  %26 = bitcast i8* %25 to %Graph*
+  %27 = load %Graph*, %Graph** %H
+  %28 = getelementptr inbounds %Graph, %Graph* %27, i32 0, i32 0
+  store i32 3, i32* %28
+  %29 = load %Graph*, %Graph** %H
+  %30 = getelementptr inbounds %Graph, %Graph* %29, i32 0, i32 1
+  store i32 2, i32* %30
   %edges2 = alloca i32**
-  %54 = call i8* @malloc(i32 20)
-  %55 = bitcast i8* %54 to i32**
-  store i32** %55, i32*** %edges2
-  %56 = call i8* @malloc(i32 20)
-  %57 = bitcast i8* %56 to i32**
-  %58 = load %Graph*, %Graph** %H
-  %59 = getelementptr inbounds %Graph, %Graph* %58, i32 0, i32 2
-  %60 = load i32**, i32*** %edges2
-  store i32** %60, i32*** %59
-  %61 = load i32**, i32*** %edges2
-  %62 = call i8* @malloc(i32 8)
-  %63 = bitcast i8* %62 to i32*
-  store i32* %63, i32** %61
-  %edgesTupleOne2 = alloca i32*
-  %64 = load i32**, i32*** %edges
-  %65 = load i32*, i32** %64
-  store i32* %65, i32** %edgesTupleOne2
-  %66 = load i32**, i32*** %edges
-  %67 = load i32*, i32** %66
-  %68 = load i32*, i32** %edgesTupleOne2
-  %69 = ptrtoint i32* %68 to i32
-  %70 = add i32 %69, 0
-  %71 = inttoptr i32 %70 to i32*
-  store i32 0, i32* %71
-  %72 = load i32*, i32** %edgesTupleOne2
-  %73 = ptrtoint i32* %72 to i32
-  %74 = add i32 %73, 4
-  %75 = inttoptr i32 %74 to i32*
-  store i32 1, i32* %75
-  %edgesTupleTwo2 = alloca i32*
-  %76 = load i32**, i32*** %edges
-  %77 = ptrtoint i32** %76 to i32
-  %78 = add i32 %77, 4
-  %79 = inttoptr i32 %78 to i32*
-  store i32* %79, i32** %edgesTupleTwo2
-  %80 = load i32**, i32*** %edges
-  %81 = ptrtoint i32** %80 to i32
-  %82 = add i32 %81, 4
-  %83 = inttoptr i32 %82 to i32*
-  %84 = load i32*, i32** %edgesTupleTwo2
-  %85 = ptrtoint i32* %84 to i32
-  %86 = add i32 %85, 0
-  %87 = inttoptr i32 %86 to i32*
-  store i32 1, i32* %87
-  %88 = load i32*, i32** %edgesTupleTwo2
-  %89 = ptrtoint i32* %88 to i32
-  %90 = add i32 %89, 4
-  %91 = inttoptr i32 %90 to i32*
-  store i32 2, i32* %91
-  %92 = load %Graph*, %Graph** %G
-  %93 = call i32 @printEdgeList(%Graph* %92)
-  %94 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.3, i32 0, i32 0))
-  %95 = load %Graph*, %Graph** %H
-  %96 = call i32 @printEdgeList(%Graph* %95)
-  %97 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.4, i32 0, i32 0))
-  %98 = load %Graph*, %Graph** %G
-  %99 = load %Graph*, %Graph** %H
-  %100 = call i32 @isIsomorphic(%Graph* %98, %Graph* %99)
-  %101 = icmp eq i32 %100, 1
-  br i1 %101, label %102, label %104
+  %31 = call i8* @malloc(i32 20)
+  %32 = bitcast i8* %31 to i32**
+  store i32** %32, i32*** %edges2
+  %33 = call i8* @malloc(i32 20)
+  %34 = bitcast i8* %33 to i32**
+  %35 = load %Graph*, %Graph** %H
+  %36 = getelementptr inbounds %Graph, %Graph* %35, i32 0, i32 2
+  %37 = load i32**, i32*** %edges2
+  store i32** %37, i32*** %36
+  %38 = load %Graph*, %Graph** %H
+  %39 = call i32* @getEdgeTuple(%Graph* %38, i32 0, i32 0)
+  store i32 0, i32* %39
+  %40 = load %Graph*, %Graph** %H
+  %41 = call i32* @getEdgeTuple(%Graph* %40, i32 0, i32 1)
+  store i32 1, i32* %41
+  %42 = load %Graph*, %Graph** %H
+  %43 = call i32* @getEdgeTuple(%Graph* %42, i32 1, i32 0)
+  store i32 1, i32* %43
+  %44 = load %Graph*, %Graph** %H
+  %45 = call i32* @getEdgeTuple(%Graph* %44, i32 1, i32 1)
+  store i32 2, i32* %45
+  %46 = load %Graph*, %Graph** %G
+  %47 = call i32 @printEdgeList(%Graph* %46)
+  %48 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.1, i32 0, i32 0))
+  %49 = load %Graph*, %Graph** %H
+  %50 = call i32 @printEdgeList(%Graph* %49)
+  %51 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.2, i32 0, i32 0))
+  %52 = load %Graph*, %Graph** %G
+  %53 = load %Graph*, %Graph** %H
+  %54 = call i32 @isIsomorphic(%Graph* %52, %Graph* %53)
+  %55 = icmp eq i32 %54, 1
+  br i1 %55, label %56, label %58
 
-102:                                              ; preds = %entry
-  %103 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([24 x i8], [24 x i8]* @str.5, i32 0, i32 0))
-  br label %104
+56:                                               ; preds = %entry
+  %57 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([24 x i8], [24 x i8]* @str.3, i32 0, i32 0))
+  br label %58
 
-104:                                              ; preds = %102, %entry
-  %105 = load %Graph*, %Graph** %G
-  %106 = load %Graph*, %Graph** %H
-  %107 = call i32 @isIsomorphic(%Graph* %105, %Graph* %106)
-  %108 = icmp eq i32 %107, 0
-  br i1 %108, label %109, label %111
+58:                                               ; preds = %56, %entry
+  %59 = load %Graph*, %Graph** %G
+  %60 = load %Graph*, %Graph** %H
+  %61 = call i32 @isIsomorphic(%Graph* %59, %Graph* %60)
+  %62 = icmp eq i32 %61, 0
+  br i1 %62, label %63, label %65
 
-109:                                              ; preds = %104
-  %110 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([28 x i8], [28 x i8]* @str.6, i32 0, i32 0))
-  br label %111
+63:                                               ; preds = %58
+  %64 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([28 x i8], [28 x i8]* @str.4, i32 0, i32 0))
+  br label %65
 
-111:                                              ; preds = %109, %104
+65:                                               ; preds = %63, %58
   ret i32 0
 }
