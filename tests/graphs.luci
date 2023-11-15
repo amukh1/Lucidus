@@ -41,7 +41,8 @@ def main() -> int {
     if(isIsomorphic(G, H) == 0) -> {
         printf("G and H are not isomorphic\n");
     }
-    printf("%d\n", sizeof int);
+
+    printf("%d\n", factorial(6));
     
     return 0;
 }

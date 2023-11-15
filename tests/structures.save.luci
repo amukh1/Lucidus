@@ -76,44 +76,8 @@ def printEdgeList (G:Graph) -> int {
     return 0;
 }
 
-struct Permutation {
-    v:int*,
-    len:int
-};
-
-dec new_Permutation(v:int*, len:int) -> Permutation;
-def new_Permutation(v:int*, len:int) -> Permutation {
-    p:Permutation = malloc(8)->(Permutation);
-    p->v = v;
-    p->len = len;
-    return p;
-}
-
-dec permute(p:Permutation, i:int) -> int;
-def permute(p:Permutation, i:int) -> int {
-    return *(((p->v)->(int) + (i - 1)*4)->(int*));
-}
-
-dec gen_all_permutations(n:int) -> int;
-def gen_all_permutations(n:int) -> int {
-    v:Permutation* = malloc(4*factorial(n))->(Permutation*);
-    i:int = 1;
-    goto while_permut;
-    label while_permut:
-    if(i == (n+1)) -> {
-        goto while_permut_end;
-    }
-    // put n in the ith position
-    // p_v:int* = malloc(4*n)->(int*);
-    // TODO: Nest loops n!
-    goto while_permut;
-    label while_permut_end:
-    return 0;
-}
-
-
-dec isEqual(G:Graph, H:Graph) -> int; // true or false (0 or 1)
-def isEqual(G:Graph, H:Graph) -> int {
+dec isIsomorphic(G:Graph, H:Graph) -> int; // true or false (0 or 1)
+def isIsomorphic(G:Graph, H:Graph) -> int {
     if(G.nodesc != H.nodesc) -> {
         return 0;
     }
@@ -182,20 +146,5 @@ def isEqual(G:Graph, H:Graph) -> int {
     (ptr i) = i + 1;
     goto while_i;
     label while_i_end:
-    return 1;
-}
-
-dec isIsomorphic(G:Graph, H:Graph) -> int; // 0 -> false, 1 -> true
-def isIsomorphic(G:Graph, H:Graph) -> int {
-    // loop through every possible bijection and see if it is an isomorphism
-    if(G.nodesc != H.nodesc) -> {
-        return 0;
-    }
-    //otherwise
-    if(G.edgesc != H.edgesc) -> {
-        return 0;
-    }
-
-    
     return 1;
 }

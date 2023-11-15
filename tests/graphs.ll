@@ -5,16 +5,19 @@ source_filename = "amukh"
 %Vector_char = type { i32*, i32 }
 %Vector_string = type { i32*, i32 }
 %Graph = type { i32, i32, i32** }
+%Permutation = type { i32*, i32 }
 
 @Vector_int = external global %Vector_int
 @Vector_char = external global %Vector_char
 @Vector_string = external global %Vector_string
 @Graph = external global %Graph
 @str = private constant [10 x i8] c"%d -- %d\0A\00"
+@Permutation = external global %Permutation
 @str.1 = private constant [22 x i8] c"--------------------\0A\00"
 @str.2 = private constant [22 x i8] c"--------------------\0A\00"
 @str.3 = private constant [24 x i8] c"G and H are isomorphic\0A\00"
 @str.4 = private constant [28 x i8] c"G and H are not isomorphic\0A\00"
+@str.5 = private constant [4 x i8] c"%d\0A\00"
 
 declare i32 @printf(i8*, ...)
 
@@ -45,6 +48,26 @@ declare i32 @atoi(i8*)
 declare i32 @fseek(i8*, i32, i32)
 
 declare i32 @scanf(i8*, ...)
+
+define i32 @factorial(i32 %0) {
+entry:
+  %n = alloca i32
+  store i32 %0, i32* %n
+  %1 = load i32, i32* %n
+  %2 = icmp eq i32 %1, 0
+  br i1 %2, label %3, label %4
+
+3:                                                ; preds = %entry
+  ret i32 1
+
+4:                                                ; preds = %entry
+  %5 = load i32, i32* %n
+  %6 = sub i32 %5, 1
+  %7 = call i32 @factorial(i32 %6)
+  %8 = load i32, i32* %n
+  %9 = mul i32 %8, %7
+  ret i32 %9
+}
 
 define i32** @edgeList(%Graph* %0) {
 entry:
@@ -180,7 +203,86 @@ entry:
   ret i32* %37
 }
 
-define i32 @isIsomorphic(%Graph* %0, %Graph* %1) {
+define %Permutation* @new_Permutation(i32* %0, i32 %1) {
+entry:
+  %v = alloca i32*
+  store i32* %0, i32** %v
+  %len = alloca i32
+  store i32 %1, i32* %len
+  %p = alloca %Permutation*
+  %2 = call i8* @malloc(i32 8)
+  %3 = bitcast i8* %2 to %Permutation*
+  store %Permutation* %3, %Permutation** %p
+  %4 = call i8* @malloc(i32 8)
+  %5 = bitcast i8* %4 to %Permutation*
+  %6 = load %Permutation*, %Permutation** %p
+  %7 = getelementptr inbounds %Permutation, %Permutation* %6, i32 0, i32 0
+  %8 = load i32*, i32** %v
+  store i32* %8, i32** %7
+  %9 = load %Permutation*, %Permutation** %p
+  %10 = getelementptr inbounds %Permutation, %Permutation* %9, i32 0, i32 1
+  %11 = load i32, i32* %len
+  store i32 %11, i32* %10
+  %12 = load %Permutation*, %Permutation** %p
+  ret %Permutation* %12
+}
+
+define i32 @permute(%Permutation* %0, i32 %1) {
+entry:
+  %p = alloca %Permutation*
+  store %Permutation* %0, %Permutation** %p
+  %i = alloca i32
+  store i32 %1, i32* %i
+  %2 = load i32, i32* %i
+  %3 = sub i32 %2, 1
+  %4 = mul i32 %3, 4
+  %5 = load %Permutation*, %Permutation** %p
+  %6 = getelementptr inbounds %Permutation, %Permutation* %5, i32 0, i32 0
+  %7 = ptrtoint i32** %6 to i32
+  %8 = add i32 %7, %4
+  %9 = inttoptr i32 %8 to i32*
+  %10 = load i32, i32* %9
+  ret i32 %10
+}
+
+define i32 @gen_all_permutations(i32 %0) {
+entry:
+  %n = alloca i32
+  store i32 %0, i32* %n
+  %v = alloca %Permutation**
+  %1 = load i32, i32* %n
+  %2 = call i32 @factorial(i32 %1)
+  %3 = mul i32 4, %2
+  %4 = call i8* @malloc(i32 %3)
+  %5 = bitcast i8* %4 to %Permutation**
+  store %Permutation** %5, %Permutation*** %v
+  %6 = load i32, i32* %n
+  %7 = call i32 @factorial(i32 %6)
+  %8 = mul i32 4, %7
+  %9 = call i8* @malloc(i32 %8)
+  %10 = bitcast i8* %9 to %Permutation**
+  %i = alloca i32
+  store i32 1, i32* %i
+  br label %while_permut
+
+while_permut:                                     ; preds = %16, %entry
+  %11 = load i32, i32* %n
+  %12 = add i32 %11, 1
+  %13 = load i32, i32* %i
+  %14 = icmp eq i32 %13, %12
+  br i1 %14, label %15, label %16
+
+15:                                               ; preds = %while_permut
+  br label %while_permut_end
+
+16:                                               ; preds = %while_permut
+  br label %while_permut
+
+while_permut_end:                                 ; preds = %15
+  ret i32 0
+}
+
+define i32 @isEqual(%Graph* %0, %Graph* %1) {
 entry:
   %G = alloca %Graph*
   store %Graph* %0, %Graph** %G
@@ -355,6 +457,41 @@ while_i_two_end:                                  ; preds = %40
   br label %while_i
 }
 
+define i32 @isIsomorphic(%Graph* %0, %Graph* %1) {
+entry:
+  %G = alloca %Graph*
+  store %Graph* %0, %Graph** %G
+  %H = alloca %Graph*
+  store %Graph* %1, %Graph** %H
+  %2 = load %Graph*, %Graph** %H
+  %3 = getelementptr inbounds %Graph, %Graph* %2, i32 0, i32 0
+  %4 = load i32, i32* %3
+  %5 = load %Graph*, %Graph** %G
+  %6 = getelementptr inbounds %Graph, %Graph* %5, i32 0, i32 0
+  %7 = load i32, i32* %6
+  %8 = icmp ne i32 %7, %4
+  br i1 %8, label %9, label %10
+
+9:                                                ; preds = %entry
+  ret i32 0
+
+10:                                               ; preds = %entry
+  %11 = load %Graph*, %Graph** %H
+  %12 = getelementptr inbounds %Graph, %Graph* %11, i32 0, i32 1
+  %13 = load i32, i32* %12
+  %14 = load %Graph*, %Graph** %G
+  %15 = getelementptr inbounds %Graph, %Graph* %14, i32 0, i32 1
+  %16 = load i32, i32* %15
+  %17 = icmp ne i32 %16, %13
+  br i1 %17, label %18, label %19
+
+18:                                               ; preds = %10
+  ret i32 0
+
+19:                                               ; preds = %10
+  ret i32 1
+}
+
 define i32 @main() {
 entry:
   %G = alloca %Graph*
@@ -463,5 +600,7 @@ entry:
   br label %75
 
 75:                                               ; preds = %73, %68
+  %76 = call i32 @factorial(i32 6)
+  %77 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.5, i32 0, i32 0), i32 %76)
   ret i32 0
 }
