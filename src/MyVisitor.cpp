@@ -14,6 +14,8 @@
 #include <llvm/IR/Argument.h>
 #include <llvm/Support/raw_ostream.h>
 #include <llvm/Bitcode/LLVMBitCodes.h>
+#include "llvm/IR/DataLayout.h"
+#include <llvm/IR/Value.h>
 
 #include "LLVMController.h"
 
@@ -152,10 +154,16 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
     }else if(ctx->EQ(0) != nullptr && ctx->EQ().size() == 2){
         // ==
         return (llvm::Value*) controller->builder->CreateICmpEQ(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))), std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
-    }else if(ctx->NEQ() != nullptr ) {
+    }else if(ctx->NEQ() != nullptr) {
         // !=
         return (llvm::Value*) controller->builder->CreateICmpNE(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))), std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
-    } else if(ctx->GTR() != nullptr && ctx->children.size() == 3) {
+    } else if (ctx->SIZEOF() != nullptr) {
+        // return sizeof type
+        auto type = getTypes(ctx->type(), this->controller, this->structs);
+        const llvm::DataLayout* TD = &controller->module->getDataLayout();
+        auto size = TD->getTypeAllocSize(type);
+        return (llvm::Value*) llvm::ConstantInt::get(llvm::Type::getInt64Ty(controller->ctx), size);
+    } else if (ctx->GTR() != nullptr && ctx->children.size() == 3) {
         // expr > expr
         return (llvm::Value*) controller->builder->CreateICmpSGT(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))), std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
     }else if(ctx->LESS() != nullptr && ctx->children.size() == 3) {

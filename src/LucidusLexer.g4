@@ -33,6 +33,9 @@ DOTS: '...';
 IF: 'if';
 IMPRT: 'import';
 ELSE: 'else';
+// WHILE: 'while';
+// FOR: 'for';
+SIZEOF : 'sizeof';
 
 LCURLY : '{' ;
 RCURLY : '}' ;
