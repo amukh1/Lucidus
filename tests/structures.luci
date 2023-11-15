@@ -106,8 +106,22 @@ def gen_all_permutations(n:int) -> int {
     // put n in the ith position
     p_v:int* = malloc(4*n)->(int*);
     (p_v->(int) + (i - 1)*4)->(int*) = n;
-    // TODO: Nest loops (n-1)!
     // now get permutations for n-1
+    j:int = 1;
+    k:int* = (gen_all_permutations(n - 1)->(int) + (i - 1)*4)->(Permutation*);
+    goto while_permut_two;
+    label while_permut_two:
+    if(j == (factorial(n-1))) -> {
+        goto while_permut_two_end;
+    }
+    //otherwise
+    // copy k into p_v;
+    
+    (ptr i) = i + 1;
+    label while_permut_two_end:
+
+    (v->(int) + (i - 1)*4)->(Permutation*) = new_Permutation(p_v, n);
+
     goto while_permut;
     label while_permut_end:
     return 0;
