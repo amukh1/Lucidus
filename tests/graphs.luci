@@ -29,19 +29,19 @@ def main() -> int {
     getEdgeTuple(H, 1, 0) = 10;
     getEdgeTuple(H, 1, 1) = 4;
 
-
     printEdgeList(G);
     printf("--------------------\n");
     printEdgeList(H);
     printf("--------------------\n");
 
     // check if G and H are isomorphic
-    // if(isIsomorphic(G, H) == 1) -> {
-    //     printf("G and H are isomorphic\n");
-    // } 
-    // if(isIsomorphic(G, H) == 0) -> {
-    //     printf("G and H are not isomorphic\n");
-    // }
+    if(isIsomorphic(G, H) == 1) -> {
+        printf("G and H are isomorphic\n");
+    } 
+    if(isIsomorphic(G, H) == 0) -> {
+        printf("G and H are not isomorphic\n");
+    }
+    printf("%d\n", sizeof int);
     
     return 0;
 }

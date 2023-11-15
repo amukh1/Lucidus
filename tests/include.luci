@@ -13,5 +13,3 @@ dec gets(tmp:char*) -> char*;
 dec atoi(tmp:char*) -> int;
 dec fseek(stream:char*, offset:int, origin:int) -> int;
 dec scanf(tmp:char*, ...) -> int;
-dec factorial(n:int) -> int;
-

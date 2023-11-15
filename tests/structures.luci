@@ -76,52 +76,75 @@ def printEdgeList (G:Graph) -> int {
     return 0;
 }
 
-struct Permutation {
-    v:int*,
-    len:int
-};
-
-dec new_Permutation(v:int*, len:int) -> Permutation;
-def new_Permutation(v:int*, len:int) -> Permutation {
-    p:Permutation = malloc(8)->(Permutation);
-    p->v = v;
-    p->len = len;
-    return p;
-}
-
-dec permute(p:Permutation, n:int) -> int;
-def permute(p:Permutation, n:int) -> int {
-    return (p.v->(int) + (n-1)*4)->(int*);
-}
-
-dec printPermutation(p:Permutation) -> int;
-def printPermutation(p:Permutation) -> int {
-    i:int = 0;
-    goto while;
-    label while:
-    if(i == (p.len)) -> {
-        goto while_end;
-    }
-    printf("%d ", *(p.v->(int) + i*4)->(int*));
-    (ptr i) = i + 1;
-    goto while;
-    label while_end:
-    printf("\n");
-    return 0;
-}
-
-dec isIsomorphic(G:Graph, H:Graph) -> int;
+dec isIsomorphic(G:Graph, H:Graph) -> int; // true or false (0 or 1)
 def isIsomorphic(G:Graph, H:Graph) -> int {
-    // loop through every possible bijection (permutation) and see if
-    // for every edge in G, (x,y), that (fx,fy) is an edge in H
-    // generate bijection:
-    n:int = 0;
-    goto while;
-    label while:
-    if(n == factorial(G.nodesc)) -> {
-        goto while_end;
+    if(G.nodesc != H.nodesc) -> {
+        return 0;
     }
-    bij: Permutation = new_Permutation(, G.nodesc);
-    label while_end:
-    return 0;
+    //otherwise
+    if(G.edgesc != H.edgesc) -> {
+        return 0;
+    }
+    //otherwise
+    G_edges:int** = edgeList(G);
+    H_edges:int** = edgeList(H);
+    // for each edge in G, there is a corresponding edge in H s.t. the endpoints are the same
+    i:int = 0;
+    goto while_i;
+    label while_i:
+    if(i == G.edgesc) -> {
+        goto while_i_end;
+    }
+    //otherwise
+    // G_edge:int* = (G_edges->(int) + i*4)->(int*);
+    // G_edge_0:int = *((G_edge->(int) + 0*4)->(int*));
+    // G_edge_1:int = *((G_edge->(int) + 1*4)->(int*));
+    // loop thru all H edges
+    j:int = 0;
+    firstsMatch:int = 0;
+    secondsMatch:int = 0;
+    goto while_i_two;
+    label while_i_two:
+    if(j == H.edgesc) -> {
+        goto while_i_two_end;
+    }
+    //otherwise
+    // H_edge:int* = ((H.edges->(int) + j*4)->(int*));
+    // H_edge_0:int = *H_edge;
+    // H_edge_1:int = *((H_edge->(int) + 1*4)->(int*));
+    // printf("G_edge_0: %d\n", G_edge_0);
+    // printf("H_edge_0: %d\n", H_edge_0);
+    if(*getEdgeTuple(G,i,0) == *getEdgeTuple(H,j,0)) -> {
+        // printf("edge match (1)\n");
+        (ptr firstsMatch) = 1;
+    }
+    //otherwise
+    if(*getEdgeTuple(G,i,1) == *getEdgeTuple(H,j,1)) -> {
+        // printf("edge match (2)\n");
+        (ptr secondsMatch) = 1;
+    }
+    //otherwise
+    if(*getEdgeTuple(G,i,0) == *getEdgeTuple(H,j,1)) -> {
+        // printf("edge match (3)\n");
+        (ptr firstsMatch) = 1;
+    }
+    //otherwise
+    if(*getEdgeTuple(G,i,1) == *getEdgeTuple(H,j,0)) -> {
+        // printf("edge match (4)\n");
+        (ptr secondsMatch) = 1;
+    }
+    (ptr j) = j + 1;
+    goto while_i_two;
+    label while_i_two_end:
+    if(firstsMatch != 1) -> {
+        return 0;
+    }
+    //otherwise
+    if(secondsMatch != 1) -> {
+        return 0;
+    }
+    (ptr i) = i + 1;
+    goto while_i;
+    label while_i_end:
+    return 1;
 }
