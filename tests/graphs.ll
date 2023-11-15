@@ -276,6 +276,25 @@ while_permut:                                     ; preds = %16, %entry
   br label %while_permut_end
 
 16:                                               ; preds = %while_permut
+  %p_v = alloca i32*
+  %17 = load i32, i32* %n
+  %18 = mul i32 4, %17
+  %19 = call i8* @malloc(i32 %18)
+  %20 = bitcast i8* %19 to i32*
+  store i32* %20, i32** %p_v
+  %21 = load i32, i32* %n
+  %22 = mul i32 4, %21
+  %23 = call i8* @malloc(i32 %22)
+  %24 = bitcast i8* %23 to i32*
+  %25 = load i32, i32* %i
+  %26 = sub i32 %25, 1
+  %27 = mul i32 %26, 4
+  %28 = load i32*, i32** %p_v
+  %29 = ptrtoint i32* %28 to i32
+  %30 = add i32 %29, %27
+  %31 = inttoptr i32 %30 to i32*
+  %32 = load i32, i32* %n
+  store i32 %32, i32* %31
   br label %while_permut
 
 while_permut_end:                                 ; preds = %15

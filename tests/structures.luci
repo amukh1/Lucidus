@@ -104,8 +104,10 @@ def gen_all_permutations(n:int) -> int {
         goto while_permut_end;
     }
     // put n in the ith position
-    // p_v:int* = malloc(4*n)->(int*);
-    // TODO: Nest loops n!
+    p_v:int* = malloc(4*n)->(int*);
+    (p_v->(int) + (i - 1)*4)->(int*) = n;
+    // TODO: Nest loops (n-1)!
+    // now get permutations for n-1
     goto while_permut;
     label while_permut_end:
     return 0;
