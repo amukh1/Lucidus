@@ -95,37 +95,37 @@ def permute(p:Permutation, i:int) -> int {
 }
 
 dec gen_all_permutations(n:int) -> int;
-def gen_all_permutations(n:int) -> int {
-    v:Permutation* = malloc(4*factorial(n))->(Permutation*);
-    i:int = 1;
-    goto while_permut;
-    label while_permut:
-    if(i == (n+1)) -> {
-        goto while_permut_end;
-    }
-    // put n in the ith position
-    p_v:int* = malloc(4*n)->(int*);
-    (p_v->(int) + (i - 1)*4)->(int*) = n;
-    // now get permutations for n-1
-    j:int = 1;
-    k:int* = (gen_all_permutations(n - 1)->(int) + (i - 1)*4)->(Permutation*);
-    goto while_permut_two;
-    label while_permut_two:
-    if(j == (factorial(n-1))) -> {
-        goto while_permut_two_end;
-    }
-    //otherwise
-    // copy k into p_v;
+// def gen_all_permutations(n:int) -> int {
+//     v:Permutation* = malloc(4*factorial(n))->(Permutation*);
+//     i:int = 1;
+//     goto while_permut;
+//     label while_permut:
+//     if(i == (n+1)) -> {
+//         goto while_permut_end;
+//     }
+//     // put n in the ith position
+//     p_v:int* = malloc(4*n)->(int*);
+//     (p_v->(int) + (i - 1)*4)->(int*) = n;
+//     // now get permutations for n-1
+//     j:int = 1;
+//     k:int* = (gen_all_permutations(n - 1)->(int) + (i - 1)*4)->(Permutation*);
+//     goto while_permut_two;
+//     label while_permut_two:
+//     if(j == (factorial(n-1))) -> {
+//         goto while_permut_two_end;
+//     }
+//     //otherwise
+//     // copy k into p_v;
     
-    (ptr i) = i + 1;
-    label while_permut_two_end:
+//     (ptr i) = i + 1;
+//     label while_permut_two_end:
 
-    (v->(int) + (i - 1)*4)->(Permutation*) = new_Permutation(p_v, n);
+//     (v->(int) + (i - 1)*4)->(Permutation*) = new_Permutation(p_v, n);
 
-    goto while_permut;
-    label while_permut_end:
-    return 0;
-}
+//     goto while_permut;
+//     label while_permut_end:
+//     return 0;
+// }
 
 
 dec isEqual(G:Graph, H:Graph) -> int; // true or false (0 or 1)
@@ -202,16 +202,16 @@ def isEqual(G:Graph, H:Graph) -> int {
 }
 
 dec isIsomorphic(G:Graph, H:Graph) -> int; // 0 -> false, 1 -> true
-def isIsomorphic(G:Graph, H:Graph) -> int {
-    // loop through every possible bijection and see if it is an isomorphism
-    if(G.nodesc != H.nodesc) -> {
-        return 0;
-    }
-    //otherwise
-    if(G.edgesc != H.edgesc) -> {
-        return 0;
-    }
+// def isIsomorphic(G:Graph, H:Graph) -> int {
+//     // loop through every possible bijection and see if it is an isomorphism
+//     if(G.nodesc != H.nodesc) -> {
+//         return 0;
+//     }
+//     //otherwise
+//     if(G.edgesc != H.edgesc) -> {
+//         return 0;
+//     }
 
     
-    return 1;
-}
+//     return 1;
+// }

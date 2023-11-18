@@ -1,0 +1,30 @@
+import "include.luci" // import luci file that includes useful declarations.
+import "structures.luci" // import luci file that includes useful structures and algorithms.
+
+dec main() -> int; // declaration. return type int, no params.
+dec main() -> int { // definition. Includes declaration.
+    printf("Hello, World!"); // c std library is included.
+    
+    // variables
+    x:int = 4; // :int defines the type.
+    y := 5; // type is inferred, := syntax is used.
+
+    // assignment
+    (ptr x) = 5; // assignment expects a pointer to be assigned to.
+    (ptr x) = y; // expressions are loaded. (ptr x) = (ptr y) is incorrect. (unless, ofcourse, x is int*)
+
+    // if
+    if(x == y) -> {
+        printf("x is equal to y");
+    }
+    // else
+    if(x != y) -> {
+        printf("x is not equal to y");
+    }
+    // other boolean expressions: (<,>)
+
+    // type casting
+    z:float = 1.2;
+    z = x->(int);
+    return 0;
+}
