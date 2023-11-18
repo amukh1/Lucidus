@@ -57,7 +57,7 @@ expr: ID
     | expr SUB expr
     | expr MOD expr
     | expr ARROW '(' type ')'
-    | SIZEOF expr
+    | SIZEOF type
     | expr '=' '=' expr
     | expr '!=' expr
     | expr GTR expr

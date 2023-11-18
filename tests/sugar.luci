@@ -1,0 +1,7 @@
+import "include.luci"
+
+dec main() -> int;
+def main() -> int {
+    printf("Hello! sizeof int = %d\n", sizeof int);
+    return 0;
+}

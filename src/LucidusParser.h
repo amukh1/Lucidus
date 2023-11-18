@@ -415,6 +415,7 @@ public:
     antlr4::tree::TerminalNode *STAR();
     antlr4::tree::TerminalNode *NOT();
     antlr4::tree::TerminalNode *SIZEOF();
+    TypeContext *type();
     antlr4::tree::TerminalNode *OPAREN();
     antlr4::tree::TerminalNode *CPAREN();
     antlr4::tree::TerminalNode *AND();
@@ -430,7 +431,6 @@ public:
     antlr4::tree::TerminalNode *LESS();
     antlr4::tree::TerminalNode *DOT();
     antlr4::tree::TerminalNode *ARROW();
-    TypeContext *type();
     antlr4::tree::TerminalNode *LBRACK();
     antlr4::tree::TerminalNode *RBRACK();
 

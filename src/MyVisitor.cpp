@@ -159,8 +159,11 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         return (llvm::Value*) controller->builder->CreateICmpNE(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))), std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
     } else if (ctx->SIZEOF() != nullptr) {
         // return sizeof type
+        // std::cout << ctx->type()->getText() << std::endl;
+
         auto type = getTypes(ctx->type(), this->controller, this->structs);
         const llvm::DataLayout* TD = &controller->module->getDataLayout();
+        // std::cout << TD->getTypeAllocSize(type) << std::endl;
         auto size = TD->getTypeAllocSize(type);
         return (llvm::Value*) llvm::ConstantInt::get(llvm::Type::getInt64Ty(controller->ctx), size);
     } else if (ctx->GTR() != nullptr && ctx->children.size() == 3) {

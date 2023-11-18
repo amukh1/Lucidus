@@ -147,7 +147,7 @@ void lucidusparserParserInitialize() {
   	12,0,0,211,37,1,0,0,0,212,213,6,19,-1,0,213,231,5,39,0,0,214,231,5,37,
   	0,0,215,231,5,38,0,0,216,231,5,42,0,0,217,231,3,36,18,0,218,219,5,22,
   	0,0,219,231,3,38,19,18,220,221,5,8,0,0,221,231,3,38,19,16,222,223,5,3,
-  	0,0,223,231,3,38,19,15,224,225,5,32,0,0,225,231,3,38,19,7,226,227,5,11,
+  	0,0,223,231,3,38,19,15,224,225,5,32,0,0,225,231,3,6,3,0,226,227,5,11,
   	0,0,227,228,3,38,19,0,228,229,5,12,0,0,229,231,1,0,0,0,230,212,1,0,0,
   	0,230,214,1,0,0,0,230,215,1,0,0,0,230,216,1,0,0,0,230,217,1,0,0,0,230,
   	218,1,0,0,0,230,220,1,0,0,0,230,222,1,0,0,0,230,224,1,0,0,0,230,226,1,
@@ -544,7 +544,6 @@ std::any LucidusParser::TypeContext::accept(tree::ParseTreeVisitor *visitor) {
 LucidusParser::TypeContext* LucidusParser::type() {
   TypeContext *_localctx = _tracker.createInstance<TypeContext>(_ctx, getState());
   enterRule(_localctx, 6, LucidusParser::RuleType);
-  size_t _la = 0;
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -554,6 +553,7 @@ LucidusParser::TypeContext* LucidusParser::type() {
     exitRule();
   });
   try {
+    size_t alt;
     enterOuterAlt(_localctx, 1);
     setState(73);
     _errHandler->sync(this);
@@ -575,13 +575,15 @@ LucidusParser::TypeContext* LucidusParser::type() {
     }
     setState(78);
     _errHandler->sync(this);
-    _la = _input->LA(1);
-    while (_la == LucidusParser::STAR) {
-      setState(75);
-      match(LucidusParser::STAR);
+    alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 5, _ctx);
+    while (alt != 2 && alt != atn::ATN::INVALID_ALT_NUMBER) {
+      if (alt == 1) {
+        setState(75);
+        match(LucidusParser::STAR); 
+      }
       setState(80);
       _errHandler->sync(this);
-      _la = _input->LA(1);
+      alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 5, _ctx);
     }
    
   }
@@ -1936,6 +1938,10 @@ tree::TerminalNode* LucidusParser::ExprContext::SIZEOF() {
   return getToken(LucidusParser::SIZEOF, 0);
 }
 
+LucidusParser::TypeContext* LucidusParser::ExprContext::type() {
+  return getRuleContext<LucidusParser::TypeContext>(0);
+}
+
 tree::TerminalNode* LucidusParser::ExprContext::OPAREN() {
   return getToken(LucidusParser::OPAREN, 0);
 }
@@ -1994,10 +2000,6 @@ tree::TerminalNode* LucidusParser::ExprContext::DOT() {
 
 tree::TerminalNode* LucidusParser::ExprContext::ARROW() {
   return getToken(LucidusParser::ARROW, 0);
-}
-
-LucidusParser::TypeContext* LucidusParser::ExprContext::type() {
-  return getRuleContext<LucidusParser::TypeContext>(0);
 }
 
 tree::TerminalNode* LucidusParser::ExprContext::LBRACK() {
@@ -2108,7 +2110,7 @@ LucidusParser::ExprContext* LucidusParser::expr(int precedence) {
       setState(224);
       match(LucidusParser::SIZEOF);
       setState(225);
-      expr(7);
+      type();
       break;
     }
 
