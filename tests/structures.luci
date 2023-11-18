@@ -90,9 +90,9 @@ def new_Permutation(v:int*, len:int) -> Permutation {
 }
 
 dec permute(p:Permutation, i:int) -> int;
-def permute(p:Permutation, i:int) -> int {
-    return *(((p->v)->(int) + (i - 1)*4)->(int*));
-}
+// def permute(p:Permutation, i:int) -> int {
+//     return *(((p->v)->(int) + (i - 1)*4)->(int*));
+// }
 
 dec gen_all_permutations(n:int) -> int;
 // def gen_all_permutations(n:int) -> int {

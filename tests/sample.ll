@@ -13,6 +13,9 @@ source_filename = "amukh"
 @Graph = external global %Graph
 @str = private constant [10 x i8] c"%d -- %d\0A\00"
 @Permutation = external global %Permutation
+@str.1 = private constant [15 x i8] c"Hello, World!\0A\00"
+@str.2 = private constant [17 x i8] c"x is equal to y\0A\00"
+@str.3 = private constant [20 x i8] c"x is not equal to y\00"
 
 declare i32 @printf(i8*, ...)
 
@@ -44,25 +47,7 @@ declare i32 @fseek(i8*, i32, i32)
 
 declare i32 @scanf(i8*, ...)
 
-define i32 @factorial(i32 %0) {
-entry:
-  %n = alloca i32
-  store i32 %0, i32* %n
-  %1 = load i32, i32* %n
-  %2 = icmp eq i32 %1, 0
-  br i1 %2, label %3, label %4
-
-3:                                                ; preds = %entry
-  ret i32 1
-
-4:                                                ; preds = %entry
-  %5 = load i32, i32* %n
-  %6 = sub i32 %5, 1
-  %7 = call i32 @factorial(i32 %6)
-  %8 = load i32, i32* %n
-  %9 = mul i32 %8, %7
-  ret i32 %9
-}
+declare i32 @factorial(i32)
 
 define i32** @edgeList(%Graph* %0) {
 entry:
@@ -222,23 +207,7 @@ entry:
   ret %Permutation* %12
 }
 
-define i32 @permute(%Permutation* %0, i32 %1) {
-entry:
-  %p = alloca %Permutation*
-  store %Permutation* %0, %Permutation** %p
-  %i = alloca i32
-  store i32 %1, i32* %i
-  %2 = load i32, i32* %i
-  %3 = sub i32 %2, 1
-  %4 = mul i32 %3, 4
-  %5 = load %Permutation*, %Permutation** %p
-  %6 = getelementptr inbounds %Permutation, %Permutation* %5, i32 0, i32 0
-  %7 = ptrtoint i32** %6 to i32
-  %8 = add i32 %7, %4
-  %9 = inttoptr i32 %8 to i32*
-  %10 = load i32, i32* %9
-  ret i32 %10
-}
+declare i32 @permute(%Permutation*, i32)
 
 declare i32 @gen_all_permutations(i32)
 
@@ -418,3 +387,41 @@ while_i_two_end:                                  ; preds = %40
 }
 
 declare i32 @isIsomorphic(%Graph*, %Graph*)
+
+define i32 @main() {
+entry:
+  %0 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @str.1, i32 0, i32 0))
+  %x = alloca i32
+  store i32 4, i32* %x
+  %y = alloca i32
+  store i32 5, i32* %y
+  store i32 5, i32* %x
+  %1 = load i32, i32* %y
+  store i32 %1, i32* %x
+  %2 = load i32, i32* %y
+  %3 = load i32, i32* %x
+  %4 = icmp eq i32 %3, %2
+  br i1 %4, label %5, label %7
+
+5:                                                ; preds = %entry
+  %6 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([17 x i8], [17 x i8]* @str.2, i32 0, i32 0))
+  br label %7
+
+7:                                                ; preds = %5, %entry
+  %8 = load i32, i32* %y
+  %9 = load i32, i32* %x
+  %10 = icmp ne i32 %9, %8
+  br i1 %10, label %11, label %13
+
+11:                                               ; preds = %7
+  %12 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([20 x i8], [20 x i8]* @str.3, i32 0, i32 0))
+  br label %13
+
+13:                                               ; preds = %11, %7
+  %z = alloca float
+  store float 0x3FF3333340000000, float* %z
+  %14 = load i32, i32* %x
+  %15 = bitcast i32 %14 to float
+  store float %15, float* %z
+  ret i32 0
+}

@@ -2,8 +2,8 @@ import "include.luci" // import luci file that includes useful declarations.
 import "structures.luci" // import luci file that includes useful structures and algorithms.
 
 dec main() -> int; // declaration. return type int, no params.
-dec main() -> int { // definition. Includes declaration.
-    printf("Hello, World!"); // c std library is included.
+def main() -> int { // definition. Includes declaration.
+    printf("Hello, World!\n"); // c std library is included.
     
     // variables
     x:int = 4; // :int defines the type.
@@ -15,7 +15,7 @@ dec main() -> int { // definition. Includes declaration.
 
     // if
     if(x == y) -> {
-        printf("x is equal to y");
+        printf("x is equal to y\n");
     }
     // else
     if(x != y) -> {
@@ -25,6 +25,8 @@ dec main() -> int { // definition. Includes declaration.
 
     // type casting
     z:float = 1.2;
-    z = x->(int);
+    (ptr z) = x->(float);
+
+    
     return 0;
 }
