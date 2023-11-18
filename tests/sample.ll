@@ -47,7 +47,25 @@ declare i32 @fseek(i8*, i32, i32)
 
 declare i32 @scanf(i8*, ...)
 
-declare i32 @factorial(i32)
+define i32 @factorial(i32 %0) {
+entry:
+  %n = alloca i32
+  store i32 %0, i32* %n
+  %1 = load i32, i32* %n
+  %2 = icmp eq i32 %1, 0
+  br i1 %2, label %3, label %4
+
+3:                                                ; preds = %entry
+  ret i32 1
+
+4:                                                ; preds = %entry
+  %5 = load i32, i32* %n
+  %6 = sub i32 %5, 1
+  %7 = call i32 @factorial(i32 %6)
+  %8 = load i32, i32* %n
+  %9 = mul i32 %8, %7
+  ret i32 %9
+}
 
 define i32** @edgeList(%Graph* %0) {
 entry:
