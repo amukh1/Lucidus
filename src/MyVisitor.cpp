@@ -145,9 +145,12 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         return (llvm::Value*) controller->builder->CreateAdd(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))), std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
     }else if(ctx->STAR() != nullptr && ctx->children.size() == 3) {
         return (llvm::Value*) controller->builder->CreateMul(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))), std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
-    }else if(ctx->SUB() != nullptr) {
+    }else if(ctx->SUB() != nullptr && ctx->children.size() == 3) {
         return (llvm::Value*) controller->builder->CreateSub(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))), std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
-    }else if(ctx->DIV() != nullptr) {
+    }else if(ctx->SUB() != nullptr && ctx->children.size() == 2) {
+        // -expr
+        return (llvm::Value*) controller->builder->CreateNeg(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))));
+    } else if(ctx->DIV() != nullptr) {
         return (llvm::Value*) controller->builder->CreateSDiv(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))), std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
     }else if(ctx->MOD() != nullptr) {
         return (llvm::Value*) controller->builder->CreateSRem(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))), std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));

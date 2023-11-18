@@ -2,6 +2,7 @@
 source_filename = "amukh"
 
 @str = private constant [24 x i8] c"Hello! sizeof int = %d\0A\00"
+@str.1 = private constant [4 x i8] c"%d\0A\00"
 
 declare i32 @printf(i8*, ...)
 
@@ -56,5 +57,6 @@ entry:
 define i32 @main() {
 entry:
   %0 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([24 x i8], [24 x i8]* @str, i32 0, i32 0), i64 4)
+  %1 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.1, i32 0, i32 0), i32 -1)
   ret i32 0
 }

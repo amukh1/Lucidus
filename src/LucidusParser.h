@@ -414,6 +414,7 @@ public:
     ExprContext* expr(size_t i);
     antlr4::tree::TerminalNode *STAR();
     antlr4::tree::TerminalNode *NOT();
+    antlr4::tree::TerminalNode *SUB();
     antlr4::tree::TerminalNode *SIZEOF();
     TypeContext *type();
     antlr4::tree::TerminalNode *OPAREN();
@@ -422,7 +423,6 @@ public:
     antlr4::tree::TerminalNode *OR();
     antlr4::tree::TerminalNode *DIV();
     antlr4::tree::TerminalNode *PLUS();
-    antlr4::tree::TerminalNode *SUB();
     antlr4::tree::TerminalNode *MOD();
     std::vector<antlr4::tree::TerminalNode *> EQ();
     antlr4::tree::TerminalNode* EQ(size_t i);

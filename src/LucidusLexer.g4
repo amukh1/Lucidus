@@ -1,4 +1,3 @@
-// DELETE THIS CONTENT IF YOU PUT COMBINED GRAMMAR IN Parser TAB
 lexer grammar LucidusLexer;
 
 AND : '&&' ;
@@ -42,8 +41,8 @@ RCURLY : '}' ;
 LBRACK : '[' ;
 RBRACK : ']' ;
 
-INT : SUB?[0-9]+ ; 
-FLOAT : SUB?[0-9]+ '.' [0-9]* ;
+INT : [0-9]+ ; 
+FLOAT : [0-9]+ '.' [0-9]* ;
 ID: [a-zA-Z_][a-zA-Z_0-9]* ;
 WS: [ \t\n\r\f]+ -> skip ;
 COMMENT: '//' .*? '\n' -> skip ;

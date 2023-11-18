@@ -27,6 +27,5 @@ def main() -> int { // definition. Includes declaration.
     z:float = 1.2;
     (ptr z) = x->(float);
 
-    
     return 0;
 }
