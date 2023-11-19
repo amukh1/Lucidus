@@ -68,7 +68,10 @@ antlrcpp::Any MyVisitor::visitDec(LucidusParser::DecContext *ctx) {
                 }
             }
         }
+        if(this->controller->module->getFunction(functionName) == nullptr)
         controller->declareFunction(functionName.c_str(), llvm::FunctionType::get(rtype, types, ellip));
+
+        this->blocks.clear();
         return visitChildren(ctx);
 }
 
