@@ -1,4 +1,5 @@
 import "include.luci"
+// my sufferings
 
 def main() -> int {
     printf("Hello! sizeof int = %d\n", sizeof int);
