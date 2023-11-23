@@ -49,6 +49,8 @@ public:
 
     virtual std::any visitIf(LucidusParser::IfContext *context) = 0;
 
+    virtual std::any visitWhile(LucidusParser::WhileContext *context) = 0;
+
     virtual std::any visitImrt(LucidusParser::ImrtContext *context) = 0;
 
     virtual std::any visitStat(LucidusParser::StatContext *context) = 0;

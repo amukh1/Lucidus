@@ -19,6 +19,7 @@ assign: expr '=' expr ';';
 label: LABEL ID ':';
 goto: GOTO ID ';';
 if: 'if' expr ARROW '{' stat* '}';
+while: 'while' expr ARROW '{' stat* '}';
 imrt: 'import' STRING;
 
 stat
@@ -33,6 +34,7 @@ stat
     | label
     | goto
     | if
+    | while
     | imrt
     ;
 def : DEF ID '(' (param (',' param)*)? ')' ARROW type '{' stat* '}' ;

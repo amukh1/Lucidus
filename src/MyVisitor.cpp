@@ -648,6 +648,31 @@ controller->builder->SetInsertPoint(endThen);
 // return visitChildren(ctx);
     return nullptr;
 
+    }else if(ctx->while_() != nullptr && ctx->children.size() == 1) {
+        // w s
+        auto cond = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->while_()->expr()));
+        auto parent = controller->builder->GetInsertBlock()->getParent();
+
+        /*
+        // two blocks: while, end
+        at the end of while block, jump to while block if cond
+        else jump to end condition
+        */
+        auto while_ = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
+        auto endWhile = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
+
+        // insert basic blocks
+        controller->builder->CreateBr(while_);
+        controller->builder->SetInsertPoint(while_);
+        // visit while block
+        for(int i = 0; i<ctx->while_()->stat().size(); i++)
+            visit(ctx->while_()->stat(i));
+
+        // now visit condition
+        controller->builder->CreateCondBr(cond, while_, endWhile);
+        controller->builder->SetInsertPoint(endWhile);
+        // return visitChildren(ctx);
+        return nullptr;
     }else if(ctx->imrt() != nullptr) {
         // import statement
         // 'import' STRING

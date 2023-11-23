@@ -2,6 +2,11 @@ import "include.luci"
 // my sufferings
 
 def main() -> int {
+    i:int = 0;
+    while(i != 10) -> {
+        printf("Hello, World!\n");
+        (ptr i) = i + 1;
+    }
     printf("Hello! sizeof int = %d\n", sizeof int);
     printf("%d\n", 1+-(1+1));
     return 0;

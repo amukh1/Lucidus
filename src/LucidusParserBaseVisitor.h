@@ -75,6 +75,10 @@ public:
     return visitChildren(ctx);
   }
 
+  virtual std::any visitWhile(LucidusParser::WhileContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
   virtual std::any visitImrt(LucidusParser::ImrtContext *ctx) override {
     return visitChildren(ctx);
   }

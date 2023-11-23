@@ -16,9 +16,9 @@ public:
     DIV = 9, MOD = 10, OPAREN = 11, CPAREN = 12, COMMA = 13, SEMI = 14, 
     DEF = 15, STRUCT = 16, DECL = 17, ARROW = 18, GTR = 19, LESS = 20, DCOL = 21, 
     PTR = 22, COL = 23, RETURN = 24, LABEL = 25, GOTO = 26, DOT = 27, DOTS = 28, 
-    IF = 29, IMPRT = 30, ELSE = 31, SIZEOF = 32, LCURLY = 33, RCURLY = 34, 
-    LBRACK = 35, RBRACK = 36, INT = 37, FLOAT = 38, ID = 39, WS = 40, COMMENT = 41, 
-    STRING = 42
+    IF = 29, IMPRT = 30, ELSE = 31, WHILE = 32, SIZEOF = 33, LCURLY = 34, 
+    RCURLY = 35, LBRACK = 36, RBRACK = 37, INT = 38, FLOAT = 39, ID = 40, 
+    WS = 41, COMMENT = 42, STRING = 43
   };
 
   explicit LucidusLexer(antlr4::CharStream *input);
