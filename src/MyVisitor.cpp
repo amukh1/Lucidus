@@ -650,7 +650,6 @@ controller->builder->SetInsertPoint(endThen);
 
     }else if(ctx->while_() != nullptr && ctx->children.size() == 1) {
         // w s
-        auto cond = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->while_()->expr()));
         auto parent = controller->builder->GetInsertBlock()->getParent();
 
         /*
@@ -669,6 +668,7 @@ controller->builder->SetInsertPoint(endThen);
             visit(ctx->while_()->stat(i));
 
         // now visit condition
+        auto cond = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->while_()->expr()));
         controller->builder->CreateCondBr(cond, while_, endWhile);
         controller->builder->SetInsertPoint(endWhile);
         // return visitChildren(ctx);

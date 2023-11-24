@@ -1,7 +1,7 @@
 ; ModuleID = 'amukh'
 source_filename = "amukh"
 
-@str = private constant [15 x i8] c"Hello, World!\0A\00"
+@str = private constant [19 x i8] c"Hello, World! %d!\0A\00"
 @str.1 = private constant [24 x i8] c"Hello! sizeof int = %d\0A\00"
 @str.2 = private constant [4 x i8] c"%d\0A\00"
 
@@ -59,19 +59,20 @@ define i32 @main() {
 entry:
   %i = alloca i32
   store i32 0, i32* %i
-  %0 = load i32, i32* %i
-  %1 = icmp ne i32 %0, 10
-  br label %2
+  br label %0
 
-2:                                                ; preds = %2, %entry
-  %3 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @str, i32 0, i32 0))
-  %4 = load i32, i32* %i
-  %5 = add i32 %4, 1
-  store i32 %5, i32* %i
-  br i1 %1, label %2, label %6
+0:                                                ; preds = %0, %entry
+  %1 = load i32, i32* %i
+  %2 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([19 x i8], [19 x i8]* @str, i32 0, i32 0), i32 %1)
+  %3 = load i32, i32* %i
+  %4 = add i32 %3, 1
+  store i32 %4, i32* %i
+  %5 = load i32, i32* %i
+  %6 = icmp ne i32 %5, 10
+  br i1 %6, label %0, label %7
 
-6:                                                ; preds = %2
-  %7 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([24 x i8], [24 x i8]* @str.1, i32 0, i32 0), i64 4)
-  %8 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.2, i32 0, i32 0), i32 -1)
+7:                                                ; preds = %0
+  %8 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([24 x i8], [24 x i8]* @str.1, i32 0, i32 0), i64 4)
+  %9 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.2, i32 0, i32 0), i32 -1)
   ret i32 0
 }
