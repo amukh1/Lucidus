@@ -64,15 +64,15 @@ def getEdgeTuple(G:Graph, i:int, j:int) -> int* {
 
 def printEdgeList (G:Graph) -> int {
     i:int = 0;
-    goto while;
-    label while:
+    goto while_loop;
+    label while_loop:
     if(i == (G.edgesc)) -> {
-        goto while_end;
+        goto while_loop_end;
     }
     printf("%d -- %d\n", *getEdgeTuple(G, i, 0), *getEdgeTuple(G, i, 1));
     (ptr i) = i + 1;
-    goto while;
-    label while_end:
+    goto while_loop;
+    label while_loop_end:
     return 0;
 }
 
