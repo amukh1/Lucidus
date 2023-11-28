@@ -36,6 +36,7 @@ def main() -> int {
 
     gen_all_permutations(1);
     gen_all_permutations(2);
+    // gen_all_permutations(3);
 
     // check if G and H are isomorphic
     // if(isIsomorphic(G, H) == 1) -> {

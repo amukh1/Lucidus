@@ -264,7 +264,7 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         // if type is a ptr
         if(val->getType()->isPointerTy() && type->isIntegerTy()) {
             return (llvm::Value*)controller->builder->CreatePtrToInt(val, type);
-        }else if(val->getType()->isIntegerTy() && type->isPointerTy() && type->getContainedType(0)->isIntegerTy()) {
+        }else if(val->getType()->isIntegerTy() && type->isPointerTy()) {
             return (llvm::Value*)controller->builder->CreateIntToPtr(val, type);
         }else {
             // least powerful cast lol

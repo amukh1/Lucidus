@@ -13,8 +13,9 @@ source_filename = "amukh"
 @Graph = external global %Graph
 @str = private constant [10 x i8] c"%d -- %d\0A\00"
 @Permutation = external global %Permutation
-@str.1 = private constant [22 x i8] c"--------------------\0A\00"
+@str.1 = private constant [22 x i8] c"pointer_to_thing: %d\0A\00"
 @str.2 = private constant [22 x i8] c"--------------------\0A\00"
+@str.3 = private constant [22 x i8] c"--------------------\0A\00"
 
 declare i32 @printf(i8*, ...)
 
@@ -362,13 +363,13 @@ entry:
   %78 = icmp ne i32 %77, %76
   br i1 %78, label %43, label %56
 
-79:                                               ; preds = %127, %58
+79:                                               ; preds = %132, %58
   %80 = load i32, i32* %i
   %81 = load i32, i32* %k
   %82 = icmp eq i32 %81, %80
   br i1 %82, label %92, label %104
 
-83:                                               ; preds = %127
+83:                                               ; preds = %132
   %84 = load i32, i32* %j
   %85 = add i32 %84, 1
   store i32 %85, i32* %j
@@ -400,7 +401,7 @@ entry:
   %105 = load i32, i32* %i
   %106 = load i32, i32* %k
   %107 = icmp ne i32 %106, %105
-  br i1 %107, label %108, label %127
+  br i1 %107, label %108, label %132
 
 108:                                              ; preds = %104
   %permutat = alloca %Permutation**
@@ -419,21 +420,26 @@ entry:
   %120 = ptrtoint %Permutation** %119 to i32
   %121 = add i32 %120, %118
   %122 = inttoptr i32 %121 to %Permutation**
-  %123 = load i32, i32* %h
-  %124 = add i32 %123, 1
-  store i32 %124, i32* %h
-  %125 = load i32, i32* %k
-  %126 = add i32 %125, 1
-  store i32 %126, i32* %k
-  br label %127
+  %123 = load %Permutation**, %Permutation*** %permutat
+  %124 = load %Permutation*, %Permutation** %123
+  %125 = load i32, i32* %h
+  %126 = call i32 @permute(%Permutation* %124, i32 %125)
+  %127 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.1, i32 0, i32 0), i32 %126)
+  %128 = load i32, i32* %h
+  %129 = add i32 %128, 1
+  store i32 %129, i32* %h
+  %130 = load i32, i32* %k
+  %131 = add i32 %130, 1
+  store i32 %131, i32* %k
+  br label %132
 
-127:                                              ; preds = %108, %104
-  %128 = load i32, i32* %n
-  %129 = call i32 @factorial(i32 %128)
-  %130 = add i32 %129, 1
-  %131 = load i32, i32* %h
-  %132 = icmp ne i32 %131, %130
-  br i1 %132, label %79, label %83
+132:                                              ; preds = %108, %104
+  %133 = load i32, i32* %n
+  %134 = call i32 @factorial(i32 %133)
+  %135 = add i32 %134, 1
+  %136 = load i32, i32* %h
+  %137 = icmp ne i32 %136, %135
+  br i1 %137, label %79, label %83
 }
 
 define i32 @isEqual(%Graph* %0, %Graph* %1) {
@@ -695,10 +701,10 @@ entry:
   store i32 4, i32* %55
   %56 = load %Graph*, %Graph** %G
   %57 = call i32 @printEdgeList(%Graph* %56)
-  %58 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.1, i32 0, i32 0))
+  %58 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.2, i32 0, i32 0))
   %59 = load %Graph*, %Graph** %H
   %60 = call i32 @printEdgeList(%Graph* %59)
-  %61 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.2, i32 0, i32 0))
+  %61 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.3, i32 0, i32 0))
   %62 = call %Permutation** @gen_all_permutations(i32 1)
   %63 = call %Permutation** @gen_all_permutations(i32 2)
   ret i32 0

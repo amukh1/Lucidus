@@ -134,7 +134,7 @@ def gen_all_permutations(n:int) -> Permutation* {
                 // ((perm->v)->(int) + (k - 1)*4)->(int*) = permute(*(last_permutation->(Permutation) + (j - 1)*4)->(Permutation*), h);
                 permutat:Permutation* = ((last_permutations->(int) + (j - 1)*4)->(Permutation*));
                 // ((perm->v)->(int) + (k - 1)*4)->(int*) = *pointer_to_thing;
-                // printf("pointer_to_thing: %d\n", *pointer_to_thing);
+                printf("pointer_to_thing: %d\n", permute(*permutat, h));
                 (ptr h) = h + 1;
                 (ptr k) = k + 1;
                 }
