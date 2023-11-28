@@ -137,6 +137,7 @@ def gen_all_permutations(n:int) -> Permutation* {
                     (permutation.v)[k] = n;
                 }
                 if(k != i) -> {
+                    u:=*(((*recurse[j]).v)[r]);
                     printf("n: %d, perm: %d, j: %d, r: %d\n", n, permute(*(recurse[j]),r+1), j, r);
                     (permutation.v)[k] = permute(*(recurse[j]),r+1);
                     (ptr r) = r + 1;

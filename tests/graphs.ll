@@ -345,13 +345,13 @@ entry:
   %53 = icmp slt i32 %52, %51
   br i1 %53, label %31, label %32
 
-54:                                               ; preds = %113, %34
+54:                                               ; preds = %122, %34
   %55 = load i32, i32* %i
   %56 = load i32, i32* %k
   %57 = icmp eq i32 %56, %55
   br i1 %57, label %76, label %83
 
-58:                                               ; preds = %113
+58:                                               ; preds = %122
   %59 = load %Permutation**, %Permutation*** %v1
   %60 = load i32, i32* %j
   %61 = load i32, i32* %n
@@ -387,46 +387,57 @@ entry:
   %84 = load i32, i32* %i
   %85 = load i32, i32* %k
   %86 = icmp ne i32 %85, %84
-  br i1 %86, label %87, label %113
+  br i1 %86, label %87, label %122
 
 87:                                               ; preds = %83
-  %88 = load i32, i32* %n
-  %89 = load %Permutation**, %Permutation*** %recurse
-  %90 = load i32, i32* %j
-  %91 = getelementptr %Permutation*, %Permutation** %89, i32 %90
-  %92 = load %Permutation*, %Permutation** %91
-  %93 = load i32, i32* %r
-  %94 = add i32 %93, 1
-  %95 = call i32 @permute(%Permutation* %92, i32 %94)
-  %96 = load i32, i32* %j
-  %97 = load i32, i32* %r
-  %98 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([31 x i8], [31 x i8]* @str.6, i32 0, i32 0), i32 %88, i32 %95, i32 %96, i32 %97)
-  %99 = load %Permutation*, %Permutation** %permutation
-  %100 = getelementptr inbounds %Permutation, %Permutation* %99, i32 0, i32 0
-  %101 = load i32*, i32** %100
-  %102 = load i32, i32* %k
-  %103 = getelementptr i32, i32* %101, i32 %102
-  %104 = load %Permutation**, %Permutation*** %recurse
+  %88 = load %Permutation**, %Permutation*** %recurse
+  %89 = load i32, i32* %j
+  %90 = getelementptr %Permutation*, %Permutation** %88, i32 %89
+  %91 = load %Permutation*, %Permutation** %90
+  %92 = getelementptr inbounds %Permutation, %Permutation* %91, i32 0, i32 0
+  %93 = load i32*, i32** %92
+  %94 = load i32, i32* %r
+  %95 = getelementptr i32, i32* %93, i32 %94
+  %96 = load i32, i32* %95
+  %u = alloca i32
+  store i32 %96, i32* %u
+  %97 = load i32, i32* %n
+  %98 = load %Permutation**, %Permutation*** %recurse
+  %99 = load i32, i32* %j
+  %100 = getelementptr %Permutation*, %Permutation** %98, i32 %99
+  %101 = load %Permutation*, %Permutation** %100
+  %102 = load i32, i32* %r
+  %103 = add i32 %102, 1
+  %104 = call i32 @permute(%Permutation* %101, i32 %103)
   %105 = load i32, i32* %j
-  %106 = getelementptr %Permutation*, %Permutation** %104, i32 %105
-  %107 = load %Permutation*, %Permutation** %106
-  %108 = load i32, i32* %r
-  %109 = add i32 %108, 1
-  %110 = call i32 @permute(%Permutation* %107, i32 %109)
-  store i32 %110, i32* %103
-  %111 = load i32, i32* %r
-  %112 = add i32 %111, 1
-  store i32 %112, i32* %r
-  br label %113
+  %106 = load i32, i32* %r
+  %107 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([31 x i8], [31 x i8]* @str.6, i32 0, i32 0), i32 %97, i32 %104, i32 %105, i32 %106)
+  %108 = load %Permutation*, %Permutation** %permutation
+  %109 = getelementptr inbounds %Permutation, %Permutation* %108, i32 0, i32 0
+  %110 = load i32*, i32** %109
+  %111 = load i32, i32* %k
+  %112 = getelementptr i32, i32* %110, i32 %111
+  %113 = load %Permutation**, %Permutation*** %recurse
+  %114 = load i32, i32* %j
+  %115 = getelementptr %Permutation*, %Permutation** %113, i32 %114
+  %116 = load %Permutation*, %Permutation** %115
+  %117 = load i32, i32* %r
+  %118 = add i32 %117, 1
+  %119 = call i32 @permute(%Permutation* %116, i32 %118)
+  store i32 %119, i32* %112
+  %120 = load i32, i32* %r
+  %121 = add i32 %120, 1
+  store i32 %121, i32* %r
+  br label %122
 
-113:                                              ; preds = %87, %83
-  %114 = load i32, i32* %k
-  %115 = add i32 %114, 1
-  store i32 %115, i32* %k
-  %116 = load i32, i32* %n
-  %117 = load i32, i32* %k
-  %118 = icmp slt i32 %117, %116
-  br i1 %118, label %54, label %58
+122:                                              ; preds = %87, %83
+  %123 = load i32, i32* %k
+  %124 = add i32 %123, 1
+  store i32 %124, i32* %k
+  %125 = load i32, i32* %n
+  %126 = load i32, i32* %k
+  %127 = icmp slt i32 %126, %125
+  br i1 %127, label %54, label %58
 }
 
 define i32 @isEqual(%Graph* %0, %Graph* %1) {
