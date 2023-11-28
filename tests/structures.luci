@@ -90,42 +90,61 @@ def new_Permutation(v:int*, len:int) -> Permutation {
 }
 
 dec permute(p:Permutation, i:int) -> int;
-// def permute(p:Permutation, i:int) -> int {
-//     return *(((p->v)->(int) + (i - 1)*4)->(int*));
-// }
+def permute(p:Permutation, i:int) -> int {
+    return *(((p->v)->(int) + (i - 1)*4)->(int*));
+}
 
-dec gen_all_permutations(n:int) -> int;
-// def gen_all_permutations(n:int) -> int {
-//     v:Permutation* = malloc(4*factorial(n))->(Permutation*);
-//     i:int = 1;
-//     goto while_permut;
-//     label while_permut:
-//     if(i == (n+1)) -> {
-//         goto while_permut_end;
-//     }
-//     // put n in the ith position
-//     p_v:int* = malloc(4*n)->(int*);
-//     (p_v->(int) + (i - 1)*4)->(int*) = n;
-//     // now get permutations for n-1
-//     j:int = 1;
-//     k:int* = (gen_all_permutations(n - 1)->(int) + (i - 1)*4)->(Permutation*);
-//     goto while_permut_two;
-//     label while_permut_two:
-//     if(j == (factorial(n-1))) -> {
-//         goto while_permut_two_end;
-//     }
-//     //otherwise
-//     // copy k into p_v;
-    
-//     (ptr i) = i + 1;
-//     label while_permut_two_end:
+dec gen_all_permutations(n:int) -> Permutation*;
+def gen_all_permutations(n:int) -> Permutation* {
+    // base case
+    if(n == 1) -> {
+        v:Permutation* = malloc(4)->(Permutation*);
+        (*v)->v = malloc(4)->(int*);
+        (*v)->len = 1;
+        // *((v->v)->(int) + 0*4)->(int*) = 1;
+        return v;
+    }
+    v:Permutation* = malloc(4*factorial(n))->(Permutation*);
+    i:int = 1;
+    // get vector for gen_all_permutations(n-1):
+    last_permutations:Permutation* = malloc(4*factorial(n-1))->(Permutation*);
+    (ptr last_permutations) = gen_all_permutations(n-1);
+    // refactor to not use goto.
+    while(i != n+1) -> {
+        // mallocate (n-1)! permutations
+        // put (n) in the ith spot of each of those permutations
+        // fill the rest of the spots of the (n-1)! permutations with the permutations from gen_all_permutations(n-1)
 
-//     (v->(int) + (i - 1)*4)->(Permutation*) = new_Permutation(p_v, n);
-
-//     goto while_permut;
-//     label while_permut_end:
-//     return 0;
-// }
+        // start:
+        perms:Permutation* = malloc(4*factorial(n-1))->(Permutation*);
+        j:int = 1;
+        while(j != (factorial(n-1)+1)) -> {
+            // mallocate a new permutation
+            perm:Permutation = malloc(8)->(Permutation);
+            perm->v = malloc(4*n)->(int*);
+            perm->len = n;
+            h:int = 1;
+            k:int = 1;
+            while(h != (factorial(n) + 1)) -> {
+                if(k == i) -> {
+                    ((perm->v)->(int) + (k - 1)*4)->(int*) = i;
+                    (ptr k) = k + 1;
+                }
+                if(k != i) -> {
+                // ((perm->v)->(int) + (k - 1)*4)->(int*) = permute(*(last_permutation->(Permutation) + (j - 1)*4)->(Permutation*), h);
+                permutat:Permutation* = ((last_permutations->(int) + (j - 1)*4)->(Permutation*));
+                // ((perm->v)->(int) + (k - 1)*4)->(int*) = *pointer_to_thing;
+                // printf("pointer_to_thing: %d\n", *pointer_to_thing);
+                (ptr h) = h + 1;
+                (ptr k) = k + 1;
+                }
+            }
+            (ptr j) = j + 1;
+        }
+        (ptr i) = i + 1;
+    }
+    return v;
+}
 
 
 dec isEqual(G:Graph, H:Graph) -> int; // true or false (0 or 1)

@@ -34,15 +34,18 @@ def main() -> int {
     printEdgeList(H);
     printf("--------------------\n");
 
-    // check if G and H are isomorphic
-    if(isIsomorphic(G, H) == 1) -> {
-        printf("G and H are isomorphic\n");
-    } 
-    if(isIsomorphic(G, H) == 0) -> {
-        printf("G and H are not isomorphic\n");
-    }
+    gen_all_permutations(1);
+    gen_all_permutations(2);
 
-    printf("%d\n", factorial(6));
+    // check if G and H are isomorphic
+    // if(isIsomorphic(G, H) == 1) -> {
+    //     printf("G and H are isomorphic\n");
+    // } 
+    // if(isIsomorphic(G, H) == 0) -> {
+    //     printf("G and H are not isomorphic\n");
+    // }
+
+    // printf("%d\n", factorial(6));
     
     return 0;
 }

@@ -1,4 +1,5 @@
 import "include.luci"
+import "structures.luci"
 // my sufferings
 
 def main() -> int {
