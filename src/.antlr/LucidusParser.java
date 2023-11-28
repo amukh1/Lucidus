@@ -1,4 +1,4 @@
-// Generated from /workspaces/codespaces-blank/src/LucidusParser.g4 by ANTLR 4.13.1
+// Generated from /home/amukh1/Lucidus/src/LucidusParser.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -132,6 +132,14 @@ public class LucidusParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_program; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).enterProgram(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).exitProgram(this);
+		}
 	}
 
 	public final ProgramContext program() throws RecognitionException {
@@ -213,6 +221,14 @@ public class LucidusParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_rawtype; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).enterRawtype(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).exitRawtype(this);
+		}
 	}
 
 	public final RawtypeContext rawtype() throws RecognitionException {
@@ -263,6 +279,14 @@ public class LucidusParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_fptr; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).enterFptr(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).exitFptr(this);
+		}
 	}
 
 	public final FptrContext fptr() throws RecognitionException {
@@ -337,6 +361,14 @@ public class LucidusParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_type; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).enterType(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).exitType(this);
+		}
 	}
 
 	public final TypeContext type() throws RecognitionException {
@@ -404,6 +436,14 @@ public class LucidusParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_idec; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).enterIdec(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).exitIdec(this);
+		}
 	}
 
 	public final IdecContext idec() throws RecognitionException {
@@ -441,6 +481,14 @@ public class LucidusParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_param; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).enterParam(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).exitParam(this);
+		}
 	}
 
 	public final ParamContext param() throws RecognitionException {
@@ -505,6 +553,14 @@ public class LucidusParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_dec; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).enterDec(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).exitDec(this);
+		}
 	}
 
 	public final DecContext dec() throws RecognitionException {
@@ -578,6 +634,14 @@ public class LucidusParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_ret; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).enterRet(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).exitRet(this);
+		}
 	}
 
 	public final RetContext ret() throws RecognitionException {
@@ -619,6 +683,14 @@ public class LucidusParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_vdec; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).enterVdec(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).exitVdec(this);
+		}
 	}
 
 	public final VdecContext vdec() throws RecognitionException {
@@ -660,6 +732,14 @@ public class LucidusParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_infdec; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).enterInfdec(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).exitInfdec(this);
+		}
 	}
 
 	public final InfdecContext infdec() throws RecognitionException {
@@ -699,6 +779,14 @@ public class LucidusParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_edec; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).enterEdec(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).exitEdec(this);
+		}
 	}
 
 	public final EdecContext edec() throws RecognitionException {
@@ -738,6 +826,14 @@ public class LucidusParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_assign; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).enterAssign(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).exitAssign(this);
+		}
 	}
 
 	public final AssignContext assign() throws RecognitionException {
@@ -776,6 +872,14 @@ public class LucidusParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_label; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).enterLabel(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).exitLabel(this);
+		}
 	}
 
 	public final LabelContext label() throws RecognitionException {
@@ -812,6 +916,14 @@ public class LucidusParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_goto; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).enterGoto(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).exitGoto(this);
+		}
 	}
 
 	public final GotoContext goto_() throws RecognitionException {
@@ -858,6 +970,14 @@ public class LucidusParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_if; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).enterIf(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).exitIf(this);
+		}
 	}
 
 	public final IfContext if_() throws RecognitionException {
@@ -923,6 +1043,14 @@ public class LucidusParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_while; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).enterWhile(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).exitWhile(this);
+		}
 	}
 
 	public final WhileContext while_() throws RecognitionException {
@@ -977,6 +1105,14 @@ public class LucidusParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_imrt; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).enterImrt(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).exitImrt(this);
+		}
 	}
 
 	public final ImrtContext imrt() throws RecognitionException {
@@ -1045,6 +1181,14 @@ public class LucidusParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_stat; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).enterStat(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).exitStat(this);
+		}
 	}
 
 	public final StatContext stat() throws RecognitionException {
@@ -1185,6 +1329,14 @@ public class LucidusParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_def; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).enterDef(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).exitDef(this);
+		}
 	}
 
 	public final DefContext def() throws RecognitionException {
@@ -1288,6 +1440,14 @@ public class LucidusParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_func; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).enterFunc(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).exitFunc(this);
+		}
 	}
 
 	public final FuncContext func() throws RecognitionException {
@@ -1407,6 +1567,14 @@ public class LucidusParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expr; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).enterExpr(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).exitExpr(this);
+		}
 	}
 
 	public final ExprContext expr() throws RecognitionException {
@@ -1749,6 +1917,14 @@ public class LucidusParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_struct; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).enterStruct(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof LucidusParserListener ) ((LucidusParserListener)listener).exitStruct(this);
+		}
 	}
 
 	public final StructContext struct() throws RecognitionException {

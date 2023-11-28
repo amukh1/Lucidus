@@ -34,14 +34,19 @@ def main() -> int {
     printEdgeList(H);
     printf("--------------------\n");
 
-    gen_all_permutations(1);
     k:Permutation* = gen_all_permutations(2);
-    // log all permutations of 2
     i:int = 0;
-    while(i != 2) -> {
+    while(i != factorial(2)) -> {
+        printPermutation(*k[i]);
+        (ptr i) = i + 1;
+    }
+
+    (ptr k) = gen_all_permutations(3);
+    // log all permutations of 2
+    (ptr i) = 0;
+    while(i != factorial(3)) -> {
         perm:Permutation = *(k[i]);
-        ((perm.v)[0]);
-        // printf("%d %d\n", *((perm.v)[0]), *((perm.v)[1]));
+        printf("(%d %d %d)\n", *((perm.v)[0]), *((perm.v)[1]), *((perm.v)[2]));
         (ptr i) = i + 1;
     }
 

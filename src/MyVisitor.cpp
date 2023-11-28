@@ -172,7 +172,8 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         const llvm::DataLayout* TD = &controller->module->getDataLayout();
         // std::cout << TD->getTypeAllocSize(type) << std::endl;
         auto size = TD->getTypeAllocSize(type);
-        return (llvm::Value*) llvm::ConstantInt::get(llvm::Type::getInt64Ty(controller->ctx), size);
+        // return (llvm::Value*) llvm::ConstantInt::get(llvm::Type::getInt64Ty(controller->ctx), size);
+        return (llvm::Value*) llvm::ConstantInt::get(llvm::Type::getInt32Ty(controller->ctx), size);
     } else if (ctx->GTR() != nullptr && ctx->children.size() == 3) {
         // expr > expr
         return (llvm::Value*) controller->builder->CreateICmpSGT(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0))), std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
@@ -460,7 +461,10 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         llvm::Type* type = getTypes(ctx->vdec()->idec()->type(), this->controller, this->structs);
         // llvm::Value* val = controller->builder->CreateAlloca(type, std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->vdec()->expr())), name);
         llvm::AllocaInst* ptr = controller->declareVariable(name, type);
-        llvm::StoreInst* val = controller->assignVariable(ptr, std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->vdec()->expr())));
+        // llvm::StoreInst* val = controller->assignVariable(ptr, std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->vdec()->expr())));
+        // manually handle storeInst
+        auto evaluatedExpr = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->vdec()->expr()));
+        llvm::StoreInst* val = controller->builder->CreateStore(evaluatedExpr, ptr);
         this->functionScope[name] = (llvm::Value*)ptr;
 
         // error checking (type)
@@ -472,7 +476,7 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         // this->e_handler->typeError<LucidusParser::VdecContext*>(ctx->vdec()->idec()->type(), ctx->vdec()->expr()->type(), ctx->vdec());
 
 
-        if(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->vdec()->expr()))->getType() != type) {
+        if(evaluatedExpr->getType() != type) {
             std::cout << "Type error at line " << ctx->vdec()->getStart()->getLine() << std::endl;
             std::cout << "> " << ctx->vdec()->getText() << std::endl;
             // show types/ underline types

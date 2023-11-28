@@ -94,6 +94,18 @@ def permute(p:Permutation, i:int) -> int {
     return *(((p->v)->(int) + (i - 1)*4)->(int*));
 }
 
+dec printPermutation(p:Permutation) -> int;
+def printPermutation(p:Permutation) -> int {
+    i:int = 0;
+    printf("(");
+    while(i < (p.len)) -> {
+        printf("%d ", *((p.v)[i]));
+        (ptr i) = i + 1;
+    }
+    printf(")\n");
+    return 0;
+}
+
 dec gen_all_permutations(n:int) -> Permutation*;
 def gen_all_permutations(n:int) -> Permutation* {
     // base case
@@ -101,47 +113,37 @@ def gen_all_permutations(n:int) -> Permutation* {
         v:Permutation* = malloc(4)->(Permutation*);
         (*v)->v = malloc(4)->(int*);
         (*v)->len = 1;
-        // *((v->v)->(int) + 0*4)->(int*) = 1;
         ((*v).v)[0] = 1;
         return v;
     }
+    printf("n: %d\n", n);
     v:Permutation* = malloc(4*factorial(n))->(Permutation*);
-    i:int = 1;
-    // get vector for gen_all_permutations(n-1):
-    last_permutations:Permutation* = malloc(4*factorial(n-1))->(Permutation*);
-    (ptr last_permutations) = gen_all_permutations(n-1);
-    // refactor to not use goto.
-    while(i != n+1) -> {
-        // mallocate (n-1)! permutations
-        // put (n) in the ith spot of each of those permutations
-        // fill the rest of the spots of the (n-1)! permutations with the permutations from gen_all_permutations(n-1)
-
-        // start:
-        perms:Permutation* = malloc(4*factorial(n-1))->(Permutation*);
-        j:int = 1;
-        while(j != (factorial(n-1)+1)) -> {
-            // mallocate a new permutation
-            perm:Permutation = malloc(8)->(Permutation);
-            perm->v = malloc(4*n)->(int*);
-            perm->len = n;
-            h:int = 1;
-            k:int = 1;
-            while(k != (factorial(n) + 1)) -> {
+    recurse := gen_all_permutations(n-1);
+    
+    i:int = 0;
+    while(i < (n)) -> {
+        // (n-1)! cases
+        j:int = 0;
+        while(j < factorial(n-1)) -> {
+            permutation:Permutation = malloc(8)->(Permutation);
+            permutation->v = malloc(4*n)->(int*);
+            permutation->len = n;
+            printf("i: %d\n", i);
+            // fill up permutation
+            k:int = 0;
+            r:int = 0;
+            while(k < n) -> {
                 if(k == i) -> {
-                    // ((perm->v)->(int) + (k - 1)*4)->(int*) = i;
-                    (perm.v)[k-1] = i;
+                    (permutation.v)[k] = n;
                 }
                 if(k != i) -> {
-                // ((perm->v)->(int) + (k - 1)*4)->(int*) = permute(*(last_permutation->(Permutation) + (j - 1)*4)->(Permutation*), h);
-                permutat:Permutation* = last_permutations[j-1];
-                // set perm val
-                (perm.v)[k-1] = *((*(last_permutations[j-1])).v)[h-1];
-                // ((perm->v)->(int) + (k - 1)*4)->(int*) = *pointer_to_thing;
-                // printf("pointer_to_thing: %d\n", *((*(last_permutations[j-1])).v)[h-1]);
-                (ptr h) = h + 1;
+                    printf("n: %d, perm: %d, j: %d, r: %d\n", n, permute(*(recurse[j]),r+1), j, r);
+                    (permutation.v)[k] = permute(*(recurse[j]),r+1);
+                    (ptr r) = r + 1;
                 }
                 (ptr k) = k + 1;
             }
+            (v[i*factorial(n-1) + j]) = permutation;
             (ptr j) = j + 1;
         }
         (ptr i) = i + 1;
