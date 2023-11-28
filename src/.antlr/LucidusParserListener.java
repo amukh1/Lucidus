@@ -1,4 +1,4 @@
-// Generated from /home/amukh1/Lucidus/src/LucidusParser.g4 by ANTLR 4.13.1
+// Generated from /workspaces/codespaces-blank/src/LucidusParser.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -156,6 +156,16 @@ public interface LucidusParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitIf(LucidusParser.IfContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LucidusParser#while}.
+	 * @param ctx the parse tree
+	 */
+	void enterWhile(LucidusParser.WhileContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LucidusParser#while}.
+	 * @param ctx the parse tree
+	 */
+	void exitWhile(LucidusParser.WhileContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LucidusParser#imrt}.
 	 * @param ctx the parse tree

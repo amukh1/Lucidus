@@ -3,12 +3,19 @@ import "structures.luci"
 // my sufferings
 
 def main() -> int {
-    i:int = 0;
-    while(i != 10) -> {
-        printf("Hello, World! %d!\n", i);
-        (ptr i) = i + 1;
-    }
-    printf("Hello! sizeof int = %d\n", sizeof int);
-    printf("%d\n", 1+-(1+1));
+    // i:int = 0;
+    // while(i != 10) -> {
+    //     printf("Hello, World! %d!\n", i);
+    //     (ptr i) = i + 1;
+    // }
+    // printf("Hello! sizeof int = %d\n", sizeof int);
+    // printf("%d\n", 1+-(1+1));
+
+    v:int* = malloc(4*3)->(int*);
+    v[0] = 1;
+    printf("%d\n", *v[0]);
+    // v[1] = 2;
+    // v[2] = 3;
+
     return 0;
 }

@@ -50,6 +50,7 @@ expr: ID
     | func
     | PTR expr
     | expr STAR expr
+    | expr '[' expr ']'
     | STAR expr
     | NOT expr
     | expr AND expr
@@ -66,7 +67,6 @@ expr: ID
     | expr GTR expr
     | expr LESS expr
     | '(' expr ')'
-    | expr '[' INT ']'
     
     ;
     

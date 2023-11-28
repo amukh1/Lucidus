@@ -1,4 +1,4 @@
-// Generated from /home/amukh1/Lucidus/src/LucidusParser.g4 by ANTLR 4.13.1
+// Generated from /workspaces/codespaces-blank/src/LucidusParser.g4 by ANTLR 4.13.1
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -191,6 +191,18 @@ public class LucidusParserBaseListener implements LucidusParserListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitIf(LucidusParser.IfContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterWhile(LucidusParser.WhileContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitWhile(LucidusParser.WhileContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

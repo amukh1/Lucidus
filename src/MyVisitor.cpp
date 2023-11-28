@@ -26,6 +26,7 @@
 
 #include "MyVisitor.h"
 #include "compile.h"
+#include "../../../usr/include/llvm-10/llvm/IR/Constants.h"
 
 void replaceAll(std::string& str, const std::string& from, const std::string& to) {
     if(from.empty())
@@ -271,25 +272,20 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
             return (llvm::Value*)controller->builder->CreateBitCast(val, type);
         }
     }else if(ctx->LBRACK() != nullptr && ctx->RBRACK() != nullptr && ctx->children.size() == 4) {
-        // expr [ int ]
+        // expr [ expr ]
         // bascially return (expr->(int) + int*sizeof type)- >(type*)
         auto val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));
-        // auto type = (llvm::PointerType*)val->getType()->getContainedType(0);
+        // std::cout << "check" << std::endl;
         auto pointerType = llvm::dyn_cast<llvm::PointerType>(val->getType());
-        // auto type = pointerType->getContainedType(0);
-        // check if this is ok
-        if(!pointerType->isPointerTy()) {
+        if(!pointerType) {
             std::cout << "WE HAVE A PROBLEM" << std::endl;
+            return nullptr;
         }
-        auto type = val->getType()->getContainedType(0);
-        auto size = get_size(type, *controller->builder);
+        auto type = pointerType->getContainedType(0);
         auto index = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1)));
-        auto offset = controller->builder->CreateMul(index, size);
-        auto ptr_0_int = controller->builder->CreatePtrToInt(val, llvm::Type::getInt64Ty(controller->ctx));
-        auto ptr_0_int_plus_offset = controller->builder->CreateAdd(ptr_0_int, offset);
-        auto ptr_0_int_plus_offset_ptr = controller->builder->CreateIntToPtr(ptr_0_int_plus_offset, type);
-        return (llvm::Value*)ptr_0_int_plus_offset_ptr;
-
+        // std::cout << "check" << std::endl;
+        auto gep = controller->builder->CreateGEP(type, val, index);
+        return gep;
 
     } else{
         // return (llvm::Value *)llvm::ConstantInt::get(llvm::Type::getInt32Ty(controller->ctx), 0);

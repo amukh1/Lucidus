@@ -35,7 +35,16 @@ def main() -> int {
     printf("--------------------\n");
 
     gen_all_permutations(1);
-    gen_all_permutations(2);
+    k:Permutation* = gen_all_permutations(2);
+    // log all permutations of 2
+    i:int = 0;
+    while(i != 2) -> {
+        perm:Permutation = *(k[i]);
+        ((perm.v)[0]);
+        // printf("%d %d\n", *((perm.v)[0]), *((perm.v)[1]));
+        (ptr i) = i + 1;
+    }
+
     // gen_all_permutations(3);
 
     // check if G and H are isomorphic

@@ -13,9 +13,8 @@ source_filename = "amukh"
 @Graph = external global %Graph
 @str = private constant [10 x i8] c"%d -- %d\0A\00"
 @Permutation = external global %Permutation
-@str.1 = private constant [22 x i8] c"pointer_to_thing: %d\0A\00"
+@str.1 = private constant [22 x i8] c"--------------------\0A\00"
 @str.2 = private constant [22 x i8] c"--------------------\0A\00"
-@str.3 = private constant [22 x i8] c"--------------------\0A\00"
 
 declare i32 @printf(i8*, ...)
 
@@ -249,7 +248,7 @@ entry:
   store i32 %0, i32* %n
   %1 = load i32, i32* %n
   %2 = icmp eq i32 %1, 1
-  br i1 %2, label %3, label %17
+  br i1 %2, label %3, label %22
 
 3:                                                ; preds = %entry
   %v = alloca %Permutation**
@@ -269,177 +268,185 @@ entry:
   %15 = getelementptr inbounds %Permutation, %Permutation* %14, i32 0, i32 1
   store i32 1, i32* %15
   %16 = load %Permutation**, %Permutation*** %v
-  ret %Permutation** %16
+  %17 = load %Permutation*, %Permutation** %16
+  %18 = getelementptr inbounds %Permutation, %Permutation* %17, i32 0, i32 0
+  %19 = load i32*, i32** %18
+  %20 = getelementptr i32, i32* %19, i32 0
+  store i32 1, i32* %20
+  %21 = load %Permutation**, %Permutation*** %v
+  ret %Permutation** %21
 
-17:                                               ; preds = %entry
+22:                                               ; preds = %entry
   %v1 = alloca %Permutation**
-  %18 = load i32, i32* %n
-  %19 = call i32 @factorial(i32 %18)
-  %20 = mul i32 4, %19
-  %21 = call i8* @malloc(i32 %20)
-  %22 = bitcast i8* %21 to %Permutation**
-  store %Permutation** %22, %Permutation*** %v1
   %23 = load i32, i32* %n
   %24 = call i32 @factorial(i32 %23)
   %25 = mul i32 4, %24
   %26 = call i8* @malloc(i32 %25)
   %27 = bitcast i8* %26 to %Permutation**
+  store %Permutation** %27, %Permutation*** %v1
+  %28 = load i32, i32* %n
+  %29 = call i32 @factorial(i32 %28)
+  %30 = mul i32 4, %29
+  %31 = call i8* @malloc(i32 %30)
+  %32 = bitcast i8* %31 to %Permutation**
   %i = alloca i32
   store i32 1, i32* %i
   %last_permutations = alloca %Permutation**
-  %28 = load i32, i32* %n
-  %29 = sub i32 %28, 1
-  %30 = call i32 @factorial(i32 %29)
-  %31 = mul i32 4, %30
-  %32 = call i8* @malloc(i32 %31)
-  %33 = bitcast i8* %32 to %Permutation**
-  store %Permutation** %33, %Permutation*** %last_permutations
-  %34 = load i32, i32* %n
-  %35 = sub i32 %34, 1
-  %36 = call i32 @factorial(i32 %35)
-  %37 = mul i32 4, %36
-  %38 = call i8* @malloc(i32 %37)
-  %39 = bitcast i8* %38 to %Permutation**
-  %40 = load i32, i32* %n
-  %41 = sub i32 %40, 1
-  %42 = call %Permutation** @gen_all_permutations(i32 %41)
-  store %Permutation** %42, %Permutation*** %last_permutations
-  br label %43
+  %33 = load i32, i32* %n
+  %34 = sub i32 %33, 1
+  %35 = call i32 @factorial(i32 %34)
+  %36 = mul i32 4, %35
+  %37 = call i8* @malloc(i32 %36)
+  %38 = bitcast i8* %37 to %Permutation**
+  store %Permutation** %38, %Permutation*** %last_permutations
+  %39 = load i32, i32* %n
+  %40 = sub i32 %39, 1
+  %41 = call i32 @factorial(i32 %40)
+  %42 = mul i32 4, %41
+  %43 = call i8* @malloc(i32 %42)
+  %44 = bitcast i8* %43 to %Permutation**
+  %45 = load i32, i32* %n
+  %46 = sub i32 %45, 1
+  %47 = call %Permutation** @gen_all_permutations(i32 %46)
+  store %Permutation** %47, %Permutation*** %last_permutations
+  br label %48
 
-43:                                               ; preds = %72, %17
+48:                                               ; preds = %77, %22
   %perms = alloca %Permutation**
-  %44 = load i32, i32* %n
-  %45 = sub i32 %44, 1
-  %46 = call i32 @factorial(i32 %45)
-  %47 = mul i32 4, %46
-  %48 = call i8* @malloc(i32 %47)
-  %49 = bitcast i8* %48 to %Permutation**
-  store %Permutation** %49, %Permutation*** %perms
-  %50 = load i32, i32* %n
-  %51 = sub i32 %50, 1
-  %52 = call i32 @factorial(i32 %51)
-  %53 = mul i32 4, %52
-  %54 = call i8* @malloc(i32 %53)
-  %55 = bitcast i8* %54 to %Permutation**
+  %49 = load i32, i32* %n
+  %50 = sub i32 %49, 1
+  %51 = call i32 @factorial(i32 %50)
+  %52 = mul i32 4, %51
+  %53 = call i8* @malloc(i32 %52)
+  %54 = bitcast i8* %53 to %Permutation**
+  store %Permutation** %54, %Permutation*** %perms
+  %55 = load i32, i32* %n
+  %56 = sub i32 %55, 1
+  %57 = call i32 @factorial(i32 %56)
+  %58 = mul i32 4, %57
+  %59 = call i8* @malloc(i32 %58)
+  %60 = bitcast i8* %59 to %Permutation**
   %j = alloca i32
   store i32 1, i32* %j
-  br label %58
+  br label %63
 
-56:                                               ; preds = %72
-  %57 = load %Permutation**, %Permutation*** %v1
-  ret %Permutation** %57
+61:                                               ; preds = %77
+  %62 = load %Permutation**, %Permutation*** %v1
+  ret %Permutation** %62
 
-58:                                               ; preds = %83, %43
+63:                                               ; preds = %88, %48
   %perm = alloca %Permutation*
-  %59 = call i8* @malloc(i32 8)
-  %60 = bitcast i8* %59 to %Permutation*
-  store %Permutation* %60, %Permutation** %perm
-  %61 = call i8* @malloc(i32 8)
-  %62 = bitcast i8* %61 to %Permutation*
-  %63 = load %Permutation*, %Permutation** %perm
-  %64 = getelementptr inbounds %Permutation, %Permutation* %63, i32 0, i32 0
-  %65 = load i32, i32* %n
-  %66 = mul i32 4, %65
-  %67 = call i8* @malloc(i32 %66)
-  %68 = bitcast i8* %67 to i32*
-  store i32* %68, i32** %64
-  %69 = load %Permutation*, %Permutation** %perm
-  %70 = getelementptr inbounds %Permutation, %Permutation* %69, i32 0, i32 1
-  %71 = load i32, i32* %n
-  store i32 %71, i32* %70
+  %64 = call i8* @malloc(i32 8)
+  %65 = bitcast i8* %64 to %Permutation*
+  store %Permutation* %65, %Permutation** %perm
+  %66 = call i8* @malloc(i32 8)
+  %67 = bitcast i8* %66 to %Permutation*
+  %68 = load %Permutation*, %Permutation** %perm
+  %69 = getelementptr inbounds %Permutation, %Permutation* %68, i32 0, i32 0
+  %70 = load i32, i32* %n
+  %71 = mul i32 4, %70
+  %72 = call i8* @malloc(i32 %71)
+  %73 = bitcast i8* %72 to i32*
+  store i32* %73, i32** %69
+  %74 = load %Permutation*, %Permutation** %perm
+  %75 = getelementptr inbounds %Permutation, %Permutation* %74, i32 0, i32 1
+  %76 = load i32, i32* %n
+  store i32 %76, i32* %75
   %h = alloca i32
   store i32 1, i32* %h
   %k = alloca i32
   store i32 1, i32* %k
-  br label %79
+  br label %84
 
-72:                                               ; preds = %83
-  %73 = load i32, i32* %i
-  %74 = add i32 %73, 1
-  store i32 %74, i32* %i
-  %75 = load i32, i32* %n
-  %76 = add i32 %75, 1
-  %77 = load i32, i32* %i
-  %78 = icmp ne i32 %77, %76
-  br i1 %78, label %43, label %56
+77:                                               ; preds = %88
+  %78 = load i32, i32* %i
+  %79 = add i32 %78, 1
+  store i32 %79, i32* %i
+  %80 = load i32, i32* %n
+  %81 = add i32 %80, 1
+  %82 = load i32, i32* %i
+  %83 = icmp ne i32 %82, %81
+  br i1 %83, label %48, label %61
 
-79:                                               ; preds = %132, %58
-  %80 = load i32, i32* %i
-  %81 = load i32, i32* %k
-  %82 = icmp eq i32 %81, %80
-  br i1 %82, label %92, label %104
+84:                                               ; preds = %137, %63
+  %85 = load i32, i32* %i
+  %86 = load i32, i32* %k
+  %87 = icmp eq i32 %86, %85
+  br i1 %87, label %97, label %105
 
-83:                                               ; preds = %132
-  %84 = load i32, i32* %j
-  %85 = add i32 %84, 1
-  store i32 %85, i32* %j
-  %86 = load i32, i32* %n
-  %87 = sub i32 %86, 1
-  %88 = call i32 @factorial(i32 %87)
-  %89 = add i32 %88, 1
-  %90 = load i32, i32* %j
-  %91 = icmp ne i32 %90, %89
-  br i1 %91, label %58, label %72
+88:                                               ; preds = %137
+  %89 = load i32, i32* %j
+  %90 = add i32 %89, 1
+  store i32 %90, i32* %j
+  %91 = load i32, i32* %n
+  %92 = sub i32 %91, 1
+  %93 = call i32 @factorial(i32 %92)
+  %94 = add i32 %93, 1
+  %95 = load i32, i32* %j
+  %96 = icmp ne i32 %95, %94
+  br i1 %96, label %63, label %77
 
-92:                                               ; preds = %79
-  %93 = load i32, i32* %k
-  %94 = sub i32 %93, 1
-  %95 = mul i32 %94, 4
-  %96 = load %Permutation*, %Permutation** %perm
-  %97 = getelementptr inbounds %Permutation, %Permutation* %96, i32 0, i32 0
-  %98 = ptrtoint i32** %97 to i32
-  %99 = add i32 %98, %95
-  %100 = inttoptr i32 %99 to i32*
-  %101 = load i32, i32* %i
-  store i32 %101, i32* %100
-  %102 = load i32, i32* %k
-  %103 = add i32 %102, 1
-  store i32 %103, i32* %k
-  br label %104
+97:                                               ; preds = %84
+  %98 = load %Permutation*, %Permutation** %perm
+  %99 = getelementptr inbounds %Permutation, %Permutation* %98, i32 0, i32 0
+  %100 = load i32*, i32** %99
+  %101 = load i32, i32* %k
+  %102 = sub i32 %101, 1
+  %103 = getelementptr i32, i32* %100, i32 %102
+  %104 = load i32, i32* %i
+  store i32 %104, i32* %103
+  br label %105
 
-104:                                              ; preds = %92, %79
-  %105 = load i32, i32* %i
-  %106 = load i32, i32* %k
-  %107 = icmp ne i32 %106, %105
-  br i1 %107, label %108, label %132
+105:                                              ; preds = %97, %84
+  %106 = load i32, i32* %i
+  %107 = load i32, i32* %k
+  %108 = icmp ne i32 %107, %106
+  br i1 %108, label %109, label %137
 
-108:                                              ; preds = %104
+109:                                              ; preds = %105
   %permutat = alloca %Permutation**
-  %109 = load i32, i32* %j
-  %110 = sub i32 %109, 1
-  %111 = mul i32 %110, 4
-  %112 = load %Permutation**, %Permutation*** %last_permutations
-  %113 = ptrtoint %Permutation** %112 to i32
-  %114 = add i32 %113, %111
-  %115 = inttoptr i32 %114 to %Permutation**
-  store %Permutation** %115, %Permutation*** %permutat
-  %116 = load i32, i32* %j
-  %117 = sub i32 %116, 1
-  %118 = mul i32 %117, 4
-  %119 = load %Permutation**, %Permutation*** %last_permutations
-  %120 = ptrtoint %Permutation** %119 to i32
-  %121 = add i32 %120, %118
-  %122 = inttoptr i32 %121 to %Permutation**
-  %123 = load %Permutation**, %Permutation*** %permutat
-  %124 = load %Permutation*, %Permutation** %123
-  %125 = load i32, i32* %h
-  %126 = call i32 @permute(%Permutation* %124, i32 %125)
-  %127 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.1, i32 0, i32 0), i32 %126)
-  %128 = load i32, i32* %h
-  %129 = add i32 %128, 1
-  store i32 %129, i32* %h
-  %130 = load i32, i32* %k
-  %131 = add i32 %130, 1
-  store i32 %131, i32* %k
-  br label %132
+  %110 = load %Permutation**, %Permutation*** %last_permutations
+  %111 = load i32, i32* %j
+  %112 = sub i32 %111, 1
+  %113 = getelementptr %Permutation*, %Permutation** %110, i32 %112
+  store %Permutation** %113, %Permutation*** %permutat
+  %114 = load %Permutation**, %Permutation*** %last_permutations
+  %115 = load i32, i32* %j
+  %116 = sub i32 %115, 1
+  %117 = getelementptr %Permutation*, %Permutation** %114, i32 %116
+  %118 = load %Permutation*, %Permutation** %perm
+  %119 = getelementptr inbounds %Permutation, %Permutation* %118, i32 0, i32 0
+  %120 = load i32*, i32** %119
+  %121 = load i32, i32* %k
+  %122 = sub i32 %121, 1
+  %123 = getelementptr i32, i32* %120, i32 %122
+  %124 = load %Permutation**, %Permutation*** %last_permutations
+  %125 = load i32, i32* %j
+  %126 = sub i32 %125, 1
+  %127 = getelementptr %Permutation*, %Permutation** %124, i32 %126
+  %128 = load %Permutation*, %Permutation** %127
+  %129 = getelementptr inbounds %Permutation, %Permutation* %128, i32 0, i32 0
+  %130 = load i32*, i32** %129
+  %131 = load i32, i32* %h
+  %132 = sub i32 %131, 1
+  %133 = getelementptr i32, i32* %130, i32 %132
+  %134 = load i32, i32* %133
+  store i32 %134, i32* %123
+  %135 = load i32, i32* %h
+  %136 = add i32 %135, 1
+  store i32 %136, i32* %h
+  br label %137
 
-132:                                              ; preds = %108, %104
-  %133 = load i32, i32* %n
-  %134 = call i32 @factorial(i32 %133)
-  %135 = add i32 %134, 1
-  %136 = load i32, i32* %h
-  %137 = icmp ne i32 %136, %135
-  br i1 %137, label %79, label %83
+137:                                              ; preds = %109, %105
+  %138 = load i32, i32* %k
+  %139 = add i32 %138, 1
+  store i32 %139, i32* %k
+  %140 = load i32, i32* %n
+  %141 = call i32 @factorial(i32 %140)
+  %142 = add i32 %141, 1
+  %143 = load i32, i32* %k
+  %144 = icmp ne i32 %143, %142
+  br i1 %144, label %84, label %88
 }
 
 define i32 @isEqual(%Graph* %0, %Graph* %1) {
@@ -701,11 +708,41 @@ entry:
   store i32 4, i32* %55
   %56 = load %Graph*, %Graph** %G
   %57 = call i32 @printEdgeList(%Graph* %56)
-  %58 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.2, i32 0, i32 0))
+  %58 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.1, i32 0, i32 0))
   %59 = load %Graph*, %Graph** %H
   %60 = call i32 @printEdgeList(%Graph* %59)
-  %61 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.3, i32 0, i32 0))
+  %61 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.2, i32 0, i32 0))
   %62 = call %Permutation** @gen_all_permutations(i32 1)
+  %k = alloca %Permutation**
   %63 = call %Permutation** @gen_all_permutations(i32 2)
+  store %Permutation** %63, %Permutation*** %k
+  %64 = call %Permutation** @gen_all_permutations(i32 2)
+  %i = alloca i32
+  store i32 0, i32* %i
+  br label %65
+
+65:                                               ; preds = %65, %entry
+  %perm = alloca %Permutation*
+  %66 = load %Permutation**, %Permutation*** %k
+  %67 = load i32, i32* %i
+  %68 = getelementptr %Permutation*, %Permutation** %66, i32 %67
+  %69 = load %Permutation*, %Permutation** %68
+  store %Permutation* %69, %Permutation** %perm
+  %70 = load %Permutation**, %Permutation*** %k
+  %71 = load i32, i32* %i
+  %72 = getelementptr %Permutation*, %Permutation** %70, i32 %71
+  %73 = load %Permutation*, %Permutation** %72
+  %74 = load %Permutation*, %Permutation** %perm
+  %75 = getelementptr inbounds %Permutation, %Permutation* %74, i32 0, i32 0
+  %76 = load i32*, i32** %75
+  %77 = getelementptr i32, i32* %76, i32 0
+  %78 = load i32, i32* %i
+  %79 = add i32 %78, 1
+  store i32 %79, i32* %i
+  %80 = load i32, i32* %i
+  %81 = icmp ne i32 %80, 2
+  br i1 %81, label %65, label %82
+
+82:                                               ; preds = %65
   ret i32 0
 }
