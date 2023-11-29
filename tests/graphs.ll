@@ -687,6 +687,7 @@ entry:
   %49 = call i32* @getEdgeTuple(%Graph* %48, i32 1, i32 0)
   store i32 10, i32* %49
   %50 = load %Graph*, %Graph** %H
+<<<<<<< HEAD
   %51 = call i32* @getEdgeTuple(%Graph* %50, i32 1, i32 1)
   store i32 4, i32* %51
   %52 = load %Graph*, %Graph** %G
@@ -754,5 +755,22 @@ entry:
   br i1 %97, label %72, label %98
 
 98:                                               ; preds = %72
+=======
+  %51 = call i32* @getEdgeTuple(%Graph* %50, i32 0, i32 1)
+  store i32 2, i32* %51
+  %52 = load %Graph*, %Graph** %H
+  %53 = call i32* @getEdgeTuple(%Graph* %52, i32 1, i32 0)
+  store i32 10, i32* %53
+  %54 = load %Graph*, %Graph** %H
+  %55 = call i32* @getEdgeTuple(%Graph* %54, i32 1, i32 1)
+  store i32 4, i32* %55
+  %56 = load %Graph*, %Graph** %G
+  %57 = call i32 @printEdgeList(%Graph* %56)
+  %58 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.1, i32 0, i32 0))
+  %59 = load %Graph*, %Graph** %H
+  %60 = call i32 @printEdgeList(%Graph* %59)
+  %61 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.2, i32 0, i32 0))
+  %62 = call %Permutation** @gen_all_permutations(i32 1)
+>>>>>>> 183fdc1 (.)
   ret i32 0
 }
