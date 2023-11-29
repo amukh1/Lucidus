@@ -1,21 +1,25 @@
 import "include.luci"
-import "structures.luci"
 // my sufferings
 
+struct Graph {
+    nodesc: int,
+    edgesc: int,
+    edges: int**
+};
+
 def main() -> int {
-    // i:int = 0;
-    // while(i != 10) -> {
-    //     printf("Hello, World! %d!\n", i);
-    //     (ptr i) = i + 1;
-    // }
-    // printf("Hello! sizeof int = %d\n", sizeof int);
-    // printf("%d\n", 1+-(1+1));
+    x:int = 5;
+    y:int* = (ptr x);
 
-    v:int* = malloc(4*3)->(int*);
-    v[0] = 1;
-    printf("%d\n", *v[0]);
-    // v[1] = 2;
-    // v[2] = 3;
+    printf("x = %d\n", x);
+    printf("*y = %d\n", *y);
 
+    *y = 10;
+
+    printf("x = %d\n", x);
+
+    v:int* = malloc(8)->(int*);
+    *v = 10;
+    *(v[1]) = 20;
     return 0;
 }

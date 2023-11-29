@@ -5,10 +5,10 @@ dec main() -> int;
 def main() -> int {
     // graph G setup
     G:Graph = malloc(16)->(Graph);
-    G->nodesc = 3;
-    G->edgesc = 2;
+    G.nodesc = 3;
+    G.edgesc = 2;
 
-    G->edges = malloc(20)->(int**);
+    G.edges = malloc(20)->(int**);
     getEdge(G,0) = malloc(8)->(int*);
     getEdge(G,1) = malloc(8)->(int*);
     getEdgeTuple(G, 0, 0) = 4;
@@ -18,10 +18,10 @@ def main() -> int {
 
     // graph H setup
     H:Graph = malloc(16)->(Graph);
-    H->nodesc = 3;
-    H->edgesc = 2;
+    H.nodesc = 3;
+    H.edgesc = 2;
 
-    H->edges = malloc(20)->(int**);
+    H.edges = malloc(20)->(int**);
     getEdge(H,0) = malloc(8)->(int*);
     getEdge(H,1) = malloc(8)->(int*);
     getEdgeTuple(H, 0, 0) = 1;
@@ -34,7 +34,7 @@ def main() -> int {
     printEdgeList(H);
     printf("--------------------\n");
 
-    gen_all_permutations(1);
+    // gen_all_permutations(1);
     // k:Permutation* = gen_all_permutations(2);
     // log all permutations of 2
     
