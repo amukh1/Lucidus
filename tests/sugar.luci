@@ -20,6 +20,11 @@ def main() -> int {
 
     v:int* = malloc(8)->(int*);
     *v = 10;
-    *(v[1]) = 20;
+
+    G:Graph = malloc(24)->(Graph);
+    // (ptr (G.nodesc)) = 5;
+    G.nodesc = 5;
+
+    printf("G.nodesc = %d\n",  (G.nodesc));
     return 0;
 }

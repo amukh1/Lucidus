@@ -7,6 +7,7 @@ source_filename = "amukh"
 @str = private constant [8 x i8] c"x = %d\0A\00"
 @str.1 = private constant [9 x i8] c"*y = %d\0A\00"
 @str.2 = private constant [8 x i8] c"x = %d\0A\00"
+@str.3 = private constant [15 x i8] c"G.nodesc = %d\0A\00"
 
 declare i32 @printf(i8*, ...)
 
@@ -79,8 +80,16 @@ entry:
   store i32* %9, i32** %v
   %10 = load i32*, i32** %v
   store i32 10, i32* %10
-  %11 = getelementptr i32*, i32** %v, i32 1
-  %12 = load i32*, i32** %11
-  store i32 20, i32* %12
+  %G = alloca %Graph*
+  %11 = call i8* @malloc(i32 24)
+  %12 = bitcast i8* %11 to %Graph*
+  store %Graph* %12, %Graph** %G
+  %13 = load %Graph*, %Graph** %G
+  %14 = getelementptr inbounds %Graph, %Graph* %13, i32 0, i32 0
+  store i32 5, i32* %14
+  %15 = load %Graph*, %Graph** %G
+  %16 = getelementptr inbounds %Graph, %Graph* %15, i32 0, i32 0
+  %17 = load i32, i32* %16
+  %18 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @str.3, i32 0, i32 0), i32 %17)
   ret i32 0
 }
