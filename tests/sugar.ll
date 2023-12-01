@@ -13,8 +13,10 @@ source_filename = "amukh"
 @Graph = external global %Graph
 @str = private constant [10 x i8] c"%d -- %d\0A\00"
 @Permutation = external global %Permutation
-@str.1 = private constant [22 x i8] c"pointer_to_thing: %d\0A\00"
-@str.2 = private constant [4 x i8] c"%d\0A\00"
+@str.1 = private constant [2 x i8] c"(\00"
+@str.2 = private constant [4 x i8] c"%d \00"
+@str.3 = private constant [3 x i8] c")\0A\00"
+@str.4 = private constant [7 x i8] c"Equal\0A\00"
 
 declare i32 @printf(i8*, ...)
 
@@ -130,22 +132,12 @@ entry:
   %8 = add i32 %7, %3
   %9 = inttoptr i32 %8 to i32*
   store i32* %9, i32** %edge_temp
-  %10 = load i32, i32* %i
-  %11 = mul i32 %10, 4
-  %12 = load %Graph*, %Graph** %G
-  %13 = getelementptr inbounds %Graph, %Graph* %12, i32 0, i32 2
-  %14 = load i32**, i32*** %13
-  %15 = ptrtoint i32** %14 to i32
-  %16 = add i32 %15, %11
-  %17 = inttoptr i32 %16 to i32*
   %edge = alloca i32**
-  %18 = load i32*, i32** %edge_temp
-  %19 = bitcast i32* %18 to i32**
-  store i32** %19, i32*** %edge
-  %20 = load i32*, i32** %edge_temp
-  %21 = bitcast i32* %20 to i32**
-  %22 = load i32**, i32*** %edge
-  ret i32** %22
+  %10 = load i32*, i32** %edge_temp
+  %11 = bitcast i32* %10 to i32**
+  store i32** %11, i32*** %edge
+  %12 = load i32**, i32*** %edge
+  ret i32** %12
 }
 
 define i32* @getEdgeTuple(%Graph* %0, i32 %1, i32 %2) {
@@ -166,38 +158,21 @@ entry:
   %9 = add i32 %8, %4
   %10 = inttoptr i32 %9 to i32*
   store i32* %10, i32** %edge_temp
-  %11 = load i32, i32* %i
-  %12 = mul i32 %11, 4
-  %13 = load %Graph*, %Graph** %G
-  %14 = getelementptr inbounds %Graph, %Graph* %13, i32 0, i32 2
-  %15 = load i32**, i32*** %14
-  %16 = ptrtoint i32** %15 to i32
-  %17 = add i32 %16, %12
-  %18 = inttoptr i32 %17 to i32*
   %edge = alloca i32**
-  %19 = load i32*, i32** %edge_temp
-  %20 = bitcast i32* %19 to i32**
-  store i32** %20, i32*** %edge
-  %21 = load i32*, i32** %edge_temp
-  %22 = bitcast i32* %21 to i32**
+  %11 = load i32*, i32** %edge_temp
+  %12 = bitcast i32* %11 to i32**
+  store i32** %12, i32*** %edge
   %p = alloca i32*
-  %23 = load i32, i32* %j
-  %24 = mul i32 %23, 4
-  %25 = load i32**, i32*** %edge
-  %26 = load i32*, i32** %25
-  %27 = ptrtoint i32* %26 to i32
-  %28 = add i32 %27, %24
-  %29 = inttoptr i32 %28 to i32*
-  store i32* %29, i32** %p
-  %30 = load i32, i32* %j
-  %31 = mul i32 %30, 4
-  %32 = load i32**, i32*** %edge
-  %33 = load i32*, i32** %32
-  %34 = ptrtoint i32* %33 to i32
-  %35 = add i32 %34, %31
-  %36 = inttoptr i32 %35 to i32*
-  %37 = load i32*, i32** %p
-  ret i32* %37
+  %13 = load i32, i32* %j
+  %14 = mul i32 %13, 4
+  %15 = load i32**, i32*** %edge
+  %16 = load i32*, i32** %15
+  %17 = ptrtoint i32* %16 to i32
+  %18 = add i32 %17, %14
+  %19 = inttoptr i32 %18 to i32*
+  store i32* %19, i32** %p
+  %20 = load i32*, i32** %p
+  ret i32* %20
 }
 
 define %Permutation* @new_Permutation(i32* %0, i32 %1) {
@@ -210,236 +185,51 @@ entry:
   %2 = call i8* @malloc(i32 8)
   %3 = bitcast i8* %2 to %Permutation*
   store %Permutation* %3, %Permutation** %p
-  %4 = call i8* @malloc(i32 8)
-  %5 = bitcast i8* %4 to %Permutation*
-  %6 = load %Permutation*, %Permutation** %p
-  %7 = getelementptr inbounds %Permutation, %Permutation* %6, i32 0, i32 0
-  %8 = load i32*, i32** %v
-  store i32* %8, i32** %7
-  %9 = load %Permutation*, %Permutation** %p
-  %10 = getelementptr inbounds %Permutation, %Permutation* %9, i32 0, i32 1
-  %11 = load i32, i32* %len
-  store i32 %11, i32* %10
-  %12 = load %Permutation*, %Permutation** %p
-  ret %Permutation* %12
+  %4 = load %Permutation*, %Permutation** %p
+  %5 = getelementptr inbounds %Permutation, %Permutation* %4, i32 0, i32 0
+  %6 = load i32*, i32** %v
+  store i32* %6, i32** %5
+  %7 = load %Permutation*, %Permutation** %p
+  %8 = getelementptr inbounds %Permutation, %Permutation* %7, i32 0, i32 1
+  %9 = load i32, i32* %len
+  store i32 %9, i32* %8
+  %10 = load %Permutation*, %Permutation** %p
+  ret %Permutation* %10
 }
 
-define i32 @permute(%Permutation* %0, i32 %1) {
+define i32 @printPermutation(%Permutation* %0) {
 entry:
   %p = alloca %Permutation*
   store %Permutation* %0, %Permutation** %p
   %i = alloca i32
-  store i32 %1, i32* %i
-  %2 = load i32, i32* %i
-  %3 = sub i32 %2, 1
-  %4 = mul i32 %3, 4
-  %5 = load %Permutation*, %Permutation** %p
-  %6 = getelementptr inbounds %Permutation, %Permutation* %5, i32 0, i32 0
-  %7 = ptrtoint i32** %6 to i32
-  %8 = add i32 %7, %4
-  %9 = inttoptr i32 %8 to i32*
-  %10 = load i32, i32* %9
-  ret i32 %10
+  store i32 0, i32* %i
+  %1 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([2 x i8], [2 x i8]* @str.1, i32 0, i32 0))
+  br label %2
+
+2:                                                ; preds = %2, %entry
+  %3 = load %Permutation*, %Permutation** %p
+  %4 = getelementptr inbounds %Permutation, %Permutation* %3, i32 0, i32 0
+  %5 = load i32*, i32** %4
+  %6 = load i32, i32* %i
+  %7 = getelementptr i32, i32* %5, i32 %6
+  %8 = load i32, i32* %7
+  %9 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.2, i32 0, i32 0), i32 %8)
+  %10 = load i32, i32* %i
+  %11 = add i32 %10, 1
+  store i32 %11, i32* %i
+  %12 = load %Permutation*, %Permutation** %p
+  %13 = getelementptr inbounds %Permutation, %Permutation* %12, i32 0, i32 1
+  %14 = load i32, i32* %13
+  %15 = load i32, i32* %i
+  %16 = icmp slt i32 %15, %14
+  br i1 %16, label %2, label %17
+
+17:                                               ; preds = %2
+  %18 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @str.3, i32 0, i32 0))
+  ret i32 0
 }
 
-define %Permutation** @gen_all_permutations(i32 %0) {
-entry:
-  %n = alloca i32
-  store i32 %0, i32* %n
-  %1 = load i32, i32* %n
-  %2 = icmp eq i32 %1, 1
-  br i1 %2, label %3, label %17
-
-3:                                                ; preds = %entry
-  %v = alloca %Permutation**
-  %4 = call i8* @malloc(i32 4)
-  %5 = bitcast i8* %4 to %Permutation**
-  store %Permutation** %5, %Permutation*** %v
-  %6 = call i8* @malloc(i32 4)
-  %7 = bitcast i8* %6 to %Permutation**
-  %8 = load %Permutation**, %Permutation*** %v
-  %9 = load %Permutation*, %Permutation** %8
-  %10 = getelementptr inbounds %Permutation, %Permutation* %9, i32 0, i32 0
-  %11 = call i8* @malloc(i32 4)
-  %12 = bitcast i8* %11 to i32*
-  store i32* %12, i32** %10
-  %13 = load %Permutation**, %Permutation*** %v
-  %14 = load %Permutation*, %Permutation** %13
-  %15 = getelementptr inbounds %Permutation, %Permutation* %14, i32 0, i32 1
-  store i32 1, i32* %15
-  %16 = load %Permutation**, %Permutation*** %v
-  ret %Permutation** %16
-
-17:                                               ; preds = %entry
-  %v1 = alloca %Permutation**
-  %18 = load i32, i32* %n
-  %19 = call i32 @factorial(i32 %18)
-  %20 = mul i32 4, %19
-  %21 = call i8* @malloc(i32 %20)
-  %22 = bitcast i8* %21 to %Permutation**
-  store %Permutation** %22, %Permutation*** %v1
-  %23 = load i32, i32* %n
-  %24 = call i32 @factorial(i32 %23)
-  %25 = mul i32 4, %24
-  %26 = call i8* @malloc(i32 %25)
-  %27 = bitcast i8* %26 to %Permutation**
-  %i = alloca i32
-  store i32 1, i32* %i
-  %last_permutations = alloca %Permutation**
-  %28 = load i32, i32* %n
-  %29 = sub i32 %28, 1
-  %30 = call i32 @factorial(i32 %29)
-  %31 = mul i32 4, %30
-  %32 = call i8* @malloc(i32 %31)
-  %33 = bitcast i8* %32 to %Permutation**
-  store %Permutation** %33, %Permutation*** %last_permutations
-  %34 = load i32, i32* %n
-  %35 = sub i32 %34, 1
-  %36 = call i32 @factorial(i32 %35)
-  %37 = mul i32 4, %36
-  %38 = call i8* @malloc(i32 %37)
-  %39 = bitcast i8* %38 to %Permutation**
-  %40 = load i32, i32* %n
-  %41 = sub i32 %40, 1
-  %42 = call %Permutation** @gen_all_permutations(i32 %41)
-  store %Permutation** %42, %Permutation*** %last_permutations
-  br label %43
-
-43:                                               ; preds = %72, %17
-  %perms = alloca %Permutation**
-  %44 = load i32, i32* %n
-  %45 = sub i32 %44, 1
-  %46 = call i32 @factorial(i32 %45)
-  %47 = mul i32 4, %46
-  %48 = call i8* @malloc(i32 %47)
-  %49 = bitcast i8* %48 to %Permutation**
-  store %Permutation** %49, %Permutation*** %perms
-  %50 = load i32, i32* %n
-  %51 = sub i32 %50, 1
-  %52 = call i32 @factorial(i32 %51)
-  %53 = mul i32 4, %52
-  %54 = call i8* @malloc(i32 %53)
-  %55 = bitcast i8* %54 to %Permutation**
-  %j = alloca i32
-  store i32 1, i32* %j
-  br label %58
-
-56:                                               ; preds = %72
-  %57 = load %Permutation**, %Permutation*** %v1
-  ret %Permutation** %57
-
-58:                                               ; preds = %83, %43
-  %perm = alloca %Permutation*
-  %59 = call i8* @malloc(i32 8)
-  %60 = bitcast i8* %59 to %Permutation*
-  store %Permutation* %60, %Permutation** %perm
-  %61 = call i8* @malloc(i32 8)
-  %62 = bitcast i8* %61 to %Permutation*
-  %63 = load %Permutation*, %Permutation** %perm
-  %64 = getelementptr inbounds %Permutation, %Permutation* %63, i32 0, i32 0
-  %65 = load i32, i32* %n
-  %66 = mul i32 4, %65
-  %67 = call i8* @malloc(i32 %66)
-  %68 = bitcast i8* %67 to i32*
-  store i32* %68, i32** %64
-  %69 = load %Permutation*, %Permutation** %perm
-  %70 = getelementptr inbounds %Permutation, %Permutation* %69, i32 0, i32 1
-  %71 = load i32, i32* %n
-  store i32 %71, i32* %70
-  %h = alloca i32
-  store i32 1, i32* %h
-  %k = alloca i32
-  store i32 1, i32* %k
-  br label %79
-
-72:                                               ; preds = %83
-  %73 = load i32, i32* %i
-  %74 = add i32 %73, 1
-  store i32 %74, i32* %i
-  %75 = load i32, i32* %n
-  %76 = add i32 %75, 1
-  %77 = load i32, i32* %i
-  %78 = icmp ne i32 %77, %76
-  br i1 %78, label %43, label %56
-
-79:                                               ; preds = %132, %58
-  %80 = load i32, i32* %i
-  %81 = load i32, i32* %k
-  %82 = icmp eq i32 %81, %80
-  br i1 %82, label %92, label %104
-
-83:                                               ; preds = %132
-  %84 = load i32, i32* %j
-  %85 = add i32 %84, 1
-  store i32 %85, i32* %j
-  %86 = load i32, i32* %n
-  %87 = sub i32 %86, 1
-  %88 = call i32 @factorial(i32 %87)
-  %89 = add i32 %88, 1
-  %90 = load i32, i32* %j
-  %91 = icmp ne i32 %90, %89
-  br i1 %91, label %58, label %72
-
-92:                                               ; preds = %79
-  %93 = load i32, i32* %k
-  %94 = sub i32 %93, 1
-  %95 = mul i32 %94, 4
-  %96 = load %Permutation*, %Permutation** %perm
-  %97 = getelementptr inbounds %Permutation, %Permutation* %96, i32 0, i32 0
-  %98 = ptrtoint i32** %97 to i32
-  %99 = add i32 %98, %95
-  %100 = inttoptr i32 %99 to i32*
-  %101 = load i32, i32* %i
-  store i32 %101, i32* %100
-  %102 = load i32, i32* %k
-  %103 = add i32 %102, 1
-  store i32 %103, i32* %k
-  br label %104
-
-104:                                              ; preds = %92, %79
-  %105 = load i32, i32* %i
-  %106 = load i32, i32* %k
-  %107 = icmp ne i32 %106, %105
-  br i1 %107, label %108, label %132
-
-108:                                              ; preds = %104
-  %permutat = alloca %Permutation**
-  %109 = load i32, i32* %j
-  %110 = sub i32 %109, 1
-  %111 = mul i32 %110, 4
-  %112 = load %Permutation**, %Permutation*** %last_permutations
-  %113 = ptrtoint %Permutation** %112 to i32
-  %114 = add i32 %113, %111
-  %115 = inttoptr i32 %114 to %Permutation**
-  store %Permutation** %115, %Permutation*** %permutat
-  %116 = load i32, i32* %j
-  %117 = sub i32 %116, 1
-  %118 = mul i32 %117, 4
-  %119 = load %Permutation**, %Permutation*** %last_permutations
-  %120 = ptrtoint %Permutation** %119 to i32
-  %121 = add i32 %120, %118
-  %122 = inttoptr i32 %121 to %Permutation**
-  %123 = load %Permutation**, %Permutation*** %permutat
-  %124 = load %Permutation*, %Permutation** %123
-  %125 = load i32, i32* %h
-  %126 = call i32 @permute(%Permutation* %124, i32 %125)
-  %127 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.1, i32 0, i32 0), i32 %126)
-  %128 = load i32, i32* %h
-  %129 = add i32 %128, 1
-  store i32 %129, i32* %h
-  %130 = load i32, i32* %k
-  %131 = add i32 %130, 1
-  store i32 %131, i32* %k
-  br label %132
-
-132:                                              ; preds = %108, %104
-  %133 = load i32, i32* %n
-  %134 = call i32 @factorial(i32 %133)
-  %135 = add i32 %134, 1
-  %136 = load i32, i32* %h
-  %137 = icmp ne i32 %136, %135
-  br i1 %137, label %79, label %83
-}
+declare %Permutation** @gen_all_permutations(i32)
 
 define i32 @isEqual(%Graph* %0, %Graph* %1) {
 entry:
@@ -473,165 +263,199 @@ entry:
   ret i32 0
 
 19:                                               ; preds = %10
-  %G_edges = alloca i32**
-  %20 = load %Graph*, %Graph** %G
-  %21 = call i32** @edgeList(%Graph* %20)
-  store i32** %21, i32*** %G_edges
-  %22 = load %Graph*, %Graph** %G
-  %23 = call i32** @edgeList(%Graph* %22)
-  %H_edges = alloca i32**
-  %24 = load %Graph*, %Graph** %H
-  %25 = call i32** @edgeList(%Graph* %24)
-  store i32** %25, i32*** %H_edges
-  %26 = load %Graph*, %Graph** %H
-  %27 = call i32** @edgeList(%Graph* %26)
   %i = alloca i32
   store i32 0, i32* %i
-  br label %while_i
+  br label %20
 
-while_i:                                          ; preds = %95, %19
-  %28 = load %Graph*, %Graph** %G
-  %29 = getelementptr inbounds %Graph, %Graph* %28, i32 0, i32 1
-  %30 = load i32, i32* %29
-  %31 = load i32, i32* %i
-  %32 = icmp eq i32 %31, %30
-  br i1 %32, label %33, label %34
+20:                                               ; preds = %59, %19
+  %21 = load %Graph*, %Graph** %H
+  %22 = getelementptr inbounds %Graph, %Graph* %21, i32 0, i32 2
+  %23 = load i32**, i32*** %22
+  %24 = load i32, i32* %i
+  %25 = getelementptr i32*, i32** %23, i32 %24
+  %26 = load i32*, i32** %25
+  %27 = getelementptr i32, i32* %26, i32 0
+  %28 = load i32, i32* %27
+  %29 = load %Graph*, %Graph** %G
+  %30 = getelementptr inbounds %Graph, %Graph* %29, i32 0, i32 2
+  %31 = load i32**, i32*** %30
+  %32 = load i32, i32* %i
+  %33 = getelementptr i32*, i32** %31, i32 %32
+  %34 = load i32*, i32** %33
+  %35 = getelementptr i32, i32* %34, i32 0
+  %36 = load i32, i32* %35
+  %37 = icmp ne i32 %36, %28
+  br i1 %37, label %39, label %40
 
-33:                                               ; preds = %while_i
-  br label %while_i_end
-
-34:                                               ; preds = %while_i
-  %j = alloca i32
-  store i32 0, i32* %j
-  %firstsMatch = alloca i32
-  store i32 0, i32* %firstsMatch
-  %secondsMatch = alloca i32
-  store i32 0, i32* %secondsMatch
-  br label %while_i_two
-
-while_i_end:                                      ; preds = %33
+38:                                               ; preds = %59
   ret i32 1
 
-while_i_two:                                      ; preds = %87, %34
-  %35 = load %Graph*, %Graph** %H
-  %36 = getelementptr inbounds %Graph, %Graph* %35, i32 0, i32 1
-  %37 = load i32, i32* %36
-  %38 = load i32, i32* %j
-  %39 = icmp eq i32 %38, %37
-  br i1 %39, label %40, label %41
+39:                                               ; preds = %20
+  ret i32 0
 
-40:                                               ; preds = %while_i_two
-  br label %while_i_two_end
+40:                                               ; preds = %20
+  %41 = load %Graph*, %Graph** %H
+  %42 = getelementptr inbounds %Graph, %Graph* %41, i32 0, i32 2
+  %43 = load i32**, i32*** %42
+  %44 = load i32, i32* %i
+  %45 = getelementptr i32*, i32** %43, i32 %44
+  %46 = load i32*, i32** %45
+  %47 = getelementptr i32, i32* %46, i32 1
+  %48 = load i32, i32* %47
+  %49 = load %Graph*, %Graph** %G
+  %50 = getelementptr inbounds %Graph, %Graph* %49, i32 0, i32 2
+  %51 = load i32**, i32*** %50
+  %52 = load i32, i32* %i
+  %53 = getelementptr i32*, i32** %51, i32 %52
+  %54 = load i32*, i32** %53
+  %55 = getelementptr i32, i32* %54, i32 1
+  %56 = load i32, i32* %55
+  %57 = icmp ne i32 %56, %48
+  br i1 %57, label %58, label %59
 
-41:                                               ; preds = %while_i_two
-  %42 = load %Graph*, %Graph** %H
-  %43 = load i32, i32* %j
-  %44 = call i32* @getEdgeTuple(%Graph* %42, i32 %43, i32 0)
-  %45 = load i32, i32* %44
-  %46 = load %Graph*, %Graph** %G
-  %47 = load i32, i32* %i
-  %48 = call i32* @getEdgeTuple(%Graph* %46, i32 %47, i32 0)
-  %49 = load i32, i32* %48
-  %50 = icmp eq i32 %49, %45
-  br i1 %50, label %53, label %54
+58:                                               ; preds = %40
+  ret i32 0
 
-while_i_two_end:                                  ; preds = %40
-  %51 = load i32, i32* %firstsMatch
-  %52 = icmp ne i32 %51, 1
-  br i1 %52, label %90, label %91
-
-53:                                               ; preds = %41
-  store i32 1, i32* %firstsMatch
-  br label %54
-
-54:                                               ; preds = %53, %41
-  %55 = load %Graph*, %Graph** %H
-  %56 = load i32, i32* %j
-  %57 = call i32* @getEdgeTuple(%Graph* %55, i32 %56, i32 1)
-  %58 = load i32, i32* %57
-  %59 = load %Graph*, %Graph** %G
+59:                                               ; preds = %40
   %60 = load i32, i32* %i
-  %61 = call i32* @getEdgeTuple(%Graph* %59, i32 %60, i32 1)
-  %62 = load i32, i32* %61
-  %63 = icmp eq i32 %62, %58
-  br i1 %63, label %64, label %65
-
-64:                                               ; preds = %54
-  store i32 1, i32* %secondsMatch
-  br label %65
-
-65:                                               ; preds = %64, %54
-  %66 = load %Graph*, %Graph** %H
-  %67 = load i32, i32* %j
-  %68 = call i32* @getEdgeTuple(%Graph* %66, i32 %67, i32 1)
-  %69 = load i32, i32* %68
-  %70 = load %Graph*, %Graph** %G
-  %71 = load i32, i32* %i
-  %72 = call i32* @getEdgeTuple(%Graph* %70, i32 %71, i32 0)
-  %73 = load i32, i32* %72
-  %74 = icmp eq i32 %73, %69
-  br i1 %74, label %75, label %76
-
-75:                                               ; preds = %65
-  store i32 1, i32* %firstsMatch
-  br label %76
-
-76:                                               ; preds = %75, %65
-  %77 = load %Graph*, %Graph** %H
-  %78 = load i32, i32* %j
-  %79 = call i32* @getEdgeTuple(%Graph* %77, i32 %78, i32 0)
-  %80 = load i32, i32* %79
-  %81 = load %Graph*, %Graph** %G
-  %82 = load i32, i32* %i
-  %83 = call i32* @getEdgeTuple(%Graph* %81, i32 %82, i32 1)
-  %84 = load i32, i32* %83
-  %85 = icmp eq i32 %84, %80
-  br i1 %85, label %86, label %87
-
-86:                                               ; preds = %76
-  store i32 1, i32* %secondsMatch
-  br label %87
-
-87:                                               ; preds = %86, %76
-  %88 = load i32, i32* %j
-  %89 = add i32 %88, 1
-  store i32 %89, i32* %j
-  br label %while_i_two
-
-90:                                               ; preds = %while_i_two_end
-  ret i32 0
-
-91:                                               ; preds = %while_i_two_end
-  %92 = load i32, i32* %secondsMatch
-  %93 = icmp ne i32 %92, 1
-  br i1 %93, label %94, label %95
-
-94:                                               ; preds = %91
-  ret i32 0
-
-95:                                               ; preds = %91
-  %96 = load i32, i32* %i
-  %97 = add i32 %96, 1
-  store i32 %97, i32* %i
-  br label %while_i
+  %61 = add i32 %60, 1
+  store i32 %61, i32* %i
+  %62 = load %Graph*, %Graph** %G
+  %63 = getelementptr inbounds %Graph, %Graph* %62, i32 0, i32 1
+  %64 = load i32, i32* %63
+  %65 = load i32, i32* %i
+  %66 = icmp ne i32 %65, %64
+  br i1 %66, label %20, label %38
 }
 
 declare i32 @isIsomorphic(%Graph*, %Graph*)
 
 define i32 @main() {
 entry:
-  %v = alloca i32*
-  %0 = call i8* @malloc(i32 12)
-  %1 = bitcast i8* %0 to i32*
-  store i32* %1, i32** %v
-  %2 = call i8* @malloc(i32 12)
-  %3 = bitcast i8* %2 to i32*
-  %4 = load i32*, i32** %v
-  %5 = getelementptr i32, i32* %4, i32 0
-  store i32 1, i32* %5
-  %6 = load i32*, i32** %v
-  %7 = getelementptr i32, i32* %6, i32 0
-  %8 = load i32, i32* %7
-  %9 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.2, i32 0, i32 0), i32 %8)
+  %G = alloca %Graph*
+  %0 = call i8* @malloc(i32 8)
+  %1 = bitcast i8* %0 to %Graph*
+  store %Graph* %1, %Graph** %G
+  %H = alloca %Graph*
+  %2 = call i8* @malloc(i32 8)
+  %3 = bitcast i8* %2 to %Graph*
+  store %Graph* %3, %Graph** %H
+  %4 = load %Graph*, %Graph** %G
+  %5 = getelementptr inbounds %Graph, %Graph* %4, i32 0, i32 0
+  store i32 4, i32* %5
+  %6 = load %Graph*, %Graph** %H
+  %7 = getelementptr inbounds %Graph, %Graph* %6, i32 0, i32 0
+  store i32 4, i32* %7
+  %8 = load %Graph*, %Graph** %G
+  %9 = getelementptr inbounds %Graph, %Graph* %8, i32 0, i32 1
+  store i32 2, i32* %9
+  %10 = load %Graph*, %Graph** %H
+  %11 = getelementptr inbounds %Graph, %Graph* %10, i32 0, i32 1
+  store i32 2, i32* %11
+  %12 = load %Graph*, %Graph** %G
+  %13 = getelementptr inbounds %Graph, %Graph* %12, i32 0, i32 2
+  %14 = call i8* @malloc(i32 8)
+  %15 = bitcast i8* %14 to i32**
+  store i32** %15, i32*** %13
+  %16 = load %Graph*, %Graph** %G
+  %17 = getelementptr inbounds %Graph, %Graph* %16, i32 0, i32 2
+  %18 = load i32**, i32*** %17
+  %19 = getelementptr i32*, i32** %18, i32 0
+  %20 = call i8* @malloc(i32 8)
+  %21 = bitcast i8* %20 to i32*
+  store i32* %21, i32** %19
+  %22 = load %Graph*, %Graph** %G
+  %23 = getelementptr inbounds %Graph, %Graph* %22, i32 0, i32 2
+  %24 = load i32**, i32*** %23
+  %25 = getelementptr i32*, i32** %24, i32 1
+  %26 = call i8* @malloc(i32 8)
+  %27 = bitcast i8* %26 to i32*
+  store i32* %27, i32** %25
+  %28 = load %Graph*, %Graph** %G
+  %29 = getelementptr inbounds %Graph, %Graph* %28, i32 0, i32 2
+  %30 = load i32**, i32*** %29
+  %31 = getelementptr i32*, i32** %30, i32 0
+  %32 = load i32*, i32** %31
+  %33 = getelementptr i32, i32* %32, i32 0
+  store i32 1, i32* %33
+  %34 = load %Graph*, %Graph** %G
+  %35 = getelementptr inbounds %Graph, %Graph* %34, i32 0, i32 2
+  %36 = load i32**, i32*** %35
+  %37 = getelementptr i32*, i32** %36, i32 0
+  %38 = load i32*, i32** %37
+  %39 = getelementptr i32, i32* %38, i32 1
+  store i32 2, i32* %39
+  %40 = load %Graph*, %Graph** %G
+  %41 = getelementptr inbounds %Graph, %Graph* %40, i32 0, i32 2
+  %42 = load i32**, i32*** %41
+  %43 = getelementptr i32*, i32** %42, i32 1
+  %44 = load i32*, i32** %43
+  %45 = getelementptr i32, i32* %44, i32 0
+  store i32 3, i32* %45
+  %46 = load %Graph*, %Graph** %G
+  %47 = getelementptr inbounds %Graph, %Graph* %46, i32 0, i32 2
+  %48 = load i32**, i32*** %47
+  %49 = getelementptr i32*, i32** %48, i32 1
+  %50 = load i32*, i32** %49
+  %51 = getelementptr i32, i32* %50, i32 1
+  store i32 4, i32* %51
+  %52 = load %Graph*, %Graph** %H
+  %53 = getelementptr inbounds %Graph, %Graph* %52, i32 0, i32 2
+  %54 = call i8* @malloc(i32 8)
+  %55 = bitcast i8* %54 to i32**
+  store i32** %55, i32*** %53
+  %56 = load %Graph*, %Graph** %H
+  %57 = getelementptr inbounds %Graph, %Graph* %56, i32 0, i32 2
+  %58 = load i32**, i32*** %57
+  %59 = getelementptr i32*, i32** %58, i32 0
+  %60 = call i8* @malloc(i32 8)
+  %61 = bitcast i8* %60 to i32*
+  store i32* %61, i32** %59
+  %62 = load %Graph*, %Graph** %H
+  %63 = getelementptr inbounds %Graph, %Graph* %62, i32 0, i32 2
+  %64 = load i32**, i32*** %63
+  %65 = getelementptr i32*, i32** %64, i32 1
+  %66 = call i8* @malloc(i32 8)
+  %67 = bitcast i8* %66 to i32*
+  store i32* %67, i32** %65
+  %68 = load %Graph*, %Graph** %H
+  %69 = getelementptr inbounds %Graph, %Graph* %68, i32 0, i32 2
+  %70 = load i32**, i32*** %69
+  %71 = getelementptr i32*, i32** %70, i32 0
+  %72 = load i32*, i32** %71
+  %73 = getelementptr i32, i32* %72, i32 0
+  store i32 1, i32* %73
+  %74 = load %Graph*, %Graph** %H
+  %75 = getelementptr inbounds %Graph, %Graph* %74, i32 0, i32 2
+  %76 = load i32**, i32*** %75
+  %77 = getelementptr i32*, i32** %76, i32 0
+  %78 = load i32*, i32** %77
+  %79 = getelementptr i32, i32* %78, i32 1
+  store i32 2, i32* %79
+  %80 = load %Graph*, %Graph** %H
+  %81 = getelementptr inbounds %Graph, %Graph* %80, i32 0, i32 2
+  %82 = load i32**, i32*** %81
+  %83 = getelementptr i32*, i32** %82, i32 1
+  %84 = load i32*, i32** %83
+  %85 = getelementptr i32, i32* %84, i32 0
+  store i32 3, i32* %85
+  %86 = load %Graph*, %Graph** %H
+  %87 = getelementptr inbounds %Graph, %Graph* %86, i32 0, i32 2
+  %88 = load i32**, i32*** %87
+  %89 = getelementptr i32*, i32** %88, i32 1
+  %90 = load i32*, i32** %89
+  %91 = getelementptr i32, i32* %90, i32 1
+  store i32 4, i32* %91
+  %92 = load %Graph*, %Graph** %G
+  %93 = load %Graph*, %Graph** %H
+  %94 = call i32 @isEqual(%Graph* %92, %Graph* %93)
+  %95 = icmp eq i32 %94, 1
+  br i1 %95, label %96, label %98
+
+96:                                               ; preds = %entry
+  %97 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([7 x i8], [7 x i8]* @str.4, i32 0, i32 0))
+  br label %98
+
+98:                                               ; preds = %96, %entry
   ret i32 0
 }

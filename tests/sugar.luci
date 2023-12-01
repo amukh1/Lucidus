@@ -3,19 +3,35 @@ import "structures.luci"
 // my sufferings
 
 def main() -> int {
-    // i:int = 0;
-    // while(i != 10) -> {
-    //     printf("Hello, World! %d!\n", i);
-    //     (ptr i) = i + 1;
-    // }
-    // printf("Hello! sizeof int = %d\n", sizeof int);
-    // printf("%d\n", 1+-(1+1));
+    G:Graph = malloc(sizeof Graph)->(Graph);
+    H:Graph = malloc(sizeof Graph)->(Graph);
+    G.nodesc = 4;
+    H.nodesc = 4;
+    G.edgesc = 2;
+    H.edgesc = 2;
+    
+    G.edges = malloc(8)->(int**);
+    G.edges[0] = malloc(8)->(int*);
+    G.edges[1] = malloc(8)->(int*);
 
-    v:int* = malloc(4*3)->(int*);
-    v[0] = 1;
-    printf("%d\n", *v[0]);
-    // v[1] = 2;
-    // v[2] = 3;
+    G.edges[0][0] = 1;
+    G.edges[0][1] = 2;
 
+    G.edges[1][0] = 3;
+    G.edges[1][1] = 4;
+
+    H.edges = malloc(8)->(int**);
+    H.edges[0] = malloc(8)->(int*);
+    H.edges[1] = malloc(8)->(int*);
+
+    H.edges[0][0] = 1;
+    H.edges[0][1] = 2;
+
+    H.edges[1][0] = 3;
+    H.edges[1][1] = 4;
+
+    if(isEqual(G, H) == 1) -> {
+        printf("Equal\n");
+    }
     return 0;
 }

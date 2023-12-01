@@ -216,7 +216,10 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         // controller->assignVariable((llvm::AllocaInst*)valptrptr, valptr);
         return (llvm::Value*)valnotptr;
     } else if(ctx->ARROW() != nullptr && ctx->children.size() == 3) {
+        auto old = this->loadingAvailable;
+        this->loadingAvailable = true;
         auto structPtr = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));
+        this->loadingAvailable = old; 
         auto structType = structPtr->getType()->getContainedType(0);
         auto structName = structType->getStructName().str();
         auto structMember = ctx->ID()->getText();
@@ -235,7 +238,10 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         return (llvm::Value*)structMemberPtr;
         // return visitChildren(ctx);
     }else if(ctx->DOT() != nullptr && ctx->children.size() == 3) {
+        auto old = this->loadingAvailable;
+        this->loadingAvailable = true;
         auto structPtr = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));
+        this->loadingAvailable = old;
         auto structType = structPtr->getType()->getContainedType(0);
         auto structName = structType->getStructName().str();
         auto structMember = ctx->ID()->getText();
@@ -250,7 +256,9 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         auto structMemberType = this->structs[structName]->getStructElementType(structMemberIndex);
         auto structMemberPtr = controller->builder->CreateStructGEP(structType, structPtr, structMemberIndex);
 
+        if(this->loadingAvailable == true)
         return (llvm::Value*)controller->builder->CreateLoad(structMemberType, structMemberPtr);
+        else return (llvm::Value*)structMemberPtr;
         // return visitChildren(ctx);
     }else if(ctx->expr(0) != nullptr && ctx->children.size() == 3) {
         return visit(ctx->expr(0));
@@ -275,18 +283,26 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
     }else if(ctx->LBRACK() != nullptr && ctx->RBRACK() != nullptr && ctx->children.size() == 4) {
         // expr [ expr ]
         // bascially return (expr->(int) + int*sizeof type)- >(type*)
+        auto old = this->loadingAvailable;
+        this->loadingAvailable = true;
         auto val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));
+        this->loadingAvailable = old;
         // std::cout << "check" << std::endl;
-        auto pointerType = llvm::dyn_cast<llvm::PointerType>(val->getType());
-        if(!pointerType) {
+        if(!llvm::isa<llvm::PointerType>(val->getType())) {
             std::cout << "WE HAVE A PROBLEM" << std::endl;
             return nullptr;
         }
+        auto pointerType = llvm::dyn_cast<llvm::PointerType>(val->getType());
         auto type = pointerType->getContainedType(0);
         auto index = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1)));
         // std::cout << "check" << std::endl;
         auto gep = controller->builder->CreateGEP(type, val, index);
+        // std::cout << this->loadingAvailable << std::endl;
+        if(this->loadingAvailable == true)
+        return (llvm::Value*)controller->builder->CreateLoad(type, gep);
+        else 
         return gep;
+        // return gep;
 
     } else{
         // return (llvm::Value *)llvm::ConstantInt::get(llvm::Type::getInt32Ty(controller->ctx), 0);
@@ -524,10 +540,11 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         // std::cout << "here" << std::endl;
         // any x = 4;
         // expr = expr, first exp is probably a pointer.
-                    // bool old = this->loadingAvailable;
-                    // this->loadingAvailable = false;
+                    bool old = this->loadingAvailable;
+                    this->loadingAvailable = false;
+        
         auto non_ptr = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->assign()->expr(0)));
-                    // this->loadingAvailable = old;
+                    this->loadingAvailable = old;
         // get ptr to non_ptr
         // auto temp = controller->builder->CreateAlloca(non_ptr->getType(), nullptr);
         // controller->builder->CreateStore(non_ptr, temp);
