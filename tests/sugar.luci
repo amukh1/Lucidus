@@ -26,5 +26,13 @@ def main() -> int {
     G.nodesc = 5;
 
     printf("G.nodesc = %d\n",  (G.nodesc));
+
+    v:int* = malloc(8)->(int*);
+    v[0] = 10;
+    // y:int* = ptr (v[0]);
+    // v[1] = 20;
+    // *(v[0]);
+    printf("v = %d\n", v[0]);
+    // printf("v[1] = %d\n", (v[1]));
     return 0;
 }
