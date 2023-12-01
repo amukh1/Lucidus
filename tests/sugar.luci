@@ -1,38 +1,37 @@
 import "include.luci"
+import "structures.luci"
 // my sufferings
 
-struct Graph {
-    nodesc: int,
-    edgesc: int,
-    edges: int**
-};
-
 def main() -> int {
-    x:int = 5;
-    y:int* = (ptr x);
+    G:Graph = malloc(sizeof Graph)->(Graph);
+    H:Graph = malloc(sizeof Graph)->(Graph);
+    G.nodesc = 4;
+    H.nodesc = 4;
+    G.edgesc = 2;
+    H.edgesc = 2;
+    
+    G.edges = malloc(8)->(int**);
+    G.edges[0] = malloc(8)->(int*);
+    G.edges[1] = malloc(8)->(int*);
 
-    printf("x = %d\n", x);
-    printf("*y = %d\n", *y);
+    G.edges[0][0] = 1;
+    G.edges[0][1] = 2;
 
-    *y = 10;
+    G.edges[1][0] = 3;
+    G.edges[1][1] = 4;
 
-    printf("x = %d\n", x);
+    H.edges = malloc(8)->(int**);
+    H.edges[0] = malloc(8)->(int*);
+    H.edges[1] = malloc(8)->(int*);
 
-    v:int* = malloc(8)->(int*);
-    *v = 10;
+    H.edges[0][0] = 1;
+    H.edges[0][1] = 2;
 
-    G:Graph = malloc(24)->(Graph);
-    // (ptr (G.nodesc)) = 5;
-    G.nodesc = 5;
+    H.edges[1][0] = 3;
+    H.edges[1][1] = 4;
 
-    printf("G.nodesc = %d\n",  (G.nodesc));
-
-    v:int* = malloc(8)->(int*);
-    v[0] = 10;
-    // y:int* = ptr (v[0]);
-    // v[1] = 20;
-    // *(v[0]);
-    printf("v = %d\n", v[0]);
-    // printf("v[1] = %d\n", (v[1]));
+    if(isEqual(G, H) == 1) -> {
+        printf("Equal\n");
+    }
     return 0;
 }
