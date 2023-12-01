@@ -1,0 +1,6 @@
+import "../tests/include.luci"
+
+dec main() -> int;
+def main() -> int {
+    return 0;
+}
