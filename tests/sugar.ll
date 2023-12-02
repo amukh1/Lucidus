@@ -17,6 +17,8 @@ source_filename = "amukh"
 @str.2 = private constant [4 x i8] c"%d \00"
 @str.3 = private constant [3 x i8] c")\0A\00"
 @str.4 = private constant [7 x i8] c"Equal\0A\00"
+@str.5 = private constant [9 x i8] c"Equal 2\0A\00"
+@str.6 = private constant [9 x i8] c"Equal 3\0A\00"
 
 declare i32 @printf(i8*, ...)
 
@@ -48,25 +50,32 @@ declare i32 @fseek(i8*, i32, i32)
 
 declare i32 @scanf(i8*, ...)
 
+declare i8* @strcat(i8*, i8*)
+
 define i32 @factorial(i32 %0) {
 entry:
   %n = alloca i32
   store i32 %0, i32* %n
   %1 = load i32, i32* %n
   %2 = icmp eq i32 %1, 0
-  br i1 %2, label %3, label %4
+  br i1 %2, label %3, label %10
 
 3:                                                ; preds = %entry
   ret i32 1
 
-4:                                                ; preds = %entry
+4:                                                ; preds = %10
   %5 = load i32, i32* %n
   %6 = sub i32 %5, 1
   %7 = call i32 @factorial(i32 %6)
   %8 = load i32, i32* %n
   %9 = mul i32 %8, %7
   ret i32 %9
+
+10:                                               ; preds = %entry
+  br label %4
 }
+
+declare i32 @isdigit(i32)
 
 define i32** @edgeList(%Graph* %0) {
 entry:
@@ -92,12 +101,12 @@ while_loop:                                       ; preds = %7, %entry
   %3 = load i32, i32* %2
   %4 = load i32, i32* %i
   %5 = icmp eq i32 %4, %3
-  br i1 %5, label %6, label %7
+  br i1 %5, label %6, label %19
 
 6:                                                ; preds = %while_loop
   br label %while_loop_end
 
-7:                                                ; preds = %while_loop
+7:                                                ; preds = %19
   %8 = load %Graph*, %Graph** %G
   %9 = load i32, i32* %i
   %10 = call i32* @getEdgeTuple(%Graph* %8, i32 %9, i32 0)
@@ -111,6 +120,9 @@ while_loop:                                       ; preds = %7, %entry
   %18 = add i32 %17, 1
   store i32 %18, i32* %i
   br label %while_loop
+
+19:                                               ; preds = %while_loop
+  br label %7
 
 while_loop_end:                                   ; preds = %6
   ret i32 0
@@ -244,12 +256,12 @@ entry:
   %6 = getelementptr inbounds %Graph, %Graph* %5, i32 0, i32 0
   %7 = load i32, i32* %6
   %8 = icmp ne i32 %7, %4
-  br i1 %8, label %9, label %10
+  br i1 %8, label %9, label %18
 
 9:                                                ; preds = %entry
   ret i32 0
 
-10:                                               ; preds = %entry
+10:                                               ; preds = %18
   %11 = load %Graph*, %Graph** %H
   %12 = getelementptr inbounds %Graph, %Graph* %11, i32 0, i32 1
   %13 = load i32, i32* %12
@@ -257,75 +269,87 @@ entry:
   %15 = getelementptr inbounds %Graph, %Graph* %14, i32 0, i32 1
   %16 = load i32, i32* %15
   %17 = icmp ne i32 %16, %13
-  br i1 %17, label %18, label %19
+  br i1 %17, label %19, label %21
 
-18:                                               ; preds = %10
-  ret i32 0
+18:                                               ; preds = %entry
+  br label %10
 
 19:                                               ; preds = %10
+  ret i32 0
+
+20:                                               ; preds = %21
   %i = alloca i32
   store i32 0, i32* %i
+  br label %22
+
+21:                                               ; preds = %10
   br label %20
 
-20:                                               ; preds = %59, %19
-  %21 = load %Graph*, %Graph** %H
-  %22 = getelementptr inbounds %Graph, %Graph* %21, i32 0, i32 2
-  %23 = load i32**, i32*** %22
-  %24 = load i32, i32* %i
-  %25 = getelementptr i32*, i32** %23, i32 %24
-  %26 = load i32*, i32** %25
-  %27 = getelementptr i32, i32* %26, i32 0
-  %28 = load i32, i32* %27
-  %29 = load %Graph*, %Graph** %G
-  %30 = getelementptr inbounds %Graph, %Graph* %29, i32 0, i32 2
-  %31 = load i32**, i32*** %30
-  %32 = load i32, i32* %i
-  %33 = getelementptr i32*, i32** %31, i32 %32
-  %34 = load i32*, i32** %33
-  %35 = getelementptr i32, i32* %34, i32 0
-  %36 = load i32, i32* %35
-  %37 = icmp ne i32 %36, %28
-  br i1 %37, label %39, label %40
+22:                                               ; preds = %62, %20
+  %23 = load %Graph*, %Graph** %H
+  %24 = getelementptr inbounds %Graph, %Graph* %23, i32 0, i32 2
+  %25 = load i32**, i32*** %24
+  %26 = load i32, i32* %i
+  %27 = getelementptr i32*, i32** %25, i32 %26
+  %28 = load i32*, i32** %27
+  %29 = getelementptr i32, i32* %28, i32 0
+  %30 = load i32, i32* %29
+  %31 = load %Graph*, %Graph** %G
+  %32 = getelementptr inbounds %Graph, %Graph* %31, i32 0, i32 2
+  %33 = load i32**, i32*** %32
+  %34 = load i32, i32* %i
+  %35 = getelementptr i32*, i32** %33, i32 %34
+  %36 = load i32*, i32** %35
+  %37 = getelementptr i32, i32* %36, i32 0
+  %38 = load i32, i32* %37
+  %39 = icmp ne i32 %38, %30
+  br i1 %39, label %41, label %60
 
-38:                                               ; preds = %59
+40:                                               ; preds = %62
   ret i32 1
 
-39:                                               ; preds = %20
+41:                                               ; preds = %22
   ret i32 0
 
-40:                                               ; preds = %20
-  %41 = load %Graph*, %Graph** %H
-  %42 = getelementptr inbounds %Graph, %Graph* %41, i32 0, i32 2
-  %43 = load i32**, i32*** %42
-  %44 = load i32, i32* %i
-  %45 = getelementptr i32*, i32** %43, i32 %44
-  %46 = load i32*, i32** %45
-  %47 = getelementptr i32, i32* %46, i32 1
-  %48 = load i32, i32* %47
-  %49 = load %Graph*, %Graph** %G
-  %50 = getelementptr inbounds %Graph, %Graph* %49, i32 0, i32 2
-  %51 = load i32**, i32*** %50
-  %52 = load i32, i32* %i
-  %53 = getelementptr i32*, i32** %51, i32 %52
-  %54 = load i32*, i32** %53
-  %55 = getelementptr i32, i32* %54, i32 1
-  %56 = load i32, i32* %55
-  %57 = icmp ne i32 %56, %48
-  br i1 %57, label %58, label %59
+42:                                               ; preds = %60
+  %43 = load %Graph*, %Graph** %H
+  %44 = getelementptr inbounds %Graph, %Graph* %43, i32 0, i32 2
+  %45 = load i32**, i32*** %44
+  %46 = load i32, i32* %i
+  %47 = getelementptr i32*, i32** %45, i32 %46
+  %48 = load i32*, i32** %47
+  %49 = getelementptr i32, i32* %48, i32 1
+  %50 = load i32, i32* %49
+  %51 = load %Graph*, %Graph** %G
+  %52 = getelementptr inbounds %Graph, %Graph* %51, i32 0, i32 2
+  %53 = load i32**, i32*** %52
+  %54 = load i32, i32* %i
+  %55 = getelementptr i32*, i32** %53, i32 %54
+  %56 = load i32*, i32** %55
+  %57 = getelementptr i32, i32* %56, i32 1
+  %58 = load i32, i32* %57
+  %59 = icmp ne i32 %58, %50
+  br i1 %59, label %61, label %70
 
-58:                                               ; preds = %40
+60:                                               ; preds = %22
+  br label %42
+
+61:                                               ; preds = %42
   ret i32 0
 
-59:                                               ; preds = %40
-  %60 = load i32, i32* %i
-  %61 = add i32 %60, 1
-  store i32 %61, i32* %i
-  %62 = load %Graph*, %Graph** %G
-  %63 = getelementptr inbounds %Graph, %Graph* %62, i32 0, i32 1
-  %64 = load i32, i32* %63
-  %65 = load i32, i32* %i
-  %66 = icmp ne i32 %65, %64
-  br i1 %66, label %20, label %38
+62:                                               ; preds = %70
+  %63 = load i32, i32* %i
+  %64 = add i32 %63, 1
+  store i32 %64, i32* %i
+  %65 = load %Graph*, %Graph** %G
+  %66 = getelementptr inbounds %Graph, %Graph* %65, i32 0, i32 1
+  %67 = load i32, i32* %66
+  %68 = load i32, i32* %i
+  %69 = icmp ne i32 %68, %67
+  br i1 %69, label %22, label %40
+
+70:                                               ; preds = %42
+  br label %62
 }
 
 declare i32 @isIsomorphic(%Graph*, %Graph*)
@@ -450,12 +474,34 @@ entry:
   %93 = load %Graph*, %Graph** %H
   %94 = call i32 @isEqual(%Graph* %92, %Graph* %93)
   %95 = icmp eq i32 %94, 1
-  br i1 %95, label %96, label %98
+  br i1 %95, label %96, label %99
 
 96:                                               ; preds = %entry
   %97 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([7 x i8], [7 x i8]* @str.4, i32 0, i32 0))
   br label %98
 
-98:                                               ; preds = %96, %entry
+98:                                               ; preds = %99, %96
+  br i1 true, label %100, label %103
+
+99:                                               ; preds = %entry
+  br label %98
+
+100:                                              ; preds = %98
+  %101 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([9 x i8], [9 x i8]* @str.5, i32 0, i32 0))
+  br i1 true, label %104, label %107
+
+102:                                              ; preds = %103
   ret i32 0
+
+103:                                              ; preds = %98
+  br label %102
+
+104:                                              ; preds = %100
+  %105 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([9 x i8], [9 x i8]* @str.6, i32 0, i32 0))
+  br label %106
+
+106:                                              ; preds = %107, %104
+  br label %103
+107:                                              ; preds = %100
+  br label %106
 }

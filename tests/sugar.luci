@@ -33,5 +33,13 @@ def main() -> int {
     if(isEqual(G, H) == 1) -> {
         printf("Equal\n");
     }
+
+    if(1 == 1) -> {
+        printf("Equal 2\n");
+        if(2 == 2) -> {
+            printf("Equal 3\n");
+        }
+    }
+
     return 0;
 }

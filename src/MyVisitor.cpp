@@ -627,7 +627,6 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         // get block
         controller->builder->CreateBr(blocks[name->getText()]);
         // increment opcode count
-        // controller->builder->CreateAdd(controller->builder->getInt32(0), controller->builder->getInt32(0));
         //  llvm::Instruction* inst = controller->builder->GetInsertBlock()->getTerminator();
         return visitChildren(ctx);
     }else if(ctx->if_() != nullptr && ctx->children.size() == 1) {
@@ -636,42 +635,33 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         auto cond = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->if_()->expr()));
         // get parent function
         auto parent = controller->builder->GetInsertBlock()->getParent();
-        // make basic blocks
-        // no else block just regular if then
-
-        // auto iff = llvm::BasicBlock::Create(this->controller->ctx, "if", parent);
-        // auto iff = llvm::BasicBlock::Create(this->controller->ctx, "if", parent);
 auto then = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
-auto endThen = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
-// auto merge = llvm::BasicBlock::Create(this->controller->ctx, "merge", parent);
-
+auto merge = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
+auto elseBB = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
+// auto merge2 = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
 // insert basic blocks
-controller->builder->CreateCondBr(cond, then, endThen);
-//  controller->builder->CreateAdd(controller->builder->getInt32(0), controller->builder->getInt32(0));
+controller->builder->CreateCondBr(cond, then, elseBB);
+
+
 controller->builder->SetInsertPoint(then);
 // visit if block
 for(int i = 0; i<ctx->if_()->stat().size(); i++)
     visit(ctx->if_()->stat(i));
-
-
-// End of 'then' block
+// jump to merge
 if(then->getTerminator() == nullptr)
-controller->builder->CreateBr(endThen);
-// controller->builder->CreateAdd(controller->builder->getInt32(0), controller->builder->getInt32(0));
-// inc opcode numbering
-// controller->builder->CreateAdd(controller->builder->getInt32(0), controller->builder->getInt32(0));
-controller->builder->SetInsertPoint(endThen);
+controller->builder->CreateBr(merge);
 
-// merge block should be AFTER the if statement and NOT contain the then body
-// controller->builder->CreateBr(merge);
-// controller->builder->SetInsertPoint(merge);
-// return visitChildren(ctx);
-    return nullptr;
+controller->builder->SetInsertPoint(elseBB);
+// visit else block
+// jump to merge
+controller->builder->CreateBr(merge);
+
+controller->builder->SetInsertPoint(merge);
+return nullptr;
 
     }else if(ctx->while_() != nullptr && ctx->children.size() == 1) {
         // w s
         auto parent = controller->builder->GetInsertBlock()->getParent();
-
         /*
         // two blocks: while, end
         at the end of while block, jump to while block if cond
@@ -679,14 +669,12 @@ controller->builder->SetInsertPoint(endThen);
         */
         auto while_ = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
         auto endWhile = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
-
         // insert basic blocks
         controller->builder->CreateBr(while_);
         controller->builder->SetInsertPoint(while_);
         // visit while block
         for(int i = 0; i<ctx->while_()->stat().size(); i++)
             visit(ctx->while_()->stat(i));
-
         // now visit condition
         auto cond = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->while_()->expr()));
         controller->builder->CreateCondBr(cond, while_, endWhile);
