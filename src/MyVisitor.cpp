@@ -294,7 +294,10 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         }
         auto pointerType = llvm::dyn_cast<llvm::PointerType>(val->getType());
         auto type = pointerType->getContainedType(0);
+        auto old2 = this->loadingAvailable;
+        this->loadingAvailable = true;
         auto index = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1)));
+        this->loadingAvailable = old2;
         // std::cout << "check" << std::endl;
         auto gep = controller->builder->CreateGEP(type, val, index);
         // std::cout << this->loadingAvailable << std::endl;

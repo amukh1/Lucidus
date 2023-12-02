@@ -13,7 +13,9 @@ dec gets(tmp:char*) -> char*;
 dec atoi(tmp:char*) -> int;
 dec fseek(stream:char*, offset:int, origin:int) -> int;
 dec scanf(tmp:char*, ...) -> int;
+dec strcat(dest:char*, src:char*) -> char*;
 dec factorial(n:int) -> int;
+dec isdigit(c:int) -> int;
 
 def factorial(n:int) -> int {
     if (n == 0) -> {
