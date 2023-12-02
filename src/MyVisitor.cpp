@@ -641,19 +641,13 @@ auto elseBB = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
 // auto merge2 = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
 // insert basic blocks
 controller->builder->CreateCondBr(cond, then, elseBB);
-
-
 controller->builder->SetInsertPoint(then);
-// visit if block
 for(int i = 0; i<ctx->if_()->stat().size(); i++)
     visit(ctx->if_()->stat(i));
-// jump to merge
-if(then->getTerminator() == nullptr)
+// if(then->getTerminator() == nullptr)
 controller->builder->CreateBr(merge);
 
 controller->builder->SetInsertPoint(elseBB);
-// visit else block
-// jump to merge
 controller->builder->CreateBr(merge);
 
 controller->builder->SetInsertPoint(merge);
