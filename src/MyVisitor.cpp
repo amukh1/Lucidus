@@ -26,7 +26,6 @@
 
 #include "MyVisitor.h"
 #include "compile.h"
-#include "../../../usr/include/llvm-10/llvm/IR/Constants.h"
 
 void replaceAll(std::string& str, const std::string& from, const std::string& to) {
     if(from.empty())
