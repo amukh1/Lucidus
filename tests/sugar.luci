@@ -3,63 +3,17 @@ import "include.luci"
 // my sufferings
 
 def main() -> int {
-    // G:Graph = malloc(sizeof Graph)->(Graph);
-    // H:Graph = malloc(sizeof Graph)->(Graph);
-    // G.nodesc = 4;
-    // H.nodesc = 4;
-    // G.edgesc = 2;
-    // H.edgesc = 2;
-    
-    // G.edges = malloc(8)->(int**);
-    // G.edges[0] = malloc(8)->(int*);
-    // G.edges[1] = malloc(8)->(int*);
 
-    // G.edges[0][0] = 1;
-    // G.edges[0][1] = 2;
-
-    // G.edges[1][0] = 3;
-    // G.edges[1][1] = 4;
-
-    // H.edges = malloc(8)->(int**);
-    // H.edges[0] = malloc(8)->(int*);
-    // H.edges[1] = malloc(8)->(int*);
-
-    // H.edges[0][0] = 1;
-    // H.edges[0][1] = 2;
-
-    // H.edges[1][0] = 3;
-    // H.edges[1][1] = 4;
-
-    // if(isEqual(G, H) == 1) -> {
-    //     printf("Equal\n");
-    // }
-
-    // if(1 == 1) -> {
-    //     printf("Equal 2\n");
-    //     if(2 == 2) -> {
-    //         printf("Equal 3\n");
-    //     }
-    // }
-
-    i:int = 0;
-    while(i != 4) -> {
-        j:int = 0;
-        while(j != 4) -> {
-            printf("i: %d, j: %d\n", i, j);
-            j = j + 1;
+    if(1 == 1) -> {
+        printf("1 == 1\n");
+        if(2 == 2) -> {
             goto frog;
+            printf("2 == 2\n");
         }
-        i = i + 1;
     }
 
+    goto frog;
     label frog:
-
-    // if(1 == 1) -> {
-    //     printf("Equal 2\n");
-    //     if(2 == 2) -> {
-    //         printf("Equal 3\n");
-    //     }
-    // }
-
+    printf("frog\n");
     return 0;
 }

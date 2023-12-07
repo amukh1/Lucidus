@@ -635,8 +635,10 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         // get parent function
         auto parent = controller->builder->GetInsertBlock()->getParent();
 auto then = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
-auto merge = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
+auto end = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
 auto elseBB = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
+
+
 // auto merge2 = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
 // insert basic blocks
 controller->builder->CreateCondBr(cond, then, elseBB);
@@ -644,12 +646,12 @@ controller->builder->SetInsertPoint(then);
 for(int i = 0; i<ctx->if_()->stat().size(); i++)
     visit(ctx->if_()->stat(i));
 // if(then->getTerminator() == nullptr)
-controller->builder->CreateBr(merge);
+controller->builder->CreateBr(end);
 
 controller->builder->SetInsertPoint(elseBB);
-controller->builder->CreateBr(merge);
+controller->builder->CreateBr(end);
 
-controller->builder->SetInsertPoint(merge);
+controller->builder->SetInsertPoint(end);
 return nullptr;
 
     }else if(ctx->while_() != nullptr && ctx->children.size() == 1) {
