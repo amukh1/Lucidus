@@ -377,6 +377,17 @@ antlrcpp::Any MyVisitor::visitDef(LucidusParser::DefContext *ctx) {
                 llvm::StoreInst* val = controller->assignVariable((llvm::AllocaInst*)this->functionScope[ctx->param(i)->idec()->ID()->getText()], arg);
             }
         }
+    for(int i = 0; i<this->allBlocks.size(); i++) {
+        // check if this->allBlocks[i] is empty block
+        if(this->allBlocks[i]->empty()) {
+            // if so, delete it
+            this->allBlocks[i]->eraseFromParent();
+        }else if(this->allBlocks[i]->getTerminator() == nullptr) {
+            controller->builder->SetInsertPoint(this->allBlocks[i]);
+            controller->builder->CreateRetVoid();
+        }
+    }
+    this->allBlocks.clear();
     return visitChildren(ctx);
 }
 
@@ -637,6 +648,9 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
 auto then = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
 auto end = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
 auto elseBB = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
+this->allBlocks.push_back(then);
+this->allBlocks.push_back(end);
+this->allBlocks.push_back(elseBB);
 
 
 // auto merge2 = llvm::BasicBlock::Create(this->controller->ctx, "", parent);

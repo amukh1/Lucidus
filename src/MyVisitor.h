@@ -31,6 +31,7 @@ public:
     std::map<std::string, std::vector<std::string>> structNames;
     bool loadingAvailable = true;
     std::map<std::string, llvm::BasicBlock*> blocks;
+    std::vector<llvm::BasicBlock*> allBlocks;
     std::shared_ptr<LLVMController> controller;
     std::shared_ptr<errorHandler> e_handler;
     antlrcpp::Any visitProgram(LucidusParser::ProgramContext *ctx) override {
