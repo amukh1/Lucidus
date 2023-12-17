@@ -381,7 +381,10 @@ antlrcpp::Any MyVisitor::visitDef(LucidusParser::DefContext *ctx) {
         // check if this->allBlocks[i] is empty block
         if(this->allBlocks[i]->empty()) {
             // if so, delete it
-            this->allBlocks[i]->eraseFromParent();
+            // this->allBlocks[i]->eraseFromParent();
+            // dont delete it causes indexing problems instead add an exit
+            controller->builder->SetInsertPoint(this->allBlocks[i]);
+            controller->builder->CreateRetVoid();
         }else if(this->allBlocks[i]->getTerminator() == nullptr) {
             controller->builder->SetInsertPoint(this->allBlocks[i]);
             controller->builder->CreateRetVoid();
@@ -659,7 +662,7 @@ controller->builder->CreateCondBr(cond, then, elseBB);
 controller->builder->SetInsertPoint(then);
 for(int i = 0; i<ctx->if_()->stat().size(); i++)
     visit(ctx->if_()->stat(i));
-// if(then->getTerminator() == nullptr)
+if(then->getTerminator() == nullptr)
 controller->builder->CreateBr(end);
 
 controller->builder->SetInsertPoint(elseBB);

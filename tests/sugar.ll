@@ -49,7 +49,7 @@ entry:
   %1 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @str, i32 0, i32 0))
   br i1 true, label %4, label %7
 
-2:                                                ; preds = %3, %6
+2:                                                ; preds = %3
   br label %frog
 
 3:                                                ; preds = %entry
@@ -57,12 +57,10 @@ entry:
 
 4:                                                ; preds = %0
   br label %frog
-  %5 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @str.1, i32 0, i32 0))
-  br label %6
+  %6 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @str.1, i32 0, i32 0))
 
 6:                                                ; preds = %7, %4
-  br label %2
-
+ br label %frog
 7:                                                ; preds = %0
   br label %6
 
