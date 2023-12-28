@@ -73,30 +73,26 @@ entry:
 
 13:                                               ; preds = %9
   %14 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([20 x i8], [20 x i8]* @str.2, i32 0, i32 0))
-  br i1 true, label %17, label %19
+  br i1 true, label %19, label %21
 
 15:                                               ; preds = %9
   br label %16
 
-16:                                               ; preds = %15, %20
-  br label %end
-
-17:                                               ; preds = %13
-  %18 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([17 x i8], [17 x i8]* @str.3, i32 0, i32 0))
-  br label %end
-  br label %20
-
-19:                                               ; preds = %13
-  br label %20
-
-20:                                               ; preds = %19, %17
-  br label %16
-
-end:                                              ; preds = %16, %17
+16:                                               ; preds = %15, %22
   %z = alloca float
   store float 0x3FF3333340000000, float* %z
-  %21 = load i32, i32* %x
-  %22 = bitcast i32 %21 to float
-  store float %22, float* %z
+  %17 = load i32, i32* %x
+  %18 = bitcast i32 %17 to float
+  store float %18, float* %z
   ret i32 0
+
+19:                                               ; preds = %13
+  %20 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([17 x i8], [17 x i8]* @str.3, i32 0, i32 0))
+  br label %22
+
+21:                                               ; preds = %13
+  br label %22
+
+22:                                               ; preds = %21, %19
+  br label %16
 }

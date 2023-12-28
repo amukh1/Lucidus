@@ -22,13 +22,8 @@ def main() -> int { // definition. Includes declaration.
         printf("x is not equal to y");
         if(1 == 1) -> {
             printf("1 is equal to 1\n");
-            goto end;
         }
     }
-
-    goto end;
-    label end:
-
 
     // type casting
     z:float = 1.2;
