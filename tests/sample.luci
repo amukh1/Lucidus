@@ -1,5 +1,5 @@
 import "include.luci" // import luci file that includes useful declarations.
-import "structures.luci" // import luci file that includes useful structures and algorithms.
+//import "structures.luci" // import luci file that includes useful structures and algorithms.
 
 dec main() -> int; // declaration. return type int, no params.
 def main() -> int { // definition. Includes declaration.
@@ -11,7 +11,7 @@ def main() -> int { // definition. Includes declaration.
 
     // assignment
     (ptr x) = 5; // assignment expects a pointer to be assigned to.
-    (ptr x) = y; // expressions are loaded. (ptr x) = (ptr y) is incorrect. (unless, ofcourse, x is int*)
+    (ptr x) = (y + 1); // expressions are loaded. (ptr x) = (ptr y) is incorrect. (unless, ofcourse, x is int*)
 
     // if
     if(x == y) -> {
@@ -20,8 +20,15 @@ def main() -> int { // definition. Includes declaration.
     // else
     if(x != y) -> {
         printf("x is not equal to y");
+        if(1 == 1) -> {
+            printf("1 is equal to 1\n");
+            goto end;
+        }
     }
-    // other boolean expressions: (<,>)
+
+    goto end;
+    label end:
+
 
     // type casting
     z:float = 1.2;

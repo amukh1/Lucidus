@@ -648,28 +648,28 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         auto cond = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->if_()->expr()));
         // get parent function
         auto parent = controller->builder->GetInsertBlock()->getParent();
-auto then = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
-auto end = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
-auto elseBB = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
-this->allBlocks.push_back(then);
-this->allBlocks.push_back(end);
-this->allBlocks.push_back(elseBB);
-
-
-// auto merge2 = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
-// insert basic blocks
-controller->builder->CreateCondBr(cond, then, elseBB);
-controller->builder->SetInsertPoint(then);
-for(int i = 0; i<ctx->if_()->stat().size(); i++)
-    visit(ctx->if_()->stat(i));
-if(then->getTerminator() == nullptr)
-controller->builder->CreateBr(end);
-
-controller->builder->SetInsertPoint(elseBB);
-controller->builder->CreateBr(end);
-
-controller->builder->SetInsertPoint(end);
-return nullptr;
+        // create basic blocks
+        auto if_ = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
+        auto else_ = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
+        auto endIf = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
+        // insert basic blocks
+        controller->builder->CreateCondBr(cond, if_, else_);
+        controller->builder->SetInsertPoint(if_);
+        // visit if block
+        for(int i = 0; i<ctx->if_()->stat().size(); i++)
+            visit(ctx->if_()->stat(i));
+        // jump to end
+        controller->builder->CreateBr(endIf);
+        // insert else block
+        controller->builder->SetInsertPoint(else_);
+        // visit else block
+        // nothing
+        // jump to end
+        controller->builder->CreateBr(endIf);
+        // insert end block
+        controller->builder->SetInsertPoint(endIf);
+        // return visitChildren(ctx);
+        return nullptr;
 
     }else if(ctx->while_() != nullptr && ctx->children.size() == 1) {
         // w s
