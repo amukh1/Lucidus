@@ -150,22 +150,22 @@ dec gen_all_permutations(n:int) -> Permutation*;
 
 dec isEqual(G: Graph, H: Graph) -> int;
 def isEqual(G: Graph, H: Graph) -> int {
-    if(G.nodesc != H.nodesc) -> {
-        return 0;
-    }
-    if(G.edgesc != H.edgesc) -> {
-        return 0;
-    }
-    i:int = 0;
-    while(i != (G.edgesc)) -> {
-        if(G.edges[i][0] != H.edges[i][0]) -> {
-            return 0;
-        }
-        if(G.edges[i][1] != H.edges[i][1]) -> {
-            return 0;
-        }
-        i = i + 1;
-    }
+    // if(G.nodesc != H.nodesc) -> {
+    //     return 0;
+    // }
+    // if(G.edgesc != H.edgesc) -> {
+    //     return 0;
+    // }
+    // i:int = 0;
+    // while(i != (G.edgesc)) -> {
+    //     if(G.edges[i][0] != H.edges[i][0]) -> {
+    //         return 0;
+    //     }
+    //     if(G.edges[i][1] != H.edges[i][1]) -> {
+    //         return 0;
+    //     }
+    //     i = i + 1;
+    // }
     return 1;
 }
 

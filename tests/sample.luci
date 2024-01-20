@@ -1,5 +1,5 @@
 import "include.luci" // import luci file that includes useful declarations.
-//import "structures.luci" // import luci file that includes useful structures and algorithms.
+import "structures.luci" // import luci file that includes useful structures and algorithms.
 
 dec main() -> int; // declaration. return type int, no params.
 def main() -> int { // definition. Includes declaration.

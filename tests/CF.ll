@@ -3,8 +3,7 @@ source_filename = "amukh"
 
 @str = private constant [4 x i8] c"%d\0A\00"
 @str.1 = private constant [8 x i8] c"x == y\0A\00"
-@str.2 = private constant [10 x i8] c"in while\0A\00"
-@str.3 = private constant [8 x i8] c"x == 4\0A\00"
+@str.2 = private constant [8 x i8] c"x == 4\0A\00"
 
 declare i32 @printf(i8*, ...)
 
@@ -57,30 +56,23 @@ entry:
 
 5:                                                ; preds = %entry
   %6 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @str.1, i32 0, i32 0))
-  br label %9
+  br label %8
 
 7:                                                ; preds = %entry
   br label %8
 
-8:                                                ; preds = %7, %13
+8:                                                ; preds = %7, %5
+  %9 = load i32, i32* %x
+  %10 = icmp eq i32 %9, 4
+  br i1 %10, label %11, label %13
+
+11:                                               ; preds = %8
+  %12 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @str.2, i32 0, i32 0))
+  br label %14
+
+13:                                               ; preds = %8
+  br label %14
+
+14:                                               ; preds = %13, %11
   ret i32 0
-
-9:                                                ; preds = %17, %5
-  %10 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @str.2, i32 0, i32 0))
-  %11 = load i32, i32* %x
-  %12 = icmp eq i32 %11, 4
-  br i1 %12, label %14, label %16
-
-13:                                               ; preds = %17
-  br label %8
-
-14:                                               ; preds = %9
-  %15 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @str.3, i32 0, i32 0))
-  br label %17
-
-16:                                               ; preds = %9
-  br label %17
-
-17:                                               ; preds = %16, %14
-  br i1 true, label %9, label %13
 }

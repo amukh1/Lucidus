@@ -7,12 +7,9 @@ def main() -> int {
     printf("%d\n", x);
     if(x == y) -> {
         printf("x == y\n");
-        while(1 == 1) -> {
-            printf("in while\n");
-            if(x == 4) -> {
-                printf("x == 4\n");
-            }
-        }
+    }
+    if(x == 4) -> {
+        printf("x == 4\n");
     }
     return 0;
 }
