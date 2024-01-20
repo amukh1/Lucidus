@@ -64,7 +64,7 @@ def main() -> int { // definition. Includes declaration.
     while(i < 10) -> {
         j = 0;
         while(j < 10) -> {
-            printf("%d ", arr2[i][j]);
+            printf("%d | ", arr2[i][j]);
             j = j + 1;
         }
         printf("\n");

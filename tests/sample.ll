@@ -5,7 +5,7 @@ source_filename = "amukh"
 @str.1 = private constant [17 x i8] c"x is equal to y\0A\00"
 @str.2 = private constant [21 x i8] c"x is not equal to y\0A\00"
 @str.3 = private constant [4 x i8] c"%d\0A\00"
-@str.4 = private constant [4 x i8] c"%d \00"
+@str.4 = private constant [6 x i8] c"%d | \00"
 @str.5 = private constant [2 x i8] c"\0A\00"
 
 declare i32 @printf(i8*, ...)
@@ -207,7 +207,7 @@ entry:
   %87 = load i32, i32* %j
   %88 = getelementptr i32, i32* %86, i32 %87
   %89 = load i32, i32* %88
-  %90 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.4, i32 0, i32 0), i32 %89)
+  %90 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @str.4, i32 0, i32 0), i32 %89)
   %91 = load i32, i32* %j
   %92 = add i32 %91, 1
   store i32 %92, i32* %j
