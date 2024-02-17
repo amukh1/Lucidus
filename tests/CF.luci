@@ -10,6 +10,14 @@ def main() -> int {
     }
     if(x == 4) -> {
         printf("x == 4\n");
+        if(1 == 1) -> {
+            printf("1 == 1\n");
+        }
+        goto end;
     }
+    printf("%d\n", x);
+    goto end;
+    label end:
+
     return 0;
 }

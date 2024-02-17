@@ -10,8 +10,11 @@ def main() -> int { // definition. Includes declaration.
     y := 5; // type is inferred, := syntax is used.
 
     // assignment
-    (ptr x) = 5; // assignment expects a pointer to be assigned to.
-    (ptr x) = (y + 1); // expressions are loaded. (ptr x) = (ptr y) is incorrect. (unless, ofcourse, x is int*)
+    x = 5; // assignment expects a pointer to be assigned to.
+    x = (y + 1); // expressions are loaded. (ptr x) = (ptr y) is incorrect. (unless, ofcourse, x is int*)
+
+    printf("%d\n", x); // printf is a function that takes a format string and a variable number of arguments.
+    printf("%d\n", y);
 
     // control flow > if
     if(x == y) -> {

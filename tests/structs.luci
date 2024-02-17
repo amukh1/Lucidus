@@ -32,8 +32,8 @@ def main() -> int {
     // get data from file
     fstream:char* = fopen("FCar.txt", "r+");
     fseek(fstream, 0, 0);
-    fgets(*FCar.make, 100, fstream);
-    fgets(*FCar.model, 100, fstream);
+    fgets(FCar.make, 100, fstream);
+    fgets(FCar.model, 100, fstream);
     fgets(mileage, 100, fstream);
     fgets(year, 100, fstream);
     fgets(cost, 100, fstream);
@@ -43,11 +43,11 @@ def main() -> int {
     FCar.year = atoi(year);
     FCar.cost = atoi(cost);
 
-    printf("Car Make: %s", *FCar.make);
-    printf("Car Model: %s", *FCar.model);
-    printf("Car Mileage: %d\n", *FCar.mileage);
-    printf("Car Year: %d\n", *FCar.year);
-    printf("Car Cost: %d\n", *FCar.cost);
+    printf("Car Make: %s", FCar.make);
+    printf("Car Model: %s", FCar.model);
+    printf("Car Mileage: %d\n", FCar.mileage);
+    printf("Car Year: %d\n", FCar.year);
+    printf("Car Cost: %d\n", FCar.cost);
 
     return 0;
 }

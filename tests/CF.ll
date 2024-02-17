@@ -4,6 +4,8 @@ source_filename = "amukh"
 @str = private constant [4 x i8] c"%d\0A\00"
 @str.1 = private constant [8 x i8] c"x == y\0A\00"
 @str.2 = private constant [8 x i8] c"x == 4\0A\00"
+@str.3 = private constant [8 x i8] c"1 == 1\0A\00"
+@str.4 = private constant [4 x i8] c"%d\0A\00"
 
 declare i32 @printf(i8*, ...)
 
@@ -68,11 +70,31 @@ entry:
 
 11:                                               ; preds = %8
   %12 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @str.2, i32 0, i32 0))
-  br label %14
+  br i1 true, label %17, label %19
 
 13:                                               ; preds = %8
   br label %14
 
-14:                                               ; preds = %13, %11
+14:                                               ; preds = %13, %21
+  %15 = load i32, i32* %x
+  %16 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.4, i32 0, i32 0), i32 %15)
+  br label %end
+
+17:                                               ; preds = %11
+  %18 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @str.3, i32 0, i32 0))
+  br label %20
+
+19:                                               ; preds = %11
+  br label %20
+
+20:                                               ; preds = %19, %17
+  br label %end
+
+end:                                              ; preds = %14, %20
   ret i32 0
+
+21:                                               ; No predecessors!
+  br label %14
+
+22:                                               ; No predecessors!
 }

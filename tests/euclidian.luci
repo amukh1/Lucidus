@@ -10,15 +10,15 @@ def main() -> int {
     rk1:int = *b;
     rk:int;
 
-    goto while;
-    label while:
-    (ptr rk) = (rk0 % rk1);
-    (ptr rk0) = rk1;
-    (ptr rk1) = rk;
+    goto loop;
+    label loop:
+    rk = (rk0 % rk1);
+    rk0 = rk1;
+    rk1 = rk;
     if(rk == 0) -> {
         goto end;
     }
-    goto while;
+    goto loop;
     label end:
     printf("%d\n", rk0);
     return 0;

@@ -71,7 +71,7 @@ antlrcpp::Any MyVisitor::visitDec(LucidusParser::DecContext *ctx) {
         if(this->controller->module->getFunction(functionName) == nullptr)
         controller->declareFunction(functionName.c_str(), llvm::FunctionType::get(rtype, types, ellip));
 
-        this->blocks.clear();
+        
         return visitChildren(ctx);
 }
 
@@ -215,6 +215,7 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         // controller->assignVariable((llvm::AllocaInst*)valptrptr, valptr);
         return (llvm::Value*)valnotptr;
     } else if(ctx->ARROW() != nullptr && ctx->children.size() == 3) {
+        // STRUCT MEMBER
         auto old = this->loadingAvailable;
         this->loadingAvailable = true;
         auto structPtr = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));
@@ -369,28 +370,33 @@ antlrcpp::Any MyVisitor::visitDef(LucidusParser::DefContext *ctx) {
     this->controller->defineFunction(ctx->ID()->getText());
     this->functionScope = {};
     for(int i = 0; i<ctx->param().size(); i++) {
-            if(ctx->param(i)->DOTS() == nullptr){
-                this->functionScope[ctx->param(i)->idec()->ID()->getText()] = controller->declareVariable(ctx->param(i)->idec()->ID()->getText(),getTypes(ctx->param(i)->idec()->type(), controller, this->structs));
-                // llvm::StoreInst* val = controller->assignVariable((llvm::AllocaInst*)this->functionScope[ctx->param(i)->idec()->ID()->getText()], this->functionParamScope[ctx->ID(i)->getText()][ctx->param(i)->idec()->ID()->getText()]);
-                // ith argument value (from llvm):
-                llvm::Value* arg = this->controller->module->getFunction(ctx->ID()->getText())->getArg(i);
-                llvm::StoreInst* val = controller->assignVariable((llvm::AllocaInst*)this->functionScope[ctx->param(i)->idec()->ID()->getText()], arg);
-            }
-        }
-    for(int i = 0; i<this->allBlocks.size(); i++) {
-        // check if this->allBlocks[i] is empty block
-        if(this->allBlocks[i]->empty()) {
-            // if so, delete it
-            // this->allBlocks[i]->eraseFromParent();
-            // dont delete it causes indexing problems instead add an exit
-            controller->builder->SetInsertPoint(this->allBlocks[i]);
-            controller->builder->CreateRetVoid();
-        }else if(this->allBlocks[i]->getTerminator() == nullptr) {
-            controller->builder->SetInsertPoint(this->allBlocks[i]);
-            controller->builder->CreateRetVoid();
+        if(ctx->param(i)->DOTS() == nullptr){
+            this->functionScope[ctx->param(i)->idec()->ID()->getText()] = controller->declareVariable(ctx->param(i)->idec()->ID()->getText(),getTypes(ctx->param(i)->idec()->type(), controller, this->structs));
+            // llvm::StoreInst* val = controller->assignVariable((llvm::AllocaInst*)this->functionScope[ctx->param(i)->idec()->ID()->getText()], this->functionParamScope[ctx->ID(i)->getText()][ctx->param(i)->idec()->ID()->getText()]);
+            // ith argument value (from llvm):
+            llvm::Value* arg = this->controller->module->getFunction(ctx->ID()->getText())->getArg(i);
+            llvm::StoreInst* val = controller->assignVariable((llvm::AllocaInst*)this->functionScope[ctx->param(i)->idec()->ID()->getText()], arg);
         }
     }
-    this->allBlocks.clear();
+    // checkblocks
+        for(int i = 0; i<this->blocks.size(); i++) {
+            // check if this->allBlocks[i] is empty block
+            if(this->allBlocks[i]->empty()) {
+                // if so, delete it
+                // this->allBlocks[i]->eraseFromParent();
+                // dont delete it causes indexing problems instead add an exit
+                controller->builder->SetInsertPoint(this->allBlocks[i]);
+                // controller->builder->CreateRetVoid();
+                controller->builder->CreateUnreachable();
+            }else if(this->allBlocks[i]->getTerminator() == nullptr) {
+                controller->builder->SetInsertPoint(this->allBlocks[i]);
+                // controller->builder->CreateRetVoid();
+                controller->builder->CreateUnreachable();
+            }
+        }
+
+        this->blocks.clear();
+        this->allBlocks.clear();
     return visitChildren(ctx);
 }
 
@@ -631,17 +637,30 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         // return bb;
         return visitChildren(ctx);
     } else if(ctx->goto_() != nullptr && ctx->children.size() == 1) {
+        /*
         auto name = ctx->goto_()->ID();
         if(blocks[name->getText()] == nullptr)
-            // make block
             blocks[name->getText()] = llvm::BasicBlock::Create(this->controller->ctx, name->getText(), controller->builder->GetInsertBlock()->getParent());
-        // get  basic block from llvm by name
-         // goto statement/ jump statment
-        // get block
         controller->builder->CreateBr(blocks[name->getText()]);
-        // increment opcode count
-        //  llvm::Instruction* inst = controller->builder->GetInsertBlock()->getTerminator();
         return visitChildren(ctx);
+        */
+       // essentially the code above, except every goto ends its block and starts a new one
+       auto name = ctx->goto_()->ID();
+if(blocks[name->getText()] == nullptr)
+    blocks[name->getText()] = llvm::BasicBlock::Create(this->controller->ctx, name->getText(), controller->builder->GetInsertBlock()->getParent());
+controller->builder->CreateBr(blocks[name->getText()]);
+allBlocks.push_back(blocks[name->getText()]);
+// Create a new block for the statements after the goto
+// first check if we are at the end of the current block
+// if(controller->builder->GetInsertBlock()->getTerminator() == nullptr && controller->builder->GetInsertBlock()->getParent() != nullptr)
+
+auto nextBlock = llvm::BasicBlock::Create(this->controller->ctx, "", controller->builder->GetInsertBlock()->getParent());
+controller->builder->SetInsertPoint(nextBlock);
+// add unreachable
+// controller->builder->CreateUnreachable();
+
+return visitChildren(ctx);
+
     }else if(ctx->if_() != nullptr && ctx->children.size() == 1) {
         // if statement
         // get condition
@@ -659,6 +678,8 @@ antlrcpp::Any MyVisitor::visitStat(LucidusParser::StatContext *ctx) {
         for(int i = 0; i<ctx->if_()->stat().size(); i++)
             visit(ctx->if_()->stat(i));
         // jump to end
+
+        // if(controller->builder->GetInsertBlock()->getTerminator() == nullptr && controller->builder->GetInsertBlock()->getParent() != nullptr)
         controller->builder->CreateBr(endIf);
         // insert else block
         controller->builder->SetInsertPoint(else_);
