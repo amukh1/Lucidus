@@ -97,4 +97,5 @@ end:                                              ; preds = %14, %20
   br label %14
 
 22:                                               ; No predecessors!
+  unreachable
 }

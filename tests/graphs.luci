@@ -5,29 +5,29 @@ dec main() -> int;
 def main() -> int {
     // graph G setup
     G:Graph = malloc(16)->(Graph);
-    G->nodesc = 3;
-    G->edgesc = 2;
+    G.nodesc = 3;
+    G.edgesc = 2;
 
-    G->edges = malloc(20)->(int**);
-    getEdge(G,0) = malloc(8)->(int*);
-    getEdge(G,1) = malloc(8)->(int*);
-    getEdgeTuple(G, 0, 0) = 4;
-    getEdgeTuple(G, 0, 1) = 10;
-    getEdgeTuple(G, 1, 0) = 1;
-    getEdgeTuple(G, 1, 1) = 2;
+    G.edges = malloc(20)->(Pair*);
+    G.edges[0] = malloc(8)->(Pair);
+    G.edges[1] = malloc(8)->(Pair);
+    G.edges[0].first = 1;
+    G.edges[0].second = 2;
+    G.edges[1].first = 4;
+    G.edges[1].second = 10;
 
     // graph H setup
     H:Graph = malloc(16)->(Graph);
-    H->nodesc = 3;
-    H->edgesc = 2;
+    H.nodesc = 3;
+    H.edgesc = 2;
 
-    H->edges = malloc(20)->(int**);
-    getEdge(H,0) = malloc(8)->(int*);
-    getEdge(H,1) = malloc(8)->(int*);
-    getEdgeTuple(H, 0, 0) = 1;
-    getEdgeTuple(H, 0, 1) = 2;
-    getEdgeTuple(H, 1, 0) = 10;
-    getEdgeTuple(H, 1, 1) = 4;
+    H.edges = malloc(20)->(Pair*);
+    H.edges[0] = malloc(8)->(Pair);
+    H.edges[1] = malloc(8)->(Pair);
+    H.edges[0].first = 1;
+    H.edges[0].second = 2;
+    H.edges[1].first = 4;
+    H.edges[1].second = 10;
 
     printEdgeList(G);
     printf("--------------------\n");

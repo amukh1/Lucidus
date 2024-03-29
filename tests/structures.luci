@@ -15,16 +15,21 @@ struct Vector_string {
     len:int
 };
 
+struct Pair {
+    first:int,
+    second:int
+};
+
 struct Graph {
     nodesc:int,
     edgesc:int,
-    edges:int**
+    edges: Pair*
 };
 
-dec edgeList(G:Graph) -> int**;
-def edgeList(G:Graph) -> int** {
-    return G.edges;
-}
+// dec edgeList(G:Graph) -> int**;
+// def edgeList(G:Graph) -> int** {
+//     return G.edges;
+// }
 
 dec printEdgeList (G:Graph) -> int;
 // def printEdgeList (G:Graph) -> int {
@@ -41,31 +46,31 @@ dec printEdgeList (G:Graph) -> int;
 //     return 0;
 // }
 
-dec getEdge(G:Graph, i:int) -> int**;
-def getEdge(G:Graph, i:int) -> int** {
-    edge_temp:int* = (G.edges->(int) + i*4)->(int*);
-    edge:int** = edge_temp->(int**);
-    return edge;
-}
+// dec getEdge(G:Graph, i:int) -> int**;
+// def getEdge(G:Graph, i:int) -> int** {
+//     edge_temp:int* = (G.edges->(int) + i*4)->(int*);
+//     edge:int** = edge_temp->(int**);
+//     return edge;
+// }
 
-dec getEdgeTuple(G:Graph, i:int, j:int) -> int*;
-def getEdgeTuple(G:Graph, i:int, j:int) -> int* {
-    // G.edges is of type int**. This is a pointer to an array of pointers to int arrays.
-    // get the [i][j]th position, return the pointer to it
-    // first get the ith pointer to an int array, should be of type int**. Just G.edges shifted by i*4
-    edge_temp:int* = (G.edges->(int) + i*4)->(int*);
-    edge:int** = edge_temp->(int**);
+// dec getEdgeTuple(G:Graph, i:int, j:int) -> int*;
+// def getEdgeTuple(G:Graph, i:int, j:int) -> int* {
+//     // G.edges is of type int**. This is a pointer to an array of pointers to int arrays.
+//     // get the [i][j]th position, return the pointer to it
+//     // first get the ith pointer to an int array, should be of type int**. Just G.edges shifted by i*4
+//     edge_temp:int* = (G.edges->(int) + i*4)->(int*);
+//     edge:int** = edge_temp->(int**);
     
-    // now we have edge, which is a pointer to an int array. We want to get the jth element of this array
-    // so we dereference edge, and then shift by j*4
-    p:int* = (((*edge)->(int) + j*4)->(int*));
-    return p;
-}
+//     // now we have edge, which is a pointer to an int array. We want to get the jth element of this array
+//     // so we dereference edge, and then shift by j*4
+//     p:int* = (((*edge)->(int) + j*4)->(int*));
+//     return p;
+// }
 
 def printEdgeList (G:Graph) -> int {
     i:int = 0;
     while(i != (G.edgesc)) -> {
-        printf("%d -- %d\n", *getEdgeTuple(G, i, 0), *getEdgeTuple(G, i, 1));
+        printf("%d -- %d\n", G.edges[i].first, G.edges[i].second);
         i = i + 1;
     }
     return 0;

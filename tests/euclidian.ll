@@ -64,7 +64,7 @@ entry:
   %rk = alloca i32
   br label %loop
 
-loop:                                             ; preds = %20, %entry
+loop:                                             ; preds = %21, %entry
   %11 = load i32, i32* %rk1
   %12 = load i32, i32* %rk0
   %13 = srem i32 %12, %11
@@ -75,19 +75,28 @@ loop:                                             ; preds = %20, %entry
   store i32 %15, i32* %rk1
   %16 = load i32, i32* %rk
   %17 = icmp eq i32 %16, 0
-  br i1 %17, label %18, label %19
+  br i1 %17, label %19, label %20
 
-18:                                               ; preds = %loop
-  br label %end
+18:                                               ; No predecessors!
+  unreachable
 
 19:                                               ; preds = %loop
-  br label %20
+  br label %end
 
-20:                                               ; preds = %19
+20:                                               ; preds = %loop
+  br label %21
+
+21:                                               ; preds = %20, %24
   br label %loop
 
-end:                                              ; preds = %18
-  %21 = load i32, i32* %rk0
-  %22 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.1, i32 0, i32 0), i32 %21)
+end:                                              ; preds = %19
+  %22 = load i32, i32* %rk0
+  %23 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.1, i32 0, i32 0), i32 %22)
   ret i32 0
+
+24:                                               ; No predecessors!
+  br label %21
+
+25:                                               ; No predecessors!
+  unreachable
 }

@@ -22,11 +22,11 @@ struct Car {
 
 dec printCarData(car:Car) -> int;
 def printCarData(car:Car) -> int {
-    printf("Car Make: %s", *car.make);
-    printf("Car Model: %s", *car.model);
-    printf("Car Mileage: %d\n", *car.mileage);
-    printf("Car Year: %d\n", *car.year);
-    printf("Car Cost: %d\n", *car.cost);
+    printf("Car Make: %s", car.make);
+    printf("Car Model: %s", car.model);
+    printf("Car Mileage: %d\n", car.mileage);
+    printf("Car Year: %d\n", car.year);
+    printf("Car Cost: %d\n", car.cost);
     return 0;
 }
 
@@ -42,8 +42,8 @@ def main() -> int {
     // get data from file
     fstream:char* = fopen("FCar.txt", "r+");
     fseek(fstream, 0, 0);
-    fgets(*FCar.make, 100, fstream);
-    fgets(*FCar.model, 100, fstream);
+    fgets(FCar.make, 100, fstream);
+    fgets(FCar.model, 100, fstream);
     fgets(mileage, 100, fstream);
     fgets(year, 100, fstream);
     fgets(cost, 100, fstream);

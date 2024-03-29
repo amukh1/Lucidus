@@ -18,8 +18,15 @@ dec factorial(n:int) -> int;
 dec isdigit(c:int) -> int;
 
 // def factorial(n:int) -> int {
-//     if (n == 0) -> {
+//     if (n != 0) -> {
+//         return n * factorial(n - 1);
+//     }
+//     return 1;
+// }
+
+// def test(n:int) -> int {
+//     if(n == 1) -> {
 //         return 1;
 //     }
-//     return n * factorial(n - 1);
+//     return 2;
 // }

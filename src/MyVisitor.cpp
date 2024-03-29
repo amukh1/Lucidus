@@ -378,26 +378,31 @@ antlrcpp::Any MyVisitor::visitDef(LucidusParser::DefContext *ctx) {
             llvm::StoreInst* val = controller->assignVariable((llvm::AllocaInst*)this->functionScope[ctx->param(i)->idec()->ID()->getText()], arg);
         }
     }
+    visitChildren(ctx); // THIS IS WHERE CHILDREN ARE VISITED
+
     // checkblocks
-        for(int i = 0; i<this->blocks.size(); i++) {
+        for(int i = 0; i<this->allBlocks.size(); i++) {
             // check if this->allBlocks[i] is empty block
+            // std::cout << this->allBlocks[i]->getName().str() << std::endl; // im dying inside, genuinely
+            // 23834734735 months later, beaten to the floor by bugs, fixed in 5 minutes. :sob: :cry: :sob: :cry: :sob:
             if(this->allBlocks[i]->empty()) {
                 // if so, delete it
                 // this->allBlocks[i]->eraseFromParent();
                 // dont delete it causes indexing problems instead add an exit
                 controller->builder->SetInsertPoint(this->allBlocks[i]);
                 // controller->builder->CreateRetVoid();
+
                 controller->builder->CreateUnreachable();
             }else if(this->allBlocks[i]->getTerminator() == nullptr) {
                 controller->builder->SetInsertPoint(this->allBlocks[i]);
-                // controller->builder->CreateRetVoid();
-                controller->builder->CreateUnreachable();
+                controller->builder->CreateRetVoid();
+                // controller->builder->CreateUnreachable();
             }
         }
 
         this->blocks.clear();
         this->allBlocks.clear();
-    return visitChildren(ctx);
+    return nullptr;
 }
 
 antlrcpp::Any MyVisitor::visitFunc(LucidusParser::FuncContext *ctx)  {
@@ -656,6 +661,7 @@ allBlocks.push_back(blocks[name->getText()]);
 
 auto nextBlock = llvm::BasicBlock::Create(this->controller->ctx, "", controller->builder->GetInsertBlock()->getParent());
 controller->builder->SetInsertPoint(nextBlock);
+allBlocks.push_back(nextBlock);
 // add unreachable
 // controller->builder->CreateUnreachable();
 
