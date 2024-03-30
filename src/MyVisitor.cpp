@@ -710,8 +710,10 @@ return visitChildren(ctx);
         at the end of while block, jump to while block if cond
         else jump to end condition
         */
-        auto while_ = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
-        auto endWhile = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
+        auto while_ = llvm::BasicBlock::Create(this->controller->ctx, "while" + blockCount, parent);
+        blockCount++;
+        auto endWhile = llvm::BasicBlock::Create(this->controller->ctx, "endWhile" + blockCount, parent);
+        blockCount++;
         // insert basic blocks
         controller->builder->CreateBr(while_);
         controller->builder->SetInsertPoint(while_);
