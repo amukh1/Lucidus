@@ -402,6 +402,7 @@ antlrcpp::Any MyVisitor::visitDef(LucidusParser::DefContext *ctx) {
 
         this->blocks.clear();
         this->allBlocks.clear();
+        this->blockCount = 0;
     return nullptr;
 }
 
@@ -674,9 +675,12 @@ return visitChildren(ctx);
         // get parent function
         auto parent = controller->builder->GetInsertBlock()->getParent();
         // create basic blocks
-        auto if_ = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
-        auto else_ = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
-        auto endIf = llvm::BasicBlock::Create(this->controller->ctx, "", parent);
+        auto if_ = llvm::BasicBlock::Create(this->controller->ctx, "if" + blockCount, parent);
+        blockCount++;
+        auto else_ = llvm::BasicBlock::Create(this->controller->ctx, "else" + blockCount, parent);
+        blockCount++;
+        auto endIf = llvm::BasicBlock::Create(this->controller->ctx, "end" + blockCount, parent);
+        blockCount++;
         // insert basic blocks
         controller->builder->CreateCondBr(cond, if_, else_);
         controller->builder->SetInsertPoint(if_);

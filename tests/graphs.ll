@@ -20,6 +20,7 @@ source_filename = "amukh"
 @str.3 = private constant [3 x i8] c")\0A\00"
 @str.4 = private constant [22 x i8] c"--------------------\0A\00"
 @str.5 = private constant [22 x i8] c"--------------------\0A\00"
+@str.6 = private constant [4 x i8] c"%d\0A\00"
 
 declare i32 @printf(i8*, ...)
 
@@ -53,7 +54,29 @@ declare i32 @scanf(i8*, ...)
 
 declare i8* @strcat(i8*, i8*)
 
-declare i32 @factorial(i32)
+define i32 @factorial(i32 %0) {
+entry:
+  %n = alloca i32
+  store i32 %0, i32* %n
+  %1 = load i32, i32* %n
+  %2 = icmp ne i32 %1, 0
+  br i1 %2, label %if, label %lse
+
+if:                                               ; preds = %entry
+  %3 = load i32, i32* %n
+  %4 = sub i32 %3, 1
+  %5 = call i32 @factorial(i32 %4)
+  %6 = load i32, i32* %n
+  %7 = mul i32 %6, %5
+  ret i32 %7
+  br label %d
+
+lse:                                              ; preds = %entry
+  br label %d
+
+d:                                                ; preds = %lse, %if
+  ret i32 1
+}
 
 declare i32 @isdigit(i32)
 
@@ -286,5 +309,7 @@ entry:
   %95 = load %Graph*, %Graph** %H
   %96 = call i32 @printEdgeList(%Graph* %95)
   %97 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.5, i32 0, i32 0))
+  %98 = call i32 @factorial(i32 6)
+  %99 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.6, i32 0, i32 0), i32 %98)
   ret i32 0
 }

@@ -49,7 +49,7 @@ def main() -> int {
     //     printf("G and H are not isomorphic\n");
     // }
 
-    // printf("%d\n", factorial(6));
+    printf("%d\n", factorial(6));
     
     return 0;
 }

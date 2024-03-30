@@ -17,12 +17,12 @@ dec strcat(dest:char*, src:char*) -> char*;
 dec factorial(n:int) -> int;
 dec isdigit(c:int) -> int;
 
-// def factorial(n:int) -> int {
-//     if (n != 0) -> {
-//         return n * factorial(n - 1);
-//     }
-//     return 1;
-// }
+def factorial(n:int) -> int {
+    if (n != 0) -> {
+        return n * factorial(n - 1);
+    }
+    return 1;
+}
 
 // def test(n:int) -> int {
 //     if(n == 1) -> {

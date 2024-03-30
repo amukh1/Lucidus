@@ -34,6 +34,7 @@ public:
     std::vector<llvm::BasicBlock*> allBlocks;
     std::shared_ptr<LLVMController> controller;
     std::shared_ptr<errorHandler> e_handler;
+    int blockCount = 0;
     antlrcpp::Any visitProgram(LucidusParser::ProgramContext *ctx) override {
         // std::cout << "Visiting program" << std::endl;
         return visitChildren(ctx);
