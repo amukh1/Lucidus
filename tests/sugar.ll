@@ -1,10 +1,6 @@
 ; ModuleID = 'amukh'
 source_filename = "amukh"
 
-@str = private constant [8 x i8] c"1 == 1\0A\00"
-@str.1 = private constant [8 x i8] c"2 == 2\0A\00"
-@str.2 = private constant [6 x i8] c"frog\0A\00"
-
 declare i32 @printf(i8*, ...)
 
 declare i8* @malloc(i32)
@@ -37,34 +33,44 @@ declare i32 @scanf(i8*, ...)
 
 declare i8* @strcat(i8*, i8*)
 
-declare i32 @factorial(i32)
+define i32 @factorial(i32 %0) {
+entry:
+  %n = alloca i32
+  store i32 %0, i32* %n
+  %1 = load i32, i32* %n
+  %2 = icmp ne i32 %1, 0
+  br i1 %2, label %if, label %lse
+
+if:                                               ; preds = %entry
+  %3 = load i32, i32* %n
+  %4 = sub i32 %3, 1
+  %5 = call i32 @factorial(i32 %4)
+  %6 = load i32, i32* %n
+  %7 = mul i32 %6, %5
+  ret i32 %7
+  br label %d
+
+lse:                                              ; preds = %entry
+  br label %d
+
+d:                                                ; preds = %lse, %if
+  ret i32 1
+}
 
 declare i32 @isdigit(i32)
 
 define i32 @main() {
 entry:
-  br i1 true, label %0, label %3
+  br i1 true, label %if, label %lse
 
-0:                                                ; preds = %entry
-  %1 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @str, i32 0, i32 0))
-  br i1 true, label %4, label %7
+if:                                               ; preds = %entry
+  ret i32 1
+  br label %d
 
-2:                                                ; preds = %3
-  br label %frog
+lse:                                              ; preds = %entry
+  br label %d
 
-3:                                                ; preds = %entry
-  br label %2
-
-4:                                                ; preds = %0
-  br label %frog
-  %6 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @str.1, i32 0, i32 0))
-
-6:                                                ; preds = %7, %4
- br label %frog
-7:                                                ; preds = %0
-  br label %6
-
-frog:                                             ; preds = %2, %4
-  %8 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @str.2, i32 0, i32 0))
+d:                                                ; preds = %lse, %if
+  ret i32 2
   ret i32 0
 }
