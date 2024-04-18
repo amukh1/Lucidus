@@ -1,0 +1,292 @@
+import "import.luci"
+
+struct Vector_int {
+    v:int*,
+    len:int
+};
+
+struct Vector_char {
+    v:int*,
+    len:int
+};
+
+struct Vector_string {
+    v:int*,
+    len:int
+};
+
+struct Pair {
+    first:int,
+    second:int
+};
+
+struct Graph {
+    nodesc:int,
+    edgesc:int,
+    edges: Pair*
+};
+
+// dec edgeList(G:Graph) -> int**;
+// def edgeList(G:Graph) -> int** {
+//     return G.edges;
+// }
+
+dec printEdgeList (G:Graph) -> int;
+// def printEdgeList (G:Graph) -> int {
+//     i:int = 0;
+//     goto while;
+//     label while:
+//     if(i == (G.edgesc)) -> {
+//         goto while_end;
+//     }
+//     printf("%d -- %d\n", *(((**(G->edges))->(int) + i*4)->(int*)), *((((((*(G->edges)))->(int) + i*4)->(int*))->(int) + 1*4)->(int*)));
+//     (ptr i) = i + 1;
+//     goto while;
+//     label while_end:
+//     return 0;
+// }
+
+// dec getEdge(G:Graph, i:int) -> int**;
+// def getEdge(G:Graph, i:int) -> int** {
+//     edge_temp:int* = (G.edges->(int) + i*4)->(int*);
+//     edge:int** = edge_temp->(int**);
+//     return edge;
+// }
+
+// dec getEdgeTuple(G:Graph, i:int, j:int) -> int*;
+// def getEdgeTuple(G:Graph, i:int, j:int) -> int* {
+//     // G.edges is of type int**. This is a pointer to an array of pointers to int arrays.
+//     // get the [i][j]th position, return the pointer to it
+//     // first get the ith pointer to an int array, should be of type int**. Just G.edges shifted by i*4
+//     edge_temp:int* = (G.edges->(int) + i*4)->(int*);
+//     edge:int** = edge_temp->(int**);
+    
+//     // now we have edge, which is a pointer to an int array. We want to get the jth element of this array
+//     // so we dereference edge, and then shift by j*4
+//     p:int* = (((*edge)->(int) + j*4)->(int*));
+//     return p;
+// }
+
+def printEdgeList (G:Graph) -> int {
+    i:int = 0;
+    while(i != (G.edgesc)) -> {
+        printf("%d -- %d\n", G.edges[i].first, G.edges[i].second);
+        i = i + 1;
+    }
+    return 0;
+}
+
+struct Permutation {
+    v:int*,
+    len:int
+};
+
+dec new_Permutation(v:int*, len:int) -> Permutation;
+def new_Permutation(v:int*, len:int) -> Permutation {
+    p:Permutation = malloc(8)->(Permutation);
+    p.v = v;
+    p.len = len;
+    return p;
+}
+
+dec printPermutation(p:Permutation) -> int;
+def printPermutation(p:Permutation) -> int {
+    i:int = 0;
+    printf("(");
+    while(i < (p.len)) -> {
+        printf("%d ", ((p.v)[i]));
+        i = i + 1;
+    }
+    printf(")\n");
+    return 0;
+}
+
+dec gen_all_permutations(n:int) -> Permutation*;
+def gen_all_permutations(n:int) -> Permutation* {
+    L:Permutation* = malloc(8)->(Permutation*);
+    if(n == 1) -> {
+        v:Permutation = malloc(8)->(Permutation);
+        v.v = malloc(4)->(int*);
+        v.len = 1;
+        (v.v)[0] = 1;
+        L[0] = v;
+        goto end;
+    }
+
+    k:int = factorial(n-1);
+    recurse:Permutation* = gen_all_permutations(n-1);
+    i:int = 0;
+    while(i != n) -> {
+        perm:Permutation = malloc(8)->(Permutation);
+        perm.v = malloc(4*n)->(int*);
+        perm.len = n;
+        // perm.v[i] = n;
+
+        j:int = 0;
+        while(j != k) -> {
+            rec:Permutation = recurse[j];
+            r:int = 0;
+            h:int = 0;
+            while(h != n) -> {
+                if(h == i) -> {
+                    (perm.v)[h] = n;
+                }
+                if(h != i) -> {
+                    (perm.v)[h] = (rec.v)[r];
+                    r = r + 1;
+                }
+                h = h + 1;
+            }
+            L[i*k + j] = perm;
+            j = j + 1;
+        }
+        i = i + 1;
+    }
+
+    goto end;
+    label end:
+    return L;
+}
+//     // base case
+//     if(n == 1) -> {
+//         v:Permutation* = malloc(4)->(Permutation*);
+//         (*v)->v = malloc(4)->(int*);
+//         (*v)->len = 1;
+//         ((*v).v)[0] = 1;
+//         return v;
+//     }
+//     printf("n: %d\n", n);
+//     v:Permutation* = malloc(4*factorial(n))->(Permutation*);
+//     i:int = 1;
+//     // get vector for gen_all_permutations(n-1):
+//     last_permutations:Permutation* = malloc(4*factorial(n-1))->(Permutation*);
+//     (ptr last_permutations) = gen_all_permutations(n-1);
+//     // refactor to not use goto.
+//     while(i != n+1) -> {
+//         // mallocate (n-1)! permutations
+//         // put (n) in the ith spot of each of those permutations
+//         // fill the rest of the spots of the (n-1)! permutations with the permutations from gen_all_permutations(n-1)
+
+//         // start:
+//         perms:Permutation* = malloc(4*factorial(n-1))->(Permutation*);
+//         j:int = 1;
+//         while(j != (factorial(n-1)+1)) -> {
+//             // mallocate a new permutation
+//             perm:Permutation = malloc(8)->(Permutation);
+//             perm->v = malloc(4*n)->(int*);
+//             perm->len = n;
+//             h:int = 1;
+//             k:inPt = 1;
+//             while(k != (factorial(n) + 1)) -> {
+//                 if(k == i) -> {
+//                     (permutation.v)[k] = n;
+//                 }
+//                 if(k != i) -> {
+//                     // u:=*(((*recurse[j]).v)[r]);
+//                     // printf("n: %d, perm: %d, j: %d, r: %d\n", n, permute(*(recurse[j]),r+1), j, r);
+//                     (permutation.v)[k] = permute(*(recurse[j]),r+1);
+//                     (ptr r) = r + 1;
+//                 }
+//                 (ptr k) = k + 1;
+//             }
+//             (v[i*factorial(n-1) + j]) = permutation;
+//             (ptr j) = j + 1;
+//         }
+//         (ptr i) = i + 1;
+//     }
+//     return v;
+// }
+
+dec isEqual(G: Graph, H: Graph) -> int;
+def isEqual(G: Graph, H: Graph) -> int {
+    // if(G.nodesc != H.nodesc) -> {
+    //     return 0;
+    // }
+    // if(G.edgesc != H.edgesc) -> {
+    //     return 0;
+    // }
+    // i:int = 0;
+    // while(i != (G.edgesc)) -> {
+    //     if(G.edges[i][0] != H.edges[i][0]) -> {
+    //         return 0;
+    //     }
+    //     if(G.edges[i][1] != H.edges[i][1]) -> {
+    //         return 0;
+    //     }
+    //     i = i + 1;
+    // }
+    return 1;
+}
+
+dec isIsomorphic(G:Graph, H:Graph) -> int; // 0 -> false, 1 -> true
+def isIsomorphic(G:Graph, H:Graph) -> int {
+    R:int = 0;
+    // loop through every possible bijection and see if it is an isomorphism
+    if(G.nodesc != H.nodesc) -> {
+        return 0;
+    }
+    //otherwise
+    if(G.edgesc != H.edgesc) -> {
+        // R = 0;
+        // goto end;
+        return 0;
+    }
+
+    // get all permutations of the nodes of G
+    // these are all the bijections G -> H
+    perms:Permutation* = gen_all_permutations(G.nodesc);
+    i:int = 0;
+    // iterate through all of them, see if any preserve relations.
+    while(i != factorial(G.nodesc)) -> {
+        // get the current permutation
+        p:Permutation = perms[i];
+        // check if the permutation preserves the edges
+        t:int = 1;
+        j:int = 0;
+        while(j != G.edgesc) -> {
+            // if a -- b in G, then p(a) -- p(b) in H?
+            a:int = G.edges[j].first;
+            b:int = G.edges[j].second;
+
+            pa:int = p.v[a];
+            ba:int = p.v[b];
+
+            // check if pa -- ba in H.
+            f:int = 0;
+            l:int = 0;
+            while(l != H.edgesc) -> {
+                if(H.edges[l].first == pa) -> {
+                    if(H.edges[l].second == ba) -> {
+                        f = 1;
+                    }
+                }
+                l = l+1;
+            }
+            if(f == 0) -> {
+                t = 0;
+            }
+
+            j = j+1;
+        }
+
+        if(t == 1) -> {
+            printf("%d\n", i);
+            return 1;
+        }
+        i = i + 1;
+    }
+    return R;
+
+}
+//     // loop through every possible bijection and see if it is an isomorphism
+//     if(G.nodesc != H.nodesc) -> {
+//         return 0;
+//     }
+//     //otherwise
+//     if(G.edgesc != H.edgesc) -> {
+//         return 0;
+//     }
+
+    
+//     return 1;
+// }

@@ -1,0 +1,35 @@
+import "include.luci"
+
+struct Car {
+    make: char*,
+    model: char*,
+    mileage: int,
+    year: int,
+    cost: int,
+    print: (Car)->(int)*
+};
+
+dec print(car:Car) -> int;
+def print(car:Car) -> int {
+    printf("Make: %s\n", car.make);
+    printf("Model: %s\n", car.model);
+    printf("Mileage: %d\n", car.mileage);
+    printf("Year: %d\n", car.year);
+    printf("Cost: %d\n", car.cost);
+    return 0;
+}
+
+dec main() -> int;
+def main() -> int {
+
+    camaro: Car = malloc(21)->(Car);
+    camaro->make = "Chevrolet";
+    camaro->model = "Camaro";
+    camaro->mileage = 10000;
+    camaro->year = 2010;
+    camaro->cost = 20000;
+    camaro->print = print;
+    (camaro.print)(camaro);
+
+    return 0;
+}

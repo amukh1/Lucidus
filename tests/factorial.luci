@@ -1,0 +1,30 @@
+dec printf(tmp:char*, ...) -> int;
+dec malloc(size:int) -> char*;
+dec gets(tmp:char*) -> char*;
+dec atoi(tmp:char*) -> int;
+
+dec factorial(n:int) -> int;
+
+dec main() -> int;
+def main() -> int {
+    n:char* = malloc(100);
+    gets(n);
+    printf("%d\n", factorial(atoi(n)));
+    return 0;
+}
+
+def factorial(n:int) -> int {
+    x:int = n;
+    i:int = 1;
+    goto while;
+    label while:
+    if(i == n) -> {
+        goto end;
+    }
+    ptr x = x * (n-i);
+    ptr i = i + 1;
+    goto while;
+
+    label end:
+    return x;
+}

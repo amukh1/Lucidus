@@ -1,0 +1,25 @@
+import "include.luci"
+
+dec main() -> int;
+def main() -> int {
+    a:int* = malloc(4)->(int*);
+    b:int* = malloc(4)->(int*);
+    scanf("(%d,%d)", a, b);
+
+    rk0:int = *a;
+    rk1:int = *b;
+    rk:int;
+
+    goto loop;
+    label loop:
+    rk = (rk0 % rk1);
+    rk0 = rk1;
+    rk1 = rk;
+    if(rk == 0) -> {
+        goto end;
+    }
+    goto loop;
+    label end:
+    printf("%d\n", rk0);
+    return 0;
+}

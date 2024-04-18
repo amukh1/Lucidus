@@ -1,0 +1,18 @@
+dec printf(tmp:char*, ...) -> int;
+dec malloc(size:int) -> char*;
+dec free(pointer:char*) -> char*;
+dec fprintf(stream:char*, tmp:char*, ...) -> int;
+dec fputs(tmp:char*, stream:char*) -> int;
+dec fgets(tmp:char*, n:int, stream:char*) -> char*;
+dec fopen(tmp:char*, mode:char*) -> char*;
+dec fclose(stream:char*) -> int;
+dec strlen(tmp:char*) -> int;
+dec strcpy(dest:char*, src:char*) -> char*;
+dec gets(tmp:char*) -> char*;
+dec atoi(tmp:char*) -> int;
+dec fseek(stream:char*, offset:int, origin:int) -> int;
+
+def main() -> int {
+    printf("hi\n");
+    return 0;
+}

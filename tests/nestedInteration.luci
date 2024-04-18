@@ -1,0 +1,20 @@
+    i:int = 0;
+    j:int = 0;
+    goto while;
+    label while:
+    if(i == 3) -> {
+        goto while_end;
+    }
+    (ptr j) = 0;
+    goto while_j;
+    label while_j:
+    if(j == 3) -> {
+        goto while_j_end;
+    }
+    printf("%d %d \n", i, j);
+    (ptr j) = j + 1;
+    goto while_j;
+    label while_j_end:
+    (ptr i) = i + 1;
+    goto while;
+    label while_end:

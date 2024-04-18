@@ -1,0 +1,67 @@
+import "include.luci"
+import "structures.luci"
+
+dec main() -> int;
+def main() -> int {
+    // graph G setup
+    G:Graph = malloc(16)->(Graph);
+    G->nodesc = 3;
+    G->edgesc = 2;
+
+    edges:int** = malloc(20)->(int**);
+    G->edges = edges;
+    // edges = malloc(8)->(int*);
+    // edgesTupleOne:int* = (*edges);
+    // malloc 4 bytes for each int
+    // getEdge(G,0) = malloc(4)->(int);
+    // getEdge(G,1) = malloc(4)->(int);
+    // (edgesTupleOne->(int) + 0*4)->(int*) = 0;
+    // (edgesTupleOne->(int) + 1*4)->(int*) = 1;
+    // edgesTupleTwo:int* = (edges->(int) + 4)->(int*);
+    // (edgesTupleTwo->(int) + 0*4)->(int*) = 1;
+    // (edgesTupleTwo->(int) + 1*4)->(int*) = 2;
+    getEdgeTuple(G, 0, 0) = 0;
+    getEdgeTuple(G, 0, 1) = 1;
+    getEdgeTuple(G, 1, 0) = 1;
+    getEdgeTuple(G, 1, 1) = 2;
+
+    // graph H setup
+    H:Graph = malloc(16)->(Graph);
+    H->nodesc = 3;
+    H->edgesc = 2;
+
+    edges2:int** = malloc(20)->(int**);
+    H->edges = edges2;
+    // edges2 = malloc(8)->(int*);
+    // edgesTupleOne2:int* = (*edges);
+    // (edgesTupleOne2->(int) + 0*4)->(int*) = 0;
+    // (edgesTupleOne2->(int) + 1*4)->(int*) = 1;
+    // edgesTupleTwo2:int* = (edges->(int) + 4)->(int*);
+    // (edgesTupleTwo2->(int) + 0*4)->(int*) = 1;
+    // (edgesTupleTwo2->(int) + 1*4)->(int*) = 2;
+    getEdgeTuple(H, 0, 0) = 0;
+    getEdgeTuple(H, 0, 1) = 1;
+    getEdgeTuple(H, 1, 0) = 1;
+    getEdgeTuple(H, 1, 1) = 2;
+    // printf("%d\n", *getEdgeTuple(G, 0, 0));
+    // print some edges in the form n1 -- n2
+    // printf("%d -- %d\n", *(((**(G->edges))->(int) + 0*4)->(int*)), *(((**(G->edges))->(int) + 1*4)->(int*)));
+    // printf("%d -- %d\n", *(((**(G->edges))->(int) + 4)->(int*)), *((((((*(G->edges)))->(int) + 4)->(int*))->(int) + 1*4)->(int*)));
+    // print edges
+
+    printEdgeList(G);
+    printf("--------------------\n");
+    printEdgeList(H);
+    printf("--------------------\n");
+    // printf("%d\n", *getEdgeTuple(G, 0, 1));
+
+    // check if G and H are isomorphic
+    if(isIsomorphic(G, H) == 1) -> {
+        printf("G and H are isomorphic\n");
+    } 
+    if(isIsomorphic(G, H) == 0) -> {
+        printf("G and H are not isomorphic\n");
+    }
+    
+    return 0;
+}

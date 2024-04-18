@@ -1,0 +1,53 @@
+dec printf(tmp:char*, ...) -> int;
+dec malloc(size:int) -> char*;
+dec free(pointer:char*) -> char*;
+dec fprintf(stream:char*, tmp:char*, ...) -> int;
+dec fputs(tmp:char*, stream:char*) -> int;
+dec fgets(tmp:char*, n:int, stream:char*) -> char*;
+dec fopen(tmp:char*, mode:char*) -> char*;
+dec fclose(stream:char*) -> int;
+dec strlen(tmp:char*) -> int;
+dec strcpy(dest:char*, src:char*) -> char*;
+dec gets(tmp:char*) -> char*;
+dec atoi(tmp:char*) -> int;
+dec fseek(stream:char*, offset:int, origin:int) -> int;
+
+struct Car {
+    make: char*,
+    model: char*,
+    mileage: int,
+    year: int,
+    cost: int
+};
+
+dec main() -> int;
+def main() -> int {
+    FCar:Car = malloc(20)->(Car);
+    FCar.make = malloc(100);
+    FCar.model = malloc(100);
+    mileage:char* = malloc(100);
+    year:char* = malloc(100);
+    cost:char* = malloc(100);
+
+    // get data from file
+    fstream:char* = fopen("FCar.txt", "r+");
+    fseek(fstream, 0, 0);
+    fgets(FCar.make, 100, fstream);
+    fgets(FCar.model, 100, fstream);
+    fgets(mileage, 100, fstream);
+    fgets(year, 100, fstream);
+    fgets(cost, 100, fstream);
+
+    // convert data to correct types
+    FCar.mileage = atoi(mileage);
+    FCar.year = atoi(year);
+    FCar.cost = atoi(cost);
+
+    printf("Car Make: %s", FCar.make);
+    printf("Car Model: %s", FCar.model);
+    printf("Car Mileage: %d\n", FCar.mileage);
+    printf("Car Year: %d\n", FCar.year);
+    printf("Car Cost: %d\n", FCar.cost);
+
+    return 0;
+}

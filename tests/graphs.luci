@@ -1,0 +1,69 @@
+import "include.luci"
+import "structures.luci"
+
+dec main() -> int;
+def main() -> int {
+    // graph G setup
+    G:Graph = malloc(16)->(Graph);
+    G.nodesc = 4;
+    G.edgesc = 3;
+
+    G.edges = malloc(40)->(Pair*);
+    G.edges[0] = malloc(8)->(Pair);
+    G.edges[1] = malloc(8)->(Pair);
+    G.edges[2] = malloc(8)->(Pair);
+    // G.edges[3] = malloc(8)->(Pair);
+    G.edges[0].first = 1;
+    G.edges[0].second = 2;
+    G.edges[1].first = 1;
+    G.edges[1].second = 3;
+    G.edges[2].first = 3;
+    G.edges[2].second = 4;
+
+    // graph H setup
+    H:Graph = malloc(16)->(Graph);
+    H.nodesc = 4;
+    H.edgesc = 3;
+
+    H.edges = malloc(40)->(Pair*);
+    H.edges[0] = malloc(8)->(Pair);
+    H.edges[1] = malloc(8)->(Pair);
+    H.edges[2] = malloc(8)->(Pair);
+    // H.edges[3] = malloc(8)->(Pair);
+    H.edges[0].first = 1;
+    H.edges[0].second = 2;
+    H.edges[1].first = 1;
+    H.edges[1].second = 3;
+    H.edges[2].first = 3;
+    H.edges[2].second = 4;
+
+    printEdgeList(G);
+    printf("--------------------\n");
+    printEdgeList(H);
+    printf("--------------------\n");
+
+    n:int = 3;
+    k:Permutation* = gen_all_permutations(n);
+    // log all permutations of 2
+    
+    i:int = 0;
+    while(i < factorial(n)) -> {
+        j:int = 0;
+        while(j < n) -> {
+            printf("%d ", k[i].perm[j]);
+            j = j + 1;
+        }
+        printf("\n");
+        i = i + 1;
+    }
+
+    // check if G and H are isomorphic
+    if(isIsomorphic(G, H) == 1) -> {
+        printf("G and H are isomorphic\n");
+    } 
+    if(isIsomorphic(G, H) == 0) -> {
+        printf("G and H are not isomorphic\n");
+    }
+    
+    return 0;
+}
