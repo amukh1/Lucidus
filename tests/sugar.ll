@@ -48,12 +48,11 @@ if:                                               ; preds = %entry
   %6 = load i32, i32* %n
   %7 = mul i32 %6, %5
   ret i32 %7
-  br label %d
 
 lse:                                              ; preds = %entry
   br label %d
 
-d:                                                ; preds = %lse, %if
+d:                                                ; preds = %lse
   ret i32 1
 }
 
@@ -61,16 +60,29 @@ declare i32 @isdigit(i32)
 
 define i32 @main() {
 entry:
-  br i1 true, label %if, label %lse
+  %x = alloca i32
+  store i32 3, i32* %x
+  %0 = load i32, i32* %x
+  %1 = icmp eq i32 %0, 1
+  br i1 %1, label %if, label %lse
 
 if:                                               ; preds = %entry
   ret i32 1
-  br label %d
 
 lse:                                              ; preds = %entry
   br label %d
 
-d:                                                ; preds = %lse, %if
+d:                                                ; preds = %lse
+  %2 = load i32, i32* %x
+  %3 = icmp eq i32 %2, 2
+  br i1 %3, label %else, label %4
+
+else:                                             ; preds = %d
   ret i32 2
+
+4:                                                ; preds = %d
+  br label %hile
+
+hile:                                             ; preds = %4
   ret i32 0
 }

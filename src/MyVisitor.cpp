@@ -690,12 +690,14 @@ return visitChildren(ctx);
         // jump to end
 
         // if(controller->builder->GetInsertBlock()->getTerminator() == nullptr && controller->builder->GetInsertBlock()->getParent() != nullptr)
+        if (controller->builder->GetInsertBlock()->getTerminator() == nullptr)
         controller->builder->CreateBr(endIf);
         // insert else block
         controller->builder->SetInsertPoint(else_);
         // visit else block
         // nothing
         // jump to end
+        
         controller->builder->CreateBr(endIf);
         // insert end block
         controller->builder->SetInsertPoint(endIf);

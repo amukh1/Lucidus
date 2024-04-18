@@ -220,16 +220,13 @@ def isEqual(G: Graph, H: Graph) -> int {
 
 dec isIsomorphic(G:Graph, H:Graph) -> int; // 0 -> false, 1 -> true
 def isIsomorphic(G:Graph, H:Graph) -> int {
-    R:int = 0;
     // loop through every possible bijection and see if it is an isomorphism
     if(G.nodesc != H.nodesc) -> {
-        R = 0;
-        goto end;
+        return 0;
     }
     //otherwise
     if(G.edgesc != H.edgesc) -> {
-        R = 0;
-        goto end;
+        return 0;
     }
 
     // get all permutations of the nodes of G
@@ -270,17 +267,13 @@ def isIsomorphic(G:Graph, H:Graph) -> int {
         }
 
         if(t == 1) -> {
-            R = 1;
             printf("%d\n", i);
-            goto end;
+            return 1;
         }
         i = i + 1;
     }
 
-    goto end;
-    label end:
-    return R;
-
+    return 0;
 }
 //     // loop through every possible bijection and see if it is an isomorphism
 //     if(G.nodesc != H.nodesc) -> {
