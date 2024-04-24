@@ -18,6 +18,7 @@
 #include <llvm/IR/Value.h>
 
 #include "LLVMController.h"
+#include "types.h"
 
 // listener and visitor
 #include "LucidusParserVisitor.h"
@@ -79,19 +80,14 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
     if(ctx->INT() != nullptr && ctx->children.size() == 1) {
         int v = std::stoi(ctx->INT()->getText());
         llvm::Value *val = llvm::ConstantInt::get(llvm::Type::getInt32Ty(controller->ctx), v);
+        // return (types::Value) wrapType(val, val->getType());
         return val;
     }else if(ctx->FLOAT() != nullptr && ctx->children.size() == 1) {
         float v = std::stof(ctx->FLOAT()->getText());
         llvm::Value *val = llvm::ConstantFP::get(llvm::Type::getFloatTy(controller->ctx), v);
+        // return (types::Value) wrapType(val, val->getType());
         return val;
     }else if(ctx->STRING() != nullptr && ctx->children.size() == 1) {
-        // auto str = controller->builder->CreateGlobalStringPtr(ctx->STRING()->getText());
-        // // load and return str
-        // auto loadedStr = controller->builder->CreateLoad(str->getType(), str);
-        // // now make loadStr llvm::Value* and return
-        // return (llvm::Value*)loadedStr;
-        // forget all that, make it an an array of chars, but in pointer form
-        // ^:skull: now that I have done this I am too lazy to do it correctly.
         std::string str = ctx->STRING()->getText();
         replaceAll(str, "\\n", "\n");
         replaceAll(str, "\\t", "\t");
@@ -186,33 +182,14 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         loadingAvailable = old;
 
         return (llvm::Value*)ptr;
-        // controller->builder->CreateStore(std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))), val);
-        // auto temp = controller->builder->CreateAlloca(val->getType(), nullptr);
-        // controller->builder->CreateStore(val, temp);
-        // return (llvm::Value*)controller->getVariable(temp);
-        // std::cout << llvm::isa<llvm::AllocaInst>(val) << std::endl;
-        // if(llvm::isa<llvm::AllocaInst>(val))
-        // return (llvm::Value*) llvm::dyn_cast<llvm::AllocaInst>(val);
-        // else {
-        //     auto allocaval = controller->builder->CreateAlloca(val->getType(), nullptr);
-        //     controller->builder->CreateStore(val, allocaval);
-        //     return (llvm::Value*)allocaval;
-        // }
-        // return ptr to allocainst
-        // return (llvm::Value*)allocval;
-        // auto valptr = controller->builder->CreateGEP(allocval->getType(), allocval, std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(1))));
-        // return (llvm::Value*)val;
+
     } else if (ctx->STAR() && ctx->children.size() == 2) {
-        // make ref
-        // std::cout << ctx->getText() << std::endl;
+
         auto val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));// gives bad any_cast  
-        // auto val = std::any_cast<llvm::AllocaInst*>((std::any)visitExpr(ctx->expr(0)));// also gives b_a_c
-        // get dereferenced type
+
         auto dtype = val->getType()->getContainedType(0);
         auto valnotptr = controller->builder->CreateLoad(dtype, val);
-        // auto valptr = controller->getVariable(val);
-        // auto valptrptr = controller->builder->CreateAlloca(dtype, nullptr);
-        // controller->assignVariable((llvm::AllocaInst*)valptrptr, valptr);
+
         return (llvm::Value*)valnotptr;
     } else if(ctx->ARROW() != nullptr && ctx->children.size() == 3) {
         // STRUCT MEMBER
@@ -223,7 +200,7 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         auto structType = structPtr->getType()->getContainedType(0);
         auto structName = structType->getStructName().str();
         auto structMember = ctx->ID()->getText();
-        // auto structMemberIndex = this->structs[structName]->getStructMemberIndex(structMember); // doesnt work, function is not defined
+
         auto structMemberIndex = 0;
         for(int i = 0; i<this->structs[structName]->getNumElements(); i++) {
             if(this->structNames[structName][i] == structMember) {
@@ -236,7 +213,7 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
 
         
         return (llvm::Value*)structMemberPtr;
-        // return visitChildren(ctx);
+
     }else if(ctx->DOT() != nullptr && ctx->children.size() == 3) {
         auto old = this->loadingAvailable;
         this->loadingAvailable = true;
@@ -245,7 +222,7 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         auto structType = structPtr->getType()->getContainedType(0);
         auto structName = structType->getStructName().str();
         auto structMember = ctx->ID()->getText();
-        // auto structMemberIndex = this->structs[structName]->getStructMemberIndex(structMember); // doesnt work, function is not defined
+
         auto structMemberIndex = 0;
         for(int i = 0; i<this->structs[structName]->getNumElements(); i++) {
             if(this->structNames[structName][i] == structMember) {
@@ -259,16 +236,12 @@ antlrcpp::Any MyVisitor::visitExpr(LucidusParser::ExprContext *ctx) {
         if(this->loadingAvailable == true)
         return (llvm::Value*)controller->builder->CreateLoad(structMemberType, structMemberPtr);
         else return (llvm::Value*)structMemberPtr;
-        // return visitChildren(ctx);
+
     }else if(ctx->expr(0) != nullptr && ctx->children.size() == 3) {
         return visit(ctx->expr(0));
     }else if(ctx->ARROW() != nullptr && ctx->children.size() == 5) {
-        // bitcast, ex: C: (int) 3.5; Source Syntax: (3.5)->(int)
-        /*
-        auto val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));
-        auto type = getTypes(ctx->type(), this->controller, this->structs);
-        return (llvm::Value*)controller->builder->CreateBitCast(val, type);
-        */ // why are compilers so smart? wrote this and thought i was home free. now i need to program logic to decide which cast to use smh
+        // bitcast, ex: C: (int) 3.5; My Syntax: (3.5)->(int)
+        // why are compilers so smart? wrote this and thought i was home free. now i need to program logic to decide which cast to use smh
         auto val = std::any_cast<llvm::Value*>((std::any)visitExpr(ctx->expr(0)));
         auto type = getTypes(ctx->type(), this->controller, this->structs);
         // if type is a ptr
