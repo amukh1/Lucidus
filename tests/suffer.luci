@@ -1,0 +1,26 @@
+import "include.luci"
+
+struct Frog {
+    name: char*,
+    age: int
+};
+
+dec main() -> int;
+def main() -> int {
+    frog:Frog = malloc(sizeof Frog)->(Frog);
+    frog.name = malloc(100);
+    frog.name = "Kermit";
+    frog.age = 5;
+
+    printf("Frog Name: %s\n", frog.name);
+    printf("Frog Age: %d\n", frog.age);
+
+    froggy:Frog* = ptr frog;
+    name:char** = ptr frog.name;
+    *name = "Froggy";
+    printf("Froggy Name: %s\n", (*froggy).name);
+    printf("Froggy Age: %d\n", (*froggy).age);
+
+    printf("Sizeof Frog: %d\n", sizeof Frog);
+    return 0;
+}

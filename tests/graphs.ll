@@ -18,13 +18,10 @@ source_filename = "amukh"
 @str.1 = private constant [2 x i8] c"(\00"
 @str.2 = private constant [4 x i8] c"%d \00"
 @str.3 = private constant [3 x i8] c")\0A\00"
-@str.4 = private constant [4 x i8] c"%d\0A\00"
+@str.4 = private constant [22 x i8] c"--------------------\0A\00"
 @str.5 = private constant [22 x i8] c"--------------------\0A\00"
-@str.6 = private constant [22 x i8] c"--------------------\0A\00"
-@str.7 = private constant [4 x i8] c"%d \00"
-@str.8 = private constant [2 x i8] c"\0A\00"
-@str.9 = private constant [24 x i8] c"G and H are isomorphic\0A\00"
-@str.10 = private constant [28 x i8] c"G and H are not isomorphic\0A\00"
+@str.6 = private constant [4 x i8] c"%d \00"
+@str.7 = private constant [2 x i8] c"\0A\00"
 
 declare i32 @printf(i8*, ...)
 
@@ -369,216 +366,12 @@ entry:
   ret i32 1
 }
 
-define i32 @isIsomorphic(%Graph* %0, %Graph* %1) {
-entry:
-  %G = alloca %Graph*
-  store %Graph* %0, %Graph** %G
-  %H = alloca %Graph*
-  store %Graph* %1, %Graph** %H
-  %2 = load %Graph*, %Graph** %H
-  %3 = getelementptr inbounds %Graph, %Graph* %2, i32 0, i32 0
-  %4 = load i32, i32* %3
-  %5 = load %Graph*, %Graph** %G
-  %6 = getelementptr inbounds %Graph, %Graph* %5, i32 0, i32 0
-  %7 = load i32, i32* %6
-  %8 = icmp ne i32 %7, %4
-  br i1 %8, label %if, label %lse
-
-if:                                               ; preds = %entry
-  ret i32 0
-
-lse:                                              ; preds = %entry
-  br label %d
-
-d:                                                ; preds = %lse
-  %9 = load %Graph*, %Graph** %H
-  %10 = getelementptr inbounds %Graph, %Graph* %9, i32 0, i32 1
-  %11 = load i32, i32* %10
-  %12 = load %Graph*, %Graph** %G
-  %13 = getelementptr inbounds %Graph, %Graph* %12, i32 0, i32 1
-  %14 = load i32, i32* %13
-  %15 = icmp ne i32 %14, %11
-  br i1 %15, label %else, label %16
-
-else:                                             ; preds = %d
-  ret i32 0
-
-16:                                               ; preds = %d
-  br label %hile
-
-hile:                                             ; preds = %16
-  %perms = alloca %Permutation**
-  %17 = load %Graph*, %Graph** %G
-  %18 = getelementptr inbounds %Graph, %Graph* %17, i32 0, i32 0
-  %19 = load i32, i32* %18
-  %20 = call %Permutation** @gen_all_permutations(i32 %19)
-  store %Permutation** %20, %Permutation*** %perms
-  %i = alloca i32
-  store i32 0, i32* %i
-  br label %endWhile
-
-endWhile:                                         ; preds = %"ename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]", %hile
-  %p = alloca %Permutation*
-  %21 = load %Permutation**, %Permutation*** %perms
-  %22 = load i32, i32* %i
-  %23 = getelementptr %Permutation*, %Permutation** %21, i32 %22
-  %24 = load %Permutation*, %Permutation** %23
-  store %Permutation* %24, %Permutation** %p
-  %t = alloca i32
-  store i32 1, i32* %t
-  %j = alloca i32
-  store i32 0, i32* %j
-  br label %dWhile
-
-e:                                                ; preds = %"ename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
-  ret i32 0
-
-dWhile:                                           ; preds = %"typename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]", %endWhile
-  %a = alloca i32
-  %25 = load %Graph*, %Graph** %G
-  %26 = getelementptr inbounds %Graph, %Graph* %25, i32 0, i32 2
-  %27 = load %Pair**, %Pair*** %26
-  %28 = load i32, i32* %j
-  %29 = getelementptr %Pair*, %Pair** %27, i32 %28
-  %30 = load %Pair*, %Pair** %29
-  %31 = getelementptr inbounds %Pair, %Pair* %30, i32 0, i32 0
-  %32 = load i32, i32* %31
-  store i32 %32, i32* %a
-  %b = alloca i32
-  %33 = load %Graph*, %Graph** %G
-  %34 = getelementptr inbounds %Graph, %Graph* %33, i32 0, i32 2
-  %35 = load %Pair**, %Pair*** %34
-  %36 = load i32, i32* %j
-  %37 = getelementptr %Pair*, %Pair** %35, i32 %36
-  %38 = load %Pair*, %Pair** %37
-  %39 = getelementptr inbounds %Pair, %Pair* %38, i32 0, i32 1
-  %40 = load i32, i32* %39
-  store i32 %40, i32* %b
-  %pa = alloca i32
-  %41 = load %Permutation*, %Permutation** %p
-  %42 = getelementptr inbounds %Permutation, %Permutation* %41, i32 0, i32 0
-  %43 = load i32*, i32** %42
-  %44 = load i32, i32* %a
-  %45 = getelementptr i32, i32* %43, i32 %44
-  %46 = load i32, i32* %45
-  store i32 %46, i32* %pa
-  %ba = alloca i32
-  %47 = load %Permutation*, %Permutation** %p
-  %48 = getelementptr inbounds %Permutation, %Permutation* %47, i32 0, i32 0
-  %49 = load i32*, i32** %48
-  %50 = load i32, i32* %b
-  %51 = getelementptr i32, i32* %49, i32 %50
-  %52 = load i32, i32* %51
-  store i32 %52, i32* %ba
-  %f = alloca i32
-  store i32 0, i32* %f
-  %l = alloca i32
-  store i32 0, i32* %l
-  br label %hile1
-
-53:                                               ; preds = %"typename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
-  %54 = load i32, i32* %t
-  %55 = icmp eq i32 %54, 1
-  br i1 %55, label %While, label %e7
-
-hile1:                                            ; preds = %hile3, %dWhile
-  %56 = load i32, i32* %pa
-  %57 = load %Graph*, %Graph** %H
-  %58 = getelementptr inbounds %Graph, %Graph* %57, i32 0, i32 2
-  %59 = load %Pair**, %Pair*** %58
-  %60 = load i32, i32* %l
-  %61 = getelementptr %Pair*, %Pair** %59, i32 %60
-  %62 = load %Pair*, %Pair** %61
-  %63 = getelementptr inbounds %Pair, %Pair* %62, i32 0, i32 0
-  %64 = load i32, i32* %63
-  %65 = icmp eq i32 %64, %56
-  br i1 %65, label %while, label %e2
-
-"ypename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]": ; preds = %hile3
-  %66 = load i32, i32* %f
-  %67 = icmp eq i32 %66, 0
-  br i1 %67, label %endWhile5, label %hile6
-
-while:                                            ; preds = %hile1
-  %68 = load i32, i32* %ba
-  %69 = load %Graph*, %Graph** %H
-  %70 = getelementptr inbounds %Graph, %Graph* %69, i32 0, i32 2
-  %71 = load %Pair**, %Pair*** %70
-  %72 = load i32, i32* %l
-  %73 = getelementptr %Pair*, %Pair** %71, i32 %72
-  %74 = load %Pair*, %Pair** %73
-  %75 = getelementptr inbounds %Pair, %Pair* %74, i32 0, i32 1
-  %76 = load i32, i32* %75
-  %77 = icmp eq i32 %76, %68
-  br i1 %77, label %le, label %ndWhile
-
-e2:                                               ; preds = %hile1
-  br label %hile3
-
-hile3:                                            ; preds = %e2, %e4
-  %78 = load i32, i32* %l
-  %79 = add i32 %78, 1
-  store i32 %79, i32* %l
-  %80 = load %Graph*, %Graph** %H
-  %81 = getelementptr inbounds %Graph, %Graph* %80, i32 0, i32 1
-  %82 = load i32, i32* %81
-  %83 = load i32, i32* %l
-  %84 = icmp ne i32 %83, %82
-  br i1 %84, label %hile1, label %"ypename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
-
-le:                                               ; preds = %while
-  store i32 1, i32* %f
-  br label %e4
-
-ndWhile:                                          ; preds = %while
-  br label %e4
-
-e4:                                               ; preds = %ndWhile, %le
-  br label %hile3
-
-endWhile5:                                        ; preds = %"ypename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
-  store i32 0, i32* %t
-  br label %"typename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
-
-hile6:                                            ; preds = %"ypename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
-  br label %"typename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
-
-"typename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]": ; preds = %hile6, %endWhile5
-  %85 = load i32, i32* %j
-  %86 = add i32 %85, 1
-  store i32 %86, i32* %j
-  %87 = load %Graph*, %Graph** %G
-  %88 = getelementptr inbounds %Graph, %Graph* %87, i32 0, i32 1
-  %89 = load i32, i32* %88
-  %90 = load i32, i32* %j
-  %91 = icmp ne i32 %90, %89
-  br i1 %91, label %dWhile, label %53
-
-While:                                            ; preds = %53
-  %92 = load i32, i32* %i
-  %93 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.4, i32 0, i32 0), i32 %92)
-  ret i32 1
-
-e7:                                               ; preds = %53
-  br label %"ename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
-
-"ename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]": ; preds = %e7
-  %94 = load i32, i32* %i
-  %95 = add i32 %94, 1
-  store i32 %95, i32* %i
-  %96 = load %Graph*, %Graph** %G
-  %97 = getelementptr inbounds %Graph, %Graph* %96, i32 0, i32 0
-  %98 = load i32, i32* %97
-  %99 = call i32 @factorial(i32 %98)
-  %100 = load i32, i32* %i
-  %101 = icmp ne i32 %100, %99
-  br i1 %101, label %endWhile, label %e
-}
+declare i32 @isIsomorphic(%Graph*, %Graph*)
 
 define i32 @main() {
 entry:
   %G = alloca %Graph*
-  %0 = call i8* @malloc(i32 16)
+  %0 = call i8* @malloc(i32 12)
   %1 = bitcast i8* %0 to %Graph*
   store %Graph* %1, %Graph** %G
   %2 = load %Graph*, %Graph** %G
@@ -656,7 +449,7 @@ entry:
   %63 = getelementptr inbounds %Pair, %Pair* %62, i32 0, i32 1
   store i32 4, i32* %63
   %H = alloca %Graph*
-  %64 = call i8* @malloc(i32 16)
+  %64 = call i8* @malloc(i32 12)
   %65 = bitcast i8* %64 to %Graph*
   store %Graph* %65, %Graph** %H
   %66 = load %Graph*, %Graph** %H
@@ -735,10 +528,10 @@ entry:
   store i32 4, i32* %127
   %128 = load %Graph*, %Graph** %G
   %129 = call i32 @printEdgeList(%Graph* %128)
-  %130 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.5, i32 0, i32 0))
+  %130 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.4, i32 0, i32 0))
   %131 = load %Graph*, %Graph** %H
   %132 = call i32 @printEdgeList(%Graph* %131)
-  %133 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.6, i32 0, i32 0))
+  %133 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.5, i32 0, i32 0))
   %n = alloca i32
   store i32 3, i32* %n
   %k = alloca %Permutation**
@@ -755,63 +548,35 @@ while:                                            ; preds = %While, %entry
   br label %ile
 
 ndWhile:                                          ; preds = %While
-  %136 = load %Graph*, %Graph** %G
-  %137 = load %Graph*, %Graph** %H
-  %138 = call i32 @isIsomorphic(%Graph* %136, %Graph* %137)
-  %139 = icmp eq i32 %138, 1
-  br i1 %139, label %lse, label %end
+  ret i32 0
 
 ile:                                              ; preds = %ile, %while
-  %140 = load %Permutation**, %Permutation*** %k
-  %141 = load i32, i32* %i
-  %142 = getelementptr %Permutation*, %Permutation** %140, i32 %141
-  %143 = load %Permutation*, %Permutation** %142
-  %144 = getelementptr inbounds %Permutation, %Permutation* %143, i32 0, i32 0
-  %145 = load i32*, i32** %144
+  %136 = load %Permutation**, %Permutation*** %k
+  %137 = load i32, i32* %i
+  %138 = getelementptr %Permutation*, %Permutation** %136, i32 %137
+  %139 = load %Permutation*, %Permutation** %138
+  %140 = getelementptr inbounds %Permutation, %Permutation* %139, i32 0, i32 0
+  %141 = load i32*, i32** %140
+  %142 = load i32, i32* %j
+  %143 = getelementptr i32, i32* %141, i32 %142
+  %144 = load i32, i32* %143
+  %145 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.6, i32 0, i32 0), i32 %144)
   %146 = load i32, i32* %j
-  %147 = getelementptr i32, i32* %145, i32 %146
-  %148 = load i32, i32* %147
-  %149 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.7, i32 0, i32 0), i32 %148)
-  %150 = load i32, i32* %j
-  %151 = add i32 %150, 1
-  store i32 %151, i32* %j
-  %152 = load i32, i32* %n
-  %153 = load i32, i32* %j
-  %154 = icmp slt i32 %153, %152
-  br i1 %154, label %ile, label %While
+  %147 = add i32 %146, 1
+  store i32 %147, i32* %j
+  %148 = load i32, i32* %n
+  %149 = load i32, i32* %j
+  %150 = icmp slt i32 %149, %148
+  br i1 %150, label %ile, label %While
 
 While:                                            ; preds = %ile
-  %155 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([2 x i8], [2 x i8]* @str.8, i32 0, i32 0))
+  %151 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([2 x i8], [2 x i8]* @str.7, i32 0, i32 0))
+  %152 = load i32, i32* %i
+  %153 = add i32 %152, 1
+  store i32 %153, i32* %i
+  %154 = load i32, i32* %n
+  %155 = call i32 @factorial(i32 %154)
   %156 = load i32, i32* %i
-  %157 = add i32 %156, 1
-  store i32 %157, i32* %i
-  %158 = load i32, i32* %n
-  %159 = call i32 @factorial(i32 %158)
-  %160 = load i32, i32* %i
-  %161 = icmp slt i32 %160, %159
-  br i1 %161, label %while, label %ndWhile
-
-lse:                                              ; preds = %ndWhile
-  %162 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([24 x i8], [24 x i8]* @str.9, i32 0, i32 0))
-  br label %ile1
-
-end:                                              ; preds = %ndWhile
-  br label %ile1
-
-ile1:                                             ; preds = %end, %lse
-  %163 = load %Graph*, %Graph** %G
-  %164 = load %Graph*, %Graph** %H
-  %165 = call i32 @isIsomorphic(%Graph* %163, %Graph* %164)
-  %166 = icmp eq i32 %165, 0
-  br i1 %166, label %167, label %169
-
-167:                                              ; preds = %ile1
-  %168 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([28 x i8], [28 x i8]* @str.10, i32 0, i32 0))
-  br label %170
-
-169:                                              ; preds = %ile1
-  br label %170
-
-170:                                              ; preds = %169, %167
-  ret i32 0
+  %157 = icmp slt i32 %156, %155
+  br i1 %157, label %while, label %ndWhile
 }

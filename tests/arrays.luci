@@ -2,9 +2,16 @@ import "include.luci"
 
 dec main() -> int;
 def main() -> int {
-    x:int* = malloc(8)->(int*); // 16 bytes, 4 ints.
-    (x->(int) + 4)->(int*) = 1;
-    printf("%d\n", *x);
-    printf("%d\n", *((x->(int) + 4)->(int*)));
+    // x:int* = malloc(8)->(int*); // 16 bytes, 4 ints.
+    // (x->(int) + 4)->(int*) = 1;
+    // printf("%d\n", *x);
+    // printf("%d\n", *((x->(int) + 4)->(int*)));
+
+    x:int* = malloc(8)->(int*);
+    x[0] = 1;
+    x[1] = 2;
+
+    printf("%d\n", x[0]);
+    printf("%d\n", x[1]);
     return 0;
 }

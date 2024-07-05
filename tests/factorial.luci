@@ -16,14 +16,14 @@ def main() -> int {
 def factorial(n:int) -> int {
     x:int = n;
     i:int = 1;
-    goto while;
-    label while:
+    goto wh;
+    label wh:
     if(i == n) -> {
         goto end;
     }
     ptr x = x * (n-i);
     ptr i = i + 1;
-    goto while;
+    goto wh;
 
     label end:
     return x;

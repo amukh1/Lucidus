@@ -4,7 +4,7 @@ import "structures.luci"
 dec main() -> int;
 def main() -> int {
     // graph G setup
-    G:Graph = malloc(16)->(Graph);
+    G:Graph = malloc(12)->(Graph);
     G.nodesc = 4;
     G.edgesc = 3;
 
@@ -21,7 +21,7 @@ def main() -> int {
     G.edges[2].second = 4;
 
     // graph H setup
-    H:Graph = malloc(16)->(Graph);
+    H:Graph = malloc(12)->(Graph);
     H.nodesc = 4;
     H.edgesc = 3;
 
@@ -44,7 +44,7 @@ def main() -> int {
 
     n:int = 3;
     k:Permutation* = gen_all_permutations(n);
-    // log all permutations of 2
+    // // log all permutations of 2
     
     i:int = 0;
     while(i < factorial(n)) -> {
@@ -57,13 +57,18 @@ def main() -> int {
         i = i + 1;
     }
 
+    // gen_all_permutations(4);
+
+
+    // isIsomorphic(G,H);
+
     // check if G and H are isomorphic
-    if(isIsomorphic(G, H) == 1) -> {
-        printf("G and H are isomorphic\n");
-    } 
-    if(isIsomorphic(G, H) == 0) -> {
-        printf("G and H are not isomorphic\n");
-    }
+    // if(isIsomorphic(G, H) == 1) -> {
+    //     printf("G and H are isomorphic\n");
+    // } 
+    // if(isIsomorphic(G, H) == 0) -> {
+    //     printf("G and H are not isomorphic\n");
+    // }
     
     return 0;
 }

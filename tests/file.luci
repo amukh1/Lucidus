@@ -29,13 +29,13 @@ def main() -> int {
     fseek(stream, 0, 2);
     fputs("\nLucidus was here\n", stream);
     fseek(stream, 0, 0);
-    goto while;
-    label while:
+    goto wh;
+    label wh:
     if (fgets(line, 100, stream)->(int) == 0) -> {
         goto end;
     }
     printf("%s", line);
-    goto while;
+    goto wh;
     label end:
     printf("Closing file %s\n", file);
     fclose(stream);

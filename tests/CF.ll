@@ -41,25 +41,24 @@ declare i8* @strcat(i8*, i8*)
 
 define i32 @factorial(i32 %0) {
 entry:
-  %n = alloca i32
-  store i32 %0, i32* %n
-  %1 = load i32, i32* %n
+  %n = alloca i32, align 4
+  store i32 %0, i32* %n, align 4
+  %1 = load i32, i32* %n, align 4
   %2 = icmp ne i32 %1, 0
   br i1 %2, label %if, label %lse
 
 if:                                               ; preds = %entry
-  %3 = load i32, i32* %n
+  %3 = load i32, i32* %n, align 4
   %4 = sub i32 %3, 1
   %5 = call i32 @factorial(i32 %4)
-  %6 = load i32, i32* %n
+  %6 = load i32, i32* %n, align 4
   %7 = mul i32 %6, %5
   ret i32 %7
-  br label %d
 
 lse:                                              ; preds = %entry
   br label %d
 
-d:                                                ; preds = %lse, %if
+d:                                                ; preds = %lse
   ret i32 1
 }
 
@@ -67,14 +66,14 @@ declare i32 @isdigit(i32)
 
 define i32 @main() {
 entry:
-  %x = alloca i32
-  store i32 4, i32* %x
-  %y = alloca i32
-  store i32 4, i32* %y
-  %0 = load i32, i32* %x
+  %x = alloca i32, align 4
+  store i32 4, i32* %x, align 4
+  %y = alloca i32, align 4
+  store i32 4, i32* %y, align 4
+  %0 = load i32, i32* %x, align 4
   %1 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str, i32 0, i32 0), i32 %0)
-  %2 = load i32, i32* %y
-  %3 = load i32, i32* %x
+  %2 = load i32, i32* %y, align 4
+  %3 = load i32, i32* %x, align 4
   %4 = icmp eq i32 %3, %2
   br i1 %4, label %if, label %lse
 
@@ -86,7 +85,7 @@ lse:                                              ; preds = %entry
   br label %d
 
 d:                                                ; preds = %lse, %if
-  %6 = load i32, i32* %x
+  %6 = load i32, i32* %x, align 4
   %7 = icmp eq i32 %6, 4
   br i1 %7, label %else, label %9
 
@@ -95,28 +94,28 @@ else:                                             ; preds = %d
   br i1 true, label %e, label %d1
 
 9:                                                ; preds = %d
-  br label %"ypename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
+  br label %hile
 
-"ypename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]": ; preds = %9, %13
-  %10 = load i32, i32* %x
+hile:                                             ; preds = %9, %13
+  %10 = load i32, i32* %x, align 4
   %11 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.4, i32 0, i32 0), i32 %10)
   br label %end
 
 e:                                                ; preds = %else
   %12 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @str.3, i32 0, i32 0))
-  br label %"name llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
+  br label %e2
 
 d1:                                               ; preds = %else
-  br label %"name llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
+  br label %e2
 
-"name llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]": ; preds = %d1, %e
+e2:                                               ; preds = %d1, %e
   br label %end
 
-end:                                              ; preds = %"ypename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]", %"name llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
+end:                                              ; preds = %hile, %e2
   ret i32 0
 
 13:                                               ; No predecessors!
-  br label %"ypename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
+  br label %hile
 
 14:                                               ; No predecessors!
   unreachable

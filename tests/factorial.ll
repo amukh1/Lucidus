@@ -13,49 +13,61 @@ declare i32 @atoi(i8*)
 
 define i32 @factorial(i32 %0) {
 entry:
-  %n = alloca i32
-  store i32 %0, i32* %n
-  %x = alloca i32
-  %1 = load i32, i32* %n
-  store i32 %1, i32* %x
-  %i = alloca i32
-  store i32 1, i32* %i
-  br label %while
+  %n = alloca i32, align 4
+  store i32 %0, i32* %n, align 4
+  %x = alloca i32, align 4
+  %1 = load i32, i32* %n, align 4
+  store i32 %1, i32* %x, align 4
+  %i = alloca i32, align 4
+  store i32 1, i32* %i, align 4
+  br label %wh
 
-while:                                            ; preds = %endThen, %entry
-  %2 = load i32, i32* %n
-  %3 = load i32, i32* %i
+wh:                                               ; preds = %d, %entry
+  %2 = load i32, i32* %n, align 4
+  %3 = load i32, i32* %i, align 4
   %4 = icmp eq i32 %3, %2
-  br i1 %4, label %then, label %endThen
+  br i1 %4, label %if, label %lse
 
-then:                                             ; preds = %while
+5:                                                ; No predecessors!
+  unreachable
+
+if:                                               ; preds = %wh
   br label %end
 
-endThen:                                          ; preds = %while
-  %5 = load i32, i32* %i
-  %6 = load i32, i32* %n
-  %7 = sub i32 %6, %5
-  %8 = load i32, i32* %x
-  %9 = mul i32 %8, %7
-  store i32 %9, i32* %x
-  %10 = load i32, i32* %i
-  %11 = add i32 %10, 1
-  store i32 %11, i32* %i
-  br label %while
+lse:                                              ; preds = %wh
+  br label %d
 
-end:                                              ; preds = %then
-  %12 = load i32, i32* %x
-  ret i32 %12
+d:                                                ; preds = %lse, %14
+  %6 = load i32, i32* %i, align 4
+  %7 = load i32, i32* %n, align 4
+  %8 = sub i32 %7, %6
+  %9 = load i32, i32* %x, align 4
+  %10 = mul i32 %9, %8
+  store i32 %10, i32* %x, align 4
+  %11 = load i32, i32* %i, align 4
+  %12 = add i32 %11, 1
+  store i32 %12, i32* %i, align 4
+  br label %wh
+
+end:                                              ; preds = %if
+  %13 = load i32, i32* %x, align 4
+  ret i32 %13
+
+14:                                               ; No predecessors!
+  br label %d
+
+15:                                               ; No predecessors!
+  unreachable
 }
 
 define i32 @main() {
 entry:
-  %n = alloca i8*
+  %n = alloca i8*, align 8
   %0 = call i8* @malloc(i32 100)
-  store i8* %0, i8** %n
-  %1 = load i8*, i8** %n
+  store i8* %0, i8** %n, align 8
+  %1 = load i8*, i8** %n, align 8
   %2 = call i8* @gets(i8* %1)
-  %3 = load i8*, i8** %n
+  %3 = load i8*, i8** %n, align 8
   %4 = call i32 @atoi(i8* %3)
   %5 = call i32 @factorial(i32 %4)
   %6 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str, i32 0, i32 0), i32 %5)

@@ -34,27 +34,52 @@ declare i32 @fseek(i8*, i32, i32)
 
 declare i32 @scanf(i8*, ...)
 
+declare i8* @strcat(i8*, i8*)
+
+define i32 @factorial(i32 %0) {
+entry:
+  %n = alloca i32, align 4
+  store i32 %0, i32* %n, align 4
+  %1 = load i32, i32* %n, align 4
+  %2 = icmp ne i32 %1, 0
+  br i1 %2, label %if, label %lse
+
+if:                                               ; preds = %entry
+  %3 = load i32, i32* %n, align 4
+  %4 = sub i32 %3, 1
+  %5 = call i32 @factorial(i32 %4)
+  %6 = load i32, i32* %n, align 4
+  %7 = mul i32 %6, %5
+  ret i32 %7
+
+lse:                                              ; preds = %entry
+  br label %d
+
+d:                                                ; preds = %lse
+  ret i32 1
+}
+
+declare i32 @isdigit(i32)
+
 define i32 @main() {
 entry:
-  %x = alloca i32*
+  %x = alloca i32*, align 8
   %0 = call i8* @malloc(i32 8)
   %1 = bitcast i8* %0 to i32*
-  store i32* %1, i32** %x
-  %2 = call i8* @malloc(i32 8)
-  %3 = bitcast i8* %2 to i32*
-  %4 = load i32*, i32** %x
-  %5 = ptrtoint i32* %4 to i32
-  %6 = add i32 %5, 4
-  %7 = inttoptr i32 %6 to i32*
-  store i32 1, i32* %7
-  %8 = load i32*, i32** %x
-  %9 = load i32, i32* %8
-  %10 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str, i32 0, i32 0), i32 %9)
-  %11 = load i32*, i32** %x
-  %12 = ptrtoint i32* %11 to i32
-  %13 = add i32 %12, 4
-  %14 = inttoptr i32 %13 to i32*
-  %15 = load i32, i32* %14
-  %16 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.1, i32 0, i32 0), i32 %15)
+  store i32* %1, i32** %x, align 8
+  %2 = load i32*, i32** %x, align 8
+  %3 = getelementptr i32, i32* %2, i32 0
+  store i32 1, i32* %3, align 4
+  %4 = load i32*, i32** %x, align 8
+  %5 = getelementptr i32, i32* %4, i32 1
+  store i32 2, i32* %5, align 4
+  %6 = load i32*, i32** %x, align 8
+  %7 = getelementptr i32, i32* %6, i32 0
+  %8 = load i32, i32* %7, align 4
+  %9 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str, i32 0, i32 0), i32 %8)
+  %10 = load i32*, i32** %x, align 8
+  %11 = getelementptr i32, i32* %10, i32 1
+  %12 = load i32, i32* %11, align 4
+  %13 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.1, i32 0, i32 0), i32 %12)
   ret i32 0
 }

@@ -41,62 +41,77 @@ declare i32 @fseek(i8*, i32, i32)
 define i32 @main() {
 entry:
   %0 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @str, i32 0, i32 0))
-  %file = alloca i8*
+  %file = alloca i8*, align 8
   %1 = call i8* @malloc(i32 100)
-  store i8* %1, i8** %file
+  store i8* %1, i8** %file, align 8
   %2 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([18 x i8], [18 x i8]* @str.1, i32 0, i32 0))
-  %3 = load i8*, i8** %file
+  %3 = load i8*, i8** %file, align 8
   %4 = call i8* @gets(i8* %3)
-  %5 = load i8*, i8** %file
+  %5 = load i8*, i8** %file, align 8
   %6 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([17 x i8], [17 x i8]* @str.2, i32 0, i32 0), i8* %5)
-  %stream = alloca i8*
-  %7 = load i8*, i8** %file
+  %stream = alloca i8*, align 8
+  %7 = load i8*, i8** %file, align 8
   %8 = call i8* @fopen(i8* %7, i8* getelementptr inbounds ([3 x i8], [3 x i8]* @str.3, i32 0, i32 0))
-  store i8* %8, i8** %stream
-  %9 = load i8*, i8** %stream
+  store i8* %8, i8** %stream, align 8
+  %9 = load i8*, i8** %stream, align 8
   %10 = ptrtoint i8* %9 to i32
   %11 = icmp eq i32 %10, 0
-  br i1 %11, label %then, label %endThen
+  br i1 %11, label %if, label %lse
 
-then:                                             ; preds = %entry
-  %12 = load i8*, i8** %file
+if:                                               ; preds = %entry
+  %12 = load i8*, i8** %file, align 8
   %13 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([23 x i8], [23 x i8]* @str.4, i32 0, i32 0), i8* %12)
   ret i32 1
 
-endThen:                                          ; preds = %entry
-  %14 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @str.5, i32 0, i32 0))
-  %line = alloca i8*
-  %15 = call i8* @malloc(i32 100)
-  store i8* %15, i8** %line
-  %16 = load i8*, i8** %stream
-  %17 = call i32 @fseek(i8* %16, i32 0, i32 2)
-  %18 = load i8*, i8** %stream
-  %19 = call i32 @fputs(i8* getelementptr inbounds ([19 x i8], [19 x i8]* @str.6, i32 0, i32 0), i8* %18)
-  %20 = load i8*, i8** %stream
-  %21 = call i32 @fseek(i8* %20, i32 0, i32 0)
-  br label %while
+lse:                                              ; preds = %entry
+  br label %d
 
-while:                                            ; preds = %endThen2, %endThen
-  %22 = load i8*, i8** %line
-  %23 = load i8*, i8** %stream
+d:                                                ; preds = %lse
+  %14 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @str.5, i32 0, i32 0))
+  %line = alloca i8*, align 8
+  %15 = call i8* @malloc(i32 100)
+  store i8* %15, i8** %line, align 8
+  %16 = load i8*, i8** %stream, align 8
+  %17 = call i32 @fseek(i8* %16, i32 0, i32 2)
+  %18 = load i8*, i8** %stream, align 8
+  %19 = call i32 @fputs(i8* getelementptr inbounds ([19 x i8], [19 x i8]* @str.6, i32 0, i32 0), i8* %18)
+  %20 = load i8*, i8** %stream, align 8
+  %21 = call i32 @fseek(i8* %20, i32 0, i32 0)
+  br label %wh
+
+wh:                                               ; preds = %hile, %d
+  %22 = load i8*, i8** %line, align 8
+  %23 = load i8*, i8** %stream, align 8
   %24 = call i8* @fgets(i8* %22, i32 100, i8* %23)
   %25 = ptrtoint i8* %24 to i32
   %26 = icmp eq i32 %25, 0
-  br i1 %26, label %then1, label %endThen2
+  br i1 %26, label %else, label %28
 
-then1:                                            ; preds = %while
+27:                                               ; No predecessors!
+  unreachable
+
+else:                                             ; preds = %wh
   br label %end
 
-endThen2:                                         ; preds = %while
-  %27 = load i8*, i8** %line
-  %28 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @str.7, i32 0, i32 0), i8* %27)
-  br label %while
+28:                                               ; preds = %wh
+  br label %hile
 
-end:                                              ; preds = %then1
-  %29 = load i8*, i8** %file
-  %30 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([17 x i8], [17 x i8]* @str.8, i32 0, i32 0), i8* %29)
-  %31 = load i8*, i8** %stream
-  %32 = call i32 @fclose(i8* %31)
-  %33 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @str.9, i32 0, i32 0))
+hile:                                             ; preds = %28, %36
+  %29 = load i8*, i8** %line, align 8
+  %30 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @str.7, i32 0, i32 0), i8* %29)
+  br label %wh
+
+end:                                              ; preds = %else
+  %31 = load i8*, i8** %file, align 8
+  %32 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([17 x i8], [17 x i8]* @str.8, i32 0, i32 0), i8* %31)
+  %33 = load i8*, i8** %stream, align 8
+  %34 = call i32 @fclose(i8* %33)
+  %35 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @str.9, i32 0, i32 0))
   ret i32 0
+
+36:                                               ; No predecessors!
+  br label %hile
+
+37:                                               ; No predecessors!
+  unreachable
 }

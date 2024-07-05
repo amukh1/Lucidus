@@ -1,0 +1,817 @@
+; ModuleID = 'amukh'
+source_filename = "amukh"
+
+%Vector_int = type { i32*, i32 }
+%Vector_char = type { i32*, i32 }
+%Vector_string = type { i32*, i32 }
+%Pair = type { i32, i32 }
+%Graph = type { i32, i32, %Pair** }
+%Permutation = type { i32*, i32 }
+
+@Vector_int = external global %Vector_int
+@Vector_char = external global %Vector_char
+@Vector_string = external global %Vector_string
+@Pair = external global %Pair
+@Graph = external global %Graph
+@str = private constant [10 x i8] c"%d -- %d\0A\00"
+@Permutation = external global %Permutation
+@str.1 = private constant [2 x i8] c"(\00"
+@str.2 = private constant [4 x i8] c"%d \00"
+@str.3 = private constant [3 x i8] c")\0A\00"
+@str.4 = private constant [4 x i8] c"%d\0A\00"
+@str.5 = private constant [22 x i8] c"--------------------\0A\00"
+@str.6 = private constant [22 x i8] c"--------------------\0A\00"
+@str.7 = private constant [4 x i8] c"%d \00"
+@str.8 = private constant [2 x i8] c"\0A\00"
+@str.9 = private constant [24 x i8] c"G and H are isomorphic\0A\00"
+@str.10 = private constant [28 x i8] c"G and H are not isomorphic\0A\00"
+
+declare i32 @printf(i8*, ...)
+
+declare i8* @malloc(i32)
+
+declare i8* @free(i8*)
+
+declare i32 @fprintf(i8*, i8*, ...)
+
+declare i32 @fputs(i8*, i8*)
+
+declare i8* @fgets(i8*, i32, i8*)
+
+declare i32 @fgetc(i8*)
+
+declare i8* @fopen(i8*, i8*)
+
+declare i32 @fclose(i8*)
+
+declare i32 @strlen(i8*)
+
+declare i8* @strcpy(i8*, i8*)
+
+declare i8* @gets(i8*)
+
+declare i32 @atoi(i8*)
+
+declare i32 @fseek(i8*, i32, i32)
+
+declare i32 @scanf(i8*, ...)
+
+declare i8* @strcat(i8*, i8*)
+
+define i32 @factorial(i32 %0) {
+entry:
+  %n = alloca i32, align 4
+  store i32 %0, i32* %n, align 4
+  %1 = load i32, i32* %n, align 4
+  %2 = icmp ne i32 %1, 0
+  br i1 %2, label %if, label %lse
+
+if:                                               ; preds = %entry
+  %3 = load i32, i32* %n, align 4
+  %4 = sub i32 %3, 1
+  %5 = call i32 @factorial(i32 %4)
+  %6 = load i32, i32* %n, align 4
+  %7 = mul i32 %6, %5
+  ret i32 %7
+
+lse:                                              ; preds = %entry
+  br label %d
+
+d:                                                ; preds = %lse
+  ret i32 1
+}
+
+declare i32 @isdigit(i32)
+
+define i32 @printEdgeList(%Graph* %0) {
+entry:
+  %G = alloca %Graph*, align 8
+  store %Graph* %0, %Graph** %G, align 8
+  %i = alloca i32, align 4
+  store i32 0, i32* %i, align 4
+  br label %while
+
+while:                                            ; preds = %while, %entry
+  %1 = load %Graph*, %Graph** %G, align 8
+  %2 = getelementptr inbounds %Graph, %Graph* %1, i32 0, i32 2
+  %3 = load %Pair**, %Pair*** %2, align 8
+  %4 = load i32, i32* %i, align 4
+  %5 = getelementptr %Pair*, %Pair** %3, i32 %4
+  %6 = load %Pair*, %Pair** %5, align 8
+  %7 = getelementptr inbounds %Pair, %Pair* %6, i32 0, i32 0
+  %8 = load i32, i32* %7, align 4
+  %9 = load %Graph*, %Graph** %G, align 8
+  %10 = getelementptr inbounds %Graph, %Graph* %9, i32 0, i32 2
+  %11 = load %Pair**, %Pair*** %10, align 8
+  %12 = load i32, i32* %i, align 4
+  %13 = getelementptr %Pair*, %Pair** %11, i32 %12
+  %14 = load %Pair*, %Pair** %13, align 8
+  %15 = getelementptr inbounds %Pair, %Pair* %14, i32 0, i32 1
+  %16 = load i32, i32* %15, align 4
+  %17 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @str, i32 0, i32 0), i32 %8, i32 %16)
+  %18 = load i32, i32* %i, align 4
+  %19 = add i32 %18, 1
+  store i32 %19, i32* %i, align 4
+  %20 = load %Graph*, %Graph** %G, align 8
+  %21 = getelementptr inbounds %Graph, %Graph* %20, i32 0, i32 1
+  %22 = load i32, i32* %21, align 4
+  %23 = load i32, i32* %i, align 4
+  %24 = icmp ne i32 %23, %22
+  br i1 %24, label %while, label %ndWhile
+
+ndWhile:                                          ; preds = %while
+  ret i32 0
+}
+
+define %Permutation* @new_Permutation(i32* %0, i32 %1) {
+entry:
+  %v = alloca i32*, align 8
+  store i32* %0, i32** %v, align 8
+  %len = alloca i32, align 4
+  store i32 %1, i32* %len, align 4
+  %p = alloca %Permutation*, align 8
+  %2 = call i8* @malloc(i32 8)
+  %3 = bitcast i8* %2 to %Permutation*
+  store %Permutation* %3, %Permutation** %p, align 8
+  %4 = load %Permutation*, %Permutation** %p, align 8
+  %5 = getelementptr inbounds %Permutation, %Permutation* %4, i32 0, i32 0
+  %6 = load i32*, i32** %v, align 8
+  store i32* %6, i32** %5, align 8
+  %7 = load %Permutation*, %Permutation** %p, align 8
+  %8 = getelementptr inbounds %Permutation, %Permutation* %7, i32 0, i32 1
+  %9 = load i32, i32* %len, align 4
+  store i32 %9, i32* %8, align 4
+  %10 = load %Permutation*, %Permutation** %p, align 8
+  ret %Permutation* %10
+}
+
+define i32 @printPermutation(%Permutation* %0) {
+entry:
+  %p = alloca %Permutation*, align 8
+  store %Permutation* %0, %Permutation** %p, align 8
+  %i = alloca i32, align 4
+  store i32 0, i32* %i, align 4
+  %1 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([2 x i8], [2 x i8]* @str.1, i32 0, i32 0))
+  br label %while
+
+while:                                            ; preds = %while, %entry
+  %2 = load %Permutation*, %Permutation** %p, align 8
+  %3 = getelementptr inbounds %Permutation, %Permutation* %2, i32 0, i32 0
+  %4 = load i32*, i32** %3, align 8
+  %5 = load i32, i32* %i, align 4
+  %6 = getelementptr i32, i32* %4, i32 %5
+  %7 = load i32, i32* %6, align 4
+  %8 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.2, i32 0, i32 0), i32 %7)
+  %9 = load i32, i32* %i, align 4
+  %10 = add i32 %9, 1
+  store i32 %10, i32* %i, align 4
+  %11 = load %Permutation*, %Permutation** %p, align 8
+  %12 = getelementptr inbounds %Permutation, %Permutation* %11, i32 0, i32 1
+  %13 = load i32, i32* %12, align 4
+  %14 = load i32, i32* %i, align 4
+  %15 = icmp slt i32 %14, %13
+  br i1 %15, label %while, label %ndWhile
+
+ndWhile:                                          ; preds = %while
+  %16 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @str.3, i32 0, i32 0))
+  ret i32 0
+}
+
+define %Permutation** @gen_all_permutations(i32 %0) {
+entry:
+  %n = alloca i32, align 4
+  store i32 %0, i32* %n, align 4
+  %L = alloca %Permutation**, align 8
+  %1 = call i8* @malloc(i32 8)
+  %2 = bitcast i8* %1 to %Permutation**
+  store %Permutation** %2, %Permutation*** %L, align 8
+  %3 = load i32, i32* %n, align 4
+  %4 = icmp eq i32 %3, 1
+  br i1 %4, label %if, label %lse
+
+if:                                               ; preds = %entry
+  %v = alloca %Permutation*, align 8
+  %5 = call i8* @malloc(i32 8)
+  %6 = bitcast i8* %5 to %Permutation*
+  store %Permutation* %6, %Permutation** %v, align 8
+  %7 = load %Permutation*, %Permutation** %v, align 8
+  %8 = getelementptr inbounds %Permutation, %Permutation* %7, i32 0, i32 0
+  %9 = call i8* @malloc(i32 4)
+  %10 = bitcast i8* %9 to i32*
+  store i32* %10, i32** %8, align 8
+  %11 = load %Permutation*, %Permutation** %v, align 8
+  %12 = getelementptr inbounds %Permutation, %Permutation* %11, i32 0, i32 1
+  store i32 1, i32* %12, align 4
+  %13 = load %Permutation*, %Permutation** %v, align 8
+  %14 = getelementptr inbounds %Permutation, %Permutation* %13, i32 0, i32 0
+  %15 = load i32*, i32** %14, align 8
+  %16 = getelementptr i32, i32* %15, i32 0
+  store i32 1, i32* %16, align 4
+  %17 = load %Permutation**, %Permutation*** %L, align 8
+  %18 = getelementptr %Permutation*, %Permutation** %17, i32 0
+  %19 = load %Permutation*, %Permutation** %v, align 8
+  store %Permutation* %19, %Permutation** %18, align 8
+  br label %end
+
+lse:                                              ; preds = %entry
+  br label %d
+
+d:                                                ; preds = %lse, %27
+  %k = alloca i32, align 4
+  %20 = load i32, i32* %n, align 4
+  %21 = sub i32 %20, 1
+  %22 = call i32 @factorial(i32 %21)
+  store i32 %22, i32* %k, align 4
+  %recurse = alloca %Permutation**, align 8
+  %23 = load i32, i32* %n, align 4
+  %24 = sub i32 %23, 1
+  %25 = call %Permutation** @gen_all_permutations(i32 %24)
+  store %Permutation** %25, %Permutation*** %recurse, align 8
+  %i = alloca i32, align 4
+  store i32 0, i32* %i, align 4
+  br label %le
+
+end:                                              ; preds = %hile, %if
+  %26 = load %Permutation**, %Permutation*** %L, align 8
+  ret %Permutation** %26
+
+27:                                               ; No predecessors!
+  br label %d
+
+le:                                               ; preds = %le1, %d
+  %perm = alloca %Permutation*, align 8
+  %28 = call i8* @malloc(i32 8)
+  %29 = bitcast i8* %28 to %Permutation*
+  store %Permutation* %29, %Permutation** %perm, align 8
+  %30 = load %Permutation*, %Permutation** %perm, align 8
+  %31 = getelementptr inbounds %Permutation, %Permutation* %30, i32 0, i32 0
+  %32 = load i32, i32* %n, align 4
+  %33 = mul i32 4, %32
+  %34 = call i8* @malloc(i32 %33)
+  %35 = bitcast i8* %34 to i32*
+  store i32* %35, i32** %31, align 8
+  %36 = load %Permutation*, %Permutation** %perm, align 8
+  %37 = getelementptr inbounds %Permutation, %Permutation* %36, i32 0, i32 1
+  %38 = load i32, i32* %n, align 4
+  store i32 %38, i32* %37, align 4
+  %j = alloca i32, align 4
+  store i32 0, i32* %j, align 4
+  br label %39
+
+hile:                                             ; preds = %le1
+  br label %end
+
+39:                                               ; preds = %52, %le
+  %rec = alloca %Permutation*, align 8
+  %40 = load %Permutation**, %Permutation*** %recurse, align 8
+  %41 = load i32, i32* %j, align 4
+  %42 = getelementptr %Permutation*, %Permutation** %40, i32 %41
+  %43 = load %Permutation*, %Permutation** %42, align 8
+  store %Permutation* %43, %Permutation** %rec, align 8
+  %r = alloca i32, align 4
+  store i32 0, i32* %r, align 4
+  %h = alloca i32, align 4
+  store i32 0, i32* %h, align 4
+  br label %ndWhile
+
+le1:                                              ; preds = %52
+  %44 = load i32, i32* %i, align 4
+  %45 = add i32 %44, 1
+  store i32 %45, i32* %i, align 4
+  %46 = load i32, i32* %n, align 4
+  %47 = load i32, i32* %i, align 4
+  %48 = icmp ne i32 %47, %46
+  br i1 %48, label %le, label %hile
+
+ndWhile:                                          ; preds = %hile4, %39
+  %49 = load i32, i32* %i, align 4
+  %50 = load i32, i32* %h, align 4
+  %51 = icmp eq i32 %50, %49
+  br i1 %51, label %nd, label %hile2
+
+52:                                               ; preds = %hile4
+  %53 = load %Permutation**, %Permutation*** %L, align 8
+  %54 = load i32, i32* %j, align 4
+  %55 = load i32, i32* %k, align 4
+  %56 = load i32, i32* %i, align 4
+  %57 = mul i32 %56, %55
+  %58 = add i32 %57, %54
+  %59 = getelementptr %Permutation*, %Permutation** %53, i32 %58
+  %60 = load %Permutation*, %Permutation** %perm, align 8
+  store %Permutation* %60, %Permutation** %59, align 8
+  %61 = load i32, i32* %j, align 4
+  %62 = add i32 %61, 1
+  store i32 %62, i32* %j, align 4
+  %63 = load i32, i32* %k, align 4
+  %64 = load i32, i32* %j, align 4
+  %65 = icmp ne i32 %64, %63
+  br i1 %65, label %39, label %le1
+
+nd:                                               ; preds = %ndWhile
+  %66 = load %Permutation*, %Permutation** %perm, align 8
+  %67 = getelementptr inbounds %Permutation, %Permutation* %66, i32 0, i32 0
+  %68 = load i32*, i32** %67, align 8
+  %69 = load i32, i32* %h, align 4
+  %70 = getelementptr i32, i32* %68, i32 %69
+  %71 = load i32, i32* %n, align 4
+  store i32 %71, i32* %70, align 4
+  br label %ndWhile3
+
+hile2:                                            ; preds = %ndWhile
+  br label %ndWhile3
+
+ndWhile3:                                         ; preds = %hile2, %nd
+  %72 = load i32, i32* %i, align 4
+  %73 = load i32, i32* %h, align 4
+  %74 = icmp ne i32 %73, %72
+  br i1 %74, label %while, label %e
+
+while:                                            ; preds = %ndWhile3
+  %75 = load %Permutation*, %Permutation** %perm, align 8
+  %76 = getelementptr inbounds %Permutation, %Permutation* %75, i32 0, i32 0
+  %77 = load i32*, i32** %76, align 8
+  %78 = load i32, i32* %h, align 4
+  %79 = getelementptr i32, i32* %77, i32 %78
+  %80 = load %Permutation*, %Permutation** %rec, align 8
+  %81 = getelementptr inbounds %Permutation, %Permutation* %80, i32 0, i32 0
+  %82 = load i32*, i32** %81, align 8
+  %83 = load i32, i32* %r, align 4
+  %84 = getelementptr i32, i32* %82, i32 %83
+  %85 = load i32, i32* %84, align 4
+  store i32 %85, i32* %79, align 4
+  %86 = load i32, i32* %r, align 4
+  %87 = add i32 %86, 1
+  store i32 %87, i32* %r, align 4
+  br label %hile4
+
+e:                                                ; preds = %ndWhile3
+  br label %hile4
+
+hile4:                                            ; preds = %e, %while
+  %88 = load i32, i32* %h, align 4
+  %89 = add i32 %88, 1
+  store i32 %89, i32* %h, align 4
+  %90 = load i32, i32* %n, align 4
+  %91 = load i32, i32* %h, align 4
+  %92 = icmp ne i32 %91, %90
+  br i1 %92, label %ndWhile, label %52
+
+93:                                               ; No predecessors!
+  unreachable
+}
+
+define i32 @isEqual(%Graph* %0, %Graph* %1) {
+entry:
+  %G = alloca %Graph*, align 8
+  store %Graph* %0, %Graph** %G, align 8
+  %H = alloca %Graph*, align 8
+  store %Graph* %1, %Graph** %H, align 8
+  ret i32 1
+}
+
+define i32 @isIsomorphic(%Graph* %0, %Graph* %1) {
+entry:
+  %G = alloca %Graph*, align 8
+  store %Graph* %0, %Graph** %G, align 8
+  %H = alloca %Graph*, align 8
+  store %Graph* %1, %Graph** %H, align 8
+  %2 = load %Graph*, %Graph** %H, align 8
+  %3 = getelementptr inbounds %Graph, %Graph* %2, i32 0, i32 0
+  %4 = load i32, i32* %3, align 4
+  %5 = load %Graph*, %Graph** %G, align 8
+  %6 = getelementptr inbounds %Graph, %Graph* %5, i32 0, i32 0
+  %7 = load i32, i32* %6, align 4
+  %8 = icmp ne i32 %7, %4
+  br i1 %8, label %if, label %lse
+
+if:                                               ; preds = %entry
+  ret i32 0
+
+lse:                                              ; preds = %entry
+  br label %d
+
+d:                                                ; preds = %lse
+  %9 = load %Graph*, %Graph** %H, align 8
+  %10 = getelementptr inbounds %Graph, %Graph* %9, i32 0, i32 1
+  %11 = load i32, i32* %10, align 4
+  %12 = load %Graph*, %Graph** %G, align 8
+  %13 = getelementptr inbounds %Graph, %Graph* %12, i32 0, i32 1
+  %14 = load i32, i32* %13, align 4
+  %15 = icmp ne i32 %14, %11
+  br i1 %15, label %else, label %16
+
+else:                                             ; preds = %d
+  ret i32 0
+
+16:                                               ; preds = %d
+  br label %hile
+
+hile:                                             ; preds = %16
+  %perms = alloca %Permutation**, align 8
+  %17 = load %Graph*, %Graph** %G, align 8
+  %18 = getelementptr inbounds %Graph, %Graph* %17, i32 0, i32 0
+  %19 = load i32, i32* %18, align 4
+  %20 = call %Permutation** @gen_all_permutations(i32 %19)
+  store %Permutation** %20, %Permutation*** %perms, align 8
+  %i = alloca i32, align 4
+  store i32 0, i32* %i, align 4
+  br label %endWhile
+
+endWhile:                                         ; preds = %96, %hile
+  %p = alloca %Permutation*, align 8
+  %21 = load %Permutation**, %Permutation*** %perms, align 8
+  %22 = load i32, i32* %i, align 4
+  %23 = getelementptr %Permutation*, %Permutation** %21, i32 %22
+  %24 = load %Permutation*, %Permutation** %23, align 8
+  store %Permutation* %24, %Permutation** %p, align 8
+  %t = alloca i32, align 4
+  store i32 1, i32* %t, align 4
+  %j = alloca i32, align 4
+  store i32 0, i32* %j, align 4
+  br label %dWhile
+
+e:                                                ; preds = %96
+  ret i32 0
+
+dWhile:                                           ; preds = %86, %endWhile
+  %a = alloca i32, align 4
+  %25 = load %Graph*, %Graph** %G, align 8
+  %26 = getelementptr inbounds %Graph, %Graph* %25, i32 0, i32 2
+  %27 = load %Pair**, %Pair*** %26, align 8
+  %28 = load i32, i32* %j, align 4
+  %29 = getelementptr %Pair*, %Pair** %27, i32 %28
+  %30 = load %Pair*, %Pair** %29, align 8
+  %31 = getelementptr inbounds %Pair, %Pair* %30, i32 0, i32 0
+  %32 = load i32, i32* %31, align 4
+  store i32 %32, i32* %a, align 4
+  %b = alloca i32, align 4
+  %33 = load %Graph*, %Graph** %G, align 8
+  %34 = getelementptr inbounds %Graph, %Graph* %33, i32 0, i32 2
+  %35 = load %Pair**, %Pair*** %34, align 8
+  %36 = load i32, i32* %j, align 4
+  %37 = getelementptr %Pair*, %Pair** %35, i32 %36
+  %38 = load %Pair*, %Pair** %37, align 8
+  %39 = getelementptr inbounds %Pair, %Pair* %38, i32 0, i32 1
+  %40 = load i32, i32* %39, align 4
+  store i32 %40, i32* %b, align 4
+  %pa = alloca i32, align 4
+  %41 = load %Permutation*, %Permutation** %p, align 8
+  %42 = getelementptr inbounds %Permutation, %Permutation* %41, i32 0, i32 0
+  %43 = load i32*, i32** %42, align 8
+  %44 = load i32, i32* %a, align 4
+  %45 = getelementptr i32, i32* %43, i32 %44
+  %46 = load i32, i32* %45, align 4
+  store i32 %46, i32* %pa, align 4
+  %ba = alloca i32, align 4
+  %47 = load %Permutation*, %Permutation** %p, align 8
+  %48 = getelementptr inbounds %Permutation, %Permutation* %47, i32 0, i32 0
+  %49 = load i32*, i32** %48, align 8
+  %50 = load i32, i32* %b, align 4
+  %51 = getelementptr i32, i32* %49, i32 %50
+  %52 = load i32, i32* %51, align 4
+  store i32 %52, i32* %ba, align 4
+  %f = alloca i32, align 4
+  store i32 0, i32* %f, align 4
+  %l = alloca i32, align 4
+  store i32 0, i32* %l, align 4
+  br label %hile1
+
+53:                                               ; preds = %86
+  %54 = load i32, i32* %t, align 4
+  %55 = icmp eq i32 %54, 1
+  br i1 %55, label %While, label %e7
+
+hile1:                                            ; preds = %hile3, %dWhile
+  %56 = load i32, i32* %pa, align 4
+  %57 = load %Graph*, %Graph** %H, align 8
+  %58 = getelementptr inbounds %Graph, %Graph* %57, i32 0, i32 2
+  %59 = load %Pair**, %Pair*** %58, align 8
+  %60 = load i32, i32* %l, align 4
+  %61 = getelementptr %Pair*, %Pair** %59, i32 %60
+  %62 = load %Pair*, %Pair** %61, align 8
+  %63 = getelementptr inbounds %Pair, %Pair* %62, i32 0, i32 0
+  %64 = load i32, i32* %63, align 4
+  %65 = icmp eq i32 %64, %56
+  br i1 %65, label %while, label %e2
+
+66:                                               ; preds = %hile3
+  %67 = load i32, i32* %f, align 4
+  %68 = icmp eq i32 %67, 0
+  br i1 %68, label %endWhile5, label %hile6
+
+while:                                            ; preds = %hile1
+  %69 = load i32, i32* %ba, align 4
+  %70 = load %Graph*, %Graph** %H, align 8
+  %71 = getelementptr inbounds %Graph, %Graph* %70, i32 0, i32 2
+  %72 = load %Pair**, %Pair*** %71, align 8
+  %73 = load i32, i32* %l, align 4
+  %74 = getelementptr %Pair*, %Pair** %72, i32 %73
+  %75 = load %Pair*, %Pair** %74, align 8
+  %76 = getelementptr inbounds %Pair, %Pair* %75, i32 0, i32 1
+  %77 = load i32, i32* %76, align 4
+  %78 = icmp eq i32 %77, %69
+  br i1 %78, label %le, label %ndWhile
+
+e2:                                               ; preds = %hile1
+  br label %hile3
+
+hile3:                                            ; preds = %e2, %e4
+  %79 = load i32, i32* %l, align 4
+  %80 = add i32 %79, 1
+  store i32 %80, i32* %l, align 4
+  %81 = load %Graph*, %Graph** %H, align 8
+  %82 = getelementptr inbounds %Graph, %Graph* %81, i32 0, i32 1
+  %83 = load i32, i32* %82, align 4
+  %84 = load i32, i32* %l, align 4
+  %85 = icmp ne i32 %84, %83
+  br i1 %85, label %hile1, label %66
+
+le:                                               ; preds = %while
+  store i32 1, i32* %f, align 4
+  br label %e4
+
+ndWhile:                                          ; preds = %while
+  br label %e4
+
+e4:                                               ; preds = %ndWhile, %le
+  br label %hile3
+
+endWhile5:                                        ; preds = %66
+  store i32 0, i32* %t, align 4
+  br label %86
+
+hile6:                                            ; preds = %66
+  br label %86
+
+86:                                               ; preds = %hile6, %endWhile5
+  %87 = load i32, i32* %j, align 4
+  %88 = add i32 %87, 1
+  store i32 %88, i32* %j, align 4
+  %89 = load %Graph*, %Graph** %G, align 8
+  %90 = getelementptr inbounds %Graph, %Graph* %89, i32 0, i32 1
+  %91 = load i32, i32* %90, align 4
+  %92 = load i32, i32* %j, align 4
+  %93 = icmp ne i32 %92, %91
+  br i1 %93, label %dWhile, label %53
+
+While:                                            ; preds = %53
+  %94 = load i32, i32* %i, align 4
+  %95 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.4, i32 0, i32 0), i32 %94)
+  ret i32 1
+
+e7:                                               ; preds = %53
+  br label %96
+
+96:                                               ; preds = %e7
+  %97 = load i32, i32* %i, align 4
+  %98 = add i32 %97, 1
+  store i32 %98, i32* %i, align 4
+  %99 = load %Graph*, %Graph** %G, align 8
+  %100 = getelementptr inbounds %Graph, %Graph* %99, i32 0, i32 0
+  %101 = load i32, i32* %100, align 4
+  %102 = call i32 @factorial(i32 %101)
+  %103 = load i32, i32* %i, align 4
+  %104 = icmp ne i32 %103, %102
+  br i1 %104, label %endWhile, label %e
+}
+
+define i32 @main() {
+entry:
+  %G = alloca %Graph*, align 8
+  %0 = call i8* @malloc(i32 16)
+  %1 = bitcast i8* %0 to %Graph*
+  store %Graph* %1, %Graph** %G, align 8
+  %2 = load %Graph*, %Graph** %G, align 8
+  %3 = getelementptr inbounds %Graph, %Graph* %2, i32 0, i32 0
+  store i32 4, i32* %3, align 4
+  %4 = load %Graph*, %Graph** %G, align 8
+  %5 = getelementptr inbounds %Graph, %Graph* %4, i32 0, i32 1
+  store i32 3, i32* %5, align 4
+  %6 = load %Graph*, %Graph** %G, align 8
+  %7 = getelementptr inbounds %Graph, %Graph* %6, i32 0, i32 2
+  %8 = call i8* @malloc(i32 40)
+  %9 = bitcast i8* %8 to %Pair**
+  store %Pair** %9, %Pair*** %7, align 8
+  %10 = load %Graph*, %Graph** %G, align 8
+  %11 = getelementptr inbounds %Graph, %Graph* %10, i32 0, i32 2
+  %12 = load %Pair**, %Pair*** %11, align 8
+  %13 = getelementptr %Pair*, %Pair** %12, i32 0
+  %14 = call i8* @malloc(i32 8)
+  %15 = bitcast i8* %14 to %Pair*
+  store %Pair* %15, %Pair** %13, align 8
+  %16 = load %Graph*, %Graph** %G, align 8
+  %17 = getelementptr inbounds %Graph, %Graph* %16, i32 0, i32 2
+  %18 = load %Pair**, %Pair*** %17, align 8
+  %19 = getelementptr %Pair*, %Pair** %18, i32 1
+  %20 = call i8* @malloc(i32 8)
+  %21 = bitcast i8* %20 to %Pair*
+  store %Pair* %21, %Pair** %19, align 8
+  %22 = load %Graph*, %Graph** %G, align 8
+  %23 = getelementptr inbounds %Graph, %Graph* %22, i32 0, i32 2
+  %24 = load %Pair**, %Pair*** %23, align 8
+  %25 = getelementptr %Pair*, %Pair** %24, i32 2
+  %26 = call i8* @malloc(i32 8)
+  %27 = bitcast i8* %26 to %Pair*
+  store %Pair* %27, %Pair** %25, align 8
+  %28 = load %Graph*, %Graph** %G, align 8
+  %29 = getelementptr inbounds %Graph, %Graph* %28, i32 0, i32 2
+  %30 = load %Pair**, %Pair*** %29, align 8
+  %31 = getelementptr %Pair*, %Pair** %30, i32 0
+  %32 = load %Pair*, %Pair** %31, align 8
+  %33 = getelementptr inbounds %Pair, %Pair* %32, i32 0, i32 0
+  store i32 1, i32* %33, align 4
+  %34 = load %Graph*, %Graph** %G, align 8
+  %35 = getelementptr inbounds %Graph, %Graph* %34, i32 0, i32 2
+  %36 = load %Pair**, %Pair*** %35, align 8
+  %37 = getelementptr %Pair*, %Pair** %36, i32 0
+  %38 = load %Pair*, %Pair** %37, align 8
+  %39 = getelementptr inbounds %Pair, %Pair* %38, i32 0, i32 1
+  store i32 2, i32* %39, align 4
+  %40 = load %Graph*, %Graph** %G, align 8
+  %41 = getelementptr inbounds %Graph, %Graph* %40, i32 0, i32 2
+  %42 = load %Pair**, %Pair*** %41, align 8
+  %43 = getelementptr %Pair*, %Pair** %42, i32 1
+  %44 = load %Pair*, %Pair** %43, align 8
+  %45 = getelementptr inbounds %Pair, %Pair* %44, i32 0, i32 0
+  store i32 1, i32* %45, align 4
+  %46 = load %Graph*, %Graph** %G, align 8
+  %47 = getelementptr inbounds %Graph, %Graph* %46, i32 0, i32 2
+  %48 = load %Pair**, %Pair*** %47, align 8
+  %49 = getelementptr %Pair*, %Pair** %48, i32 1
+  %50 = load %Pair*, %Pair** %49, align 8
+  %51 = getelementptr inbounds %Pair, %Pair* %50, i32 0, i32 1
+  store i32 3, i32* %51, align 4
+  %52 = load %Graph*, %Graph** %G, align 8
+  %53 = getelementptr inbounds %Graph, %Graph* %52, i32 0, i32 2
+  %54 = load %Pair**, %Pair*** %53, align 8
+  %55 = getelementptr %Pair*, %Pair** %54, i32 2
+  %56 = load %Pair*, %Pair** %55, align 8
+  %57 = getelementptr inbounds %Pair, %Pair* %56, i32 0, i32 0
+  store i32 3, i32* %57, align 4
+  %58 = load %Graph*, %Graph** %G, align 8
+  %59 = getelementptr inbounds %Graph, %Graph* %58, i32 0, i32 2
+  %60 = load %Pair**, %Pair*** %59, align 8
+  %61 = getelementptr %Pair*, %Pair** %60, i32 2
+  %62 = load %Pair*, %Pair** %61, align 8
+  %63 = getelementptr inbounds %Pair, %Pair* %62, i32 0, i32 1
+  store i32 4, i32* %63, align 4
+  %H = alloca %Graph*, align 8
+  %64 = call i8* @malloc(i32 16)
+  %65 = bitcast i8* %64 to %Graph*
+  store %Graph* %65, %Graph** %H, align 8
+  %66 = load %Graph*, %Graph** %H, align 8
+  %67 = getelementptr inbounds %Graph, %Graph* %66, i32 0, i32 0
+  store i32 4, i32* %67, align 4
+  %68 = load %Graph*, %Graph** %H, align 8
+  %69 = getelementptr inbounds %Graph, %Graph* %68, i32 0, i32 1
+  store i32 3, i32* %69, align 4
+  %70 = load %Graph*, %Graph** %H, align 8
+  %71 = getelementptr inbounds %Graph, %Graph* %70, i32 0, i32 2
+  %72 = call i8* @malloc(i32 40)
+  %73 = bitcast i8* %72 to %Pair**
+  store %Pair** %73, %Pair*** %71, align 8
+  %74 = load %Graph*, %Graph** %H, align 8
+  %75 = getelementptr inbounds %Graph, %Graph* %74, i32 0, i32 2
+  %76 = load %Pair**, %Pair*** %75, align 8
+  %77 = getelementptr %Pair*, %Pair** %76, i32 0
+  %78 = call i8* @malloc(i32 8)
+  %79 = bitcast i8* %78 to %Pair*
+  store %Pair* %79, %Pair** %77, align 8
+  %80 = load %Graph*, %Graph** %H, align 8
+  %81 = getelementptr inbounds %Graph, %Graph* %80, i32 0, i32 2
+  %82 = load %Pair**, %Pair*** %81, align 8
+  %83 = getelementptr %Pair*, %Pair** %82, i32 1
+  %84 = call i8* @malloc(i32 8)
+  %85 = bitcast i8* %84 to %Pair*
+  store %Pair* %85, %Pair** %83, align 8
+  %86 = load %Graph*, %Graph** %H, align 8
+  %87 = getelementptr inbounds %Graph, %Graph* %86, i32 0, i32 2
+  %88 = load %Pair**, %Pair*** %87, align 8
+  %89 = getelementptr %Pair*, %Pair** %88, i32 2
+  %90 = call i8* @malloc(i32 8)
+  %91 = bitcast i8* %90 to %Pair*
+  store %Pair* %91, %Pair** %89, align 8
+  %92 = load %Graph*, %Graph** %H, align 8
+  %93 = getelementptr inbounds %Graph, %Graph* %92, i32 0, i32 2
+  %94 = load %Pair**, %Pair*** %93, align 8
+  %95 = getelementptr %Pair*, %Pair** %94, i32 0
+  %96 = load %Pair*, %Pair** %95, align 8
+  %97 = getelementptr inbounds %Pair, %Pair* %96, i32 0, i32 0
+  store i32 1, i32* %97, align 4
+  %98 = load %Graph*, %Graph** %H, align 8
+  %99 = getelementptr inbounds %Graph, %Graph* %98, i32 0, i32 2
+  %100 = load %Pair**, %Pair*** %99, align 8
+  %101 = getelementptr %Pair*, %Pair** %100, i32 0
+  %102 = load %Pair*, %Pair** %101, align 8
+  %103 = getelementptr inbounds %Pair, %Pair* %102, i32 0, i32 1
+  store i32 2, i32* %103, align 4
+  %104 = load %Graph*, %Graph** %H, align 8
+  %105 = getelementptr inbounds %Graph, %Graph* %104, i32 0, i32 2
+  %106 = load %Pair**, %Pair*** %105, align 8
+  %107 = getelementptr %Pair*, %Pair** %106, i32 1
+  %108 = load %Pair*, %Pair** %107, align 8
+  %109 = getelementptr inbounds %Pair, %Pair* %108, i32 0, i32 0
+  store i32 1, i32* %109, align 4
+  %110 = load %Graph*, %Graph** %H, align 8
+  %111 = getelementptr inbounds %Graph, %Graph* %110, i32 0, i32 2
+  %112 = load %Pair**, %Pair*** %111, align 8
+  %113 = getelementptr %Pair*, %Pair** %112, i32 1
+  %114 = load %Pair*, %Pair** %113, align 8
+  %115 = getelementptr inbounds %Pair, %Pair* %114, i32 0, i32 1
+  store i32 3, i32* %115, align 4
+  %116 = load %Graph*, %Graph** %H, align 8
+  %117 = getelementptr inbounds %Graph, %Graph* %116, i32 0, i32 2
+  %118 = load %Pair**, %Pair*** %117, align 8
+  %119 = getelementptr %Pair*, %Pair** %118, i32 2
+  %120 = load %Pair*, %Pair** %119, align 8
+  %121 = getelementptr inbounds %Pair, %Pair* %120, i32 0, i32 0
+  store i32 3, i32* %121, align 4
+  %122 = load %Graph*, %Graph** %H, align 8
+  %123 = getelementptr inbounds %Graph, %Graph* %122, i32 0, i32 2
+  %124 = load %Pair**, %Pair*** %123, align 8
+  %125 = getelementptr %Pair*, %Pair** %124, i32 2
+  %126 = load %Pair*, %Pair** %125, align 8
+  %127 = getelementptr inbounds %Pair, %Pair* %126, i32 0, i32 1
+  store i32 4, i32* %127, align 4
+  %128 = load %Graph*, %Graph** %G, align 8
+  %129 = call i32 @printEdgeList(%Graph* %128)
+  %130 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.5, i32 0, i32 0))
+  %131 = load %Graph*, %Graph** %H, align 8
+  %132 = call i32 @printEdgeList(%Graph* %131)
+  %133 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @str.6, i32 0, i32 0))
+  %n = alloca i32, align 4
+  store i32 3, i32* %n, align 4
+  %k = alloca %Permutation**, align 8
+  %134 = load i32, i32* %n, align 4
+  %135 = call %Permutation** @gen_all_permutations(i32 %134)
+  store %Permutation** %135, %Permutation*** %k, align 8
+  %i = alloca i32, align 4
+  store i32 0, i32* %i, align 4
+  br label %while
+
+while:                                            ; preds = %While, %entry
+  %j = alloca i32, align 4
+  store i32 0, i32* %j, align 4
+  br label %ile
+
+ndWhile:                                          ; preds = %While
+  %136 = load %Graph*, %Graph** %G, align 8
+  %137 = load %Graph*, %Graph** %H, align 8
+  %138 = call i32 @isIsomorphic(%Graph* %136, %Graph* %137)
+  %139 = icmp eq i32 %138, 1
+  br i1 %139, label %lse, label %end
+
+ile:                                              ; preds = %ile, %while
+  %140 = load %Permutation**, %Permutation*** %k, align 8
+  %141 = load i32, i32* %i, align 4
+  %142 = getelementptr %Permutation*, %Permutation** %140, i32 %141
+  %143 = load %Permutation*, %Permutation** %142, align 8
+  %144 = getelementptr inbounds %Permutation, %Permutation* %143, i32 0, i32 0
+  %145 = load i32*, i32** %144, align 8
+  %146 = load i32, i32* %j, align 4
+  %147 = getelementptr i32, i32* %145, i32 %146
+  %148 = load i32, i32* %147, align 4
+  %149 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.7, i32 0, i32 0), i32 %148)
+  %150 = load i32, i32* %j, align 4
+  %151 = add i32 %150, 1
+  store i32 %151, i32* %j, align 4
+  %152 = load i32, i32* %n, align 4
+  %153 = load i32, i32* %j, align 4
+  %154 = icmp slt i32 %153, %152
+  br i1 %154, label %ile, label %While
+
+While:                                            ; preds = %ile
+  %155 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([2 x i8], [2 x i8]* @str.8, i32 0, i32 0))
+  %156 = load i32, i32* %i, align 4
+  %157 = add i32 %156, 1
+  store i32 %157, i32* %i, align 4
+  %158 = load i32, i32* %n, align 4
+  %159 = call i32 @factorial(i32 %158)
+  %160 = load i32, i32* %i, align 4
+  %161 = icmp slt i32 %160, %159
+  br i1 %161, label %while, label %ndWhile
+
+lse:                                              ; preds = %ndWhile
+  %162 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([24 x i8], [24 x i8]* @str.9, i32 0, i32 0))
+  br label %ile1
+
+end:                                              ; preds = %ndWhile
+  br label %ile1
+
+ile1:                                             ; preds = %end, %lse
+  %163 = load %Graph*, %Graph** %G, align 8
+  %164 = load %Graph*, %Graph** %H, align 8
+  %165 = call i32 @isIsomorphic(%Graph* %163, %Graph* %164)
+  %166 = icmp eq i32 %165, 0
+  br i1 %166, label %167, label %169
+
+167:                                              ; preds = %ile1
+  %168 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([28 x i8], [28 x i8]* @str.10, i32 0, i32 0))
+  br label %170
+
+169:                                              ; preds = %ile1
+  br label %170
+
+170:                                              ; preds = %169, %167
+  ret i32 0
+}

@@ -41,7 +41,7 @@ declare i32 @fseek(i8*, i32, i32)
 define i32 @main() {
 entry:
   %FCar = alloca %Car*
-  %0 = call i8* @malloc(i32 20)
+  %0 = call i8* @malloc(i32 25)
   %1 = bitcast i8* %0 to %Car*
   store %Car* %1, %Car** %FCar
   %2 = load %Car*, %Car** %FCar

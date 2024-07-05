@@ -1,0 +1,50 @@
+corrupted double-linked list
+Process 22919 stopped
+* thread #1, name = 'lli', stop reason = signal SIGABRT
+    frame #0: 0x00007ffff121e9fc libc.so.6`pthread_kill + 300
+libc.so.6`pthread_kill:
+->  0x7ffff121e9fc <+300>: movl   %eax, %r13d
+    0x7ffff121e9ff <+303>: negl   %r13d
+    0x7ffff121ea02 <+306>: cmpl   $0xfffff000, %eax         ; imm = 0xFFFFF000 
+    0x7ffff121ea07 <+311>: movl   $0x0, %eax
+(lldb) bt
+* thread #1, name = 'lli', stop reason = signal SIGABRT
+  * frame #0: 0x00007ffff121e9fc libc.so.6`pthread_kill + 300
+    frame #1: 0x00007ffff11ca476 libc.so.6`raise + 22
+    frame #2: 0x00007ffff11b07f3 libc.so.6`abort + 211
+    frame #3: 0x00007ffff1211676 libc.so.6`___lldb_unnamed_symbol3390 + 662
+    frame #4: 0x00007ffff1228cfc libc.so.6`___lldb_unnamed_symbol3546 + 28
+    frame #5: 0x00007ffff12297cc libc.so.6`___lldb_unnamed_symbol3560 + 188
+    frame #6: 0x00007ffff122c62b libc.so.6`___lldb_unnamed_symbol3571 + 3195
+    frame #7: 0x00007ffff122d262 libc.so.6`malloc + 450
+    frame #8: 0x00007ffff24b2a79 libLLVM-14.so.1`llvm::SmallVectorBase<unsigned int>::grow_pod(void*, unsigned long, unsigned long) + 137
+    frame #9: 0x00007ffff26676f1 libLLVM-14.so.1`___lldb_unnamed_symbol48553 + 273
+    frame #10: 0x00007ffff2660fa9 libLLVM-14.so.1`llvm::PMTopLevelManager::findAnalysisUsage(llvm::Pass*) + 601
+    frame #11: 0x00007ffff2661689 libLLVM-14.so.1`llvm::PMTopLevelManager::schedulePass(llvm::Pass*) + 233
+    frame #12: 0x00007ffff2ad7210 libLLVM-14.so.1`llvm::TargetPassConfig::addPass(llvm::Pass*) + 832
+    frame #13: 0x00007ffff2ad7509 libLLVM-14.so.1`llvm::TargetPassConfig::addPass(void const*) + 185
+    frame #14: 0x00007ffff2ad8c6b libLLVM-14.so.1`llvm::TargetPassConfig::addRegAssignAndRewriteOptimized() + 59
+    frame #15: 0x00007ffff2ad8dac libLLVM-14.so.1`llvm::TargetPassConfig::addOptimizedRegAlloc() + 220
+    frame #16: 0x00007ffff2ad83d0 libLLVM-14.so.1`llvm::TargetPassConfig::addMachinePasses() + 480
+    frame #17: 0x00007ffff2831f60 libLLVM-14.so.1`llvm::LLVMTargetMachine::addPassesToEmitMC(llvm::legacy::PassManagerBase&, llvm::MCContext*&, llvm::raw_pwrite_stream&, bool) + 160
+    frame #18: 0x00007ffff3eb8e23 libLLVM-14.so.1`llvm::orc::SimpleCompiler::operator()(llvm::Module&) + 275
+    frame #19: 0x00007ffff3f1068d libLLVM-14.so.1`___lldb_unnamed_symbol74536 + 93
+    frame #20: 0x00007ffff3f10465 libLLVM-14.so.1`llvm::orc::IRCompileLayer::emit(std::unique_ptr<llvm::orc::MaterializationResponsibility, std::default_delete<llvm::orc::MaterializationResponsibility> >, llvm::orc::ThreadSafeModule) + 53
+    frame #21: 0x00007ffff3f10ac4 libLLVM-14.so.1`llvm::orc::IRTransformLayer::emit(std::unique_ptr<llvm::orc::MaterializationResponsibility, std::default_delete<llvm::orc::MaterializationResponsibility> >, llvm::orc::ThreadSafeModule) + 212
+    frame #22: 0x00007ffff3f10ac4 libLLVM-14.so.1`llvm::orc::IRTransformLayer::emit(std::unique_ptr<llvm::orc::MaterializationResponsibility, std::default_delete<llvm::orc::MaterializationResponsibility> >, llvm::orc::ThreadSafeModule) + 212
+    frame #23: 0x00007ffff3f16f88 libLLVM-14.so.1`llvm::orc::BasicIRLayerMaterializationUnit::materialize(std::unique_ptr<llvm::orc::MaterializationResponsibility, std::default_delete<llvm::orc::MaterializationResponsibility> >) + 296
+    frame #24: 0x00007ffff3ecc0c5 libLLVM-14.so.1`llvm::orc::MaterializationTask::run() + 53
+    frame #25: 0x00007ffff3ed798b libLLVM-14.so.1`___lldb_unnamed_symbol74010 + 43
+    frame #26: 0x00007ffff3ece0cb libLLVM-14.so.1`llvm::orc::ExecutionSession::dispatchOutstandingMUs() + 395
+    frame #27: 0x00007ffff3ed1f4e libLLVM-14.so.1`llvm::orc::ExecutionSession::OL_completeLookup(std::unique_ptr<llvm::orc::InProgressLookupState, std::default_delete<llvm::orc::InProgressLookupState> >, std::shared_ptr<llvm::orc::AsynchronousSymbolQuery>, std::function<void (llvm::DenseMap<llvm::orc::JITDylib*, llvm::DenseSet<llvm::orc::SymbolStringPtr, llvm::DenseMapInfo<llvm::orc::SymbolStringPtr, void> >, llvm::DenseMapInfo<llvm::orc::JITDylib*, void>, llvm::detail::DenseMapPair<llvm::orc::JITDylib*, llvm::DenseSet<llvm::orc::SymbolStringPtr, llvm::DenseMapInfo<llvm::orc::SymbolStringPtr, void> > > > const&)>) + 7118
+    frame #28: 0x00007ffff3edd75b libLLVM-14.so.1`___lldb_unnamed_symbol74100 + 219
+    frame #29: 0x00007ffff3ebf28b libLLVM-14.so.1`llvm::orc::ExecutionSession::OL_applyQueryPhase1(std::unique_ptr<llvm::orc::InProgressLookupState, std::default_delete<llvm::orc::InProgressLookupState> >, llvm::Error) + 3291
+    frame #30: 0x00007ffff3ebd129 libLLVM-14.so.1`llvm::orc::ExecutionSession::lookup(llvm::orc::LookupKind, std::vector<std::pair<llvm::orc::JITDylib*, llvm::orc::JITDylibLookupFlags>, std::allocator<std::pair<llvm::orc::JITDylib*, llvm::orc::JITDylibLookupFlags> > > const&, llvm::orc::SymbolLookupSet, llvm::orc::SymbolState, llvm::unique_function<void (llvm::Expected<llvm::DenseMap<llvm::orc::SymbolStringPtr, llvm::JITEvaluatedSymbol, llvm::DenseMapInfo<llvm::orc::SymbolStringPtr, void>, llvm::detail::DenseMapPair<llvm::orc::SymbolStringPtr, llvm::JITEvaluatedSymbol> > >)>, std::function<void (llvm::DenseMap<llvm::orc::JITDylib*, llvm::DenseSet<llvm::orc::SymbolStringPtr, llvm::DenseMapInfo<llvm::orc::SymbolStringPtr, void> >, llvm::DenseMapInfo<llvm::orc::JITDylib*, void>, llvm::detail::DenseMapPair<llvm::orc::JITDylib*, llvm::DenseSet<llvm::orc::SymbolStringPtr, llvm::DenseMapInfo<llvm::orc::SymbolStringPtr, void> > > > const&)>) + 393
+    frame #31: 0x00007ffff3ecb76d libLLVM-14.so.1`llvm::orc::Platform::lookupInitSymbols(llvm::orc::ExecutionSession&, llvm::DenseMap<llvm::orc::JITDylib*, llvm::orc::SymbolLookupSet, llvm::DenseMapInfo<llvm::orc::JITDylib*, void>, llvm::detail::DenseMapPair<llvm::orc::JITDylib*, llvm::orc::SymbolLookupSet> > const&) + 733
+    frame #32: 0x00007ffff3f1fc1c libLLVM-14.so.1`___lldb_unnamed_symbol74611 + 1100
+    frame #33: 0x0000000000418144 lli`runOrcJIT(char const*) + 11636
+    frame #34: 0x0000000000412cc8 lli`main + 808
+    frame #35: 0x00007ffff11b1d90 libc.so.6`___lldb_unnamed_symbol3139 + 128
+    frame #36: 0x00007ffff11b1e40 libc.so.6`__libc_start_main + 128
+    frame #37: 0x000000000040fe15 lli`_start + 37
+(lldb) 

@@ -4,9 +4,9 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/usr/include/llvm-17",
-                "/usr/include/llvm-c-17",
-                "/usr/local/include/antlr4-runtime"
+                "/usr/local/include/antlr4-runtime",
+                "/usr/include/llvm-14",
+                "/usr/include/llvm-c-14"
             ],
             "defines": [],
             "cStandard": "c17",

@@ -22,7 +22,7 @@ struct Car {
 
 dec main() -> int;
 def main() -> int {
-    FCar:Car = malloc(20)->(Car);
+    FCar:Car = malloc(25)->(Car);
     FCar.make = malloc(100);
     FCar.model = malloc(100);
     mileage:char* = malloc(100);

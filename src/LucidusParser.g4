@@ -42,6 +42,7 @@ def : DEF ID '(' (param (',' param)*)? ')' ARROW type '{' stat* '}' ;
 func :  (ID | '(' expr ')') '(' (expr (',' expr)*)? ')' ;
 
 expr: ID
+    | SIZEOF type
     | INT
     | FLOAT
     | STRING
@@ -61,7 +62,6 @@ expr: ID
     | SUB expr
     | expr MOD expr
     | expr ARROW '(' type ')'
-    | SIZEOF type
     | expr '=' '=' expr
     | expr '!=' expr
     | expr GTR expr

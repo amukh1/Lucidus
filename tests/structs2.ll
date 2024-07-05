@@ -9,8 +9,9 @@ source_filename = "amukh"
 @str.2 = private constant [17 x i8] c"Car Mileage: %d\0A\00"
 @str.3 = private constant [14 x i8] c"Car Year: %d\0A\00"
 @str.4 = private constant [14 x i8] c"Car Cost: %d\0A\00"
-@str.5 = private constant [9 x i8] c"FCar.txt\00"
-@str.6 = private constant [3 x i8] c"r+\00"
+@str.5 = private constant [16 x i8] c"Sizeof Car: %d\0A\00"
+@str.6 = private constant [9 x i8] c"FCar.txt\00"
+@str.7 = private constant [3 x i8] c"r+\00"
 
 declare i32 @printf(i8*, ...)
 
@@ -67,67 +68,68 @@ entry:
 
 define i32 @main() {
 entry:
+  %0 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @str.5, i32 0, i32 0), i32 ptrtoint (%Car* getelementptr (%Car, %Car* null, i32 1) to i32))
   %FCar = alloca %Car*
-  %0 = call i8* @malloc(i32 20)
-  %1 = bitcast i8* %0 to %Car*
-  store %Car* %1, %Car** %FCar
-  %2 = load %Car*, %Car** %FCar
-  %3 = getelementptr inbounds %Car, %Car* %2, i32 0, i32 0
-  %4 = call i8* @malloc(i32 100)
-  store i8* %4, i8** %3
-  %5 = load %Car*, %Car** %FCar
-  %6 = getelementptr inbounds %Car, %Car* %5, i32 0, i32 1
-  %7 = call i8* @malloc(i32 100)
-  store i8* %7, i8** %6
-  %mileage = alloca i8*
+  %1 = call i8* @malloc(i32 28)
+  %2 = bitcast i8* %1 to %Car*
+  store %Car* %2, %Car** %FCar
+  %3 = load %Car*, %Car** %FCar
+  %4 = getelementptr inbounds %Car, %Car* %3, i32 0, i32 0
+  %5 = call i8* @malloc(i32 100)
+  store i8* %5, i8** %4
+  %6 = load %Car*, %Car** %FCar
+  %7 = getelementptr inbounds %Car, %Car* %6, i32 0, i32 1
   %8 = call i8* @malloc(i32 100)
-  store i8* %8, i8** %mileage
-  %year = alloca i8*
+  store i8* %8, i8** %7
+  %mileage = alloca i8*
   %9 = call i8* @malloc(i32 100)
-  store i8* %9, i8** %year
-  %cost = alloca i8*
+  store i8* %9, i8** %mileage
+  %year = alloca i8*
   %10 = call i8* @malloc(i32 100)
-  store i8* %10, i8** %cost
+  store i8* %10, i8** %year
+  %cost = alloca i8*
+  %11 = call i8* @malloc(i32 100)
+  store i8* %11, i8** %cost
   %fstream = alloca i8*
-  %11 = call i8* @fopen(i8* getelementptr inbounds ([9 x i8], [9 x i8]* @str.5, i32 0, i32 0), i8* getelementptr inbounds ([3 x i8], [3 x i8]* @str.6, i32 0, i32 0))
-  store i8* %11, i8** %fstream
-  %12 = load i8*, i8** %fstream
-  %13 = call i32 @fseek(i8* %12, i32 0, i32 0)
-  %14 = load %Car*, %Car** %FCar
-  %15 = getelementptr inbounds %Car, %Car* %14, i32 0, i32 0
-  %16 = load i8*, i8** %15
-  %17 = load i8*, i8** %fstream
-  %18 = call i8* @fgets(i8* %16, i32 100, i8* %17)
-  %19 = load %Car*, %Car** %FCar
-  %20 = getelementptr inbounds %Car, %Car* %19, i32 0, i32 1
-  %21 = load i8*, i8** %20
-  %22 = load i8*, i8** %fstream
-  %23 = call i8* @fgets(i8* %21, i32 100, i8* %22)
-  %24 = load i8*, i8** %mileage
-  %25 = load i8*, i8** %fstream
-  %26 = call i8* @fgets(i8* %24, i32 100, i8* %25)
-  %27 = load i8*, i8** %year
-  %28 = load i8*, i8** %fstream
-  %29 = call i8* @fgets(i8* %27, i32 100, i8* %28)
-  %30 = load i8*, i8** %cost
-  %31 = load i8*, i8** %fstream
-  %32 = call i8* @fgets(i8* %30, i32 100, i8* %31)
-  %33 = load %Car*, %Car** %FCar
-  %34 = getelementptr inbounds %Car, %Car* %33, i32 0, i32 2
-  %35 = load i8*, i8** %mileage
-  %36 = call i32 @atoi(i8* %35)
-  store i32 %36, i32* %34
-  %37 = load %Car*, %Car** %FCar
-  %38 = getelementptr inbounds %Car, %Car* %37, i32 0, i32 3
-  %39 = load i8*, i8** %year
-  %40 = call i32 @atoi(i8* %39)
-  store i32 %40, i32* %38
-  %41 = load %Car*, %Car** %FCar
-  %42 = getelementptr inbounds %Car, %Car* %41, i32 0, i32 4
-  %43 = load i8*, i8** %cost
-  %44 = call i32 @atoi(i8* %43)
-  store i32 %44, i32* %42
-  %45 = load %Car*, %Car** %FCar
-  %46 = call i32 @printCarData(%Car* %45)
+  %12 = call i8* @fopen(i8* getelementptr inbounds ([9 x i8], [9 x i8]* @str.6, i32 0, i32 0), i8* getelementptr inbounds ([3 x i8], [3 x i8]* @str.7, i32 0, i32 0))
+  store i8* %12, i8** %fstream
+  %13 = load i8*, i8** %fstream
+  %14 = call i32 @fseek(i8* %13, i32 0, i32 0)
+  %15 = load %Car*, %Car** %FCar
+  %16 = getelementptr inbounds %Car, %Car* %15, i32 0, i32 0
+  %17 = load i8*, i8** %16
+  %18 = load i8*, i8** %fstream
+  %19 = call i8* @fgets(i8* %17, i32 100, i8* %18)
+  %20 = load %Car*, %Car** %FCar
+  %21 = getelementptr inbounds %Car, %Car* %20, i32 0, i32 1
+  %22 = load i8*, i8** %21
+  %23 = load i8*, i8** %fstream
+  %24 = call i8* @fgets(i8* %22, i32 100, i8* %23)
+  %25 = load i8*, i8** %mileage
+  %26 = load i8*, i8** %fstream
+  %27 = call i8* @fgets(i8* %25, i32 100, i8* %26)
+  %28 = load i8*, i8** %year
+  %29 = load i8*, i8** %fstream
+  %30 = call i8* @fgets(i8* %28, i32 100, i8* %29)
+  %31 = load i8*, i8** %cost
+  %32 = load i8*, i8** %fstream
+  %33 = call i8* @fgets(i8* %31, i32 100, i8* %32)
+  %34 = load %Car*, %Car** %FCar
+  %35 = getelementptr inbounds %Car, %Car* %34, i32 0, i32 2
+  %36 = load i8*, i8** %mileage
+  %37 = call i32 @atoi(i8* %36)
+  store i32 %37, i32* %35
+  %38 = load %Car*, %Car** %FCar
+  %39 = getelementptr inbounds %Car, %Car* %38, i32 0, i32 3
+  %40 = load i8*, i8** %year
+  %41 = call i32 @atoi(i8* %40)
+  store i32 %41, i32* %39
+  %42 = load %Car*, %Car** %FCar
+  %43 = getelementptr inbounds %Car, %Car* %42, i32 0, i32 4
+  %44 = load i8*, i8** %cost
+  %45 = call i32 @atoi(i8* %44)
+  store i32 %45, i32* %43
+  %46 = load %Car*, %Car** %FCar
+  %47 = call i32 @printCarData(%Car* %46)
   ret i32 0
 }
