@@ -23,6 +23,6 @@
 // listener and visitor
 #include "LucidusParserVisitor.h"
 #include "LucidusParserBaseVisitor.h"
-#include "MyVisitor.h"
+#include "Codegen.h"
 
-void compile(std::shared_ptr<LLVMController> Controller, std::ifstream& program, MyVisitor& visitor);
+void compile(std::shared_ptr<LLVMController> Controller, std::ifstream& program, Codegen& visitor);

@@ -1,9 +1,9 @@
 {
     "files.associations": {
-        "*.excalidraw": "json",
-        "*.excalidrawlib": "json",
         "*html": "html",
         "*.axs": "axtionscript",
+        "*.excalidraw": "json",
+        "*.excalidrawlib": "json",
         "any": "cpp",
         "array": "cpp",
         "atomic": "cpp",
@@ -89,7 +89,8 @@
         "__tree": "cpp",
         "codecvt": "cpp",
         "coroutine": "cpp",
-        "future": "cpp"
+        "future": "cpp",
+        "compare": "cpp"
     },
     "C_Cpp.default.compilerPath": "/usr/bin/clang++"
 }

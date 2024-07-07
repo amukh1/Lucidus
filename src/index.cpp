@@ -23,10 +23,11 @@
 // listener and visitor
 #include "LucidusParserVisitor.h"
 #include "LucidusParserBaseVisitor.h"
-#include "MyVisitor.h"
+#include "Codegen.h"
 #include "compile.h"
+#include "TypeChecker.h"
 
-void compile(std::shared_ptr<LLVMController> Controller, std::ifstream& program, MyVisitor& visitor) {
+void compile(std::shared_ptr<LLVMController> Controller, std::ifstream& program, Codegen& visitor) {
     // parse with antlr
     antlr4::ANTLRInputStream inputStream(program);
     LucidusLexer lexer(&inputStream);
@@ -42,7 +43,7 @@ int main(int argc, char **argv) {
     std::shared_ptr<LLVMController> Controller = std::make_shared<LLVMController>();
     // Controller->module->getOrInsertFunction("printf", llvm::FunctionType::get(Controller->builder->getInt32Ty(), Controller->builder->getInt8PtrTy(), true));
 
-    MyVisitor visitor;
+    Codegen visitor;
     visitor.controller = Controller;
 
     /*
@@ -54,6 +55,20 @@ int main(int argc, char **argv) {
     -O <optimization level>
     else: input files
     */
+
+    // Type* t = new Type();
+    // t->type = Controller->builder->getInt32Ty();
+    // t->name = "int";
+    // t->ptr = false;
+
+    // std::cout << t->name << std::endl;
+    // std::cout << t->pointerTo()->pointerTo()->name << std::endl;
+    // std::cout << t->name << std::endl;
+
+    // PtrType* type = new PtrType();
+    // type = t->pointerTo();
+
+    // std::cout << type->name << std::endl;
 
     // parse flags & compile files
     std::vector<std::string> inputFiles;

@@ -18,15 +18,14 @@ source_filename = "amukh"
 @str.1 = private constant [2 x i8] c"(\00"
 @str.2 = private constant [4 x i8] c"%d \00"
 @str.3 = private constant [3 x i8] c")\0A\00"
-@str.4 = private constant [4 x i8] c"%d\0A\00"
-@str.5 = private constant [15 x i8] c"Hello, World!\0A\00"
+@str.4 = private constant [15 x i8] c"Hello, World!\0A\00"
+@str.5 = private constant [4 x i8] c"%d\0A\00"
 @str.6 = private constant [4 x i8] c"%d\0A\00"
-@str.7 = private constant [4 x i8] c"%d\0A\00"
-@str.8 = private constant [17 x i8] c"x is equal to y\0A\00"
-@str.9 = private constant [21 x i8] c"x is not equal to y\0A\00"
-@str.10 = private constant [4 x i8] c"%d\0A\00"
-@str.11 = private constant [6 x i8] c"%d | \00"
-@str.12 = private constant [2 x i8] c"\0A\00"
+@str.7 = private constant [17 x i8] c"x is equal to y\0A\00"
+@str.8 = private constant [21 x i8] c"x is not equal to y\0A\00"
+@str.9 = private constant [4 x i8] c"%d\0A\00"
+@str.10 = private constant [6 x i8] c"%d | \00"
+@str.11 = private constant [2 x i8] c"\0A\00"
 
 declare i32 @printf(i8*, ...)
 
@@ -371,215 +370,11 @@ entry:
   ret i32 1
 }
 
-define i32 @isIsomorphic(%Graph* %0, %Graph* %1) {
-entry:
-  %G = alloca %Graph*
-  store %Graph* %0, %Graph** %G
-  %H = alloca %Graph*
-  store %Graph* %1, %Graph** %H
-  %2 = load %Graph*, %Graph** %H
-  %3 = getelementptr inbounds %Graph, %Graph* %2, i32 0, i32 0
-  %4 = load i32, i32* %3
-  %5 = load %Graph*, %Graph** %G
-  %6 = getelementptr inbounds %Graph, %Graph* %5, i32 0, i32 0
-  %7 = load i32, i32* %6
-  %8 = icmp ne i32 %7, %4
-  br i1 %8, label %if, label %lse
-
-if:                                               ; preds = %entry
-  ret i32 0
-
-lse:                                              ; preds = %entry
-  br label %d
-
-d:                                                ; preds = %lse
-  %9 = load %Graph*, %Graph** %H
-  %10 = getelementptr inbounds %Graph, %Graph* %9, i32 0, i32 1
-  %11 = load i32, i32* %10
-  %12 = load %Graph*, %Graph** %G
-  %13 = getelementptr inbounds %Graph, %Graph* %12, i32 0, i32 1
-  %14 = load i32, i32* %13
-  %15 = icmp ne i32 %14, %11
-  br i1 %15, label %else, label %16
-
-else:                                             ; preds = %d
-  ret i32 0
-
-16:                                               ; preds = %d
-  br label %hile
-
-hile:                                             ; preds = %16
-  %perms = alloca %Permutation**
-  %17 = load %Graph*, %Graph** %G
-  %18 = getelementptr inbounds %Graph, %Graph* %17, i32 0, i32 0
-  %19 = load i32, i32* %18
-  %20 = call %Permutation** @gen_all_permutations(i32 %19)
-  store %Permutation** %20, %Permutation*** %perms
-  %i = alloca i32
-  store i32 0, i32* %i
-  br label %endWhile
-
-endWhile:                                         ; preds = %"ename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]", %hile
-  %p = alloca %Permutation*
-  %21 = load %Permutation**, %Permutation*** %perms
-  %22 = load i32, i32* %i
-  %23 = getelementptr %Permutation*, %Permutation** %21, i32 %22
-  %24 = load %Permutation*, %Permutation** %23
-  store %Permutation* %24, %Permutation** %p
-  %t = alloca i32
-  store i32 1, i32* %t
-  %j = alloca i32
-  store i32 0, i32* %j
-  br label %dWhile
-
-e:                                                ; preds = %"ename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
-  ret i32 0
-
-dWhile:                                           ; preds = %"typename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]", %endWhile
-  %a = alloca i32
-  %25 = load %Graph*, %Graph** %G
-  %26 = getelementptr inbounds %Graph, %Graph* %25, i32 0, i32 2
-  %27 = load %Pair**, %Pair*** %26
-  %28 = load i32, i32* %j
-  %29 = getelementptr %Pair*, %Pair** %27, i32 %28
-  %30 = load %Pair*, %Pair** %29
-  %31 = getelementptr inbounds %Pair, %Pair* %30, i32 0, i32 0
-  %32 = load i32, i32* %31
-  store i32 %32, i32* %a
-  %b = alloca i32
-  %33 = load %Graph*, %Graph** %G
-  %34 = getelementptr inbounds %Graph, %Graph* %33, i32 0, i32 2
-  %35 = load %Pair**, %Pair*** %34
-  %36 = load i32, i32* %j
-  %37 = getelementptr %Pair*, %Pair** %35, i32 %36
-  %38 = load %Pair*, %Pair** %37
-  %39 = getelementptr inbounds %Pair, %Pair* %38, i32 0, i32 1
-  %40 = load i32, i32* %39
-  store i32 %40, i32* %b
-  %pa = alloca i32
-  %41 = load %Permutation*, %Permutation** %p
-  %42 = getelementptr inbounds %Permutation, %Permutation* %41, i32 0, i32 0
-  %43 = load i32*, i32** %42
-  %44 = load i32, i32* %a
-  %45 = getelementptr i32, i32* %43, i32 %44
-  %46 = load i32, i32* %45
-  store i32 %46, i32* %pa
-  %ba = alloca i32
-  %47 = load %Permutation*, %Permutation** %p
-  %48 = getelementptr inbounds %Permutation, %Permutation* %47, i32 0, i32 0
-  %49 = load i32*, i32** %48
-  %50 = load i32, i32* %b
-  %51 = getelementptr i32, i32* %49, i32 %50
-  %52 = load i32, i32* %51
-  store i32 %52, i32* %ba
-  %f = alloca i32
-  store i32 0, i32* %f
-  %l = alloca i32
-  store i32 0, i32* %l
-  br label %hile1
-
-53:                                               ; preds = %"typename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
-  %54 = load i32, i32* %t
-  %55 = icmp eq i32 %54, 1
-  br i1 %55, label %While, label %e7
-
-hile1:                                            ; preds = %hile3, %dWhile
-  %56 = load i32, i32* %pa
-  %57 = load %Graph*, %Graph** %H
-  %58 = getelementptr inbounds %Graph, %Graph* %57, i32 0, i32 2
-  %59 = load %Pair**, %Pair*** %58
-  %60 = load i32, i32* %l
-  %61 = getelementptr %Pair*, %Pair** %59, i32 %60
-  %62 = load %Pair*, %Pair** %61
-  %63 = getelementptr inbounds %Pair, %Pair* %62, i32 0, i32 0
-  %64 = load i32, i32* %63
-  %65 = icmp eq i32 %64, %56
-  br i1 %65, label %while, label %e2
-
-"ypename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]": ; preds = %hile3
-  %66 = load i32, i32* %f
-  %67 = icmp eq i32 %66, 0
-  br i1 %67, label %endWhile5, label %hile6
-
-while:                                            ; preds = %hile1
-  %68 = load i32, i32* %ba
-  %69 = load %Graph*, %Graph** %H
-  %70 = getelementptr inbounds %Graph, %Graph* %69, i32 0, i32 2
-  %71 = load %Pair**, %Pair*** %70
-  %72 = load i32, i32* %l
-  %73 = getelementptr %Pair*, %Pair** %71, i32 %72
-  %74 = load %Pair*, %Pair** %73
-  %75 = getelementptr inbounds %Pair, %Pair* %74, i32 0, i32 1
-  %76 = load i32, i32* %75
-  %77 = icmp eq i32 %76, %68
-  br i1 %77, label %le, label %ndWhile
-
-e2:                                               ; preds = %hile1
-  br label %hile3
-
-hile3:                                            ; preds = %e2, %e4
-  %78 = load i32, i32* %l
-  %79 = add i32 %78, 1
-  store i32 %79, i32* %l
-  %80 = load %Graph*, %Graph** %H
-  %81 = getelementptr inbounds %Graph, %Graph* %80, i32 0, i32 1
-  %82 = load i32, i32* %81
-  %83 = load i32, i32* %l
-  %84 = icmp ne i32 %83, %82
-  br i1 %84, label %hile1, label %"ypename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
-
-le:                                               ; preds = %while
-  store i32 1, i32* %f
-  br label %e4
-
-ndWhile:                                          ; preds = %while
-  br label %e4
-
-e4:                                               ; preds = %ndWhile, %le
-  br label %hile3
-
-endWhile5:                                        ; preds = %"ypename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
-  store i32 0, i32* %t
-  br label %"typename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
-
-hile6:                                            ; preds = %"ypename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
-  br label %"typename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
-
-"typename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]": ; preds = %hile6, %endWhile5
-  %85 = load i32, i32* %j
-  %86 = add i32 %85, 1
-  store i32 %86, i32* %j
-  %87 = load %Graph*, %Graph** %G
-  %88 = getelementptr inbounds %Graph, %Graph* %87, i32 0, i32 1
-  %89 = load i32, i32* %88
-  %90 = load i32, i32* %j
-  %91 = icmp ne i32 %90, %89
-  br i1 %91, label %dWhile, label %53
-
-While:                                            ; preds = %53
-  %92 = load i32, i32* %i
-  %93 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.4, i32 0, i32 0), i32 %92)
-  ret i32 1
-
-e7:                                               ; preds = %53
-  br label %"ename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
-
-"ename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]": ; preds = %e7
-  %94 = load i32, i32* %i
-  %95 = add i32 %94, 1
-  store i32 %95, i32* %i
-  %96 = load %Graph*, %Graph** %G
-  %97 = getelementptr inbounds %Graph, %Graph* %96, i32 0, i32 0
-  %98 = load i32, i32* %97
-  %99 = call i32 @factorial(i32 %98)
-  %100 = load i32, i32* %i
-  %101 = icmp ne i32 %100, %99
-  br i1 %101, label %endWhile, label %e
-}
+declare i32 @isIsomorphic(%Graph*, %Graph*)
 
 define i32 @main() {
 entry:
-  %0 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @str.5, i32 0, i32 0))
+  %0 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @str.4, i32 0, i32 0))
   %x = alloca i32
   store i32 4, i32* %x
   %y = alloca i32
@@ -589,16 +384,16 @@ entry:
   %2 = add i32 %1, 1
   store i32 %2, i32* %x
   %3 = load i32, i32* %x
-  %4 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.6, i32 0, i32 0), i32 %3)
+  %4 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.5, i32 0, i32 0), i32 %3)
   %5 = load i32, i32* %y
-  %6 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.7, i32 0, i32 0), i32 %5)
+  %6 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.6, i32 0, i32 0), i32 %5)
   %7 = load i32, i32* %y
   %8 = load i32, i32* %x
   %9 = icmp eq i32 %8, %7
   br i1 %9, label %if, label %lse
 
 if:                                               ; preds = %entry
-  %10 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([17 x i8], [17 x i8]* @str.8, i32 0, i32 0))
+  %10 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([17 x i8], [17 x i8]* @str.7, i32 0, i32 0))
   br label %d
 
 lse:                                              ; preds = %entry
@@ -611,7 +406,7 @@ d:                                                ; preds = %lse, %if
   br i1 %13, label %else, label %15
 
 else:                                             ; preds = %d
-  %14 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([21 x i8], [21 x i8]* @str.9, i32 0, i32 0))
+  %14 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([21 x i8], [21 x i8]* @str.8, i32 0, i32 0))
   br label %hile
 
 15:                                               ; preds = %d
@@ -624,7 +419,7 @@ hile:                                             ; preds = %15, %else
   %17 = bitcast i32 %16 to float
   store float %17, float* %z
   %arr = alloca i32*
-  %18 = call i8* @malloc(i32 40)
+  %18 = call i8* @malloc(i32 mul (i32 ptrtoint (i32* getelementptr (i32, i32* null, i32 1) to i32), i32 10))
   %19 = bitcast i8* %18 to i32*
   store i32* %19, i32** %arr
   %20 = load i32*, i32** %arr
@@ -659,7 +454,7 @@ dWhile:                                           ; preds = %dWhile, %e
   %33 = load i32, i32* %i
   %34 = getelementptr i32, i32* %32, i32 %33
   %35 = load i32, i32* %34
-  %36 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.10, i32 0, i32 0), i32 %35)
+  %36 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.9, i32 0, i32 0), i32 %35)
   %37 = load i32, i32* %i
   %38 = add i32 %37, 1
   store i32 %38, i32* %i
@@ -669,7 +464,7 @@ dWhile:                                           ; preds = %dWhile, %e
 
 41:                                               ; preds = %dWhile
   %arr2 = alloca i32**
-  %42 = call i8* @malloc(i32 80)
+  %42 = call i8* @malloc(i32 mul (i32 ptrtoint (i1** getelementptr (i1*, i1** null, i32 1) to i32), i32 10))
   %43 = bitcast i8* %42 to i32**
   store i32** %43, i32*** %arr2
   store i32 0, i32* %i
@@ -681,7 +476,7 @@ hile1:                                            ; preds = %hile1, %41
   %44 = load i32**, i32*** %arr2
   %45 = load i32, i32* %i
   %46 = getelementptr i32*, i32** %44, i32 %45
-  %47 = call i8* @malloc(i32 40)
+  %47 = call i8* @malloc(i32 mul (i32 ptrtoint (i32* getelementptr (i32, i32* null, i32 1) to i32), i32 10))
   %48 = bitcast i8* %47 to i32*
   store i32* %48, i32** %46
   %49 = load i32, i32* %i
@@ -689,19 +484,19 @@ hile1:                                            ; preds = %hile1, %41
   store i32 %50, i32* %i
   %51 = load i32, i32* %i
   %52 = icmp slt i32 %51, 10
-  br i1 %52, label %hile1, label %"ypename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
+  br i1 %52, label %hile1, label %"ypename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::StructType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::StructType*]"
 
-"ypename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]": ; preds = %hile1
+"ypename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::StructType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::StructType*]": ; preds = %hile1
   store i32 0, i32* %i
   br label %le
 
-le:                                               ; preds = %"ame llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]", %"ypename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
+le:                                               ; preds = %"ame llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::StructType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::StructType*]", %"ypename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::StructType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::StructType*]"
   store i32 0, i32* %j
   br label %53
 
-"ename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]": ; preds = %"ame llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
+"ename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::StructType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::StructType*]": ; preds = %"ame llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::StructType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::StructType*]"
   store i32 0, i32* %i
-  br label %"typename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
+  br label %"typename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::StructType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::StructType*]"
 
 53:                                               ; preds = %53, %le
   %54 = load i32**, i32*** %arr2
@@ -719,24 +514,24 @@ le:                                               ; preds = %"ame llvm::cast_ret
   store i32 %64, i32* %j
   %65 = load i32, i32* %j
   %66 = icmp slt i32 %65, 10
-  br i1 %66, label %53, label %"ame llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
+  br i1 %66, label %53, label %"ame llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::StructType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::StructType*]"
 
-"ame llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]": ; preds = %53
+"ame llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::StructType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::StructType*]": ; preds = %53
   %67 = load i32, i32* %i
   %68 = add i32 %67, 1
   store i32 %68, i32* %i
   %69 = load i32, i32* %i
   %70 = icmp slt i32 %69, 10
-  br i1 %70, label %le, label %"ename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
+  br i1 %70, label %le, label %"ename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::StructType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::StructType*]"
 
-"typename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]": ; preds = %"llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]", %"ename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
+"typename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::StructType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::StructType*]": ; preds = %"llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::StructType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::StructType*]", %"ename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::StructType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::StructType*]"
   store i32 0, i32* %j
-  br label %"pename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
+  br label %"pename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::StructType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::StructType*]"
 
-"e llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]": ; preds = %"llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
+"e llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::StructType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::StructType*]": ; preds = %"llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::StructType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::StructType*]"
   ret i32 0
 
-"pename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]": ; preds = %"pename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]", %"typename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
+"pename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::StructType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::StructType*]": ; preds = %"pename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::StructType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::StructType*]", %"typename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::StructType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::StructType*]"
   %71 = load i32**, i32*** %arr2
   %72 = load i32, i32* %i
   %73 = getelementptr i32*, i32** %71, i32 %72
@@ -744,20 +539,20 @@ le:                                               ; preds = %"ame llvm::cast_ret
   %75 = load i32, i32* %j
   %76 = getelementptr i32, i32* %74, i32 %75
   %77 = load i32, i32* %76
-  %78 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @str.11, i32 0, i32 0), i32 %77)
+  %78 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([6 x i8], [6 x i8]* @str.10, i32 0, i32 0), i32 %77)
   %79 = load i32, i32* %j
   %80 = add i32 %79, 1
   store i32 %80, i32* %j
   %81 = load i32, i32* %j
   %82 = icmp slt i32 %81, 10
-  br i1 %82, label %"pename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]", label %"llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
+  br i1 %82, label %"pename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::StructType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::StructType*]", label %"llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::StructType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::StructType*]"
 
-"llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]": ; preds = %"pename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
-  %83 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([2 x i8], [2 x i8]* @str.12, i32 0, i32 0))
+"llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::StructType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::StructType*]": ; preds = %"pename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::StructType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::StructType*]"
+  %83 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([2 x i8], [2 x i8]* @str.11, i32 0, i32 0))
   %84 = load i32, i32* %i
   %85 = add i32 %84, 1
   store i32 %85, i32* %i
   %86 = load i32, i32* %i
   %87 = icmp slt i32 %86, 10
-  br i1 %87, label %"typename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]", label %"e llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::IntegerType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::IntegerType*]"
+  br i1 %87, label %"typename llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::StructType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::StructType*]", label %"e llvm::cast_retty<X, Y*>::ret_type llvm::cast(Y*) [with X = llvm::StructType; Y = const llvm::Type; typename llvm::cast_retty<X, Y*>::ret_type = const llvm::StructType*]"
 }

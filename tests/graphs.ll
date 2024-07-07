@@ -548,35 +548,36 @@ while:                                            ; preds = %While, %entry
   br label %ile
 
 ndWhile:                                          ; preds = %While
+  %136 = call %Permutation** @gen_all_permutations(i32 4)
   ret i32 0
 
 ile:                                              ; preds = %ile, %while
-  %136 = load %Permutation**, %Permutation*** %k
-  %137 = load i32, i32* %i
-  %138 = getelementptr %Permutation*, %Permutation** %136, i32 %137
-  %139 = load %Permutation*, %Permutation** %138
-  %140 = getelementptr inbounds %Permutation, %Permutation* %139, i32 0, i32 0
-  %141 = load i32*, i32** %140
-  %142 = load i32, i32* %j
-  %143 = getelementptr i32, i32* %141, i32 %142
-  %144 = load i32, i32* %143
-  %145 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.6, i32 0, i32 0), i32 %144)
-  %146 = load i32, i32* %j
-  %147 = add i32 %146, 1
-  store i32 %147, i32* %j
-  %148 = load i32, i32* %n
-  %149 = load i32, i32* %j
-  %150 = icmp slt i32 %149, %148
-  br i1 %150, label %ile, label %While
+  %137 = load %Permutation**, %Permutation*** %k
+  %138 = load i32, i32* %i
+  %139 = getelementptr %Permutation*, %Permutation** %137, i32 %138
+  %140 = load %Permutation*, %Permutation** %139
+  %141 = getelementptr inbounds %Permutation, %Permutation* %140, i32 0, i32 0
+  %142 = load i32*, i32** %141
+  %143 = load i32, i32* %j
+  %144 = getelementptr i32, i32* %142, i32 %143
+  %145 = load i32, i32* %144
+  %146 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x i8]* @str.6, i32 0, i32 0), i32 %145)
+  %147 = load i32, i32* %j
+  %148 = add i32 %147, 1
+  store i32 %148, i32* %j
+  %149 = load i32, i32* %n
+  %150 = load i32, i32* %j
+  %151 = icmp slt i32 %150, %149
+  br i1 %151, label %ile, label %While
 
 While:                                            ; preds = %ile
-  %151 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([2 x i8], [2 x i8]* @str.7, i32 0, i32 0))
-  %152 = load i32, i32* %i
-  %153 = add i32 %152, 1
-  store i32 %153, i32* %i
-  %154 = load i32, i32* %n
-  %155 = call i32 @factorial(i32 %154)
-  %156 = load i32, i32* %i
-  %157 = icmp slt i32 %156, %155
-  br i1 %157, label %while, label %ndWhile
+  %152 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([2 x i8], [2 x i8]* @str.7, i32 0, i32 0))
+  %153 = load i32, i32* %i
+  %154 = add i32 %153, 1
+  store i32 %154, i32* %i
+  %155 = load i32, i32* %n
+  %156 = call i32 @factorial(i32 %155)
+  %157 = load i32, i32* %i
+  %158 = icmp slt i32 %157, %156
+  br i1 %158, label %while, label %ndWhile
 }

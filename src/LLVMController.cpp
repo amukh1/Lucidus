@@ -9,7 +9,7 @@
 #include <llvm/Support/raw_ostream.h>
 
 #include "LLVMController.h"
-#include "MyVisitor.h"
+#include "Codegen.h"
 
 LLVMController::LLVMController() {
     // this->ctx = std::make_unique<llvm::LLVMContext>();

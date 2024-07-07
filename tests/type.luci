@@ -1,0 +1,14 @@
+// import "include.luci"
+
+struct Frog {
+    x: int,
+    y: float
+};
+
+dec frog(x:int) -> Frog*;
+
+dec main() -> int;
+def main() -> int {
+    x:int = 5;
+    return 0;
+}
