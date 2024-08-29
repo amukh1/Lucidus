@@ -43,7 +43,7 @@ void PtrType::selfPoint() {
     this->ptr = true;
 }
 
-Type* TypeChecker::typeExpr(LucidusParser::ExprContext* ctx, std::shared_ptr<LLVMController> controller, Codegen* visitor) {
+Type* TypeChecker::typeLit(LucidusParser::ExprContext* ctx, std::shared_ptr<LLVMController> controller, Codegen* visitor) {
     if(ctx->INT() != nullptr && ctx->children.size() == 1) {
         Type *t = new Type();
         t->type = controller->builder->getInt32Ty();

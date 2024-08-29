@@ -52,9 +52,9 @@ antlrcpp::Any Codegen::visitDec(LucidusParser::DecContext *ctx) {
         std::string functionName = ctx->ID()->getText();
         llvm::Type* rtype = getTypes(ctx->type(), this->controller, this->structs);
         Type* rtypeType = TypeChecker::parseType(ctx->type(), this->controller, this);
-        std::cout << rtypeType->name << std::endl;
+        // std::cout << rtypeType->name << std::endl;
         if(rtypeType->ptr) {
-            std::cout << ((PtrType*)rtypeType)->containedType->name << std::endl;
+            // std::cout << ((PtrType*)rtypeType)->containedType->name << std::endl;
         }
         std::vector<llvm::Type*> types;
         bool ellip = false;

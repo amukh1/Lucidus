@@ -42,8 +42,8 @@ struct PtrType : Type {
 
 namespace TypeChecker {
 
-    // takes a type context and returns the llvm type
-    Type* typeExpr(LucidusParser::ExprContext* ctx, std::shared_ptr<LLVMController> controller, Codegen* visitor);
+    // takes a expr context (of a literal) and returns the llvm type
+    Type* typeLit(LucidusParser::ExprContext* ctx, std::shared_ptr<LLVMController> controller, Codegen* visitor);
 
     // parses a type given a type context and returns type
     Type* parseType(LucidusParser::TypeContext* ctx, std::shared_ptr<LLVMController> controller, Codegen* visitor);
